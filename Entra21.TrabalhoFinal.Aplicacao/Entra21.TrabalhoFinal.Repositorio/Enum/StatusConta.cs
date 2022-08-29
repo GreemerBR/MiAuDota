@@ -1,8 +1,8 @@
 ﻿namespace Entra21.TrabalhoFinal.Repositorio.Enum
 {
-    public enum GeneroAnimal
+    public enum StatusConta
     {
-        Femea,
-        Macho
+        Ativada,
+        Desativa
     }
 }
