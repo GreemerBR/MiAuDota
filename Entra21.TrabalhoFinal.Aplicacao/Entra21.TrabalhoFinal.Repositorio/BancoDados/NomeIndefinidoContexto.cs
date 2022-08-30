@@ -8,5 +8,14 @@ namespace Entra21.TrabalhoFinal.Repositorio.BancoDados
         public DbSet<Animal> Animais { get; set; }
         public DbSet<Protetor> Protetores { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+
+        //public NomeIndefinidoContexto(DbSet<NomeIndefinidoContexto> options) : base(options)
+        //{
+        //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.ApplyConfiguration(new IndefinidoMapeamento());
+        }
     }
 }
