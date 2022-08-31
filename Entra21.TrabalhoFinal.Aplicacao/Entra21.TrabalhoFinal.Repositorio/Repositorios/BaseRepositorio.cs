@@ -17,7 +17,7 @@ namespace Entra21.TrabalhoFinal.Repositorio.Repositorios
             }
             else
             {
-                using (NomeIndefinidoContexto contexto = new NomeIndefinidoContexto())
+                using (MiAuDotaContexto contexto = new MiAuDotaContexto())
                 {
                     contexto.Entry<T>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
                     contexto.SaveChanges();
@@ -29,7 +29,7 @@ namespace Entra21.TrabalhoFinal.Repositorio.Repositorios
 
         public T Cadastrar(T entity)
         {
-            using (NomeIndefinidoContexto contexto = new NomeIndefinidoContexto())
+            using (MiAuDotaContexto contexto = new MiAuDotaContexto())
             {
                 contexto.Set<T>().Add(entity);
                 contexto.SaveChanges();
@@ -40,7 +40,7 @@ namespace Entra21.TrabalhoFinal.Repositorio.Repositorios
 
         public void Editar(T entity)
         {
-            using (NomeIndefinidoContexto contexto = new NomeIndefinidoContexto())
+            using (MiAuDotaContexto contexto = new MiAuDotaContexto())
             {
                 contexto.Entry<T>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             }
@@ -50,7 +50,7 @@ namespace Entra21.TrabalhoFinal.Repositorio.Repositorios
         {
             T model = null;
 
-            using (NomeIndefinidoContexto contexto = new NomeIndefinidoContexto())
+            using (MiAuDotaContexto contexto = new MiAuDotaContexto())
             {
                 model = contexto.Set<T>().Find(id);
             }
@@ -62,7 +62,7 @@ namespace Entra21.TrabalhoFinal.Repositorio.Repositorios
         {
             IList<T> list = new List<T>();
 
-            using (NomeIndefinidoContexto contexto = new NomeIndefinidoContexto())
+            using (MiAuDotaContexto contexto = new MiAuDotaContexto())
             {
                 list = contexto.Set<T>().ToList();
             }
