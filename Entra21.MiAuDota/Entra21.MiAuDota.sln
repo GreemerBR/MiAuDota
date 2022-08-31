@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Application", "00 - Application", "{85C7880D-405D-4FBE-907C-D5C3EF509183}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Domain", "01 - Domain", "{5E316F0F-C5B1-45A8-B776-A96A250529A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Infra", "02 - Infra", "{52FAB95E-DDFC-47B6-9562-18D19ACA8CD0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.MiAuDota.Repositorio", "Entra21.MiAuDota.Repositorio\Entra21.MiAuDota.Repositorio.csproj", "{E1445673-6B79-45F5-A59A-FB6948EA82F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.MiAuDota.Servico", "Entra21.MiAuDota.Servico\Entra21.MiAuDota.Servico.csproj", "{B357C30A-E41B-43D1-B0F1-8E72F902D1CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.MiAuDota.Aplicacao", "Entra21.MiAuDota.Aplicacao\Entra21.MiAuDota.Aplicacao.csproj", "{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1445673-6B79-45F5-A59A-FB6948EA82F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1445673-6B79-45F5-A59A-FB6948EA82F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1445673-6B79-45F5-A59A-FB6948EA82F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1445673-6B79-45F5-A59A-FB6948EA82F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B357C30A-E41B-43D1-B0F1-8E72F902D1CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B357C30A-E41B-43D1-B0F1-8E72F902D1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B357C30A-E41B-43D1-B0F1-8E72F902D1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B357C30A-E41B-43D1-B0F1-8E72F902D1CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E1445673-6B79-45F5-A59A-FB6948EA82F8} = {52FAB95E-DDFC-47B6-9562-18D19ACA8CD0}
+		{B357C30A-E41B-43D1-B0F1-8E72F902D1CE} = {5E316F0F-C5B1-45A8-B776-A96A250529A7}
+		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738} = {85C7880D-405D-4FBE-907C-D5C3EF509183}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {689011A9-2358-4ABD-9092-1D7957F80C41}
+	EndGlobalSection
+EndGlobal
