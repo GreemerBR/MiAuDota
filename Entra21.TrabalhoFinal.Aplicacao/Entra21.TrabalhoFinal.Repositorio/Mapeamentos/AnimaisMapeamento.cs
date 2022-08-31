@@ -122,7 +122,7 @@ namespace Entra21.TrabalhoFinal.Repositorio.Mapeamentos
                 Altura = 0.7,
 
 
-            },
+            });
         }
     }
 }
