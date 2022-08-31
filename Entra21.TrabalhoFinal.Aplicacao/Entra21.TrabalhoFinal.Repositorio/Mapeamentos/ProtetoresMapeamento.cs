@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Entra21.TrabalhoFinal.Repositorio.Mapeamentos
 {
-    internal class ProtetoresMapeamento : IEntityTypeConfiguration<Protetor>
+    public class ProtetoresMapeamento : IEntityTypeConfiguration<Protetor>
     {
         public void Configure(EntityTypeBuilder<Protetor> builder)
         {
@@ -59,6 +59,7 @@ namespace Entra21.TrabalhoFinal.Repositorio.Mapeamentos
 
             builder.Property(x => x.Pix)
                .HasColumnType("VARCHAR")
+               .HasMaxLength(45)
                .HasColumnName("pix");
 
             builder.Property(x => x.Sobre)
@@ -92,6 +93,19 @@ namespace Entra21.TrabalhoFinal.Repositorio.Mapeamentos
                 Email = "greg@gmail.com",
                 Senha = "123123123",
                 Sobre = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                EhProtetor = false
+            },
+
+            new Protetor
+            {
+                Id = 2,
+                Nome = "DOug",
+                Cpf = "186.123.892-00",
+                Endereco = "Rua São Paulo",
+                Celular = "47 9886495-1246",
+                Email = "douh@gmail.com",
+                Senha = "156156156",
+                Sobre = "Printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
                 EhProtetor = false
             }
             );

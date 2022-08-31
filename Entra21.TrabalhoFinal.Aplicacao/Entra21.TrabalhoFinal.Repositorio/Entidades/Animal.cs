@@ -20,7 +20,10 @@ namespace Entra21.TrabalhoFinal.Repositorio.Entidades
         public GeneroAnimal Genero { get; set; }
         public StatusInstituicao Status { get; set; }
 
+        public int ProtetorId { get; set; }
+        public int UsuarioId { get; set; }
         public Protetor Protetor { get; set; }
         public Usuario? Usuario { get; set; }
     }
 }
+    
