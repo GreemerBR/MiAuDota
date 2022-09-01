@@ -40,15 +40,15 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                .IsRequired()
                .HasColumnName("sobre");
 
-            //builder.Property(x => x.Status)
-            //   .WithMany(x => x.StatusInstituicao)
-            //   .IsRequired()
-            //   .HasColumnName("status");
+            builder.Property(x => x.Genero)
+            .HasColumnType("TINYINT")
+            .IsRequired()
+            .HasColumnName("genero");
 
-            //builder.Property(x => x.Genero)
-            //   .WithMany(x => x.GeneroAnimal)
-            //   .IsRequired()
-            //   .HasColumnName("genero");
+            builder.Property(x => x.Status)
+               .HasColumnType("TINYINT")
+               .IsRequired()
+               .HasColumnName("status");
 
             builder.Property(x => x.Peso)
                .HasColumnType("DECIMAL")
@@ -57,7 +57,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                .HasColumnName("peso");
 
             builder.Property(x => x.Altura)
-               .HasColumnType("VARCHAR")
+               .HasColumnType("DECIMAL")
                .HasPrecision(3, 2)
                .IsRequired()
                .HasColumnName("altura");
@@ -93,18 +93,18 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
              .IsRequired()
              .HasColumnName("usuario_id");
 
-            //builder.HasOne(x => x.Usuario)
-            //.WithMany(x => x.Animais)
-            //.HasForeignKey(x => x.UsuarioId);
+            builder.Property(x => x.ProtetorId)
+             .HasColumnType("INT")
+             .IsRequired()
+             .HasColumnName("protetor_id");
 
-            //builder.Property(x => x.ProtetorId)
-            // .HasColumnType("INT")
-            // .IsRequired()
-            // .HasColumnName("protetor_id");
+            builder.HasOne(x => x.Usuario)
+            .WithMany(x => x.Animais)
+            .HasForeignKey(x => x.UsuarioId);
 
-            //builder.HasOne(x => x.Protetor)
-            //.WithMany(x => x.)
-            //.HasForeignKey(x => x.ProtetorId);
+            builder.HasOne(x => x.Protetor)
+            .WithMany(x => x.Animais)
+            .HasForeignKey(x => x.ProtetorId);
 
             builder.HasData(
             new Animal
@@ -120,7 +120,12 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Idade = 1,
                 Peso = 2.3,
                 Altura = 0.7,
-
+                Castrado = true,
+                DataAdocao = Convert.ToDateTime(22/08/2022),
+                Genero = Enum.GeneroAnimal.Macho,
+                Status = Enum.StatusInstituicao.Adotado,
+                ProtetorId = 1,
+                UsuarioId = 1
 
             });
         }

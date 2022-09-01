@@ -82,6 +82,11 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
              .IsRequired()
              .HasColumnName("ehprotetor");
 
+            builder.Property(x => x.StatusConta)
+             .HasColumnType("TINYINT")
+             .IsRequired()
+             .HasColumnName("status_conta");
+
             builder.HasData(
             new Protetor
             {
@@ -93,7 +98,8 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Email = "greg@gmail.com",
                 Senha = "123123123",
                 Sobre = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                EhProtetor = false
+                EhProtetor = false,
+                StatusConta  = Enum.StatusConta.Ativada
             },
 
             new Protetor
@@ -106,7 +112,8 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Email = "douh@gmail.com",
                 Senha = "156156156",
                 Sobre = "Printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                EhProtetor = false
+                EhProtetor = false,
+                StatusConta = Enum.StatusConta.Ativada
             }
             );
 

@@ -37,7 +37,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.Endereco)
                .HasColumnType("VARCHAR")
-               .HasMaxLength(14)
+               .HasMaxLength(45)
                .IsRequired()
                .HasColumnName("endereco");
 
@@ -68,10 +68,10 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .IsRequired()
                .HasColumnName("ehUsuario");
 
-            //builder.Property(x => x.StatusConta)
-            //   .WithMany(x => x.StatusConta)
-            //   .IsRequired()
-            //   .HasColumnName("statusConta"); ///---------------------------------
+            builder.Property(x => x.StatusConta)
+               .HasColumnType("TINYINT")
+               .IsRequired()
+               .HasColumnName("statusConta"); 
 
             builder.HasData(
             new Usuario
@@ -79,14 +79,14 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Id = 1,
                 Nome = "Ana",
                 Cpf = "145.889.265-00",
-                //DataNascimento = 08/04/1992,
+                DataNascimento = Convert.ToDateTime(1992-04-02),
                 Endereco = "Rua tal",
                 Email = "ana@gmail.com",
                 Especialidade = "Salto em distância",
                 EhVoluntario = false,
                 Celular = "47 9986588-1246",
                 EhUsuario = true,
-                StatusConta = StatusConta.Ativada//--------------------------------------
+                StatusConta = StatusConta.Ativada
             },
 
             new Usuario
@@ -94,7 +94,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Id = 1,
                 Nome = "Amanda",
                 Cpf = "189.456.789-00",
-                //DataNascimento = 08 / 04 / 1992,
+                DataNascimento = Convert.ToDateTime(17/05/1993),
                 Endereco = "Rua alt",
                 Email = "amanda@gmail.com",
                 Especialidade = "Corrida",

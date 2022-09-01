@@ -14,5 +14,7 @@ namespace Entra21.MiAuDota.Repositorio.Entidades
         public DateTime DataNascimento { get; set; }
 
         public StatusConta StatusConta { get; set; }
+
+        public IList<Animal> Animais { get; set; }
     }
 }
