@@ -5,8 +5,6 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
     public class BaseRepositorio<T> : IRepositorio<T> where T : BaseModel
     {
-        //private readonly NomeIndefinidoContexto _contexto;
-
         public bool Apagar(int id)
         {
             var entity = ObterPorId(id);

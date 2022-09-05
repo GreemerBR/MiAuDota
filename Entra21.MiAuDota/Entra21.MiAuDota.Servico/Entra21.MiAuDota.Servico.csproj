@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -11,8 +11,11 @@
     <Folder Include="MapeamentoViewModels\" />
     <Folder Include="MapeamentoEntidades\" />
     <Folder Include="InjecoesDependencia\" />
-    <Folder Include="Servicos\" />
     <Folder Include="ViewModels\Usuarios\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entra21.MiAuDota.Repositorio\Entra21.MiAuDota.Repositorio.csproj" />
   </ItemGroup>
 
 </Project>
