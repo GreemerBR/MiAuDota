@@ -1,6 +1,7 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
+using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +29,13 @@ namespace Entra21.MiAuDota.Servico.Servicos
             throw new NotImplementedException();
         }
 
-        public Usuario Cadastrar(UsuarioCadastrarViewModel viewModel) //TODO CadastrarViewModel USUARIO
+        public Usuario Cadastrar(UsuarioCadastrarViewModel viewModel)
         {
             var usuario = _mapeamentoEntidade.ConstruirCom(viewModel);
 
             _usuarioRespositorio.Cadastrar(usuario);
 
             return usuario;
-
         }
 
         public bool Editar(UsuarioEditarViewModel viewModel)

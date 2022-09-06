@@ -1,4 +1,5 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
