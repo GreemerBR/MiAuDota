@@ -2,7 +2,7 @@
 
 namespace Entra21.MiAuDota.Repositorio.Entidades
 {
-    public class Usuario : BaseModel
+    public class Usuario : BaseEntity
     {
         public string Endereco { get; set; }
         public string Celular { get; set; }

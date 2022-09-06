@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
-    public abstract class BaseRepositorio<T> : IRepositorio<T> where T : BaseModel
+    public abstract class BaseRepositorio<T> : IRepositorio<T> where T : BaseEntity
     {
         private readonly MiAuDotaContexto _contexto;
 

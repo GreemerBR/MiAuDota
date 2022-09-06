@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="MapeamentoViewModels\" />
     <Folder Include="InjecoesDependencia\" />
-    <Folder Include="ViewModels\Usuarios\" />
   </ItemGroup>
 
   <ItemGroup>
