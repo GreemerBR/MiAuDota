@@ -2,7 +2,7 @@
 
 namespace Entra21.MiAuDota.Repositorio.Entidades
 {
-    public class Protetor : BaseModel
+    public class Protetor : BaseEntity
     {
         public string? Cpf { get; set; }
         public string? Cnpj { get; set; }

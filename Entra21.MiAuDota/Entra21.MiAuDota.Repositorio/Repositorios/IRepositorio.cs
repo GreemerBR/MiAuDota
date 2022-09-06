@@ -2,7 +2,7 @@
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
-    public interface IRepositorio<T> where T : BaseModel
+    public interface IRepositorio<T> where T : BaseEntity
     {
         bool Apagar(int id);
         T Cadastrar(T entity);
