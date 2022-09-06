@@ -1,59 +1,51 @@
 ﻿using Entra21.MiAuDota.Repositorio.BancoDados;
 using Entra21.MiAuDota.Repositorio.Entidades;
+using Microsoft.EntityFrameworkCore;
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
-    public class BaseRepositorio<T> : IRepositorio<T> where T : BaseModel
+    public abstract class BaseRepositorio<T> : IRepositorio<T> where T : BaseModel
     {
-        //private readonly NomeIndefinidoContexto _contexto;
+        private readonly MiAuDotaContexto _contexto;
+
+        public BaseRepositorio(MiAuDotaContexto contexto)
+        {
+            _contexto = contexto;
+        }
 
         public bool Apagar(int id)
         {
             var entity = ObterPorId(id);
 
             if (entity == null)
-            {
                 return false;
-            }
-            else
-            {
-                using (MiAuDotaContexto contexto = new MiAuDotaContexto())
-                {
-                    contexto.Entry<T>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-                    contexto.SaveChanges();
-                }
 
-                return true;
-            }
+            _contexto.Entry<T>(entity).State = EntityState.Deleted;
+            _contexto.SaveChanges();
+
+
+            return true;
+
         }
 
         public T Cadastrar(T entity)
         {
-            using (MiAuDotaContexto contexto = new MiAuDotaContexto())
-            {
-                contexto.Set<T>().Add(entity);
-                contexto.SaveChanges();
-            }
+            _contexto.Set<T>().Add(entity);
+            _contexto.SaveChanges();
 
             return entity;
         }
 
         public void Editar(T entity)
         {
-            using (MiAuDotaContexto contexto = new MiAuDotaContexto())
-            {
-                contexto.Entry<T>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            }
+            _contexto.Entry<T>(entity).State = EntityState.Modified;
         }
 
         public T? ObterPorId(int id)
         {
             T model = null;
 
-            using (MiAuDotaContexto contexto = new MiAuDotaContexto())
-            {
-                model = contexto.Set<T>().Find(id);
-            }
+            model = _contexto.Set<T>().Find(id);
 
             return model;
         }
@@ -62,10 +54,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         {
             IList<T> list = new List<T>();
 
-            using (MiAuDotaContexto contexto = new MiAuDotaContexto())
-            {
-                list = contexto.Set<T>().ToList();
-            }
+            list = _contexto.Set<T>().ToList();
 
             return list;
         }
