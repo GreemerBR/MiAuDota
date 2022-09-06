@@ -36,13 +36,13 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.Celular)
                 .HasColumnType("VARCHAR")
-                .HasMaxLength(14)
+                .HasMaxLength(15)
                 .IsRequired()
                 .HasColumnName("celular");
 
             builder.Property(x => x.Telefone)
                 .HasColumnType("VARCHAR")
-                .HasMaxLength(13)
+                .HasMaxLength(14)
                 .HasColumnName("telefone");
 
             builder.Property(x => x.Email)
@@ -108,7 +108,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Nome = "DOug",
                 Cpf = "186.123.892-00",
                 Endereco = "Rua São Paulo",
-                Celular = "47 9886495-1246",
+                Celular = "47 98895-1246",
                 Email = "douh@gmail.com",
                 Senha = "156156156",
                 Sobre = "Printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",

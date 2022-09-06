@@ -1,4 +1,5 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Repositorio.Enum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -98,6 +99,10 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
              .IsRequired()
              .HasColumnName("protetor_id");
 
+            builder.Property(x => x.DataAdocao)
+            .HasColumnType("DATETIME2")
+            .HasColumnName("data_adocao");
+
             builder.HasOne(x => x.Usuario)
             .WithMany(x => x.Animais)
             .HasForeignKey(x => x.UsuarioId);
@@ -121,9 +126,9 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Peso = 2.3,
                 Altura = 0.7,
                 Castrado = true,
-                DataAdocao = Convert.ToDateTime(22/08/2022),
-                Genero = Enum.GeneroAnimal.Macho,
-                Status = Enum.StatusInstituicao.Adotado,
+                DataAdocao = new DateTime(2022,8,22),
+                Genero = GeneroAnimal.Macho,
+                Status = StatusInstituicao.Adotado,
                 ProtetorId = 1,
                 UsuarioId = 1
 

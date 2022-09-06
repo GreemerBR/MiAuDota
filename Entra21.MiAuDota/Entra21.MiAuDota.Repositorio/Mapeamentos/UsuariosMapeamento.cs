@@ -31,7 +31,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasColumnName("cpf");
 
             builder.Property(x => x.DataNascimento)
-                .HasColumnType("DATE")
+                .HasColumnType("DATETIME2")
                 .IsRequired()
                 .HasColumnName("data_nascimento");
 
@@ -55,23 +55,23 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.Property(x => x.EhVoluntario)
                .HasColumnType("BIT")
                .IsRequired()
-               .HasColumnName("ehVoluntario");
+               .HasColumnName("eh_voluntario");
 
             builder.Property(x => x.Celular)
                .HasColumnType("VARCHAR")
-               .HasMaxLength(14)
+               .HasMaxLength(15)
                .IsRequired()
                .HasColumnName("celular");
 
             builder.Property(x => x.EhUsuario)
                .HasColumnType("BIT")
                 .IsRequired()
-               .HasColumnName("ehUsuario");
+               .HasColumnName("eh_usuario");
 
             builder.Property(x => x.StatusConta)
                .HasColumnType("TINYINT")
                .IsRequired()
-               .HasColumnName("statusConta"); 
+               .HasColumnName("status_conta"); 
 
             builder.HasData(
             new Usuario
@@ -79,27 +79,27 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Id = 1,
                 Nome = "Ana",
                 Cpf = "145.889.265-00",
-                DataNascimento = Convert.ToDateTime(1992-04-02),
+                DataNascimento = new DateTime(1992,04,02),
                 Endereco = "Rua tal",
                 Email = "ana@gmail.com",
                 Especialidade = "Salto em distância",
                 EhVoluntario = false,
-                Celular = "47 9986588-1246",
+                Celular = "47 99888-1246",
                 EhUsuario = true,
                 StatusConta = StatusConta.Ativada
             },
 
             new Usuario
             {
-                Id = 1,
+                Id = 2,
                 Nome = "Amanda",
                 Cpf = "189.456.789-00",
-                DataNascimento = Convert.ToDateTime(17/05/1993),
+                DataNascimento = new DateTime(1993,07,03),
                 Endereco = "Rua alt",
                 Email = "amanda@gmail.com",
                 Especialidade = "Corrida",
                 EhVoluntario = true,
-                Celular = "47 9884565-1246",
+                Celular = "47 98865-1246",
                 EhUsuario = true,
                 StatusConta = StatusConta.Ativada
             }
