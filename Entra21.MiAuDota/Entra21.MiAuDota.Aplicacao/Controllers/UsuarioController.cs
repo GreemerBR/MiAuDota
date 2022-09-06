@@ -1,4 +1,5 @@
 ﻿using Entra21.MiAuDota.Servico.Servicos;
+using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
