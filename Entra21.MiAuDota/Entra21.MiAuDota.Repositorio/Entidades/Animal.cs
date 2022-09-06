@@ -2,7 +2,7 @@
 
 namespace Entra21.MiAuDota.Repositorio.Entidades
 {
-    public class Animal : BaseModel
+    public class Animal : BaseEntity
     {
         public string Raca { get; set; }
         public string Especie { get; set; }
