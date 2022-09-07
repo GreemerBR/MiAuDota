@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
-    public abstract class BaseRepositorio<T> : IRepositorio<T> where T : BaseEntity
+    public abstract class BaseRepositorio<T> : IBaseRepositorio<T> where T : BaseEntity
     {
         private readonly MiAuDotaContexto _contexto;
 
@@ -22,7 +22,6 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 
             _contexto.Entry<T>(entity).State = EntityState.Deleted;
             _contexto.SaveChanges();
-
 
             return true;
 
