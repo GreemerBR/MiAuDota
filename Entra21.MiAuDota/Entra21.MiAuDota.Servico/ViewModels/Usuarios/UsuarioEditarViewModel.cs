@@ -1,7 +1,6 @@
 ﻿namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
 {
-    public class UsuarioEditarViewModel : UsuarioViewModel
+    public class UsuarioEditarViewModel : BaseEditarViewModel<UsuarioViewModel>
     {
-        public int Id { get; set; }
     }
 }

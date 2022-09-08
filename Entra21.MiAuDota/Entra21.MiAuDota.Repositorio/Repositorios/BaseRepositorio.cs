@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
-    public abstract class BaseRepositorio<T> : IRepositorio<T> where T : BaseEntity
+    public class BaseRepositorio<TEntity>
+        : IBaseRepositorio<TEntity>
+        where TEntity : BaseEntity
     {
         private readonly MiAuDotaContexto _contexto;
 
@@ -20,41 +22,40 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             if (entity == null)
                 return false;
 
-            _contexto.Entry<T>(entity).State = EntityState.Deleted;
+            _contexto.Entry<TEntity>(entity).State = EntityState.Deleted;
             _contexto.SaveChanges();
-
 
             return true;
 
         }
 
-        public T Cadastrar(T entity)
+        public TEntity Cadastrar(TEntity entity)
         {
-            _contexto.Set<T>().Add(entity);
+            _contexto.Set<TEntity>().Add(entity);
             _contexto.SaveChanges();
 
             return entity;
         }
 
-        public void Editar(T entity)
+        public void Editar(TEntity entity)
         {
-            _contexto.Entry<T>(entity).State = EntityState.Modified;
+            _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
         }
 
-        public T? ObterPorId(int id)
+        public TEntity? ObterPorId(int id)
         {
-            T model = null;
+            TEntity model = null;
 
-            model = _contexto.Set<T>().Find(id);
+            model = _contexto.Set<TEntity>().Find(id);
 
             return model;
         }
 
-        public IList<T> ObterTodos()
+        public IList<TEntity> ObterTodos()
         {
-            IList<T> list = new List<T>();
+            IList<TEntity> list = new List<TEntity>();
 
-            list = _contexto.Set<T>().ToList();
+            list = _contexto.Set<TEntity>().ToList();
 
             return list;
         }
