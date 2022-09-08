@@ -3,9 +3,13 @@ using Entra21.MiAuDota.Servico.ViewModels;
 
 namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 {
-    public interface IBaseMapeamentoEntidade<T, C, E> where T : BaseEntity where C : BaseViewModel where E : BaseEditarViewModel
+    public interface IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
+        : IBaseMapeamentoEntidadeEditar<TEntity, TUpdateViewModel, TViewModel>
+        where TEntity : BaseEntity 
+        where TCreateViewModel : BaseViewModel
+        where TUpdateViewModel : BaseEditarViewModel<TViewModel>
+        where TViewModel: BaseViewModel
     {
-        T ConstruirCom(C viewModel);
-        void AtualizarCampos(T entity, E viewModel);
+        TEntity ConstruirCom(TCreateViewModel viewModel);
     }
 }

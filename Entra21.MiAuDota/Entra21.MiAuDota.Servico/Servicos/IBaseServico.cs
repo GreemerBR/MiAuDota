@@ -3,12 +3,16 @@ using Entra21.MiAuDota.Servico.ViewModels;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public interface IBaseServico<T, C, E> where T : BaseEntity where C : BaseViewModel where E : BaseEditarViewModel
+    public interface IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> 
+        where TEntity : BaseEntity 
+        where TCreateViewModel : BaseViewModel 
+        where TUpdateViewModel : BaseEditarViewModel<TViewModel>
+        where TViewModel : BaseViewModel
     {
-        T Cadastrar(C viewModel);
+        TEntity Cadastrar(TCreateViewModel viewModel);
         bool Apagar(int id);
-        bool Editar(E viewModel);
-        T? ObterPorId(int id);
-        IList<T> ObterTodos();
+        bool Editar(TUpdateViewModel viewModel);
+        TEntity? ObterPorId(int id);
+        IList<TEntity> ObterTodos();
     }
 }

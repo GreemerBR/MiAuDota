@@ -1,6 +1,7 @@
 ﻿namespace Entra21.MiAuDota.Servico.ViewModels
 {
-    public interface BaseEditarViewModel
+    public class BaseEditarViewModel<TViewModel>
+        where TViewModel : BaseViewModel
     {
         public int Id { get; set; }
     }

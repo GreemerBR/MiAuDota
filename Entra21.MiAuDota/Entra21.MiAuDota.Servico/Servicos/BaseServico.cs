@@ -5,27 +5,28 @@ using Entra21.MiAuDota.Servico.ViewModels;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public class BaseServico<T, C, E> : IBaseServico<T, C, E> where T : BaseEntity where C : BaseViewModel where E : BaseEditarViewModel
+    public class BaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> 
+        : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> 
+        where TEntity : BaseEntity 
+        where TCreateViewModel : BaseViewModel 
+        where TUpdateViewModel : BaseEditarViewModel<TViewModel>
+        where TViewModel: BaseViewModel
     {
-        private readonly IBaseRepositorio<T> _baseRepositorio;
-        private readonly IBaseMapeamentoEntidade<T, C, E> _baseMapeamentoEntidade;
+        private readonly IBaseRepositorio<TEntity> _baseRepositorio;
+        private readonly IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> _baseMapeamentoEntidade;
 
         public BaseServico(
-            IBaseRepositorio<T> baseRepositorio,
-            IBaseMapeamentoEntidade<T, C, E> baseMapeamentoEntidade)
+            IBaseRepositorio<TEntity> baseRepositorio,
+            IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> baseMapeamentoEntidade)
         {
             _baseRepositorio = baseRepositorio;
             _baseMapeamentoEntidade = baseMapeamentoEntidade;
         }
 
-        public bool Apagar(int id)
-        {
+        public virtual bool Apagar(int id) =>
             _baseRepositorio.Apagar(id);
 
-            return true;
-        }
-
-        public T Cadastrar(C viewModel)
+        public TEntity Cadastrar(TCreateViewModel viewModel)
         {
             var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel);
 
@@ -34,9 +35,9 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return entity;
         }
 
-        public bool Editar(E viewModel)
+        public virtual bool Editar(TUpdateViewModel viewModel)
         {
-            T entity = _baseRepositorio.ObterPorId(viewModel.Id);
+            var entity = _baseRepositorio.ObterPorId(viewModel.Id);
 
             if (entity == null)
                 return false;
@@ -48,14 +49,14 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return true;
         }
 
-        public T? ObterPorId(int id)
+        public virtual TEntity? ObterPorId(int id)
         {
             var entity = _baseRepositorio.ObterPorId(id);
 
             return entity;
         }
 
-        public IList<T> ObterTodos()
+        public virtual IList<TEntity> ObterTodos()
         {
             var list = _baseRepositorio.ObterTodos();
 
