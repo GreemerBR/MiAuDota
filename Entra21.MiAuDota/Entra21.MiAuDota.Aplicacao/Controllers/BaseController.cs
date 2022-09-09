@@ -1,19 +1,17 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
-using Entra21.MiAuDota.Repositorio.Repositorios;
 using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels;
-using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
 {
-    public class BaseController<TEntity, TRepository, TServico, TCreateViewModel, TUpdateViewModel, TViewModel> : Controller
+    [Route("Usuario")]
+    public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel> : Controller
         where TEntity : BaseEntity
-        where TRepository : BaseRepositorio<TEntity>
-        where TCreateViewModel : BaseViewModel
+        where TCreateViewModel : BaseViewModel, new()
         where TViewModel : BaseViewModel
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>
-        where TServico : BaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
+        where TServico : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
     {
         private readonly TServico _servico;
 
@@ -35,7 +33,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
 
             return Ok(entities);
         }
-        
+
         [HttpGet("obterTodos")]
         public IActionResult ObterTodos()
         {
@@ -44,8 +42,14 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
             return Ok(entities);
         }
 
+        [HttpGet("cadastrar")]
+        public IActionResult Cadastrar()
+        {
+            return View(new TCreateViewModel());
+        }
+
         [HttpPost("cadastrar")]
-        public IActionResult Cadastrar([FromBody] TCreateViewModel creatViewModel)
+        public IActionResult Cadastrar([FromForm] TCreateViewModel creatViewModel)
         {
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
