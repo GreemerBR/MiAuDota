@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services
+    .AdicionarEntityFramework(builder.Configuration)
     .AdicionarServicos()
     .AdicionarRepositorios()
     .AdicionarMapeamentoEntidades();
