@@ -1,4 +1,5 @@
-﻿
+﻿@model UsuarioCadastrarViewModel
+
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="en">
 <head>
@@ -81,7 +82,7 @@
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
             </form>
             -->
-            <form asp-action="Usuario" method="POST">
+            <form asp-action="Cadastrar" method="POST">
                 <div class="mb-3">
                     <label asp-for="Nome" class="form-label" span-required=""></label>
                     <input asp-for="Nome" class="form-control" />

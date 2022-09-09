@@ -1,9 +1,6 @@
 using Entra21.MiAuDota.Repositorio.BancoDados;
 using Entra21.MiAuDota.Repositorio.InjecoesDependencia;
-using Entra21.MiAuDota.Repositorio.Repositorios;
 using Entra21.MiAuDota.Servico.InjecoesDependencia;
-using Entra21.MiAuDota.Servico.MapeamentoEntidades;
-using Entra21.MiAuDota.Servico.Servicos;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
