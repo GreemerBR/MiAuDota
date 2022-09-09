@@ -15,7 +15,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             _contexto = contexto;
         }
 
-        public bool Apagar(int id)
+        public virtual bool Apagar(int id)
         {
             var entity = ObterPorId(id);
 
@@ -29,7 +29,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 
         }
 
-        public TEntity Cadastrar(TEntity entity)
+        public virtual TEntity Cadastrar(TEntity entity)
         {
             _contexto.Set<TEntity>().Add(entity);
             _contexto.SaveChanges();
@@ -37,12 +37,12 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             return entity;
         }
 
-        public void Editar(TEntity entity)
+        public virtual void Editar(TEntity entity)
         {
             _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
         }
 
-        public TEntity? ObterPorId(int id)
+        public virtual TEntity? ObterPorId(int id)
         {
             TEntity model = null;
 
@@ -51,7 +51,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             return model;
         }
 
-        public IList<TEntity> ObterTodos()
+        public virtual IList<TEntity> ObterTodos()
         {
             IList<TEntity> list = new List<TEntity>();
 
@@ -59,5 +59,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 
             return list;
         }
+
+        public virtual IList<TEntity> ObterTodosComFiltro(string pesquisa) => ObterTodos();
     }
 }

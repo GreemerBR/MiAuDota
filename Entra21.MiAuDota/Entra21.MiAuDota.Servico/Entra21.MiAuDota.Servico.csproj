@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="InjecoesDependencia\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Entra21.MiAuDota.Repositorio\Entra21.MiAuDota.Repositorio.csproj" />
   </ItemGroup>
 

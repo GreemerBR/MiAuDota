@@ -62,5 +62,12 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             return list;
         }
+
+        public IList<TEntity> ObterTodosComFiltro(string pesquisa)
+        {
+            var list = _baseRepositorio.ObterTodosComFiltro(pesquisa);
+
+            return list;
+        }
     }
 }
