@@ -106,16 +106,12 @@
                     </li>
                 </ul> -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <li class="nav-item dropdown">
-                        <a href="~/Login.cshtml"> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< NÃO FUNCIONAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
-                        <button type="button" class="btn btn-block btn-sucess">
-                            Entrar
-                        </button>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
+                    <a class= asp-controller="Login" asp-action="Index"> Login </a>
+                    <a class= asp-controller="Cadastro" asp-action="Index"> Cadastro </a>
+
+                    <!-- <li class="nav-item dropdown">
                         <button type="button" class="btn btn-block btn-sucess"> Cadastrar</button>
-                    </li>
+                    </li>-->
                 </ul>
                 <!-- End Navbar Toolbar Right -->
             </div>
