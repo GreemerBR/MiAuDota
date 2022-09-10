@@ -10,8 +10,8 @@ namespace Entra21.MiAuDota.Servico.Servicos
         IUsuarioServico
     {
         public UsuarioServico(
-            IUsuarioRepositorio baseRepositorio,
-            IUsuarioMapeamentoEntidade baseMapeamentoEntidade)
+            IBaseRepositorio<Usuario> baseRepositorio, 
+            IBaseMapeamentoEntidade<Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel> baseMapeamentoEntidade) 
             : base(baseRepositorio, baseMapeamentoEntidade)
         {
         }

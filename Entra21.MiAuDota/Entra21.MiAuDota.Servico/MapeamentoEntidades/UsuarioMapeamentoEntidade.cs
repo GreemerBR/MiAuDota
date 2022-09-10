@@ -8,7 +8,13 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
     {
         public void AtualizarCampos(Usuario entity, UsuarioEditarViewModel viewModel)
         {
-            throw new NotImplementedException();
+            entity.Endereco = viewModel.Endereco;
+            entity.Celular = viewModel.Celular;
+            entity.Senha = viewModel.Senha;
+            entity.ConfirmarSenha = viewModel.ConfirmarSenha;
+            entity.Especialidade = viewModel.Especialidade;
+            entity.EhVoluntario = viewModel.EhVoluntario;
+            entity.StatusConta = viewModel.StatusConta;
         }
 
         public Usuario ConstruirCom(UsuarioCadastrarViewModel viewModel)
@@ -19,14 +25,14 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Endereco = viewModel.Endereco,
                 Celular = viewModel.Celular,
                 Email = viewModel.Email,
+                Senha = viewModel.Senha,
+                ConfirmarSenha = viewModel.ConfirmarSenha,
                 Cpf = viewModel.Cpf,
                 Especialidade = viewModel.Especialidade,
                 EhVoluntario = viewModel.EhVoluntario,
                 EhUsuario = viewModel.EhUsuario,
                 DataNascimento = viewModel.DataNascimento,
-
                 StatusConta = (StatusConta)viewModel.StatusConta,
-
             };
         }
     }

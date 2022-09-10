@@ -3,9 +3,12 @@ using Entra21.MiAuDota.Repositorio.Entidades;
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
-    public class AnimalRepositorio : BaseRepositorio<Animal>
+    public class AnimalRepositorio 
+        : BaseRepositorio<Animal>,
+        IAnimalRepositorio
     {
         private readonly MiAuDotaContexto _contexto;
+
         public AnimalRepositorio(MiAuDotaContexto contexto) : base(contexto)
         {
         }

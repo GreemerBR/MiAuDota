@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Entra21.MiAuDota.Servico.Utils
+namespace Entra21.MiAuDota.Repositorio.Utils
 {
     public class Criptografia
     {

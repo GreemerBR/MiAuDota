@@ -11,6 +11,7 @@ namespace Entra21.MiAuDota.Repositorio.Entidades
         public string? Telefone { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
+        public string ConfirmarSenha { get; set; }
         public string? Pix { get; set; }
         public string Sobre { get; set; }
         public string? Instagram { get; set; }

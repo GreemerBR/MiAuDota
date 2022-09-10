@@ -2,7 +2,7 @@
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
-    public interface IUsuarioRepositorio: IBaseRepositorio<Usuario>
+    public interface IUsuarioRepositorio : IBaseRepositorio<Usuario>
     {
     }
 }

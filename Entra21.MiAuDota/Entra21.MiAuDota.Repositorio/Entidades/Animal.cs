@@ -22,7 +22,7 @@ namespace Entra21.MiAuDota.Repositorio.Entidades
 
         public int ProtetorId { get; set; }
         public Protetor Protetor { get; set; }
-        public int UsuarioId { get; set; }
+        public int? UsuarioId { get; set; }
         public Usuario? Usuario { get; set; }
     }
 }
