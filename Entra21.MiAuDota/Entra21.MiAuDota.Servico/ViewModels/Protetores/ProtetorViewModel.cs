@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 {
     public class ProtetorViewModel : BaseViewModel
     {
-
         [Display(Name = "Endereço")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(7, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
@@ -14,12 +12,12 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 
         [Display(Name = nameof(Celular))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^(\d[0-9]{2})\9\d[0-9]{4}-\d[0-9]{4}$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
+        [RegularExpression(@"^(\d[0-9]{2}\9\d[0-9]{4}-\d[0-9]{4})$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
         public string Celular { get; set; }
-        
+
         [Display(Name = nameof(Telefone))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^(\d[0-9]{2})\d[0-9]{4}-\d[0-9]{4}$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
+        [RegularExpression(@"^(\d[0-9]{2}\d[0-9]{4}-\d[0-9]{4})$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
         public string Telefone { get; set; }
 
         [Display(Name = nameof(Email))]
@@ -50,13 +48,13 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 
         [Display(Name = nameof(Pix))]
         public string Pix { get; set; }
-        
+
         [Display(Name = nameof(Facebook))]
         public string Facebook { get; set; }
-        
+
         [Display(Name = nameof(Instagram))]
         public string Instagram { get; set; }
-        
+
         [Display(Name = nameof(Sobre))]
         public string Sobre { get; set; }
 
@@ -64,6 +62,8 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public bool EhUsuario { get; set; }
 
+        [Display(Name = "Status da conta")]
+        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public byte StatusConta { get; set; }
     }
 }

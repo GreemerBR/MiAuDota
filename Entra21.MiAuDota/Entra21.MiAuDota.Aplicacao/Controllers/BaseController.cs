@@ -4,8 +4,7 @@ using Entra21.MiAuDota.Servico.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
-{
-    [Route("Usuario")]
+{    
     public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel> : Controller
         where TEntity : BaseEntity
         where TCreateViewModel : BaseViewModel, new()

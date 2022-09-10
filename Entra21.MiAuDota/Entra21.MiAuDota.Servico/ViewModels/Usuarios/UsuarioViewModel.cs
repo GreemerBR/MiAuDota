@@ -51,6 +51,8 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
         [RegularExpression(@"\(d[0-3]{1})\(d[0-9]{1})/\(d[0-1]{1})\(d[0-9]{1})/\(d[0-2]{1})\(d[0-9]{3})", ErrorMessage = "{0} deve ser preenchido no formato '00/00/0000'")]
         public DateTime DataNascimento { get; set; }
 
+        [Display(Name = "Status da conta")]
+        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public byte StatusConta { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Entra21.MiAuDota.Repositorio.BancoDados;
 using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Repositorio.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
@@ -40,6 +41,11 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         public virtual void Editar(TEntity entity)
         {
             _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
+        }
+
+        public virtual TEntity Logon(string email, string senha)
+        {
+            throw new NotImplementedException();
         }
 
         public virtual TEntity? ObterPorId(int id)

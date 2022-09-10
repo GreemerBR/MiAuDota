@@ -8,6 +8,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         IAnimalRepositorio
     {
         private readonly MiAuDotaContexto _contexto;
+
         public AnimalRepositorio(MiAuDotaContexto contexto) : base(contexto)
         {
         }
