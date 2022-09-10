@@ -88,27 +88,58 @@
                     <input asp-for="Nome" class="form-control" />
                     <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+                <div class="mb-3">
+                    <label asp-for="Cpf" class="form-label" span-required=""></label>
+                    <input asp-for="Cpf" class="form-control" />
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DataNascimento" class="form-label" span-required=""></label>
+                    <input asp-for="DataNascimento" class="form-control" />
+                    <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Endereco" class="form-label" span-required=""></label>
+                    <input asp-for="Endereco" class="form-control" />
+                    <span asp-validation-for="Endereco" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EhVoluntario" class="form-label" span-required=""></label>
+                    <input asp-for="EhVoluntario" class="form-check-label" />
+                    <span asp-validation-for="EhVoluntario" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Celular" class="form-label" span-required=""></label>
+                    <input asp-for="Celular" class="form-control" />
+                    <span asp-validation-for="Celular" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label" span-required=""></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EhUsuario" class="form-label" span-required=""></label>
+                    <input asp-for="EhUsuario" class="form-check-label" />
+                    <span asp-validation-for="EhUsuario" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <a asp-action="Cadastrar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                </div>
+
+                <!--<button type="submit" class="btn btn-primary btn-block">Register</button>-->
 
             </form>
 
             <p>Have account already? Please go to <a href="login.html">Sign In</a></p>
-
-            <footer class="page-copyright page-copyright-inverse">
-                <p>WEBSITE BY Creation Studio</p>
-                <p>© 2018. All RIGHT RESERVED.</p>
-                <div class="social">
-                    <a class="btn btn-icon btn-pure" href="javascript:void(0)">
-                        <i class="icon bd-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-icon btn-pure" href="javascript:void(0)">
-                        <i class="icon bd-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-icon btn-pure" href="javascript:void(0)">
-                        <i class="icon bd-dribbble" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </footer>
         </div>
     </div>
     <!-- End Page -->
