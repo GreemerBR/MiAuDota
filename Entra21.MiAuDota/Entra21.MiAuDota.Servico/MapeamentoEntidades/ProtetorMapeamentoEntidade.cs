@@ -1,4 +1,5 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Repositorio.Enum;
 using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 
 namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
@@ -7,12 +8,33 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
     {
         public void AtualizarCampos(Protetor entity, ProtetorEditarViewModel viewModel)
         {
-            throw new NotImplementedException();
+            entity.Endereco = viewModel.Endereco;
+            entity.Celular = viewModel.Celular;
+            entity.Telefone = viewModel.Telefone;
+            entity.Senha = viewModel.Senha;
+            entity.ConfirmarSenha = viewModel.ConfirmarSenha; ;
+            entity.Pix = viewModel.Pix;
+            entity.Sobre = viewModel.Sobre;
+            entity.Instagram = viewModel.Instagram;
+            entity.Facebook = viewModel.Facebook;
+            entity.StatusConta = viewModel.StatusConta;
         }
 
         public Protetor ConstruirCom(ProtetorCadastrarViewModel viewModel)
         {
-            throw new NotImplementedException();
+            return new Protetor
+            {
+                Endereco = viewModel.Endereco,
+                Celular = viewModel.Celular,
+                Telefone = viewModel.Telefone,
+                Senha = viewModel.Senha,
+                ConfirmarSenha = viewModel.ConfirmarSenha,
+                Pix = viewModel.Pix,
+                Sobre = viewModel.Sobre,
+                Instagram = viewModel.Instagram,
+                Facebook = viewModel.Facebook,
+                StatusConta = (StatusConta)viewModel.StatusConta,
+            };
         }
     }
 }
