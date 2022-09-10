@@ -11,6 +11,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 
         public AnimalRepositorio(MiAuDotaContexto contexto) : base(contexto)
         {
+            _contexto = contexto;
         }
 
         public override IList<Animal> ObterTodosComFiltro(string pesquisa)

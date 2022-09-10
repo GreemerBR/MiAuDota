@@ -1,16 +1,20 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
 {    
-    public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel> : Controller
+    public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade> : Controller
         where TEntity : BaseEntity
-        where TCreateViewModel : BaseViewModel, new()
         where TViewModel : BaseViewModel
+        where TCreateViewModel : BaseViewModel, new()
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>
-        where TServico : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
+        where TRepositorio : IBaseRepositorio<TEntity>
+        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
+        where TServico : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade>
     {
         private readonly TServico _servico;
 

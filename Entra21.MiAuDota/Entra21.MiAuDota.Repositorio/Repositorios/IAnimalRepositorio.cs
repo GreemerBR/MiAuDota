@@ -2,7 +2,7 @@
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
-    internal interface IAnimalRepositorio : IBaseRepositorio<Animal>
+    public interface IAnimalRepositorio : IBaseRepositorio<Animal>
     {
     }
 }

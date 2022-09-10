@@ -1,6 +1,5 @@
 ﻿using Entra21.MiAuDota.Repositorio.BancoDados;
 using Entra21.MiAuDota.Repositorio.Entidades;
-using Entra21.MiAuDota.Repositorio.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
@@ -45,25 +44,17 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 
         public virtual TEntity Logon(string email, string senha)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public virtual TEntity? ObterPorId(int id)
         {
-            TEntity model = null;
-
-            model = _contexto.Set<TEntity>().Find(id);
-
-            return model;
+            return _contexto.Set<TEntity>().Find(id);
         }
 
         public virtual IList<TEntity> ObterTodos()
         {
-            IList<TEntity> list = new List<TEntity>();
-
-            list = _contexto.Set<TEntity>().ToList();
-
-            return list;
+            return _contexto.Set<TEntity>().ToList();
         }
 
         public virtual IList<TEntity> ObterTodosComFiltro(string pesquisa) => ObterTodos();

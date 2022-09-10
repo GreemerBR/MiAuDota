@@ -6,12 +6,11 @@ using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 namespace Entra21.MiAuDota.Servico.Servicos
 {
     public class ProtetorServico
-        : BaseServico<Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel>,
+        : BaseServico<Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade>,
         IProtetorServico
     {
-        public ProtetorServico(
-            IProtetorRepositorio baseRepositorio,
-            IProtetorMapeamentoEntidade baseMapeamentoEntidade)
+        public ProtetorServico(IProtetorRepositorio baseRepositorio, 
+            IProtetorMapeamentoEntidade baseMapeamentoEntidade) 
             : base(baseRepositorio, baseMapeamentoEntidade)
         {
         }

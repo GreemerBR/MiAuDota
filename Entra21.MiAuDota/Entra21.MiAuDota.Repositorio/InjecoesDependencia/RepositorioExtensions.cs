@@ -11,7 +11,6 @@ namespace Entra21.MiAuDota.Repositorio.InjecoesDependencia
     {
         public static IServiceCollection AdicionarRepositorios(this IServiceCollection services)
         {
-            services.AddScoped<IBaseRepositorio<BaseEntity>, BaseRepositorio<BaseEntity>>();
             services.AddScoped<IAnimalRepositorio, AnimalRepositorio>();
             services.AddScoped<IProtetorRepositorio, ProtetorRepositorio>();
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
