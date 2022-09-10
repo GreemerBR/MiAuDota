@@ -1,5 +1,4 @@
 ﻿using Entra21.MiAuDota.Repositorio.BancoDados;
-using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
