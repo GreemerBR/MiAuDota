@@ -16,17 +16,17 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(45)
                 .IsRequired()
-                .HasColumnName("nome");
-
-            builder.Property(x => x.Cnpj)
-                .HasColumnType("VARCHAR")
-                .HasMaxLength(18)
-                .HasColumnName("cnpf");
+                .HasColumnName("nome");           
 
             builder.Property(x => x.Cpf)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(14)
                 .HasColumnName("cpf");
+
+            builder.Property(x => x.Cnpj)
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(18)
+                .HasColumnName("cnpf");
 
             builder.Property(x => x.Endereco)
                 .HasColumnType("VARCHAR")
@@ -46,46 +46,52 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasColumnName("telefone");
 
             builder.Property(x => x.Email)
-               .HasColumnType("VARCHAR")
-               .HasMaxLength(45)
-               .IsRequired()
-               .HasColumnName("email");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .IsRequired()
+                .HasColumnName("email");
 
             builder.Property(x => x.Senha)
-               .HasColumnType("VARCHAR")
-               .HasMaxLength(45)
-               .IsRequired()
-               .HasColumnName("senha");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .IsRequired()
+                .HasColumnName("senha");
+
+            builder.Property(x => x.ConfirmarSenha)
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .IsRequired()
+                .HasColumnName("confirmar_senha");
 
             builder.Property(x => x.Pix)
-               .HasColumnType("VARCHAR")
-               .HasMaxLength(45)
-               .HasColumnName("pix");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .HasColumnName("pix");
 
             builder.Property(x => x.Sobre)
-             .HasColumnType("TEXT")
-             .IsRequired()
-             .HasColumnName("sobre");
+                .HasColumnType("TEXT")
+                .IsRequired()
+                .HasColumnName("sobre");
 
             builder.Property(x => x.Instagram)
-             .HasColumnType("VARCHAR")
-             .HasMaxLength(45)
-             .HasColumnName("instagram");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .HasColumnName("instagram");
 
             builder.Property(x => x.Facebook)
-             .HasColumnType("VARCHAR")
-             .HasMaxLength(45)
-             .HasColumnName("facebook");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .HasColumnName("facebook");
 
             builder.Property(x => x.EhProtetor)
-             .HasColumnType("BIT")
-             .IsRequired()
-             .HasColumnName("ehprotetor");
+                .HasColumnType("BIT")
+                .IsRequired()
+                .HasColumnName("eh_protetor");
 
             builder.Property(x => x.StatusConta)
-             .HasColumnType("TINYINT")
-             .IsRequired()
-             .HasColumnName("status_conta");
+                .HasColumnType("TINYINT")
+                .IsRequired()
+                .HasColumnName("status_conta");
 
             builder.HasData(
             new Protetor
@@ -97,6 +103,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Celular = "47 99999-1246",
                 Email = "greg@gmail.com",
                 Senha = "123123123",
+                ConfirmarSenha = "123123123",
                 Sobre = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
                 EhProtetor = false,
                 StatusConta  = Enum.StatusConta.Ativada
@@ -111,6 +118,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Celular = "47 98895-1246",
                 Email = "douh@gmail.com",
                 Senha = "156156156",
+                ConfirmarSenha = "156156156",
                 Sobre = "Printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
                 EhProtetor = false,
                 StatusConta = Enum.StatusConta.Ativada

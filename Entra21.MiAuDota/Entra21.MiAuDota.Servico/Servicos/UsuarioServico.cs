@@ -5,13 +5,12 @@ using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public class UsuarioServico :
-        BaseServico<Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel>,
+    public class UsuarioServico
+        : BaseServico<Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade>,
         IUsuarioServico
     {
-        public UsuarioServico(
-            IBaseRepositorio<Usuario> baseRepositorio, 
-            IBaseMapeamentoEntidade<Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel> baseMapeamentoEntidade) 
+        public UsuarioServico(IUsuarioRepositorio baseRepositorio, 
+            IUsuarioMapeamentoEntidade baseMapeamentoEntidade) 
             : base(baseRepositorio, baseMapeamentoEntidade)
         {
         }

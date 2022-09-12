@@ -7,12 +7,11 @@ using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 namespace Entra21.MiAuDota.Servico.Servicos
 {
     public class AnimalServico
-        : BaseServico<Animal, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel>,
+        : BaseServico<Animal, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade>,
         IAnimalServico
     {
-        public AnimalServico(
-            IBaseRepositorio<Animal> baseRepositorio, 
-            IBaseMapeamentoEntidade<Animal, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel> baseMapeamentoEntidade) 
+        public AnimalServico(IAnimalRepositorio baseRepositorio, 
+            IAnimalMapeamentoEntidade baseMapeamentoEntidade) 
             : base(baseRepositorio, baseMapeamentoEntidade)
         {
         }

@@ -12,6 +12,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 
         public UsuarioRepositorio(MiAuDotaContexto contexto) : base(contexto)
         {
+            _contexto = contexto;
         }
 
         public override Usuario Cadastrar(Usuario entity)
@@ -29,11 +30,9 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         public override Usuario Logon(string email, string senha)
         {
             senha = Criptografia.Criptografar(senha);
-            Usuario usuario = new Usuario();
+            Usuario usuario = new();
 
-            usuario = _contexto.Usuarios.Where(usuario => usuario.Email == email && usuario.Senha == senha).FirstOrDefault();
-
-            return usuario;
+            return _contexto.Usuarios.Where(usuario => usuario.Email == email && usuario.Senha == senha).FirstOrDefault();
         }
     }
 }

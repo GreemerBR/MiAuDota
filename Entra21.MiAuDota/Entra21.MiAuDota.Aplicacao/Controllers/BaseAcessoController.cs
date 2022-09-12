@@ -26,7 +26,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         public BaseEntity Logon(BaseDto baseDto)
         {
             var entity = _repositorio.Logon(baseDto.Email, baseDto.Senha);
-            
+
             return entity;
         }
     }

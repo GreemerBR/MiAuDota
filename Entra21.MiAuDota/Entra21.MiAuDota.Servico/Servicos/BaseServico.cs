@@ -5,19 +5,21 @@ using Entra21.MiAuDota.Servico.ViewModels;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public class BaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> 
-        : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> 
+    public class BaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade> 
+        : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade> 
         where TEntity : BaseEntity 
         where TCreateViewModel : BaseViewModel 
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>
         where TViewModel: BaseViewModel
+        where TRepositorio : IBaseRepositorio<TEntity>
+        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
     {
-        private readonly IBaseRepositorio<TEntity> _baseRepositorio;
-        private readonly IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> _baseMapeamentoEntidade;
+        private readonly TRepositorio _baseRepositorio;
+        private readonly TMapeamentoEntidade _baseMapeamentoEntidade;
 
         public BaseServico(
-            IBaseRepositorio<TEntity> baseRepositorio,
-            IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel> baseMapeamentoEntidade)
+            TRepositorio baseRepositorio,
+            TMapeamentoEntidade baseMapeamentoEntidade)
         {
             _baseRepositorio = baseRepositorio;
             _baseMapeamentoEntidade = baseMapeamentoEntidade;
@@ -45,6 +47,16 @@ namespace Entra21.MiAuDota.Servico.Servicos
             _baseMapeamentoEntidade.AtualizarCampos(entity, viewModel);
 
             _baseRepositorio.Editar(entity);
+
+            return true;
+        }
+
+        public virtual bool Logon(string email, string senha)
+        {
+            var entity = _baseRepositorio.Logon(email, senha);
+
+            if (entity == null)
+                return false;
 
             return true;
         }

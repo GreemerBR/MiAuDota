@@ -14,97 +14,102 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Nome)
-               .HasColumnType("VARCHAR")
-               .HasMaxLength(45)
-               .IsRequired()
-               .HasColumnName("nome");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .IsRequired()
+                .HasColumnName("nome");
 
             builder.Property(x => x.Raca)
-               .HasColumnType("VARCHAR")
-               .HasMaxLength(45)
-               .IsRequired()
-               .HasColumnName("raca");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .IsRequired()
+                .HasColumnName("raca");
 
             builder.Property(x => x.Especie)
-               .HasColumnType("VARCHAR")
-               .HasMaxLength(45)
-               .IsRequired()
-               .HasColumnName("especie");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .IsRequired()
+                .HasColumnName("especie");
 
             builder.Property(x => x.Sobre)
-               .HasColumnType("TEXT")
-               .IsRequired()
-               .HasColumnName("sobre");
-
-            builder.Property(x => x.Genero)
-            .HasColumnType("TINYINT")
-            .IsRequired()
-            .HasColumnName("genero");
-
-            builder.Property(x => x.Status)
-               .HasColumnType("TINYINT")
-               .IsRequired()
-               .HasColumnName("status");
-
-            builder.Property(x => x.Peso)
-               .HasColumnType("DECIMAL")
-               .HasPrecision(5, 2)
-               .IsRequired()
-               .HasColumnName("peso");
-
-            builder.Property(x => x.Altura)
-               .HasColumnType("DECIMAL")
-               .HasPrecision(3, 2)
-               .IsRequired()
-               .HasColumnName("altura");
+                .HasColumnType("TEXT")
+                .IsRequired()
+                .HasColumnName("sobre");
 
             builder.Property(x => x.Vacinas)
-               .HasColumnType("VARCHAR")
-               .HasMaxLength(45)
-               .IsRequired()
-               .HasColumnName("vacinas");
-
-            builder.Property(x => x.Castrado)
-             .HasColumnType("BIT")
-             .IsRequired()
-             .HasColumnName("cadastro");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .IsRequired()
+                .HasColumnName("vacinas");
 
             builder.Property(x => x.Alergias)
-               .HasColumnType("VARCHAR")
-               .HasMaxLength(45)
-               .IsRequired()
-               .HasColumnName("alergias");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
+                .IsRequired()
+                .HasColumnName("alergias");
 
             builder.Property(x => x.OutrasInformacoesMedicas)
-               .HasColumnType("TEXT")
-               .HasColumnName("outras_infos_medicas");
+                .HasColumnType("TEXT")
+                .HasColumnName("outras_infos_medicas");
 
             builder.Property(x => x.Foto)
-            .HasColumnType("VARCHAR")
-            .HasMaxLength(300)
-            .HasColumnName("caminho_arquivo");
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(300)
+                .HasColumnName("caminho_arquivo");
 
-            builder.Property(x => x.UsuarioId)
-             .HasColumnType("INT")
-             .IsRequired()
-             .HasColumnName("usuario_id");
+            builder.Property(x => x.Idade)
+                .HasColumnType("TYNYINT")
+                .IsRequired()
+                .HasColumnName("idade");
 
-            builder.Property(x => x.ProtetorId)
-             .HasColumnType("INT")
-             .IsRequired()
-             .HasColumnName("protetor_id");
+            builder.Property(x => x.Peso)
+                .HasColumnType("DECIMAL")
+                .HasPrecision(5, 2)
+                .IsRequired()
+                .HasColumnName("peso");
+
+            builder.Property(x => x.Altura)
+                .HasColumnType("DECIMAL")
+                .HasPrecision(3, 2)
+                .IsRequired()
+                .HasColumnName("altura");
+
+            builder.Property(x => x.Castrado)
+                .HasColumnType("BIT")
+                .IsRequired()
+                .HasColumnName("cadastro");
 
             builder.Property(x => x.DataAdocao)
-            .HasColumnType("DATETIME2")
-            .HasColumnName("data_adocao");
+                .HasColumnType("DATETIME2")
+                .HasColumnName("data_adocao");
 
-            builder.HasOne(x => x.Usuario)
-            .WithMany(x => x.Animais)
-            .HasForeignKey(x => x.UsuarioId);
+            builder.Property(x => x.Genero)
+                .HasColumnType("TINYINT")
+                .IsRequired()
+                .HasColumnName("genero");
+
+            builder.Property(x => x.Status)
+                .HasColumnType("TINYINT")
+                .IsRequired()
+                .HasColumnName("status");
+
+            builder.Property(x => x.ProtetorId)
+                .HasColumnType("INT")
+                .IsRequired()
+                .HasColumnName("protetor_id");
 
             builder.HasOne(x => x.Protetor)
-            .WithMany(x => x.Animais)
-            .HasForeignKey(x => x.ProtetorId);
+                .WithMany(x => x.Animais)
+                .HasForeignKey(x => x.ProtetorId);
+
+            builder.Property(x => x.UsuarioId)
+                .HasColumnType("INT")
+                .IsRequired()
+                .HasColumnName("usuario_id");
+                       
+            builder.HasOne(x => x.Usuario)
+                .WithMany(x => x.Animais)
+                .HasForeignKey(x => x.UsuarioId);
 
             builder.HasData(
             new Animal
@@ -121,12 +126,11 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Peso = 2.3,
                 Altura = 0.7,
                 Castrado = true,
-                DataAdocao = new DateTime(2022,8,22),
+                DataAdocao = new DateTime(2022, 8, 22),
                 Genero = GeneroAnimal.Macho,
                 Status = StatusInstituicao.Adotado,
                 ProtetorId = 1,
                 UsuarioId = 1
-
             });
         }
     }

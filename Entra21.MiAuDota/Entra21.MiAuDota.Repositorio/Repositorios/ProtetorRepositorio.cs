@@ -12,6 +12,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 
         public ProtetorRepositorio(MiAuDotaContexto contexto) : base(contexto)
         {
+            _contexto = contexto;
         }
 
         public override Protetor Cadastrar(Protetor entity)
@@ -29,7 +30,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         public override Protetor Logon(string email, string senha)
         {
             senha = Criptografia.Criptografar(senha);
-            Protetor protetor = new Protetor();
+            Protetor protetor = new();
 
             protetor = _contexto.Protetores.Where(protetor => protetor.Email == email && protetor.Senha == senha).FirstOrDefault();
 
