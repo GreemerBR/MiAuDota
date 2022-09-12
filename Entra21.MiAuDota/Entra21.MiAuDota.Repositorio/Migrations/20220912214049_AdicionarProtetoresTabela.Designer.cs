@@ -68,7 +68,7 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
                         .HasColumnName("genero");
 
                     b.Property<int>("Idade")
-                        .HasColumnType("TYNYINT")
+                        .HasColumnType("TINYINT")
                         .HasColumnName("idade");
 
                     b.Property<string>("Nome")

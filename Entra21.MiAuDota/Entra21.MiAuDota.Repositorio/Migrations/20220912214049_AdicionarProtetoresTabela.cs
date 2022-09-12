@@ -45,7 +45,7 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
             migrationBuilder.AlterColumn<int>(
                 name: "idade",
                 table: "animais",
-                type: "TYNYINT",
+                type: "TINYINT",
                 nullable: false,
                 oldClrType: typeof(int),
                 oldType: "int");
@@ -109,7 +109,7 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
                 type: "int",
                 nullable: false,
                 oldClrType: typeof(int),
-                oldType: "TYNYINT");
+                oldType: "TINYINT");
         }
     }
 }
