@@ -45,7 +45,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         [Display(Name = nameof(Idade))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
         [RegularExpression(@"^(\d[0-9]{1,2})$", ErrorMessage = "{0} deve ser preenchida")]
-        public int Idade { get; set; }
+        public byte Idade { get; set; }
 
         [Display(Name = nameof(Peso))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]

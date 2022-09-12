@@ -58,7 +58,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasColumnName("caminho_arquivo");
 
             builder.Property(x => x.Idade)
-                .HasColumnType("TYNYINT")
+                .HasColumnType("TINYINT")
                 .IsRequired()
                 .HasColumnName("idade");
 
