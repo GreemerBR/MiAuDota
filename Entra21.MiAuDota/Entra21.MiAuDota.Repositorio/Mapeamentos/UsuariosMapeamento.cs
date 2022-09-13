@@ -22,19 +22,16 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.Property(x => x.Cpf)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(14)
-                .IsRequired()
                 .HasColumnName("cpf");
 
             builder.Property(x => x.Endereco)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(45)
-                .IsRequired()
                 .HasColumnName("endereco");
 
             builder.Property(x => x.Celular)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(15)
-                .IsRequired()
                 .HasColumnName("celular");
 
             builder.Property(x => x.Email)
@@ -57,7 +54,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.Especialidade)
                 .HasColumnType("VARCHAR")
-                .HasMaxLength(45)
                 .HasColumnName("especialidade");
 
             builder.Property(x => x.EhVoluntario)
@@ -72,12 +68,10 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.DataNascimento)
                 .HasColumnType("DATETIME2")
-                .IsRequired()
                 .HasColumnName("data_nascimento");      
 
             builder.Property(x => x.StatusConta)
                 .HasColumnType("TINYINT")
-                .IsRequired()
                 .HasColumnName("status_conta"); 
 
             builder.HasData(
