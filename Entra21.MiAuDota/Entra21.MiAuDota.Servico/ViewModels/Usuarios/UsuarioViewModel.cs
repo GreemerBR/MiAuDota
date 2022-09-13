@@ -12,7 +12,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
 
         [Display(Name = nameof(Celular))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^(\d[0-9]{2})\9\d[0-9]{4}-\d[0-9]{4}$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
+        [RegularExpression(@"^(\d[0-9]{2})\+9\d[0-9]{4}\+-\d[0-9]{4}$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
         public string Celular { get; set; }
 
         [Display(Name = nameof(Email))]
@@ -48,7 +48,8 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
 
         [Display(Name = "Data de nascimento")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"\(d[0-3]{1})\(d[0-9]{1})/\(d[0-1]{1})\(d[0-9]{1})/\(d[0-2]{1})\(d[0-9]{3})", ErrorMessage = "{0} deve ser preenchido no formato '00/00/0000'")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", NullDisplayText = "{0} deve ser preenchido no formato '00/00/0000'")]
         public DateTime DataNascimento { get; set; }
 
         [Display(Name = "Status da conta")]
