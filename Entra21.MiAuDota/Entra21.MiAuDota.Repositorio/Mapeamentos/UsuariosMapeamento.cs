@@ -54,11 +54,11 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.Especialidade)
                 .HasColumnType("VARCHAR")
+                .HasMaxLength(45)
                 .HasColumnName("especialidade");
 
             builder.Property(x => x.EhVoluntario)
                 .HasColumnType("BIT")
-                .IsRequired()
                 .HasColumnName("eh_voluntario");
 
             builder.Property(x => x.EhUsuario)
@@ -85,7 +85,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Email = "ana@gmail.com",
                 Senha = "123123123",
                 ConfirmarSenha = "123123123",
-                Especialidade = "Salto em distância",
                 EhVoluntario = false,
                 EhUsuario = true,
                 DataNascimento = new DateTime(1992,04,02),
@@ -102,7 +101,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Email = "amanda@gmail.com",
                 Senha = "123123123",
                 ConfirmarSenha = "123123123",
-                Especialidade = "Corrida",
                 EhVoluntario = true,
                 EhUsuario = true,
                 DataNascimento = new DateTime(1993,07,03),
