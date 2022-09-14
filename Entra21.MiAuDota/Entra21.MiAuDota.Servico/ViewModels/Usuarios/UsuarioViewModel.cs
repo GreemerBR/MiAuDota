@@ -22,10 +22,13 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
         public string Email { get; set; }
 
         [Display(Name = nameof(Senha))]
+        [DataType(DataType.Password)]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
+        [Compare("ConfirmarSenha")]
         public string Senha { get; set; }
 
         [Display(Name = "Confirmar senha")]
+        [DataType(DataType.Password)]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
         public string ConfirmarSenha { get; set; }
 
