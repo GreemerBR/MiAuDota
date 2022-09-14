@@ -131,6 +131,18 @@
                     <span asp-validation-for="EhUsuario" class="text-danger"></span>
                 </div>
 
+                <div class="mb-3">
+                    <label asp-for="Senha" class="password" span-required=""></label>
+                    <input asp-for="Senha" class="form-control" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ConfirmarSenha" class="password" span-required=""></label>
+                    <input asp-for="ConfirmarSenha" class="form-control" />
+                    <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                </div>
+
                 <div class="text-end">
                     <a asp-action="Cadastrar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
                 </div>
