@@ -14,7 +14,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         [HttpGet("Logon")]
         public IActionResult Index()
         {
-            return View();
+            return View("Logon");
         }
 
         [HttpPost("Logon")]
