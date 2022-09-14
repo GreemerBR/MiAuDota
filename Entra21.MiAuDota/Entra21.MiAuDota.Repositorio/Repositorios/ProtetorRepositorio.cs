@@ -18,12 +18,14 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         public override Protetor Cadastrar(Protetor entity)
         {
             entity.Senha = Criptografia.Criptografar(entity.Senha);
+            entity.ConfirmarSenha = Criptografia.Criptografar(entity.ConfirmarSenha);
             return base.Cadastrar(entity);
         }
 
         public override void Editar(Protetor entity)
         {
             entity.Senha = Criptografia.Criptografar(entity.Senha);
+            entity.ConfirmarSenha = Criptografia.Criptografar(entity.ConfirmarSenha);
             base.Editar(entity);
         }
 
