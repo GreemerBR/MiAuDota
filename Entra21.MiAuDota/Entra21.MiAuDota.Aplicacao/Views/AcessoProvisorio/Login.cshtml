@@ -1,4 +1,5 @@
-﻿
+﻿@model LogonViewModel
+
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="en">
 <head>
@@ -56,48 +57,33 @@
         <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
             <div class="brand">
                 <img class="brand-img" src="~/theme/assets//images/logo.png" alt="...">
-                <h2 class="brand-text">Remark</h2>
+                <h2 class="brand-text">MiAuDota</h2>
             </div>
-            <p>Sign into your pages account</p>
-            <form method="post" action="login.html">
+            <p>Faça login na sua conta</p>
+            <form asp-controller="AcessoUsuario" asp-action="Logon" method="post">
                 <div class="form-group">
-                    <label class="sr-only" for="inputName">Name</label>
-                    <input type="text" class="form-control" id="inputName" name="name" placeholder="Name">
+                    <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
+                    <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label class="sr-only" for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label class="sr-only" for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" name="password"
+                    <label asp-for="Senha" class="sr-only" for="inputPassword">Senha</label>
+                    <input asp-for="Senha" type="password" class="form-control" id="inputPassword" name="password"
                            placeholder="Password">
                 </div>
                 <div class="form-group clearfix">
                     <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
                         <input type="checkbox" id="inputCheckbox" name="remember">
-                        <label for="inputCheckbox">Remember me</label>
+                        <label for="inputCheckbox">Salvar credenciais</label>
                     </div>
-                    <a class="float-right" href="forgot-password.html">Forgot password?</a>
+                    <a class="float-right" href="forgot-password.html">Esqueceu a senha?</a>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
             </form>
-            <p>Still no account? Please go to <a href="register.html">Register</a></p>
+            <p>Não possue uma conta? Por favor, registre-se. <a href="register.html">Registre-se</a></p>
 
             <footer class="page-copyright page-copyright-inverse">
-                <p>WEBSITE BY Creation Studio</p>
-                <p>© 2018. All RIGHT RESERVED.</p>
-                <div class="social">
-                    <a class="btn btn-icon btn-pure" href="javascript:void(0)">
-                        <i class="icon bd-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-icon btn-pure" href="javascript:void(0)">
-                        <i class="icon bd-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-icon btn-pure" href="javascript:void(0)">
-                        <i class="icon bd-dribbble" aria-hidden="true"></i>
-                    </a>
-                </div>
+                <p>WEBSITE BY MiAuDota</p>
+                <p>© 2022. MIAUDOTA.</p>
             </footer>
         </div>
     </div>
