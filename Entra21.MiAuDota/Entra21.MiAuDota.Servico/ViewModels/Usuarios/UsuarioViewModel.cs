@@ -12,7 +12,8 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
 
         [Display(Name = nameof(Celular))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^\d[0-9]{2}+9\d[0-9]{4}\+-\d[0-9]{4}$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
+        [MinLength(9, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
+        [MaxLength(11, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
         public string Celular { get; set; }
 
         [Display(Name = nameof(Email))]
