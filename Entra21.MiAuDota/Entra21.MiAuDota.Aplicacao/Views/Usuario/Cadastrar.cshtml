@@ -34,13 +34,6 @@
     <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-    <!--[if lt IE 9]>
-    <script src="~/theme/global/vendor/html5shiv/html5shiv.min.js"></script>
-    <![endif]-->
-    <!--[if lt IE 10]>
-    <script src="~/theme/global/vendor/media-match/media.match.min.js"></script>
-    <script src="~/theme/global/vendor/respond/respond.min.js"></script>
-    <![endif]-->
     <!-- Scripts -->
     <script src="~/theme/global/vendor/breakpoints/breakpoints.js"></script>
     <script>
@@ -48,9 +41,7 @@
     </script>
 </head>
 <body class="animsition page-register layout-full page-dark">
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+
     <!-- Page -->
     <div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
         <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
@@ -59,29 +50,7 @@
                 <h2 class="brand-text">Remark</h2>
             </div>
             <p>Sign up to find interesting thing</p>
-            <!--
-                            <form method="post" role="form">
-                <div class="form-group">
-                    <label class="sr-only" for="inputName">Name</label>
-                    <input type="text" class="form-control" id="inputName" name="name" placeholder="Name">
-                </div>
-                <div class="form-group">
-                    <label class="sr-only" for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label class="sr-only" for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" name="password"
-                           placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label class="sr-only" for="inputPasswordCheck">Retype Password</label>
-                    <input type="password" class="form-control" id="inputPasswordCheck" name="passwordCheck"
-                           placeholder="Confirm Password">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
-            </form>
-            -->
+            
             <form asp-action="Cadastrar" method="POST">
                 <div class="mb-3">
                     <label asp-for="Nome" class="form-label" span-required=""></label>
@@ -147,7 +116,6 @@
                     <a asp-action="Cadastrar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
                 </div>
 
-                <!--<button type="submit" class="btn btn-primary btn-block">Register</button>-->
 
             </form>
 

@@ -37,7 +37,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.Property(x => x.Celular)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(15)
-                .IsRequired()
                 .HasColumnName("celular");
 
             builder.Property(x => x.Telefone)
@@ -70,7 +69,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.Sobre)
                 .HasColumnType("TEXT")
-                .IsRequired()
                 .HasColumnName("sobre");
 
             builder.Property(x => x.Instagram)
@@ -90,7 +88,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.StatusConta)
                 .HasColumnType("TINYINT")
-                .IsRequired()
                 .HasColumnName("status_conta");
 
             builder.HasData(
