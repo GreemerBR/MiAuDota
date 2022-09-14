@@ -12,7 +12,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
 
         [Display(Name = nameof(Celular))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^(\d[0-9]{2})\+9\d[0-9]{4}\+-\d[0-9]{4}$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
+        [RegularExpression(@"^\d[0-9]{2}+9\d[0-9]{4}\+-\d[0-9]{4}$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
         public string Celular { get; set; }
 
         [Display(Name = nameof(Email))]
@@ -30,7 +30,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
 
         [Display(Name = "CPF")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^\d[0-9]{3}.\d[0-9]{3}.\d[0-9]{3}-\d[0-9]{2}$", ErrorMessage = "{0} deve ser preenchido no formato '000.000.000-00'")]
         public string Cpf { get; set; }
 
         [Display(Name = nameof(Especialidade))]
