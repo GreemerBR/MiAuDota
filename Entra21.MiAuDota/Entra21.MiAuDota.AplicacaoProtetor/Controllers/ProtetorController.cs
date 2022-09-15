@@ -5,7 +5,7 @@ using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Entra21.MiAuDota.Aplicacao.Controllers
+namespace Entra21.MiAuDota.AplicacaoProtetor.Controllers
 {
     [Route("Protetor")]
     public class ProtetorController 

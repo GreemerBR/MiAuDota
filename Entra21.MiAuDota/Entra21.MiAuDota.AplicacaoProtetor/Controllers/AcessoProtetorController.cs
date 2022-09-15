@@ -1,9 +1,9 @@
-﻿using Entra21.MiAuDota.Aplicacao.DTO;
+﻿using Entra21.MiAuDota.AplicacaoProtetor.DTO;
 using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Entra21.MiAuDota.Aplicacao.Controllers
+namespace Entra21.MiAuDota.AplicacaoProtetor.Controllers
 {
     [Route("AcessoProtetor")]
     public class AcessoProtetorController : Controller
