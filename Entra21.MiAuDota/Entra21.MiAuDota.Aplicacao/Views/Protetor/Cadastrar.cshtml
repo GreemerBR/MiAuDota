@@ -1,4 +1,4 @@
-﻿@model LogonViewModel
+﻿@model ProtetorCadastrarViewModel
 
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="en">
@@ -9,7 +9,7 @@
     <meta name="description" content="bootstrap admin template">
     <meta name="author" content="">
 
-    <title>Login | MiAuDota</title>
+    <title>Cadastrar | MiAuDota</title>
 
     <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="~/theme/global/vendor/intro-js/introjs.css">
     <link rel="stylesheet" href="~/theme/global/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="~/theme/global/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="~/theme/assets/examples/css/pages/login.css">
+    <link rel="stylesheet" href="~/theme/assets/examples/css/pages/register.css">
 
 
     <!-- Fonts -->
@@ -34,57 +34,54 @@
     <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-    <!--[if lt IE 9]>
-    <script src="~/theme/global/vendor/html5shiv/html5shiv.min.js"></script>
-    <![endif]-->
-    <!--[if lt IE 10]>
-    <script src="~/theme/global/vendor/media-match/media.match.min.js"></script>
-    <script src="~/theme/global/vendor/respond/respond.min.js"></script>
-    <![endif]-->
     <!-- Scripts -->
     <script src="~/theme/global/vendor/breakpoints/breakpoints.js"></script>
     <script>
         Breakpoints();
     </script>
 </head>
-<body class="animsition page-login layout-full page-dark">
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<body class="animsition page-register layout-full page-dark">
+
     <!-- Page -->
     <div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
-        >
         <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
             <div class="brand">
                 <img class="brand-img" src="~/theme/assets//images/logo.png" alt="...">
                 <h2 class="brand-text">MiAuDota</h2>
             </div>
-            <p>Faça login na sua conta</p>
-            <form asp-controller="AcessoUsuario" asp-action="Logon" method="post">
+            <p>Cadastre-se para divulgar seus animais</p>
+
+            <form asp-action="Cadastrar" method="POST">
+                <div class="mb-3">
+                    <label asp-for="Nome" class="form-label" span-required=""></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
                 <div class="form-group">
                     <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
                     <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
                 </div>
+
                 <div class="form-group">
                     <label asp-for="Senha" class="sr-only" for="inputPassword">Senha</label>
                     <input asp-for="Senha" type="password" class="form-control" id="inputPassword" name="password"
-                           placeholder="Password">
+                     placeholder="Password">
                 </div>
-                <div class="form-group clearfix">
-                    <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
-                        <input type="checkbox" id="inputCheckbox" name="remember">
-                        <label for="inputCheckbox">Salvar credenciais</label>
-                    </div>
-                    <a class="float-right" href="forgot-password.html">Esqueceu a senha?</a>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-            </form>
-            <p>Não possue uma conta? Por favor, registre-se. <a href="register.html">Registre-se</a></p>
 
-            <footer class="page-copyright page-copyright-inverse">
-                <p>WEBSITE BY MiAuDota</p>
-                <p>© 2022. MIAUDOTA.</p>
-            </footer>
+                <div class="mb-3">
+                    <label asp-for="ConfirmarSenha" class="password" span-required=""></label>
+                    <input asp-for="ConfirmarSenha" class="form-control" />
+                    <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <a asp-action="Cadastrar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                </div>
+
+            </form>
+
+            <p>Have account already? Please go to <a href="login.html">Sign In</a></p>
         </div>
     </div>
     <!-- End Page -->
@@ -128,6 +125,7 @@
     <script src="~/theme/global/js/Plugin/slidepanel.js"></script>
     <script src="~/theme/global/js/Plugin/switchery.js"></script>
     <script src="~/theme/global/js/Plugin/jquery-placeholder.js"></script>
+    <script src="~/theme/global/js/Plugin/animate-list.js"></script>
 
     <script>
         (function (document, window, $) {
