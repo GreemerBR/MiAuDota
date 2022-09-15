@@ -31,7 +31,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.Property(x => x.Endereco)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(45)
-                .IsRequired()
                 .HasColumnName("endereco");
 
             builder.Property(x => x.Celular)

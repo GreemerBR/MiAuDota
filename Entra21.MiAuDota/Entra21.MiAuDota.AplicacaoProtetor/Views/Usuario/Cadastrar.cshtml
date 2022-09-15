@@ -1,0 +1,179 @@
+﻿@model UsuarioCadastrarViewModel
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
+
+    <title>Register | Remark Admin Template</title>
+
+    <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/theme/global/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/theme/global/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/site.min.css">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/theme/global/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="~/theme/global/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="~/theme/global/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/theme/global/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="~/theme/global/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="~/theme/global/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="~/theme/assets/examples/css/pages/register.css">
+
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/theme/global/fonts/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+    <!-- Scripts -->
+    <script src="~/theme/global/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+</head>
+<body class="animsition page-register layout-full page-dark">
+
+    <!-- Page -->
+    <div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+        <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
+            <div class="brand">
+                <img class="brand-img" src="~/theme/assets//images/logo.png" alt="...">
+                <h2 class="brand-text">Remark</h2>
+            </div>
+            <p>Sign up to find interesting thing</p>
+            
+            <form asp-action="Cadastrar" method="POST">
+                <div class="mb-3">
+                    <label asp-for="Nome" class="form-label" span-required=""></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Cpf" class="form-label" span-required=""></label>
+                    <input asp-for="Cpf" class="form-control" />
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DataNascimento" class="form-label" span-required=""></label>
+                    <input asp-for="DataNascimento" class="form-control" />
+                    <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Endereco" class="form-label" span-required=""></label>
+                    <input asp-for="Endereco" class="form-control" />
+                    <span asp-validation-for="Endereco" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EhVoluntario" class="form-label" span-required=""></label>
+                    <input asp-for="EhVoluntario" class="form-check-label" />
+                    <span asp-validation-for="EhVoluntario" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Celular" class="form-label" span-required=""></label>
+                    <input asp-for="Celular" class="form-control" />
+                    <span asp-validation-for="Celular" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label" span-required=""></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EhUsuario" class="form-label" span-required=""></label>
+                    <input asp-for="EhUsuario" class="form-check-label" />
+                    <span asp-validation-for="EhUsuario" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Senha" class="password" span-required=""></label>
+                    <input asp-for="Senha" class="form-control" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ConfirmarSenha" class="password" span-required=""></label>
+                    <input asp-for="ConfirmarSenha" class="form-control" />
+                    <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <a asp-action="Cadastrar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                </div>
+
+
+            </form>
+
+            <p>Have account already? Please go to <a href="login.html">Sign In</a></p>
+        </div>
+    </div>
+    <!-- End Page -->
+    <!-- Core  -->
+    <script src="~/theme/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/theme/global/vendor/jquery/jquery.js"></script>
+    <script src="~/theme/global/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="~/theme/global/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/theme/global/vendor/animsition/animsition.js"></script>
+    <script src="~/theme/global/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/theme/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/theme/global/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="~/theme/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+    <!-- Plugins -->
+    <script src="~/theme/global/vendor/switchery/switchery.js"></script>
+    <script src="~/theme/global/vendor/intro-js/intro.js"></script>
+    <script src="~/theme/global/vendor/screenfull/screenfull.js"></script>
+    <script src="~/theme/global/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/theme/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <!-- Scripts -->
+    <script src="~/theme/global/js/Component.js"></script>
+    <script src="~/theme/global/js/Plugin.js"></script>
+    <script src="~/theme/global/js/Base.js"></script>
+    <script src="~/theme/global/js/Config.js"></script>
+
+    <script src="~/theme/assets/js/Section/Menubar.js"></script>
+    <script src="~/theme/assets/js/Section/GridMenu.js"></script>
+    <script src="~/theme/assets/js/Section/Sidebar.js"></script>
+    <script src="~/theme/assets/js/Section/PageAside.js"></script>
+    <script src="~/theme/assets/js/Plugin/menu.js"></script>
+
+    <script src="~/theme/global/js/config/colors.js"></script>
+    <script src="~/theme/assets/js/config/tour.js"></script>
+    <script>Config.set('assets', '~/theme/assets');</script>
+
+    <!-- Page -->
+    <script src="~/theme/assets/js/Site.js"></script>
+    <script src="~/theme/global/js/Plugin/asscrollable.js"></script>
+    <script src="~/theme/global/js/Plugin/slidepanel.js"></script>
+    <script src="~/theme/global/js/Plugin/switchery.js"></script>
+    <script src="~/theme/global/js/Plugin/jquery-placeholder.js"></script>
+    <script src="~/theme/global/js/Plugin/animate-list.js"></script>
+
+    <script>
+        (function (document, window, $) {
+            'use strict';
+
+            var Site = window.Site;
+            $(document).ready(function () {
+                Site.run();
+            });
+        })(document, window, jQuery);
+    </script>
+</body>
+</html>

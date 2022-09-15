@@ -5,20 +5,17 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
     public class ProtetorViewModel : BaseViewModel
     {
         [Display(Name = "Endereço")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(7, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
         public string Endereco { get; set; }
 
         [Display(Name = nameof(Celular))]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(9, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(11, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
 
         public string Celular { get; set; }
 
-        [Display(Name = nameof(Telefone))]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
+        [Display(Name = nameof(Telefone))]       
         [MinLength(8, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(10, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
 
@@ -63,11 +60,9 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         public string Sobre { get; set; }
 
         [Display(Name = "É Protetor")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public bool EhUsuario { get; set; }
 
         [Display(Name = "Status da conta")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public byte StatusConta { get; set; }
     }
 }
