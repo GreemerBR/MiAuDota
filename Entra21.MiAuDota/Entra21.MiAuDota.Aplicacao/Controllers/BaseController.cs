@@ -11,7 +11,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         where TEntity : BaseEntity
         where TViewModel : BaseViewModel
         where TCreateViewModel : BaseViewModel, new()
-        where TUpdateViewModel : BaseEditarViewModel<TViewModel>
+        where TUpdateViewModel : BaseEditarViewModel<TViewModel>, new()
         where TRepositorio : IBaseRepositorio<TEntity>
         where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
         where TServico : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade>
@@ -71,6 +71,12 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
                 return NotFound();
 
             return Ok(entity);
+        }
+
+        [HttpGet("editar")]
+        public IActionResult Editar()
+        {
+            return View(new TUpdateViewModel());
         }
 
         [HttpPost("editar")]
