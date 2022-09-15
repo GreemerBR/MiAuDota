@@ -20,8 +20,7 @@ namespace Entra21.MiAuDota.Repositorio.InjecoesDependencia
         public static IServiceCollection AdicionarEntityFramework(
             this IServiceCollection services, ConfigurationManager configurationManager)
         {
-            services.AddDbContext<MiAuDotaContexto>(options =>
-                options.UseSqlServer(configurationManager.GetConnectionString("SqlServer")));
+            services.AddDbContext<MiAuDotaContexto>(options => options.UseSqlServer(configurationManager.GetConnectionString("SqlServer")));
 
             return services;
         }

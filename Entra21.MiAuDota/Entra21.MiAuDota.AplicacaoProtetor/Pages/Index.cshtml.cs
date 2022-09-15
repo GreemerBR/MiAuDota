@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Entra21.MiAuDota.AplicacaoProtetor.Pages
+namespace Entra21.MiAuDota.Aplicacao.Pages
 {
     public class IndexModel : PageModel
     {
