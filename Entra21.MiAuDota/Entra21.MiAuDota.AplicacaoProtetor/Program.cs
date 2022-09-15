@@ -17,14 +17,6 @@ builder.Services
 var app = builder.Build();
 
 
-using (var scopo = app.Services.CreateScope())
-{
-    var contexto = scopo.ServiceProvider
-        .GetService<MiAuDotaContexto>();
-    contexto.Database.Migrate();
-}
-
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
