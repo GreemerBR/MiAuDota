@@ -58,58 +58,15 @@
                     <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
 
-                <div class="mb-3">
-                    <label asp-for="Cnpj" class="form-label" span-required=""></label>
-                    <input asp-for="Cnpj" class="form-control" />
-                    <span asp-validation-for="Cnpj" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
+                    <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
                 </div>
 
-                <div class="mb-3">
-                    <label asp-for="Endereco" class="form-label" span-required=""></label>
-                    <input asp-for="Endereco" class="form-control" />
-                    <span asp-validation-for="Endereco" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Celular" class="form-label" span-required=""></label>
-                    <input asp-for="Celular" class="form-control" />
-                    <span asp-validation-for="Celular" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Telefone" class="form-label" span-required=""></label>
-                    <input asp-for="Telefone" class="form-check-label" />
-                    <span asp-validation-for="Telefone" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Pix" class="form-label" span-required=""></label>
-                    <input asp-for="Pix" class="form-check-label" />
-                    <span asp-validation-for="Pix" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Facebook" class="form-label" span-required=""></label>
-                    <input asp-for="Facebook" class="form-control" />
-                    <span asp-validation-for="Facebook" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Instagram" class="form-label" span-required=""></label>
-                    <input asp-for="Instagram" class="form-control" />
-                    <span asp-validation-for="Instagram" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Email" class="form-label" span-required=""></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Senha" class="password" span-required=""></label>
-                    <input asp-for="Senha" class="form-control" />
-                    <span asp-validation-for="Senha" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="Senha" class="sr-only" for="inputPassword">Senha</label>
+                    <input asp-for="Senha" type="password" class="form-control" id="inputPassword" name="password"
+                     placeholder="Password">
                 </div>
 
                 <div class="mb-3">
