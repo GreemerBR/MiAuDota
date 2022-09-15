@@ -12,12 +12,16 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 
         [Display(Name = nameof(Celular))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^(\d[0-9]{2}\9\d[0-9]{4}-\d[0-9]{4})$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
+        [MinLength(9, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
+        [MaxLength(11, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+
         public string Celular { get; set; }
 
         [Display(Name = nameof(Telefone))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^(\d[0-9]{2}\d[0-9]{4}-\d[0-9]{4})$", ErrorMessage = "{0} deve ser preenchido no formato '(00)90000-0000'")]
+        [MinLength(8, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
+        [MaxLength(10, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+
         public string Telefone { get; set; }
 
         [Display(Name = nameof(Email))]
@@ -34,11 +38,11 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         public string ConfirmarSenha { get; set; }
 
         [Display(Name = "CPF")]
-        [RegularExpression(@"^\d[0-9]{3}.\d[0-9]{3}.\d[0-9]{3}-\d[0-9]{2}$", ErrorMessage = "{0} deve ser preenchido no formato '000.000.000-00'")]
+        [Required(ErrorMessage = "{0} deve ser preenchida")]
         public string Cpf { get; set; }
 
         [Display(Name = "CNPJ")]
-        [RegularExpression(@"^\d[0-9]{2}.\d[0-9]{3}.\d[0-9]{3}\/0001-\d[0-9]{2}$", ErrorMessage = "{0} deve ser preenchido no formato '000.000.000-00'")]
+        [Required(ErrorMessage = "{0} deve ser preenchida")]
         public string Cnpj { get; set; }
 
         [Display(Name = nameof(Especialidade))]
