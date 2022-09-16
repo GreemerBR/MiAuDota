@@ -9,7 +9,7 @@
     <meta name="description" content="bootstrap admin template">
     <meta name="author" content="">
 
-    <title>Register | Remark Admin Template</title>
+    <title>Cadastrar | MiAuDota</title>
 
     <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
@@ -47,9 +47,9 @@
         <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
             <div class="brand">
                 <img class="brand-img" src="~/theme/assets//images/logo.png" alt="...">
-                <h2 class="brand-text">Remark</h2>
+                <h2 class="brand-text">MiAuDota</h2>
             </div>
-            <p>Sign up to find interesting thing</p>
+            <p>Cadastre-se para visualizar os animais</p>
             
             <form asp-action="Cadastrar" method="POST">
                 <div class="mb-3">
@@ -92,12 +92,6 @@
                     <label asp-for="Email" class="form-label" span-required=""></label>
                     <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="EhUsuario" class="form-label" span-required=""></label>
-                    <input asp-for="EhUsuario" class="form-check-label" />
-                    <span asp-validation-for="EhUsuario" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">

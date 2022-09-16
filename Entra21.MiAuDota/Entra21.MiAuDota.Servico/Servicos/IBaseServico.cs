@@ -16,7 +16,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
         TEntity Cadastrar(TCreateViewModel viewModel);
         bool Apagar(int id);
         bool Editar(TUpdateViewModel viewModel);
-        bool Logon(string email, string senha);
+        TEntity? Logon(string email, string senha);
         TEntity? ObterPorId(int id);
         IList<TEntity> ObterTodos();
         IList<TEntity> ObterTodosComFiltro(string pesquisa);
