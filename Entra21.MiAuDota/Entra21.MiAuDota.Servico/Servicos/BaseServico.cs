@@ -51,14 +51,11 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return true;
         }
 
-        public virtual bool Logon(string email, string senha)
+        public virtual TEntity? Logon(string email, string senha)
         {
             var entity = _baseRepositorio.Logon(email, senha);
 
-            if (entity == null)
-                return false;
-
-            return true;
+            return entity;
         }
 
         public virtual TEntity? ObterPorId(int id)

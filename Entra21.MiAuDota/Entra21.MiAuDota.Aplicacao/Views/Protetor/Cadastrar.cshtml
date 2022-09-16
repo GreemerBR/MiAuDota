@@ -58,15 +58,22 @@
                     <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
-                    <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
+                <div class="mb-3">
+                    <label asp-for="EhProtetor" class="form-label" span-required=""></label>
+                    <input asp-for="EhProtetor" class="form-check-label" />
+                    <span asp-validation-for="EhProtetor" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <label asp-for="Senha" class="sr-only" for="inputPassword">Senha</label>
-                    <input asp-for="Senha" type="password" class="form-control" id="inputPassword" name="password"
-                     placeholder="Password">
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label" span-required=""></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Senha" class="password" span-required=""></label>
+                    <input asp-for="Senha" class="form-control" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">

@@ -28,6 +28,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Endereco = viewModel.Endereco,
                 Celular = viewModel.Celular,
                 Telefone = viewModel.Telefone,
+                Email = viewModel.Email,
                 Senha = viewModel.Senha,
                 ConfirmarSenha = viewModel.ConfirmarSenha,
                 Pix = viewModel.Pix,
