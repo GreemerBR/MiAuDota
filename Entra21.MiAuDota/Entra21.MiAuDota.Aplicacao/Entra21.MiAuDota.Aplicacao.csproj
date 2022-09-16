@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Entra21.MiAuDota.Servico\Entra21.MiAuDota.Servico.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Adotantes\Views\NewFolder\" />
+  </ItemGroup>
+
 </Project>

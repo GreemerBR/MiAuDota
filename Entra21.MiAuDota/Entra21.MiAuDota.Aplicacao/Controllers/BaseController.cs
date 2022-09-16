@@ -6,7 +6,7 @@ using Entra21.MiAuDota.Servico.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
-{    
+{
     public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade> : Controller
         where TEntity : BaseEntity
         where TViewModel : BaseViewModel
@@ -87,9 +87,8 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
             if (!alterou)
                 return NotFound();
 
-            return Ok();
+            return RedirectToAction("Index", "Home", new { area = "Adotantes" });
         }
-
         [HttpGet("apagar")]
         public IActionResult Apagar([FromQuery] int id)
         {

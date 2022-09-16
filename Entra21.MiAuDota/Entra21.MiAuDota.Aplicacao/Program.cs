@@ -1,12 +1,22 @@
 using Entra21.MiAuDota.Repositorio.BancoDados;
 using Entra21.MiAuDota.Repositorio.InjecoesDependencia;
 using Entra21.MiAuDota.Servico.InjecoesDependencia;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    options.AreaViewLocationFormats.Clear();
+    options.AreaViewLocationFormats.Add("/Areas/{2}/Views/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Areas/{2}/Views/{1}/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Areas/{2}/Views/Shared/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Views/{0}.cshtml");
+});
+
+builder.Services.AddControllersWithViews();
 
 builder.Services
     .AdicionarEntityFramework(builder.Configuration)
@@ -40,11 +50,23 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
-
-
 app.UseEndpoints(endpoint =>
 {
+    endpoint.MapAreaControllerRoute(
+        name: "AreaAdotantes",
+        areaName: "Adotantes",
+        pattern: "Adotantes/{controller=HomeDriver}/{action=Index}/{id?}");
+
+    endpoint.MapAreaControllerRoute(
+        name: "AreaProtetores",
+        areaName: "Protetores",
+        pattern: "Protetores/{controller=Home}/{action=Index}/{id?}");
+
+    endpoint.MapAreaControllerRoute(
+        name: "AreaPublic",
+        areaName: "Public",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
     endpoint.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
