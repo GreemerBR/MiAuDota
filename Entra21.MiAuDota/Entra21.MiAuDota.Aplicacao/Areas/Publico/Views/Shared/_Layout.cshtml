@@ -1,6 +1,6 @@
-﻿
+﻿@model LogonViewModel
 <!DOCTYPE html>
-<html class="no-js css-menubar" lang="en">
+<html class="no-js css-menubar" lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -106,10 +106,17 @@
                     </li>
                 </ul> -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <a class= asp-controller ="AcessoUsuario" asp-action="Logon">Login U  </a>
-                    <a class= asp-controller ="AcessoProtetor" asp-action="Logon">Login P  </a>
-                    <a class= asp-controller ="Usuario" asp-action="Cadastrar">Cadastrar U  </a>
-                    <a class= asp-controller ="Protetor" asp-action="Cadastrar">Cadastrar P  </a>
+                    
+                    <a data-toggle="modal" data-target="#loginModal">
+                        <button type="button" class="btn btn-primary mb-2 float-end">Login</button>
+                    </a>
+
+                    <a data-toggle="modal" data-target="#cadastroModal">
+                        <button type="button" class="btn btn-primary mb-2 float-end">Cadastro</button>
+                    </a>
+
+
+                    @*<a class= asp-controller ="Protetor" asp-action="Cadastrar">Cadastrar P  </a>*@
 
                     <!-- <li class="nav-item dropdown">
                         <button type="button" class="btn btn-block btn-sucess"> Cadastrar</button>
@@ -134,6 +141,95 @@
             <!-- End Site Navbar Seach -->
         </div>
     </nav>
+
+
+    @*Modal de login*@
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                <form asp-controller="AcessoUsuario" asp-action="Logon" method="post">
+                    <div class="form-group">
+                      <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
+                      <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="Senha" class="sr-only" for="inputPassword">Senha</label>
+                      <input asp-for="Senha" type="password" class="form-control" id="inputPassword" name="password"
+                        placeholder="Password">
+                    </div>
+                    <div class="form-group clearfix">
+                      <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
+                        <input type="checkbox" id="inputCheckbox" name="remember">
+                        <label for="inputCheckbox">Salvar credenciais</label>
+                      </div>
+                      <a class="float-right" href="forgot-password.html">Esqueceu a senha?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                 </form>
+                  <p>Não possue uma conta? Por favor, registre-se.
+                      <a href class="float-right" data-toggle="modal" data-target="#cadastroModal" data-dismiss="model" >Cadastre-se <span aria-hidden="true"></span></a>
+                  </p>
+
+                </div>
+                <div class="modal-footer">
+
+                    @* <a type="button"  class= asp-controller ="AcessoUsuario" asp-action="Logon">
+                        <button type="button" class="btn btn-primary">Login</button>
+                     </a>*@
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Modal de cadastro*@
+    <div class="modal fade" id="cadastroModal" tabindex="-1" role="dialog" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cadastroModalLabel">Cadastro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                       
+
+
+                    @*inputs do formulario de login*@
+
+
+
+                </div>
+                <div class="modal-footer">
+
+                     <a class= asp-controller ="Usuario" asp-action="Cadastrar">
+                        <button type="button" class="btn btn-primary">Cadastrar usuario</button>
+                     </a>
+
+                     <a class= asp-controller ="Protetor" asp-action="Cadastrar">
+                        <button type="button" class="btn btn-primary">Cadastrar protetor</button>
+                     </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
     <!-- Page -->
     <div class="page">
         <div class="page-content container-fluid">
