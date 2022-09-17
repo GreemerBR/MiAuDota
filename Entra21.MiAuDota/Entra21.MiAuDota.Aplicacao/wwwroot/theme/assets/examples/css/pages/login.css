@@ -1,5 +1,5 @@
-.page-login:before {
-  background-image: url("../../images/login.png"); }
+/*.page-login:before {
+  background-image: url("../../images/login.png"); }*/
 
 .page-login form {
   width: 340px;
@@ -10,3 +10,11 @@
 @media (max-width: 767.98px) {
   .page-login form {
     width: auto; } }
+
+body {
+    background-color: #115383;
+}
+
+h2, p {
+    color: black;
+}
