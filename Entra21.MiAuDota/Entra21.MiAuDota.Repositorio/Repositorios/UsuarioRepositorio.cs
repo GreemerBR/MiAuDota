@@ -29,10 +29,9 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             base.Editar(entity);
         }
 
-        public override Usuario Logon(string email, string senha)
+        public Usuario Logon(string email, string senha)
         {
             senha = Criptografia.Criptografar(senha);
-            Usuario usuario = new();
 
             return _contexto.Usuarios.Where(usuario => usuario.Email == email && usuario.Senha == senha).FirstOrDefault();
         }

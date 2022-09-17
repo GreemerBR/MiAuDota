@@ -1,5 +1,7 @@
 ﻿using Entra21.MiAuDota.Aplicacao.Areas.Publico.Dtos;
 using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.Servicos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,11 +11,10 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
     [Route("publico/AcessoUsuario")]
     public class AcessoUsuarioController : Controller
     {
-        private readonly IProtetorServico _servico;
-
-        public AcessoUsuarioController(IProtetorServico servico)
+        private readonly IUsuarioServico _usuarioServico;
+        public AcessoUsuarioController(IUsuarioServico usuarioServico)
         {
-            _servico = servico ?? throw new ArgumentNullException(nameof(servico));
+            _usuarioServico = usuarioServico;
         }
 
         [HttpGet("Logon")]
@@ -23,9 +24,9 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
         }
 
         [HttpPost("Logon")]
-        public BaseEntity Logon(UsuarioDto userDto)
+        public Usuario Logon([FromForm]UsuarioDto userDto)
         {
-            var user = _servico.Logon(userDto.Email, userDto.Senha);
+            var user = _usuarioServico.Logon(userDto.Email, userDto.Senha);
 
             return user;
         }

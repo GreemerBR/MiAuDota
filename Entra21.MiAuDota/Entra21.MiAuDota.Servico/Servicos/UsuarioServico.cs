@@ -14,5 +14,12 @@ namespace Entra21.MiAuDota.Servico.Servicos
             : base(baseRepositorio, baseMapeamentoEntidade)
         {
         }
+
+        public Usuario? Logon(string email, string senha)
+        {
+            var entity = _baseRepositorio.Logon(email, senha);
+
+            return entity;
+        }
     }
 }

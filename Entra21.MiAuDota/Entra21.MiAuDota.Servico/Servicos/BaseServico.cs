@@ -14,7 +14,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
         where TRepositorio : IBaseRepositorio<TEntity>
         where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
     {
-        private readonly TRepositorio _baseRepositorio;
+        protected readonly TRepositorio _baseRepositorio;
         private readonly TMapeamentoEntidade _baseMapeamentoEntidade;
 
         public BaseServico(
@@ -49,13 +49,6 @@ namespace Entra21.MiAuDota.Servico.Servicos
             _baseRepositorio.Editar(entity);
 
             return true;
-        }
-
-        public virtual TEntity? Logon(string email, string senha)
-        {
-            var entity = _baseRepositorio.Logon(email, senha);
-
-            return entity;
         }
 
         public virtual TEntity? ObterPorId(int id)

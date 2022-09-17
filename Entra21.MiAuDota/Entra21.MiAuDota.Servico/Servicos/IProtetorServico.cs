@@ -7,5 +7,6 @@ namespace Entra21.MiAuDota.Servico.Servicos
 {
     public interface IProtetorServico : IBaseServico<Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade>
     {
+        Protetor? Logon(string email, string senha);
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Entra21.MiAuDota.Aplicacao.Areas.Publico.Dtos;
 using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.Servicos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,8 +25,10 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
         }
 
         [HttpPost("Logon")]
-        public Protetor Logon(ProtetorDto protetorDto)
+        public Protetor Logon(ProtetorDto protetorDto, ProtetorRepositorio protetorRepositorio, ProtetorMapeamentoEntidade protetorMapeamentoEntidade)
         {
+            ProtetorServico _servico = new(protetorRepositorio, protetorMapeamentoEntidade);
+
             var protetor = _servico.Logon(protetorDto.Email, protetorDto.Senha);
 
             return protetor;
