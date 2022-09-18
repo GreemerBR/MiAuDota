@@ -12,6 +12,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
     public class AcessoUsuarioController : Controller
     {
         private readonly IUsuarioServico _usuarioServico;
+
         public AcessoUsuarioController(IUsuarioServico usuarioServico)
         {
             _usuarioServico = usuarioServico;
