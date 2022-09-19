@@ -10,8 +10,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
         public string Senha { get; set; }
         public string ConfirmarSenha { get; set; }
         public string? Especialidade { get; set; }
-        public bool? EhVoluntario { get; set; }
-
-        public StatusConta? StatusConta { get; set; }
+        public bool EhVoluntario { get; set; }
     }
 }

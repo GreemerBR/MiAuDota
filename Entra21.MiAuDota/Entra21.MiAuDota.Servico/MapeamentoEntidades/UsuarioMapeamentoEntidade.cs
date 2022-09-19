@@ -1,5 +1,4 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
-using Entra21.MiAuDota.Repositorio.Enum;
 using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 
 namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
@@ -14,7 +13,6 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.ConfirmarSenha = viewModel.ConfirmarSenha;
             entity.Especialidade = viewModel.Especialidade;
             entity.EhVoluntario = viewModel.EhVoluntario;
-            entity.StatusConta = viewModel.StatusConta;
         }
 
         public Usuario ConstruirCom(UsuarioCadastrarViewModel viewModel)
@@ -30,9 +28,8 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Cpf = viewModel.Cpf,
                 Especialidade = viewModel.Especialidade,
                 EhVoluntario = viewModel.EhVoluntario,
-                EhUsuario = viewModel.EhUsuario,
                 DataNascimento = viewModel.DataNascimento,
-                StatusConta = (StatusConta)viewModel.StatusConta,
+                StatusConta = true,
             };
         }
     }
