@@ -8,7 +8,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
     {
         public void Configure(EntityTypeBuilder<Administrador> builder)
         {
-            builder.ToTable("protetores");
+            builder.ToTable("administrador");
 
             builder.HasKey(x => x.Id);
 
