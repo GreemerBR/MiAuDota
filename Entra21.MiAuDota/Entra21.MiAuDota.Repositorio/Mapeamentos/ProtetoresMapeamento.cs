@@ -83,23 +83,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.Property(x => x.IsActive)
                 .HasColumnType("BIT")
                 .HasColumnName("conta_esta_ativa");
-
-            builder.HasData(
-            new Protetor
-            {
-                Id = 0,
-                Nome = "Administrador",
-                Cnpj = "00.000.000/0001-00",
-                Endereco = "Rua da Administração, 1",
-                Celular = "47 99999-9999",
-                Email = "admin@admin.com",
-                Senha = "admin123",
-                ConfirmarSenha = "admin123",
-                Sobre = "Somos os administradores deste site.",
-                IsActive  = true
-            }
-            );
-
         }
     }
 }
