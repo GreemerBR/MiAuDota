@@ -80,44 +80,23 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasMaxLength(45)
                 .HasColumnName("facebook");
 
-            builder.Property(x => x.EhProtetor)
+            builder.Property(x => x.IsActive)
                 .HasColumnType("BIT")
-                .IsRequired()
-                .HasColumnName("eh_protetor");
-
-            builder.Property(x => x.StatusConta)
-                .HasColumnType("TINYINT")
-                .HasColumnName("status_conta");
+                .HasColumnName("conta_esta_ativa");
 
             builder.HasData(
             new Protetor
             {
-                Id = 1,
-                Nome = "Greg",
-                Cpf = "123.123.123-00",
-                Endereco = "Rua tãnãnã",
-                Celular = "47 99999-1246",
-                Email = "greg@gmail.com",
-                Senha = "123123123",
-                ConfirmarSenha = "123123123",
-                Sobre = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                EhProtetor = false,
-                StatusConta  = Enum.StatusConta.Ativada
-            },
-
-            new Protetor
-            {
-                Id = 2,
-                Nome = "DOug",
-                Cpf = "186.123.892-00",
-                Endereco = "Rua São Paulo",
-                Celular = "47 98895-1246",
-                Email = "douh@gmail.com",
-                Senha = "156156156",
-                ConfirmarSenha = "156156156",
-                Sobre = "Printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                EhProtetor = false,
-                StatusConta = Enum.StatusConta.Ativada
+                Id = 0,
+                Nome = "Administrador",
+                Cnpj = "00.000.000/0001-00",
+                Endereco = "Rua da Administração, 1",
+                Celular = "47 99999-9999",
+                Email = "admin@admin.com",
+                Senha = "admin123",
+                ConfirmarSenha = "admin123",
+                Sobre = "Somos os administradores deste site.",
+                IsActive  = true
             }
             );
 

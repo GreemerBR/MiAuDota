@@ -17,7 +17,11 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Sobre = viewModel.Sobre;
             entity.Instagram = viewModel.Instagram;
             entity.Facebook = viewModel.Facebook;
-            entity.StatusConta = viewModel.StatusConta;
+        }
+
+        public void AtualizarStatus(Protetor entity, ProtetorEditarViewModel viewModel)
+        {
+            entity.IsActive = viewModel.IsActive;
         }
 
         public Protetor ConstruirCom(ProtetorCadastrarViewModel viewModel)
@@ -35,7 +39,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Sobre = viewModel.Sobre,
                 Instagram = viewModel.Instagram,
                 Facebook = viewModel.Facebook,
-                StatusConta = (StatusConta)viewModel.StatusConta,
+                IsActive = false,
             };
         }
     }

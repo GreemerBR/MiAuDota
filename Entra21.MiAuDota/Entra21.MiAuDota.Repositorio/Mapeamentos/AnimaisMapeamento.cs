@@ -110,28 +110,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.HasOne(x => x.Usuario)
                 .WithMany(x => x.Animais)
                 .HasForeignKey(x => x.UsuarioId);
-
-            builder.HasData(
-            new Animal
-            {
-                Id = 1,
-                Nome = "bob",
-                Raca = "Pastor",
-                Especie = "Cão",
-                Sobre = "bonito",
-                Vacinas = "Gripe",
-                Alergias = "nenhuma",
-                Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
-                Idade = 1,
-                Peso = 2.3,
-                Altura = 0.7,
-                Castrado = true,
-                DataAdocao = new DateTime(2022, 8, 22),
-                Genero = GeneroAnimal.Macho,
-                Status = StatusInstituicao.Adotado,
-                ProtetorId = 1,
-                UsuarioId = 1
-            });
         }
     }
 }
