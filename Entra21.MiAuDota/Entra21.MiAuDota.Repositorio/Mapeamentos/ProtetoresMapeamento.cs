@@ -80,14 +80,9 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasMaxLength(45)
                 .HasColumnName("facebook");
 
-            builder.Property(x => x.EhProtetor)
+            builder.Property(x => x.IsActive)
                 .HasColumnType("BIT")
-                .IsRequired()
-                .HasColumnName("eh_protetor");
-
-            builder.Property(x => x.StatusConta)
-                .HasColumnType("TINYINT")
-                .HasColumnName("status_conta");
+                .HasColumnName("conta_esta_ativa");
 
             builder.HasData(
             new Protetor
@@ -101,8 +96,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 Senha = "admin123",
                 ConfirmarSenha = "admin123",
                 Sobre = "Somos os administradores deste site.",
-                EhProtetor = false,
-                StatusConta  = Enum.StatusConta.Ativada
+                IsActive  = true
             }
             );
 

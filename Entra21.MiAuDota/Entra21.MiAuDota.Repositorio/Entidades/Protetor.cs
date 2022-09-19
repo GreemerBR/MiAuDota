@@ -16,7 +16,7 @@ namespace Entra21.MiAuDota.Repositorio.Entidades
         public string? Sobre { get; set; }
         public string? Instagram { get; set; }
         public string? Facebook { get; set; }
-        public bool? StatusConta { get; set; }
+        public bool IsActive { get; set; }
 
         public IList<Animal> Animais { get; set; }
     }

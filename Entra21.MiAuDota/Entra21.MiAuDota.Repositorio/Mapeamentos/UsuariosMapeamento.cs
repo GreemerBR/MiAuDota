@@ -61,18 +61,13 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasColumnType("BIT")
                 .HasColumnName("eh_voluntario");
 
-            builder.Property(x => x.EhUsuario)
-                .HasColumnType("BIT")
-                .IsRequired()
-                .HasColumnName("eh_usuario");
-
             builder.Property(x => x.DataNascimento)
                 .HasColumnType("DATETIME2")
                 .HasColumnName("data_nascimento");      
 
-            builder.Property(x => x.StatusConta)
-                .HasColumnType("TINYINT")
-                .HasColumnName("status_conta");
+            builder.Property(x => x.IsActive)
+                .HasColumnType("BIT")
+                .HasColumnName("conta_esta_ativa");
         }
     }
 }

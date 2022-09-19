@@ -13,8 +13,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         public string Sobre { get; set; }
         public string Instagram { get; set; }
         public string Facebook { get; set; }
-
-        public StatusConta StatusConta { get; set; }
-
+        public bool IsActive { get; set; }
     }
 }

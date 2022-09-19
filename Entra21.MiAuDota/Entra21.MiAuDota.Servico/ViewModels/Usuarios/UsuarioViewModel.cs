@@ -42,16 +42,9 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public bool EhVoluntario { get; set; }
 
-        [Display(Name = "É usuário")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
-        public bool EhUsuario { get; set; }
-
         [Display(Name = "Data de nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", NullDisplayText = "{0} deve ser preenchido no formato '00/00/0000'")]
         public DateTime DataNascimento { get; set; }
-
-        [Display(Name = "Status da conta")]
-        public byte StatusConta { get; set; }
     }
 }

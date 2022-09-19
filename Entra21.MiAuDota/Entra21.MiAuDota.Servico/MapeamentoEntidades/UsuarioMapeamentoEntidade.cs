@@ -29,7 +29,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Especialidade = viewModel.Especialidade,
                 EhVoluntario = viewModel.EhVoluntario,
                 DataNascimento = viewModel.DataNascimento,
-                StatusConta = true,
+                IsActive = true,
             };
         }
     }
