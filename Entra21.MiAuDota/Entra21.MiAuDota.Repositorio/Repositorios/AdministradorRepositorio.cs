@@ -14,11 +14,11 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             _contexto = contexto;
         }
 
-        public Protetor Logon(string email, string senha)
+        public Administrador Logon(string email, string senha)
         {
             senha = Criptografia.Criptografar(senha);
 
-            return _contexto.Protetores.Where(administrador => administrador.Email == email && administrador.Senha == senha).FirstOrDefault();
+            return _contexto.Administrador.Where(administrador => administrador.Email == email && administrador.Senha == senha).FirstOrDefault();
         }
     }
 }
