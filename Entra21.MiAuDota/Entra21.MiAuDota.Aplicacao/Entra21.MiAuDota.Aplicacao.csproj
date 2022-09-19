@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Usuarios\Views\NewFolder\**" />
+    <Content Remove="Areas\Usuarios\Views\NewFolder\**" />
+    <EmbeddedResource Remove="Areas\Usuarios\Views\NewFolder\**" />
+    <None Remove="Areas\Usuarios\Views\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
       <PrivateAssets>all</PrivateAssets>
@@ -23,10 +30,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Entra21.MiAuDota.Servico\Entra21.MiAuDota.Servico.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Usuarios\Views\NewFolder\" />
   </ItemGroup>
 
 </Project>

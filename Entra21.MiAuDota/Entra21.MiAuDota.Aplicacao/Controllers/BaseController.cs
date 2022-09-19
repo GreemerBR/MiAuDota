@@ -87,7 +87,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
             if (!alterou)
                 return NotFound();
 
-            return RedirectToAction("Index", "Home", new { area = "Adotantes" });
+            return RedirectToAction("Index", "Home", new { area = "Usuarios" });
         }
         [HttpGet("apagar")]
         public IActionResult Apagar([FromQuery] int id)

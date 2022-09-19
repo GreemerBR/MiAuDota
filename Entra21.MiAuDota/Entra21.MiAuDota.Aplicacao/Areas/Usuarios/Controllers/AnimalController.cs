@@ -6,10 +6,10 @@ using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Animais;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Entra21.MiAuDota.Aplicacao.Areas.Adotantes.Controllers
+namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
 {
-    [Area("Adotantes")]
-    [Route("/adotantes/animal")]
+    [Area("Usuarios")]
+    [Route("/usuarios/animal")]
     public class AnimalController
         : BaseController<Animal, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade>
     {

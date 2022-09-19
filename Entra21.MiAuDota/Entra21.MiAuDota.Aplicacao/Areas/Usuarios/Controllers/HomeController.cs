@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Entra21.MiAuDota.Aplicacao.Areas.Adotantes.Controllers
+namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
 {
-    [Area("Adotantes")]
-    [Route("/adotantes")]
+    [Area("Usuarios")]
+    [Route("/usuarios")]
     public class HomeController: Controller
     {
         [HttpGet]
         public IActionResult Index()
         {
+
+            //return RedirectToAction("Index", "Usuario", new { area = "Usuarios" });
             return View();
         }
     }

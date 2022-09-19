@@ -56,7 +56,6 @@ app.UseEndpoints(endpoint =>
         name: "AreaAdministradores",
         areaName: "Administradores",
         pattern: "Administradores/{controller=HomeDriver}/{action=Index}/{id?}");
-    
 
     endpoint.MapAreaControllerRoute(
         name: "AreaProtetores",
