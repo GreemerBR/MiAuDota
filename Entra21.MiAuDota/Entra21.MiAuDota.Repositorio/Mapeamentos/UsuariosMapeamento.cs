@@ -72,41 +72,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.StatusConta)
                 .HasColumnType("TINYINT")
-                .HasColumnName("status_conta"); 
-
-            builder.HasData(
-            new Usuario
-            {
-                Id = 1,
-                Nome = "Ana",
-                Cpf = "145.889.265-00",
-                Endereco = "Rua tal",
-                Celular = "47 99888-1246",
-                Email = "ana@gmail.com",
-                Senha = "123123123",
-                ConfirmarSenha = "123123123",
-                EhVoluntario = false,
-                EhUsuario = true,
-                DataNascimento = new DateTime(1992,04,02),
-                StatusConta = StatusConta.Ativada
-            },
-
-            new Usuario
-            {
-                Id = 2,
-                Nome = "Amanda",
-                Endereco = "Rua alt",
-                Cpf = "189.456.789-00",
-                Celular = "47 98865-1246",
-                Email = "amanda@gmail.com",
-                Senha = "123123123",
-                ConfirmarSenha = "123123123",
-                EhVoluntario = true,
-                EhUsuario = true,
-                DataNascimento = new DateTime(1993,07,03),
-                StatusConta = StatusConta.Ativada
-            }
-            );
+                .HasColumnName("status_conta");
         }
     }
 }
