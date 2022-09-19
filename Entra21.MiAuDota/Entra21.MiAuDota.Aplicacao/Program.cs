@@ -53,9 +53,9 @@ app.UseAuthorization();
 app.UseEndpoints(endpoint =>
 {
     endpoint.MapAreaControllerRoute(
-        name: "AreaAdotantes",
-        areaName: "Adotantes",
-        pattern: "Adotantes/{controller=HomeDriver}/{action=Index}/{id?}");
+        name: "AreaUsuarios",
+        areaName: "Usuarios",
+        pattern: "Usuarios/{controller=HomeDriver}/{action=Index}/{id?}");
 
     endpoint.MapAreaControllerRoute(
         name: "AreaProtetores",
