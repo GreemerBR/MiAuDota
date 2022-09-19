@@ -8,14 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
 {
     [Area("Publico")]
-    [Route("publico/acessoprotetor")]
+    [Route("publico/AcessoProtetor")]
     public class AcessoProtetorController : Controller
     {
-        private readonly IProtetorServico _servico;
+        private readonly IProtetorServico _protetorServico;
 
-        public AcessoProtetorController(IProtetorServico servico)
+        public AcessoProtetorController(IProtetorServico protetorServico)
         {
-            _servico = servico ?? throw new ArgumentNullException(nameof(servico));
+            _protetorServico = protetorServico;
         }
 
         [HttpGet("Logon")]
@@ -25,13 +25,11 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
         }
 
         [HttpPost("Logon")]
-        public Protetor Logon(ProtetorDto protetorDto, ProtetorRepositorio protetorRepositorio, ProtetorMapeamentoEntidade protetorMapeamentoEntidade)
+        public Protetor Logon([FromForm] ProtetorDto protetorDto)
         {
-            ProtetorServico _servico = new(protetorRepositorio, protetorMapeamentoEntidade);
+            var user = _protetorServico.Logon(protetorDto.Email, protetorDto.Senha);
 
-            var protetor = _servico.Logon(protetorDto.Email, protetorDto.Senha);
-
-            return protetor;
+            return user;
         }
     }
 }
