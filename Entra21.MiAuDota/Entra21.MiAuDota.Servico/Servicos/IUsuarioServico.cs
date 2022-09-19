@@ -7,5 +7,6 @@ namespace Entra21.MiAuDota.Servico.Servicos
 {
     public interface IUsuarioServico : IBaseServico<Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade>
     {
+        Usuario? Logon(string email, string senha);
     }
 }

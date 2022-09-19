@@ -42,11 +42,6 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
         }
 
-        public virtual TEntity Logon(string email, string senha)
-        {
-            return null;
-        }
-
         public virtual TEntity? ObterPorId(int id)
         {
             return _contexto.Set<TEntity>().Find(id);

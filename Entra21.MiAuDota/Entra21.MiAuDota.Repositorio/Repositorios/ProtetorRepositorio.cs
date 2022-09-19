@@ -29,10 +29,9 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             base.Editar(entity);
         }
 
-        public override Protetor Logon(string email, string senha)
+        public Protetor Logon(string email, string senha)
         {
             senha = Criptografia.Criptografar(senha);
-            Protetor protetor = new();
 
             return _contexto.Protetores.Where(protetor => protetor.Email == email && protetor.Senha == senha).FirstOrDefault();
         }
