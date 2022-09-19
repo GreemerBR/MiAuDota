@@ -6,10 +6,10 @@ using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Entra21.MiAuDota.Aplicacao.Areas.Adotantes.Controllers
+namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
 {
-    [Area("Adotantes")]
-    [Route("/adotantes/usuario")]
+    [Area("Usuarios")]
+    [Route("/usuarios/usuario")]
     public class UsuarioController
         : BaseController<Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade>
     {
