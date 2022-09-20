@@ -54,11 +54,5 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 
         [Display(Name = nameof(Sobre))]
         public string? Sobre { get; set; }
-
-        [Display(Name = "É Protetor")]
-        public bool EhProtetor { get; set; }
-
-        [Display(Name = "Status da conta")]
-        public byte StatusConta { get; set; }
     }
 }
