@@ -4,12 +4,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 {
     public class AnimalViewModel : BaseViewModel
     {
-        [Display(Name = "Endereço")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [MinLength(2, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
-        [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
-        public string Endereco { get; set; }
-
         [Display(Name = "Raça")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(3, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]

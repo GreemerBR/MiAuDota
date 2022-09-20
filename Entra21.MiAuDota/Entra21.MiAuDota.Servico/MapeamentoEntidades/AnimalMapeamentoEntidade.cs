@@ -13,14 +13,13 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Alergias = viewModel.Alergias;
             entity.OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas;
             entity.Foto = viewModel.Foto;
-            entity.Idade = viewModel.Idade;
-            entity.Peso = viewModel.Peso;
-            entity.Altura = viewModel.Altura;
+            entity.Idade = (Byte)viewModel.Idade;
+            entity.Peso = (Double)viewModel.Peso;
+            entity.Altura = (Double)viewModel.Altura;
             entity.Castrado = viewModel.Castrado;
             entity.DataAdocao = viewModel.DataAdocao;
-            entity.Genero = viewModel.Genero;
-            entity.Status = viewModel.Status;
-            entity.UsuarioId = viewModel.UsuarioId;
+            entity.Status = (StatusInstituicao)viewModel.Status;
+            entity.UsuarioId = (int)viewModel.UsuarioId;
         }
 
         public Animal ConstruirCom(AnimalCadastrarViewModel viewModel)
@@ -35,15 +34,14 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Alergias = viewModel.Alergias,
                 OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas,
                 Foto = viewModel.Foto,
-                Idade = viewModel.Idade,
-                Peso = viewModel.Peso,
-                Altura = viewModel.Altura,
+                Idade = (Byte)viewModel.Idade,
+                Peso = (Double)viewModel.Peso,
+                Altura = (Double)viewModel.Altura,
                 Castrado = viewModel.Castrado,
                 DataAdocao = viewModel.DataAdocao,
                 Genero = (GeneroAnimal)viewModel.Genero,
                 Status = (StatusInstituicao)viewModel.Status,
-                ProtetorId = viewModel.ProtetorId,
-                UsuarioId = viewModel.UsuarioId,
+                ProtetorId = (int)viewModel.ProtetorId,
             };
         }
     }
