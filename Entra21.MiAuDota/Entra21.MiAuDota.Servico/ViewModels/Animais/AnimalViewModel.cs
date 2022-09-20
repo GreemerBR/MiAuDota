@@ -38,18 +38,15 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
         [Display(Name = nameof(Idade))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        [RegularExpression(@"^(\d[0-9]{1,2})$", ErrorMessage = "{0} deve ser preenchida")]
-        public byte Idade { get; set; }
+        public byte? Idade { get; set; }
 
         [Display(Name = nameof(Peso))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        [RegularExpression(@"^(\d[0-9]{1,2},\d[0-9]{1,2})$", ErrorMessage = "{0} deve ser preenchida")]
-        public double Peso { get; set; }
+        public double? Peso { get; set; }
 
         [Display(Name = nameof(Altura))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        [RegularExpression(@"^(\d[0-9]{1,2},\d[0-9]{1,2})$", ErrorMessage = "{0} deve ser preenchida")]
-        public double Altura { get; set; }
+        public double? Altura { get; set; }
 
         [Display(Name = "É Castrado")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
@@ -60,15 +57,13 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public byte Genero { get; set; }
 
         [Display(Name = "Id do Usuário")]
-        public int UsuarioId { get; set; }
+        public int? UsuarioId { get; set; }
 
         [Display(Name = "Id do Protetor")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
-        public int ProtetorId { get; set; }
+        public int? ProtetorId { get; set; }
 
         [Display(Name = "Data de adoção")]
-        [Required(ErrorMessage = "{0} deve ser preenchido no formato '00/00/0000'")]
-        public DateTime DataAdocao { get; set; }
+        public DateTime? DataAdocao { get; set; }
 
         [Display(Name = "Status na instituíção")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
@@ -76,6 +71,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
 
         [Display(Name = "Outras informacoesMedicas")]
-        public string OutrasInformacoesMedicas { get; set; }
+        public string? OutrasInformacoesMedicas { get; set; }
     }
 }

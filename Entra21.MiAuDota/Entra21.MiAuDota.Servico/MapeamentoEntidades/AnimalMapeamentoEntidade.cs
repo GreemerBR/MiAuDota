@@ -34,14 +34,15 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Alergias = viewModel.Alergias,
                 OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas,
                 Foto = viewModel.Foto,
-                Idade = (Byte)viewModel.Idade,
-                Peso = (Double)viewModel.Peso,
-                Altura = (Double)viewModel.Altura,
+                Idade = viewModel.Idade.GetValueOrDefault(),
+                Peso = viewModel.Peso.GetValueOrDefault(),
+                Altura = viewModel.Altura.GetValueOrDefault(),
                 Castrado = viewModel.Castrado,
-                DataAdocao = viewModel.DataAdocao,
                 Genero = (GeneroAnimal)viewModel.Genero,
                 Status = (StatusInstituicao)viewModel.Status,
-                ProtetorId = (int)viewModel.ProtetorId,
+                UsuarioId = 0,
+                //ProtetorId = viewModel.ProtetorId.GetValueOrDefault(),
+                ProtetorId = 3,
             };
         }
     }
