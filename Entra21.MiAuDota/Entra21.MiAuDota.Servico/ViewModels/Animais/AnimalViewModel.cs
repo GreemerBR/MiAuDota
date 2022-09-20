@@ -4,12 +4,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 {
     public class AnimalViewModel : BaseViewModel
     {
-        [Display(Name = "Endereço")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [MinLength(2, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
-        [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
-        public string Endereco { get; set; }
-
         [Display(Name = "Raça")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(3, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
@@ -73,8 +67,8 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public int ProtetorId { get; set; }
 
         [Display(Name = "Data de adoção")]
-        [RegularExpression(@"\(d[0-3]{1})\(d[0-9]{1})/\(d[0-1]{1})\(d[0-9]{1})/\(d[0-2]{1})\(d[0-9]{3})", ErrorMessage = "{0} deve ser preenchido no formato '00/00/0000'")]
-        public DateTime DataAdocao { get; set; }
+        //[RegularExpression(@"\(d[0-3]{1})\(d[0-9]{1})/\(d[0-1]{1})\(d[0-9]{1})/\(d[0-2]{1})\(d[0-9]{3})", ErrorMessage = "{0} deve ser preenchido no formato '00/00/0000'")]
+        public DateTime? DataAdocao { get; set; }
 
         [Display(Name = "Status na instituíção")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
@@ -82,6 +76,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
 
         [Display(Name = "Outras informacoesMedicas")]
-        public string OutrasInformacoesMedicas { get; set; }
+        public string? OutrasInformacoesMedicas { get; set; }
     }
 }
