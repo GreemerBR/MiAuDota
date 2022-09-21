@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
+     @RenderSection("css", required:false)
+
     <!--[if lt IE 9]>
     <script src="~/theme/global/vendor/html5shiv/html5shiv.min.js"></script>
     <![endif]-->
@@ -106,10 +108,7 @@
                     </li>
                 </ul> -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <a class= asp-controller ="Animal" asp-action="Cadastrar">Cadastrar Animal </a>
-                    <!-- <li class="nav-item dropdown">
-                        <button type="button" class="btn btn-block btn-sucess"> Cadastrar</button>
-                    </li>-->
+                    <a asp-controller ="Animal" asp-action="Cadastrar">Cadastrar Animal </a>                
                 </ul>
                 <!-- End Navbar Toolbar Right -->
             </div>
@@ -181,5 +180,7 @@
     <script src="~/theme/global/js/Plugin/jvectormap.js"></script>
 
     <script src="~/theme/assets/examples/js/dashboard/v1.js"></script>
+
+    @RenderSection("Scripts", required:false)
 </body>
 </html>
