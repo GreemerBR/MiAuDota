@@ -1,4 +1,6 @@
-﻿
+﻿@using Entra21.MiAuDota.Repositorio.Entidades
+@model List<Animal>
+
 <ul class="blocks blocks-100 blocks-xxl-4 blocks-lg-3 blocks-md-2" data-plugin="filterable"
     data-filters="#exampleFilter">
     <li data-type="animal">
@@ -10,6 +12,25 @@
                     <a class="icon wb-search" href="~/theme/global/photos/placeholder.png"></a>
                 </figcaption>
             </figure>
+
+            
+               @* @foreach (var animal in Model)
+                {
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">@( $"{animal.Raca} {animal.Nome}" )</h5>
+                                <p class="card-text"><span class="fw-bold">Dono: </span> @animal.Usuario.</p>
+                                <p class="card-text"><span class="fw-bold">Altura: </span> @animal.Altura</p>
+                                <p class="card-text"><span class="fw-bold">Peso: </span> @animal.Peso</p>
+                                <p class="card-text"><span class="fw-bold">Idade: </span> @animal.Idade</p>
+                            </div>
+                        </div>
+                    </div>
+                }*@
+            
+
+
             <div class="card-block">
                 <h4 class="card-title">Animal Horse</h4>
             </div>
@@ -85,6 +106,7 @@
             </div>
         </div>
     </li>
+    
     <li data-type="animal">
         <div class="card card-shadow">
             <figure class="card-img-top overlay-hover overlay">
