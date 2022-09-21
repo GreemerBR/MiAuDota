@@ -1,4 +1,5 @@
-﻿using Entra21.MiAuDota.Aplicacao.Controllers;
+﻿using Entra21.MiAuDota.Aplicacao.Areas.Administradores.Dtos;
+using Entra21.MiAuDota.Aplicacao.Controllers;
 using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
@@ -21,8 +22,9 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
         }
 
         [HttpPost("editar")]
-        public IActionResult Editar([FromBody] ProtetorEditarViewModel updateViewModel)
+        public IActionResult Editar([FromBody] ProtetorEditarViewModel updateViewModel, ProtetorStatusDto statusDto)
         {
+            updateViewModel.IsActive = statusDto.IsActive;
             var alterou = _protetorServico.Editar(updateViewModel);
 
             if (!alterou)
