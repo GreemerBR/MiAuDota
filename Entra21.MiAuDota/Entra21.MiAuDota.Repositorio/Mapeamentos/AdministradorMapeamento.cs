@@ -26,7 +26,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.Senha)
                 .HasColumnType("VARCHAR")
-                .HasMaxLength(8)
+                .HasMaxLength(45)
                 .IsRequired()
                 .HasColumnName("senha");
 
