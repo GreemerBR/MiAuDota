@@ -1,6 +1,4 @@
-﻿using Entra21.MiAuDota.Repositorio.Enum;
-
-namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
+﻿namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 {
     public class ProtetorEditarViewModel : BaseEditarViewModel<ProtetorViewModel>
     {

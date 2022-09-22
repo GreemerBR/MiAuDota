@@ -1,10 +1,11 @@
-﻿using Entra21.MiAuDota.Repositorio.Entidades;
-using Entra21.MiAuDota.Repositorio.Enum;
+﻿using Entra21.MiAuDota.Repositorio.Enum;
 
 namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 {
     public class AnimalEditarViewModel : BaseEditarViewModel<AnimalViewModel>
     {
+        public string Raca { get; set; }
+        public string Especie { get; set; }
         public string Sobre { get; set; }
         public string Vacinas { get; set; }
         public string Alergias { get; set; }
@@ -21,5 +22,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public StatusInstituicao Status { get; set; }
 
         public int UsuarioId { get; set; }
+        public int ProtetorId { get; set; }
     }
 }

@@ -33,7 +33,9 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         {
             senha = Criptografia.Criptografar(senha);
 
-            return _contexto.Protetores.Where(protetor => protetor.Email == email && protetor.Senha == senha && protetor.IsActive == true).FirstOrDefault();
+            var protetor = _contexto.Protetores.FirstOrDefault(protetor => protetor.Email == email && protetor.Senha == senha && protetor.IsActive == true);
+
+            return protetor;
         }
     }
 }

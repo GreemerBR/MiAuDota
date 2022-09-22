@@ -1,6 +1,6 @@
-﻿namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Dtos
+﻿namespace Entra21.MiAuDota.Repositorio.Entidades
 {
-    public class BaseDto
+    public class LogonEntity : BaseEntity
     {
         public string Email { get; set; }
         public string Senha { get; set; }
