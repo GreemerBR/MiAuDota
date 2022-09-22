@@ -101,8 +101,9 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="Peso" class="form-label">Altura <span class="text-danger">*</span></label>
-                    <input id="cadastroPetModalAltura" class="form-control" />
+                    <label asp-for="Peso" class="form-label" span-required=""></label>
+                    <input asp-for="Peso" class="form-control" />
+                    <span asp-validation-for="Peso" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
@@ -115,12 +116,6 @@
                     <label asp-for="Genero" class="form-label" span-required=""></label>
                     <input asp-for="Genero" class="form-control" />
                     <span asp-validation-for="Genero" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="DataAdocao" class="form-label" span-required=""></label>
-                    <input asp-for="DataAdocao" class="form-control" />
-                    <span asp-validation-for="DataAdocao" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
