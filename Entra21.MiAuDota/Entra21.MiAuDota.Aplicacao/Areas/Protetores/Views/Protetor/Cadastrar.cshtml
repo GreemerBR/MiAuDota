@@ -59,6 +59,12 @@
                 </div>
 
                 <div class="mb-3">
+                    <label asp-for="Celular" class="form-label" span-required=""></label>
+                    <input asp-for="Celular" class="form-control" />
+                    <span asp-validation-for="Celular" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
                     <label asp-for="Email" class="form-label" span-required=""></label>
                     <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
