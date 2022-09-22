@@ -1,4 +1,6 @@
-﻿namespace Entra21.MiAuDota.Servico.Servicos
+﻿using Entra21.MiAuDota.Repositorio.Entidades;
+
+namespace Entra21.MiAuDota.Servico.Servicos
 {
     public interface ILogonServico
     {

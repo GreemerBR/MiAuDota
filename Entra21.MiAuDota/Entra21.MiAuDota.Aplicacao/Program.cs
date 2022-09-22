@@ -22,7 +22,10 @@ builder.Services
     .AdicionarEntityFramework(builder.Configuration)
     .AdicionarServicos()
     .AdicionarRepositorios()
-    .AdicionarMapeamentoEntidades();
+    .AdicionarAutenticacoes()
+    .AdicionarMapeamentoEntidades()
+    .AdicionarMapeamentoViewModel();
+
 
 var app = builder.Build();
 
