@@ -29,7 +29,8 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         [HttpGet]
         public virtual IActionResult Index()
         {
-            return View();
+            var entities = _servico.ObterTodos();
+            return View(entities);
         }
 
         [HttpGet("obterTodosComFiltro")]

@@ -1,4 +1,5 @@
-﻿
+﻿@model ProtetorEditarViewModel
+
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="en">
 <head>
@@ -8,7 +9,7 @@
     <meta name="description" content="bootstrap admin template">
     <meta name="author" content="">
 
-    <title>MiAuDota</title>
+    <title>Cadastrar | MiAuDota</title>
 
     <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
@@ -17,7 +18,6 @@
     <link rel="stylesheet" href="~/theme/global/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/theme/global/css/bootstrap-extend.min.css">
     <link rel="stylesheet" href="~/theme/assets/css/site.min.css">
-    <link rel="stylesheet" href="~/css/site.css">
 
     <!-- Plugins -->
     <link rel="stylesheet" href="~/theme/global/vendor/animsition/animsition.css">
@@ -26,60 +26,62 @@
     <link rel="stylesheet" href="~/theme/global/vendor/intro-js/introjs.css">
     <link rel="stylesheet" href="~/theme/global/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="~/theme/global/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/chartist/chartist.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
-    <link rel="stylesheet" href="~/theme/assets/examples/css/dashboard/v1.css">
+    <link rel="stylesheet" href="~/theme/assets/examples/css/pages/register.css">
+
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="~/theme/global/fonts/weather-icons/weather-icons.css">
     <link rel="stylesheet" href="~/theme/global/fonts/web-icons/web-icons.min.css">
     <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-    @RenderSection("css", required:false)
-
+    <!-- Scripts -->
     <script src="~/theme/global/vendor/breakpoints/breakpoints.js"></script>
     <script>
         Breakpoints();
     </script>
 </head>
-<body class="animsition dashboard">
+<body class="animsition page-register layout-full page-dark">
 
-    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
-        <div class="navbar-container container-fluid">
-            <!-- Navbar Collapse -->
-            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
-                <!-- Navbar Toolbar -->
-                <ul class="nav navbar-toolbar">
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a asp-controller="Home" asp-action="Index">Home </a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-toolbar">
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a asp-controller="Animal" asp-action="Index">Animais </a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <a asp-controller="Animal" asp-action="Cadastrar">Cadastrar Animal </a>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <!-- Page -->
-    <div class="page">
-        <div class="page-content container-fluid">
-            <h6>_Layout Protetores</h6>
+    <div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+        <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
+            <div class="brand">
+                <img class="brand-img" src="~/theme/assets//images/logo.png" alt="...">
+                <h2 class="brand-text">MiAuDota</h2>
+            </div>
+            <p>Cadastre-se para divulgar seus animais</p>
 
-            @RenderBody()
+            <form asp-action="Editar" method="POST">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Celular" class="form-label" span-required=""></label>
+                    <input asp-for="Celular" class="form-control" />
+                    <span asp-validation-for="Celular" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Senha" class="password" span-required=""></label>
+                    <input asp-for="Senha" class="form-control" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ConfirmarSenha" class="password" span-required=""></label>
+                    <input asp-for="ConfirmarSenha" class="form-control" />
+                    <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <a asp-action="Cadastrar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                </div>
+
+            </form>
+
+            <p>Have account already? Please go to <a href="login.html">Sign In</a></p>
         </div>
     </div>
     <!-- End Page -->
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="site-footer-legal">Footer Protetores</div>
-    </footer>
     <!-- Core  -->
     <script src="~/theme/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
     <script src="~/theme/global/vendor/jquery/jquery.js"></script>
@@ -90,6 +92,13 @@
     <script src="~/theme/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
     <script src="~/theme/global/vendor/asscrollable/jquery-asScrollable.js"></script>
     <script src="~/theme/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+    <!-- Plugins -->
+    <script src="~/theme/global/vendor/switchery/switchery.js"></script>
+    <script src="~/theme/global/vendor/intro-js/intro.js"></script>
+    <script src="~/theme/global/vendor/screenfull/screenfull.js"></script>
+    <script src="~/theme/global/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/theme/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 
     <!-- Scripts -->
     <script src="~/theme/global/js/Component.js"></script>
@@ -112,11 +121,18 @@
     <script src="~/theme/global/js/Plugin/asscrollable.js"></script>
     <script src="~/theme/global/js/Plugin/slidepanel.js"></script>
     <script src="~/theme/global/js/Plugin/switchery.js"></script>
-    <script src="~/theme/global/js/Plugin/matchheight.js"></script>
-    <script src="~/theme/global/js/Plugin/jvectormap.js"></script>
+    <script src="~/theme/global/js/Plugin/jquery-placeholder.js"></script>
+    <script src="~/theme/global/js/Plugin/animate-list.js"></script>
 
-    <script src="~/theme/assets/examples/js/dashboard/v1.js"></script>
+    <script>
+        (function (document, window, $) {
+            'use strict';
 
-    @RenderSection("Scripts", required:false)
+            var Site = window.Site;
+            $(document).ready(function () {
+                Site.run();
+            });
+        })(document, window, jQuery);
+    </script>
 </body>
 </html>
