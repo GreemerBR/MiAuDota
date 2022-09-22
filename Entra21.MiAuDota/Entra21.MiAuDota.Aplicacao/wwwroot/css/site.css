@@ -1,3 +1,11 @@
 div.page {
     margin-left: 0px !important;
 }
+
+.site-navbar {
+    background-color: white;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: white;
+}
