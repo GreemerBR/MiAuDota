@@ -1,5 +1,4 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
-using Entra21.MiAuDota.Repositorio.Enum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
