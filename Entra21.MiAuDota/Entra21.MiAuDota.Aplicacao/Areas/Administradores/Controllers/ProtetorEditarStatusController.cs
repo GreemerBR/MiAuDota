@@ -1,8 +1,4 @@
 ﻿using Entra21.MiAuDota.Aplicacao.Areas.Administradores.Dtos;
-using Entra21.MiAuDota.Aplicacao.Controllers;
-using Entra21.MiAuDota.Repositorio.Entidades;
-using Entra21.MiAuDota.Repositorio.Repositorios;
-using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 using Microsoft.AspNetCore.Mvc;

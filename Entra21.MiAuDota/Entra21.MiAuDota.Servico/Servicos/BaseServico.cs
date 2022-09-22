@@ -1,28 +1,33 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
+using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.ViewModels;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public class BaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade> 
-        : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade> 
+    public class BaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> 
+        : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> 
         where TEntity : BaseEntity 
         where TCreateViewModel : BaseViewModel 
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>
         where TViewModel: BaseViewModel
         where TRepositorio : IBaseRepositorio<TEntity>
         where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
+        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TViewModel>
     {
         protected readonly TRepositorio _baseRepositorio;
         private readonly TMapeamentoEntidade _baseMapeamentoEntidade;
+        private readonly TMapeamentoViewModel _mapeamentoViewModel;
 
         public BaseServico(
             TRepositorio baseRepositorio,
-            TMapeamentoEntidade baseMapeamentoEntidade)
+            TMapeamentoEntidade baseMapeamentoEntidade,
+            TMapeamentoViewModel mapeamentoViewModel)
         {
             _baseRepositorio = baseRepositorio;
             _baseMapeamentoEntidade = baseMapeamentoEntidade;
+            _mapeamentoViewModel = mapeamentoViewModel;
         }
 
         public virtual bool Apagar(int id) =>
@@ -51,11 +56,16 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return true;
         }
 
-        public virtual TEntity? ObterPorId(int id)
+        public virtual TUpdateViewModel? ObterPorId(int id)
         {
             var entity = _baseRepositorio.ObterPorId(id);
 
-            return entity;
+            if (entity == null)
+                return null;
+
+            var viewModel = _mapeamentoViewModel.ConstruirCom(entity);
+
+            return viewModel;
         }
 
         public virtual IList<TEntity> ObterTodos()

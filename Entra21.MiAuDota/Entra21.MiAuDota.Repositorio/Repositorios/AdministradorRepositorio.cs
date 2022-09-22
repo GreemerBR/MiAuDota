@@ -18,7 +18,9 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         {
             senha = Criptografia.Criptografar(senha);
 
-            return _contexto.Administrador.Where(administrador => administrador.Email == email && administrador.Senha == senha).FirstOrDefault();
+            var admin = _contexto.Administrador.Where(administrador => administrador.Email == email && administrador.Senha == senha).FirstOrDefault();
+
+            return admin;
         }
     }
 }
