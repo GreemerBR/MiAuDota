@@ -8,7 +8,7 @@
     <meta name="description" content="bootstrap admin template">
     <meta name="author" content="">
 
-    <title>Dashboard | Remark Admin Template</title>
+    <title>MiAuDota</title>
 
     <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
@@ -31,109 +31,46 @@
     <link rel="stylesheet" href="~/theme/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="~/theme/assets/examples/css/dashboard/v1.css">
 
-
     <!-- Fonts -->
     <link rel="stylesheet" href="~/theme/global/fonts/weather-icons/weather-icons.css">
     <link rel="stylesheet" href="~/theme/global/fonts/web-icons/web-icons.min.css">
     <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-    <!--[if lt IE 9]>
-    <script src="~/theme/global/vendor/html5shiv/html5shiv.min.js"></script>
-    <![endif]-->
-    <!--[if lt IE 10]>
-    <script src="~/theme/global/vendor/media-match/media.match.min.js"></script>
-    <script src="~/theme/global/vendor/respond/respond.min.js"></script>
-    <![endif]-->
-    <!-- Scripts -->
+    @RenderSection("css", required:false)
+
     <script src="~/theme/global/vendor/breakpoints/breakpoints.js"></script>
     <script>
         Breakpoints();
     </script>
 </head>
 <body class="animsition dashboard">
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
-
-
         <div class="navbar-container container-fluid">
             <!-- Navbar Collapse -->
             <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
                 <!-- Navbar Toolbar -->
                 <ul class="nav navbar-toolbar">
-
                     <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Quero Adotar</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Quero Ajudar</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Animais Adotados</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Apoiadores</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Eventos</a>
+                        <a asp-controller="Home" asp-action="Index">Home </a>
                     </li>
                 </ul>
-                <!-- End Navbar Toolbar -->
-                <!-- Navbar Toolbar Right -->
-                <!-- <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
-                           data-animation="scale-up" role="button">
-                            <span class="avatar avatar-online">
-                                <img src="~/theme/global/portraits/5.jpg" alt="...">
-                                <i></i>
-                            </span>
-                        </a>
-                        <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Editar Cadastro</a>
-                            <div class="dropdown-divider" role="presentation"></div>
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Sair</a>
-                        </div>
+                <ul class="nav navbar-toolbar">
+                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
+                        <a asp-controller="Animal" asp-action="Index">Animais </a>
                     </li>
-                </ul> -->
+                </ul>
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <a class= asp-controller ="Animal" asp-action="Cadastrar">Cadastrar Animal </a>
-                    <!-- <li class="nav-item dropdown">
-                        <button type="button" class="btn btn-block btn-sucess"> Cadastrar</button>
-                    </li>-->
+                    <a asp-controller="Animal" asp-action="Cadastrar">Cadastrar Animal </a>
                 </ul>
-                <!-- End Navbar Toolbar Right -->
             </div>
-            <!-- End Navbar Collapse -->
-            <!-- Site Navbar Seach -->
-            <div class="collapse navbar-search-overlap" id="site-navbar-search">
-                <form role="search">
-                    <div class="form-group">
-                        <div class="input-search">
-                            <i class="input-search-icon wb-search" aria-hidden="true"></i>
-                            <input type="text" class="form-control" name="site-search" placeholder="Search...">
-                            <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
-                                    data-toggle="collapse" aria-label="Close"></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- End Site Navbar Seach -->
         </div>
     </nav>
     <!-- Page -->
     <div class="page">
         <div class="page-content container-fluid">
-            <h1>Olá mundo protetores</h1>
+            <h6>_Layout Protetores</h6>
 
             @RenderBody()
         </div>
@@ -141,7 +78,7 @@
     <!-- End Page -->
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="site-footer-legal">© 2022 MiAuDota</div>
+        <div class="site-footer-legal">Footer Protetores</div>
     </footer>
     <!-- Core  -->
     <script src="~/theme/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
@@ -153,8 +90,6 @@
     <script src="~/theme/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
     <script src="~/theme/global/vendor/asscrollable/jquery-asScrollable.js"></script>
     <script src="~/theme/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
-
-
 
     <!-- Scripts -->
     <script src="~/theme/global/js/Component.js"></script>
@@ -181,5 +116,7 @@
     <script src="~/theme/global/js/Plugin/jvectormap.js"></script>
 
     <script src="~/theme/assets/examples/js/dashboard/v1.js"></script>
+
+    @RenderSection("Scripts", required:false)
 </body>
 </html>

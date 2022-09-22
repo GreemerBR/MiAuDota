@@ -143,6 +143,8 @@
     </nav>
 
 
+
+
     @*Modal de login*@
 
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -156,15 +158,14 @@
                 </div>
                 <div class="modal-body">
 
-                    <form asp-controller="AcessoUsuario" asp-action="Logon" method="post">
+                    <form asp-controller="Logon" asp-action="Logon" method="post">
                         <div class="form-group">
                             <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
                             <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <label asp-for="Senha" class="sr-only" for="inputPassword">Senha</label>
-                            <input asp-for="Senha" type="password" class="form-control" id="inputPassword" name="password"
-                                   placeholder="Password">
+                            <label asp-for="Senha" class="sr-only">Senha</label>
+                            <input asp-for="Senha" type="password" class="form-control" placeholder="Password">                            
                         </div>
                         <div class="form-group clearfix">
                             <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
@@ -177,7 +178,8 @@
                     </form>
                     <p>
                         Não possue uma conta? Por favor, registre-se.
-                        <a href class="float-right" data-toggle="modal" data-target="#cadastroModal" data-dismiss="model">Cadastre-se <span aria-hidden="true"></span></a>
+
+                        <a href class="float-right" data-toggle="modal" data-target="#cadastroModal" data-mdb-dismiss="loginModal">Cadastre-se <span aria-hidden="true"></span></a>
                     </p>
 
                 </div>

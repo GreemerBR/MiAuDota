@@ -1,20 +1,23 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
+using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
 {
-    public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade> : Controller
+    public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
         where TEntity : BaseEntity
         where TViewModel : BaseViewModel
         where TCreateViewModel : BaseViewModel, new()
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>, new()
         where TRepositorio : IBaseRepositorio<TEntity>
         where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
-        where TServico : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade>
+        where TServico : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
+        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TViewModel>
+
     {
         private readonly TServico _servico;
 
@@ -24,13 +27,14 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public virtual IActionResult Index()
         {
-            return View();
+            var entities = _servico.ObterTodos();
+            return View(entities);
         }
 
         [HttpGet("obterTodosComFiltro")]
-        public IActionResult ObterTodosComFiltro([FromQuery] string pesquisa)
+        public virtual IActionResult ObterTodosComFiltro([FromQuery] string pesquisa)
         {
             var entities = _servico.ObterTodosComFiltro(pesquisa);
 
@@ -38,7 +42,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpGet("obterTodos")]
-        public IActionResult ObterTodos()
+        public virtual IActionResult ObterTodos()
         {
             var entities = _servico.ObterTodos();
 
@@ -46,13 +50,13 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpGet("cadastrar")]
-        public IActionResult Cadastrar()
+        public virtual IActionResult Cadastrar()
         {
             return View(new TCreateViewModel());
         }
 
         [HttpPost("cadastrar")]
-        public IActionResult Cadastrar([FromForm] TCreateViewModel creatViewModel)
+        public virtual IActionResult Cadastrar([FromForm] TCreateViewModel creatViewModel)
         {
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
@@ -63,7 +67,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpGet("obterPorId")]
-        public IActionResult ObterPorId([FromQuery] int id)
+        public virtual IActionResult ObterPorId([FromQuery] int id)
         {
             var entity = _servico.ObterPorId(id);
 
@@ -74,13 +78,15 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpGet("editar")]
-        public IActionResult Editar()
+        public virtual IActionResult Editar([FromQuery] int id)
         {
-            return View(new TUpdateViewModel());
+            var viewModel = _servico.ObterPorId(id);
+
+            return View(viewModel);
         }
 
         [HttpPost("editar")]
-        public IActionResult Editar([FromBody] TUpdateViewModel updateViewModel)
+        public virtual IActionResult Editar([FromBody] TUpdateViewModel updateViewModel)
         {
             var alterou = _servico.Editar(updateViewModel);
 
@@ -90,7 +96,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
             return RedirectToAction("Index", "Home", new { area = "Usuarios" });
         }
         [HttpGet("apagar")]
-        public IActionResult Apagar([FromQuery] int id)
+        public virtual IActionResult Apagar([FromQuery] int id)
         {
             var apagou = _servico.Apagar(id);
 

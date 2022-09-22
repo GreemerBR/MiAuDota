@@ -1,0 +1,39 @@
+﻿@using Entra21.MiAuDota.Repositorio.Entidades
+@model List<Animal>
+
+<ul class="blocks blocks-100 blocks-xxl-4 blocks-lg-3 blocks-md-2" data-plugin="filterable"
+    data-filters="#exampleFilter">
+
+
+
+    @foreach (var animal in Model)
+    {
+        <li data-type="object">
+            <div class="card card-shadow">
+                <figure class="card-img-top overlay-hover overlay">
+                    <img class="overlay-figure overlay-scale" src="~/theme/global/photos/placeholder.png"
+                     alt="...">
+                    <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
+                        <a class="icon wb-search" href="~/theme/global/photos/placeholder.png"></a>
+                    </figcaption>
+                </figure>
+                <div class="card-block">
+                    <h4 class="card-title">@animal.Raca @animal.Nome</h4>
+                </div>
+            </div>
+        </li>
+
+    }
+
+
+</ul>
+
+@section Scripts{
+
+    <script src="~/theme/assets/examples/js/pages/gallery.js"></script>
+    }
+
+
+    @section css{
+    <link rel="stylesheet" href="~/theme/assets/examples/css/pages/gallery.css">
+}
