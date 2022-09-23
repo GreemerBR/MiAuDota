@@ -1,188 +1,43 @@
-﻿
-<!DOCTYPE html>
-<html class="no-js css-menubar" lang="en">
+﻿<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="bootstrap admin template">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MiAuDota</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <title>Dashboard | Remark Admin Template</title>
-
-    <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
-    <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="~/theme/global/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/theme/global/css/bootstrap-extend.min.css">
-    <link rel="stylesheet" href="~/theme/assets/css/site.min.css">
-    <link rel="stylesheet" href="~/css/site.css">
-
-    <!-- Plugins -->
-    <link rel="stylesheet" href="~/theme/global/vendor/animsition/animsition.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/asscrollable/asScrollable.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/switchery/switchery.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/intro-js/introjs.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/slidepanel/slidePanel.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/chartist/chartist.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
-    <link rel="stylesheet" href="~/theme/assets/examples/css/dashboard/v1.css">
-
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="~/theme/global/fonts/weather-icons/weather-icons.css">
-    <link rel="stylesheet" href="~/theme/global/fonts/web-icons/web-icons.min.css">
-    <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-
-    <!--[if lt IE 9]>
-    <script src="~/theme/global/vendor/html5shiv/html5shiv.min.js"></script>
-    <![endif]-->
-    <!--[if lt IE 10]>
-    <script src="~/theme/global/vendor/media-match/media.match.min.js"></script>
-    <script src="~/theme/global/vendor/respond/respond.min.js"></script>
-    <![endif]-->
-    <!-- Scripts -->
-    <script src="~/theme/global/vendor/breakpoints/breakpoints.js"></script>
-    <script>
-        Breakpoints();
-    </script>
-</head>
-<body class="animsition dashboard">
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
-
-
-        <div class="navbar-container container-fluid">
-            <!-- Navbar Collapse -->
-            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
-                <!-- Navbar Toolbar -->
-                <ul class="nav navbar-toolbar">
-
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Quero Adotar</a>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="Publico" asp-controller="Home" asp-action="Index">
+                <img src="https://cdn-icons-png.flaticon.com/512/194/194279.png" alt="Logo" width="20" height="20" class="d-inline-block align-text-top">
+                MiAuDota
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-area="Protetores" asp-controller="Animal" asp-action="Index">Animais</a>
                     </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Quero Ajudar</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Animais Adotados</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Apoiadores</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Eventos</a>
-                    </li>
-                </ul>
-                <!-- End Navbar Toolbar -->
-                <!-- Navbar Toolbar Right -->
-                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
-                           data-animation="scale-up" role="button">
-                            <span class="avatar avatar-online">
-                                <img src="~/theme/global/portraits/5.jpg" alt="...">
-                                <i></i>
-                            </span>
+                    <li class="nav-item dropdown position-absolute top-1 end-0">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            username
                         </a>
-                        <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Editar Cadastro</a>
-                            <div class="dropdown-divider" role="presentation"></div>
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Sair</a>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="Usuarios" asp-controller="Usuario" asp-action="Editar">Editar Perfil</a></li>
+                            <li><a class="dropdown-item" href="#">Sair</a></li>
+                        </ul>
                     </li>
                 </ul>
-                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <a class= asp-controller ="AcessoUsuario" asp-action="Logon">Login U  </a>
-                    <a class= asp-controller ="AcessoProtetor" asp-action="Logon">Login P  </a>
-                    <a class= asp-controller ="Usuario" asp-action="Cadastrar">Cadastrar U  </a>
-                    <a class= asp-controller ="Protetor" asp-action="Cadastrar">Cadastrar P  </a>
-
-                    <!-- <li class="nav-item dropdown">
-                        <button type="button" class="btn btn-block btn-sucess"> Cadastrar</button>
-                    </li>-->
-                </ul>
-                <!-- End Navbar Toolbar Right -->
             </div>
-            <!-- End Navbar Collapse -->
-            <!-- Site Navbar Seach -->
-            <div class="collapse navbar-search-overlap" id="site-navbar-search">
-                <form role="search">
-                    <div class="form-group">
-                        <div class="input-search">
-                            <i class="input-search-icon wb-search" aria-hidden="true"></i>
-                            <input type="text" class="form-control" name="site-search" placeholder="Search...">
-                            <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
-                                    data-toggle="collapse" aria-label="Close"></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- End Site Navbar Seach -->
         </div>
     </nav>
-    <!-- Page -->
-    <div class="page">
-        <div class="page-content container-fluid">
-            <h1>Olá mundo adotantes</h1>
-            @RenderBody()
-        </div>
-    </div>
-    <!-- End Page -->
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="site-footer-legal">© 2022 MiAuDota</div>
-    </footer>
-    <!-- Core  -->
-    <script src="~/theme/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
-    <script src="~/theme/global/vendor/jquery/jquery.js"></script>
-    <script src="~/theme/global/vendor/popper-js/umd/popper.min.js"></script>
-    <script src="~/theme/global/vendor/bootstrap/bootstrap.js"></script>
-    <script src="~/theme/global/vendor/animsition/animsition.js"></script>
-    <script src="~/theme/global/vendor/mousewheel/jquery.mousewheel.js"></script>
-    <script src="~/theme/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
-    <script src="~/theme/global/vendor/asscrollable/jquery-asScrollable.js"></script>
-    <script src="~/theme/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+</head>
 
-
-
-    <!-- Scripts -->
-    <script src="~/theme/global/js/Component.js"></script>
-    <script src="~/theme/global/js/Plugin.js"></script>
-    <script src="~/theme/global/js/Base.js"></script>
-    <script src="~/theme/global/js/Config.js"></script>
-
-    <script src="~/theme/assets/js/Section/Menubar.js"></script>
-    <script src="~/theme/assets/js/Section/GridMenu.js"></script>
-    <script src="~/theme/assets/js/Section/Sidebar.js"></script>
-    <script src="~/theme/assets/js/Section/PageAside.js"></script>
-    <script src="~/theme/assets/js/Plugin/menu.js"></script>
-
-    <script src="~/theme/global/js/config/colors.js"></script>
-    <script src="~/theme/assets/js/config/tour.js"></script>
-    <script>Config.set('assets', '~/theme/assets');</script>
-
-    <!-- Page -->
-    <script src="~/theme/assets/js/Site.js"></script>
-    <script src="~/theme/global/js/Plugin/asscrollable.js"></script>
-    <script src="~/theme/global/js/Plugin/slidepanel.js"></script>
-    <script src="~/theme/global/js/Plugin/switchery.js"></script>
-    <script src="~/theme/global/js/Plugin/matchheight.js"></script>
-    <script src="~/theme/global/js/Plugin/jvectormap.js"></script>
-
-    <script src="~/theme/assets/examples/js/dashboard/v1.js"></script>
+<body>
+    @RenderBody()
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
+
 </html>

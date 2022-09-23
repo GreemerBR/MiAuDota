@@ -8,7 +8,7 @@
     <meta name="description" content="bootstrap admin template">
     <meta name="author" content="">
 
-    <title>Dashboard | Remark Admin Template</title>
+    <title>MiAuDota Index Publico</title>
 
     <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
@@ -64,47 +64,20 @@
             <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
                 <!-- Navbar Toolbar -->
                 <ul class="nav navbar-toolbar">
-
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Quero Adotar</a>
+                    <li class="nav-item">
+                        <a asp-area="Publico" asp-controller="Home" asp-action="Index"
+                           class="nav-link">
+                            Home
+                        </a>
                     </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Quero Ajudar</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Animais Adotados</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Apoiadores</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade"
-                           role="button">Eventos</a>
+                    <li class="nav-item">
+                        <a asp-area="Protetores" asp-controller="Animal" asp-action="Index"
+                           class="nav-link">
+                            Animais
+                        </a>
                     </li>
                 </ul>
-                <!-- End Navbar Toolbar -->
-                <!-- Navbar Toolbar Right -->
-                <!-- <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
-                           data-animation="scale-up" role="button">
-                            <span class="avatar avatar-online">
-                                <img src="~/theme/global/portraits/5.jpg" alt="...">
-                                <i></i>
-                            </span>
-                        </a>
-                        <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Editar Cadastro</a>
-                            <div class="dropdown-divider" role="presentation"></div>
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Sair</a>
-                        </div>
-                    </li>
-                </ul> -->
+
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
 
                     <a data-toggle="modal" data-target="#loginModal">
@@ -241,15 +214,11 @@
     <!-- Page -->
     <div class="page">
         <div class="page-content container-fluid">
-            <h1>MEU TEXTO público</h1>
+            <h6>_Layout Publico</h6>
             @RenderBody()
         </div>
     </div>
     <!-- End Page -->
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="site-footer-legal">© 2022 MiAuDota</div>
-    </footer>
     <!-- Core  -->
     <script src="~/theme/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
     <script src="~/theme/global/vendor/jquery/jquery.js"></script>
