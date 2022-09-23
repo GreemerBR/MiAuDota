@@ -49,10 +49,10 @@
                 <img class="brand-img" src="~/theme/assets//images/logo.png" alt="...">
                 <h2 class="brand-text">MiAuDota</h2>
             </div>
-            <p style="padding: 10px; color: black; font-weight: bold">Cadastre-se para divulgar seus animais</p>
+            <p style="padding: 10px; color: black; font-weight: bold; font-size: 17px">Cadastre-se para divulgar seus animais</p>
 
             <form asp-action="Cadastrar" method="POST">
-                <div class="row" style="padding: 10px; color: black; font-weight: bold">
+                <div class="row" style="padding: 10px; color: black; font-weight: bold; font-size: 17px">
                     <div class="col">
                         <label asp-for="Nome" class="form-label" span-required=""></label>
                         <input asp-for="Nome" class="form-control"  aria-label="Nome">
@@ -66,13 +66,13 @@
                     
                 </div>
 
-                <div class="col" style="padding: 10px; color: black; font-weight: bold">
+                <div class="col" style="padding: 10px; color: black; font-weight: bold; font-size: 17px">
                         <label asp-for="Endereco" class="form-label" span-required=""></label>
                         <input asp-for="Endereco" class="form-control" />
                         <span asp-validation-for="Endereco" class="text-danger"></span>
                 </div>
 
-                <div class="row" style="padding: 10px; color: black; font-weight: bold">
+                <div class="row" style="padding: 10px; color: black; font-weight: bold; font-size: 17px">
                     <div class="col">
                         <label asp-for="Telefone" class="form-label" span-required=""></label>
                         <input asp-for="Telefone" class="form-control" />
@@ -91,7 +91,7 @@
 
                 </div>
 
-                <div class="row" style="padding: 10px; color: black; font-weight: bold">
+                <div class="row" style="padding: 10px; color: black; font-weight: bold; font-size: 17px">
                     <div class="col">
                         <label asp-for="Instagram" class="form-label" span-required=""></label>
                         <input asp-for="Instagram" class="form-control" />
@@ -104,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="col" style="padding: 10px; color: black; font-weight: bold">
+                <div class="col" style="padding: 10px; color: black; font-weight: bold; font-size: 17px">
                 <div class="mb-3">
                     <label asp-for="Celular" class="form-label" span-required=""></label>
                     <input asp-for="Celular" class="form-control" />
@@ -117,7 +117,7 @@
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
-                <div class="row" style="padding: 10px; color: black; font-weight: bold">
+                    <div class="row" style="padding: 15x; color: black; font-weight: bold; font-size: 17px">
                     <div class="col">
                         <label asp-for="Senha" class="password" span-required=""></label>
                         <input asp-for="Senha" class="form-control" />
@@ -126,7 +126,7 @@
                     <div class="col">
                         <label asp-for="ConfirmarSenha" class="password" span-required=""></label>
                         <input asp-for="ConfirmarSenha" class="form-control" />
-                        <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                        <span asp-validation-for="ConfirmarSenha" class="text-danger "></span>
                     </div>
                 </div>
                
