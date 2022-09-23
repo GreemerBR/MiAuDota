@@ -1,6 +1,6 @@
 ﻿namespace Entra21.MiAuDota.Repositorio.Entidades
 {
-    public class Protetor : LogonEntity
+    public class Protetor : UsuarioBase
     {
         public string? Cpf { get; set; }
         public string? Cnpj { get; set; }

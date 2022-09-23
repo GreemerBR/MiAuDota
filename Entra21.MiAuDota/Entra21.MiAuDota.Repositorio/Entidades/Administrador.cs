@@ -1,6 +1,6 @@
 ﻿namespace Entra21.MiAuDota.Repositorio.Entidades
 {
-    public class Administrador : LogonEntity
+    public class Administrador : UsuarioBase
     {
     }
 }

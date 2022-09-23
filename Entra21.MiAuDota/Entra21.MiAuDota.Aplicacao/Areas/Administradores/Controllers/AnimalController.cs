@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
 {
-    [Area("Administrador")]
-    [Route("administrador/animal")]
+    [Area("Administradores")]
+    [Route("administradores/animal")]
     public class AnimalController
         : BaseController<Animal, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {

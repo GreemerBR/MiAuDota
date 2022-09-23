@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
 {
-    [Area("Administrador")]
-    [Route("administrador/protetor")]
+    [Area("Administradores")]
+    [Route("administradores/protetor")]
     public class AdministradorController
         : BaseController<Administrador, IAdministradorServico, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorViewModel, IAdministradorRepositorio, IAdministradorMapeamentoEntidade, IAdministradorMapeamentoViewModel>
     {

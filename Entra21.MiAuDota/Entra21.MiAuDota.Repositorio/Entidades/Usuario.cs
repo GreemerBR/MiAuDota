@@ -1,6 +1,6 @@
 ﻿namespace Entra21.MiAuDota.Repositorio.Entidades
 {
-    public class Usuario : LogonEntity
+    public class Usuario : UsuarioBase
     {
         public string? Cpf { get; set; }
         public string? Endereco { get; set; }

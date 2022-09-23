@@ -6,7 +6,14 @@ using Entra21.MiAuDota.Servico.ViewModels.Administrador;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public class AdministradorServico : BaseServico<Administrador, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorViewModel, IAdministradorRepositorio, IAdministradorMapeamentoEntidade, IAdministradorMapeamentoViewModel>,
+    public class AdministradorServico : 
+        BaseServico<Administrador, 
+        AdministradorCadastrarViewModel, 
+        AdministradorEditarViewModel,
+        AdministradorViewModel,
+        IAdministradorRepositorio,
+        IAdministradorMapeamentoEntidade,
+        IAdministradorMapeamentoViewModel>,
         IAdministradorServico
     {
         public AdministradorServico(
