@@ -3,14 +3,14 @@ using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
+namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
 {
-    [Area("Administrador")]
-    [Route("administrador/protetor")]
+    [Area("Administradores")]
+    [Route("administradores/protetor")]
     public class ProtetorControllerAcessoProtetorController : Controller
     {
         private readonly IProtetorServico _protetorServico;
-        
+
         [HttpGet("editar")]
         public IActionResult Editar()
         {

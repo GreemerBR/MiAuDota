@@ -68,7 +68,7 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     email = table.Column<string>(type: "VARCHAR(15)", maxLength: 15, nullable: false),
-                    senha = table.Column<string>(type: "VARCHAR(8)", maxLength: 8, nullable: false),
+                    senha = table.Column<string>(type: "VARCHAR(45)", maxLength: 45, nullable: false),
                     nome = table.Column<string>(type: "VARCHAR(13)", maxLength: 13, nullable: false)
                 },
                 constraints: table =>

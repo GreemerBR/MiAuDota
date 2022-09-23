@@ -4,6 +4,7 @@ using Entra21.MiAuDota.Repositorio.BancoDados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entra21.MiAuDota.Repositorio.Migrations
 {
     [DbContext(typeof(MiAuDotaContexto))]
-    partial class MiAuDotaContextoModelSnapshot : ModelSnapshot
+    [Migration("20220922220135_UpdateAdminTable")]
+    partial class UpdateAdminTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,8 +46,8 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("VARCHAR(50)")
+                        .HasMaxLength(8)
+                        .HasColumnType("VARCHAR(8)")
                         .HasColumnName("senha");
 
                     b.HasKey("Id");
@@ -179,7 +181,7 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
                     b.Property<string>("Cnpj")
                         .HasMaxLength(18)
                         .HasColumnType("VARCHAR(18)")
-                        .HasColumnName("cnpj");
+                        .HasColumnName("cnpf");
 
                     b.Property<string>("ConfirmarSenha")
                         .IsRequired()
