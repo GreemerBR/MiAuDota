@@ -41,9 +41,7 @@ namespace Entra21.MiAuDota.Servico.InjecoesDependencia
 
         public static IServiceCollection AdicionarAutenticacoes(this IServiceCollection services)
         {
-            services.AddScoped<IAutenticacaoAdministrador, AutenticacaoAdministrador>();
-            services.AddScoped<IAutenticacaoProtetor, AutenticacaoProtetor>();
-            services.AddScoped<IAutenticacaoUsuario, AutenticacaoUsuario>();
+            services.AddScoped(typeof(ISessionManager), typeof(SessionManager));
 
             return services;
         }

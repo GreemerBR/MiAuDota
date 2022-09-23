@@ -26,7 +26,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.Property(x => x.Cnpj)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(18)
-                .HasColumnName("cnpf");
+                .HasColumnName("cnpj");
 
             builder.Property(x => x.Endereco)
                 .HasColumnType("VARCHAR")

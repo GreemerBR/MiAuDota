@@ -11,6 +11,11 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
     {
         private readonly ILogonServico _logonServico;
 
+        public LogonController(ILogonServico logonServico)
+        {
+            _logonServico = logonServico;
+        }
+
         [HttpGet("Logon")]
         public IActionResult Index()
         {

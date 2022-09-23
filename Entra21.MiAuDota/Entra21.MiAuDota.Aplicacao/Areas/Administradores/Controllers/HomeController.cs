@@ -2,8 +2,8 @@
 
 namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
 {
-    [Area("Administrador")]
-    [Route("/administrador")]
+    [Area("Administradores")]
+    [Route("/administradores")]
     public class HomeController: Controller
     {
         [HttpGet]

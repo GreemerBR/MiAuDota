@@ -3,6 +3,7 @@ using Entra21.MiAuDota.Repositorio.InjecoesDependencia;
 using Entra21.MiAuDota.Servico.InjecoesDependencia;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ builder.Services.Configure<RazorViewEngineOptions>(options =>
     options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
     options.AreaViewLocationFormats.Add("/Views/{0}.cshtml");
 });
-
+builder.Services.AddSession();
 builder.Services.AddControllersWithViews();
 
 builder.Services
@@ -26,9 +27,11 @@ builder.Services
     .AdicionarMapeamentoEntidades()
     .AdicionarMapeamentoViewModel();
 
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 
 var app = builder.Build();
-
+app.UseSession();
 
 using (var scopo = app.Services.CreateScope())
 {
@@ -58,7 +61,7 @@ app.UseEndpoints(endpoint =>
     endpoint.MapAreaControllerRoute(
         name: "AreaAdministradores",
         areaName: "Administradores",
-        pattern: "Administradores/{controller=HomeDriver}/{action=Index}/{id?}");
+        pattern: "Administradores/{controller=Home}/{action=Index}/{id?}");
 
     endpoint.MapAreaControllerRoute(
         name: "AreaProtetores",
@@ -73,7 +76,7 @@ app.UseEndpoints(endpoint =>
     endpoint.MapAreaControllerRoute(
         name: "AreaUsuarios",
         areaName: "Usuarios",
-        pattern: "Usuarios/{controller=HomeDriver}/{action=Index}/{id?}");
+        pattern: "Usuarios/{controller=Home}/{action=Index}/{id?}");
 
     endpoint.MapControllerRoute(
         name: "default",
