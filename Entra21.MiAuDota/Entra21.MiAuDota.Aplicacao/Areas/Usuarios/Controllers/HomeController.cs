@@ -9,7 +9,6 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-
             //return RedirectToAction("Index", "Usuario", new { area = "Usuarios" });
             return View();
         }
