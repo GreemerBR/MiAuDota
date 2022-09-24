@@ -49,5 +49,10 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             return string.Empty;
         }
+
+        public void Logout<TUserBase>() where TUserBase : UsuarioBase
+        {
+            _sessionManager.Logout<TUserBase>();
+        }
     }
 }
