@@ -1,5 +1,6 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -78,11 +79,9 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpGet("editar")]
-        public virtual IActionResult Editar([FromQuery] int id)
+        public virtual IActionResult Editar()
         {
-            var viewModel = _servico.ObterPorId(id);
-
-            return View(viewModel);
+            return View();
         }
 
         [HttpPost("editar")]
@@ -93,7 +92,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
             if (!alterou)
                 return NotFound();
 
-            return RedirectToAction("Index", "Home", new { area = "Usuarios" });
+            return RedirectToAction("Index", "Home", new { area = "Publico" });
         }
         [HttpGet("apagar")]
         public virtual IActionResult Apagar([FromQuery] int id)
