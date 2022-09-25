@@ -7,11 +7,11 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
 {
     [Area("Publico")]
     [Route("publico/Logon")]
-    public class LogonController : Controller
+    public class LogoutController : Controller
     {
         private readonly ILogonServico _logonServico;
 
-        public LogonController(ILogonServico logonServico)
+        public LogoutController(ILogonServico logonServico)
         {
             _logonServico = logonServico;
         }
