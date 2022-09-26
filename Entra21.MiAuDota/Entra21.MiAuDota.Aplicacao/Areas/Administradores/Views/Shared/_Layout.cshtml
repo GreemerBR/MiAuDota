@@ -1,122 +1,69 @@
-﻿
-<!DOCTYPE html>
-<html class="no-js css-menubar" lang="en">
+﻿<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="bootstrap admin template">
-    <meta name="author" content="">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MiAuDota</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
-    <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="~/theme/global/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/theme/global/css/bootstrap-extend.min.css">
-    <link rel="stylesheet" href="~/theme/assets/css/site.min.css">
-    <link rel="stylesheet" href="~/css/site.css">
-
-    <!-- Plugins -->
-    <link rel="stylesheet" href="~/theme/global/vendor/animsition/animsition.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/asscrollable/asScrollable.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/switchery/switchery.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/intro-js/introjs.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/slidepanel/slidePanel.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/chartist/chartist.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
-    <link rel="stylesheet" href="~/theme/assets/examples/css/dashboard/v1.css">
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="~/theme/global/fonts/weather-icons/weather-icons.css">
-    <link rel="stylesheet" href="~/theme/global/fonts/web-icons/web-icons.min.css">
-    <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-
-    @RenderSection("css", required:false)
-
-    <script src="~/theme/global/vendor/breakpoints/breakpoints.js"></script>
-    <script>
-        Breakpoints();
-    </script>
-</head>
-<body class="animsition dashboard">
-
-    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
-        <div class="navbar-container container-fluid">
-            <!-- Navbar Collapse -->
-            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
-                <!-- Navbar Toolbar -->
-                <ul class="nav navbar-toolbar">
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a asp-controller="Home" asp-action="Index">Home </a>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="Publico" asp-controller="Home" asp-action="Index">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmexK41kTYytSYP8D2SDbnCZnuC6Ps0a8yXw&usqp=CAU" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                MiAuDota
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-area="Publico" asp-controller="Animal" asp-action="Index">Animais</a>
                     </li>
-                </ul>
-                <ul class="nav navbar-toolbar">
-                    <li class="nav-item dropdown dropdown-fw dropdown-mega">
-                        <a asp-controller="Animal" asp-action="Index">Animais </a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <a asp-controller="Animal" asp-action="Cadastrar">Cadastrar Animal </a>
                 </ul>
             </div>
         </div>
-    </nav>
-    <!-- Page -->
-    <div class="page">
-        <div class="page-content container-fluid">
-            <h6>_Layout Protetores</h6>
 
-            @RenderBody()
+        <div class="modal-body">
+            <a asp-area="Administradores" asp-controller="Logout" asp-action="Logout" class="btn btn-primary">Sair</a>
         </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary w-auto m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Cadastrar
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cadastre-se</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <a asp-area="Publico" asp-controller="Usuario" asp-action="Cadastrar" class="btn btn-primary">Quero adotar (Usuário)</a>
+                    </div>
+                    <div class="modal-body">
+                        <a asp-area="Publico" asp-controller="Protetor" asp-action="Cadastrar" class="btn btn-primary">Quero divulgar um animal (Protetor)</a>
+                    </div>
+                    <div class="modal-footer">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+</head>
+
+<body>
+    <div class="bg-image"
+        <div style="background-image: url('https://t4.ftcdn.net/jpg/00/26/80/33/360_F_26803377_fFNCrwUbzm7Ye6b3UP15VHwzWqU0Xcs3.jpg');"></div>
     </div>
-    <!-- End Page -->
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="site-footer-legal">Footer Protetores</div>
-    </footer>
-    <!-- Core  -->
-    <script src="~/theme/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
-    <script src="~/theme/global/vendor/jquery/jquery.js"></script>
-    <script src="~/theme/global/vendor/popper-js/umd/popper.min.js"></script>
-    <script src="~/theme/global/vendor/bootstrap/bootstrap.js"></script>
-    <script src="~/theme/global/vendor/animsition/animsition.js"></script>
-    <script src="~/theme/global/vendor/mousewheel/jquery.mousewheel.js"></script>
-    <script src="~/theme/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
-    <script src="~/theme/global/vendor/asscrollable/jquery-asScrollable.js"></script>
-    <script src="~/theme/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
-
-    <!-- Scripts -->
-    <script src="~/theme/global/js/Component.js"></script>
-    <script src="~/theme/global/js/Plugin.js"></script>
-    <script src="~/theme/global/js/Base.js"></script>
-    <script src="~/theme/global/js/Config.js"></script>
-
-    <script src="~/theme/assets/js/Section/Menubar.js"></script>
-    <script src="~/theme/assets/js/Section/GridMenu.js"></script>
-    <script src="~/theme/assets/js/Section/Sidebar.js"></script>
-    <script src="~/theme/assets/js/Section/PageAside.js"></script>
-    <script src="~/theme/assets/js/Plugin/menu.js"></script>
-
-    <script src="~/theme/global/js/config/colors.js"></script>
-    <script src="~/theme/assets/js/config/tour.js"></script>
-    <script>Config.set('assets', '~/theme/assets');</script>
-
-    <!-- Page -->
-    <script src="~/theme/assets/js/Site.js"></script>
-    <script src="~/theme/global/js/Plugin/asscrollable.js"></script>
-    <script src="~/theme/global/js/Plugin/slidepanel.js"></script>
-    <script src="~/theme/global/js/Plugin/switchery.js"></script>
-    <script src="~/theme/global/js/Plugin/matchheight.js"></script>
-    <script src="~/theme/global/js/Plugin/jvectormap.js"></script>
-
-    <script src="~/theme/assets/examples/js/dashboard/v1.js"></script>
-
-    @RenderSection("Scripts", required:false)
+    @RenderBody()
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
+
 </html>

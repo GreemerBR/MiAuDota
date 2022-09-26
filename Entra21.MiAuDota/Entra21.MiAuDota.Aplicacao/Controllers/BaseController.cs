@@ -64,7 +64,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
 
             var entity = _servico.Cadastrar(creatViewModel);
 
-            return RedirectToAction("Cadastrar");
+            return RedirectToAction("Index", "Logon", new { area = "Publico" });
         }
 
         [HttpGet("obterPorId")]

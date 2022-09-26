@@ -22,7 +22,8 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
         public IActionResult Logout()
         {
             _logonServico.Logout<Protetor>();
-            return RedirectToAction("Index", "Home", "Publico");
+            return RedirectToAction("Index", "Home", new { area = "Publico" });
+
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View("Index");
         }
     }
 }
