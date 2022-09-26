@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
 {
     [Area("Publico")]
-    [Route("/publico/protetor")]
-    public class ProtetorControllers
+    [Route("/protetor")]
+    public class ProtetorController
         : BaseController<Protetor, IProtetorServico, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>
     {
-        public ProtetorControllers(IProtetorServico servico) : base(servico)
+        public ProtetorController(IProtetorServico servico) : base(servico)
         {
         }
     }

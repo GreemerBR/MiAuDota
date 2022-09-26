@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
 {
     [Area("Publico")]
-    [Route("publico/Logon")]
+    [Route("/logon")]
     public class LogonController : Controller
     {
         private readonly ILogonServico _logonServico;
@@ -19,7 +19,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
         [HttpGet("Logon")]
         public IActionResult Index()
         {
-            return View("Logon");
+            return View("Index");
         }
 
         [HttpPost("Logon")]

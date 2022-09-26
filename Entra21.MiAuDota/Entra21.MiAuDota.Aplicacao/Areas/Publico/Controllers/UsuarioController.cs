@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
 {
     [Area("Publico")]
-    [Route("/publico/usuario")]
+    [Route("/usuario")]
     public class UsuarioController
         : BaseController<Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
     {
