@@ -1,0 +1,43 @@
+﻿@model LogonViewModel
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <div class="mx-auto" style="width: 500px;">
+        <form asp-controller="Logon" asp-action="Logon" method="post">
+            <div class="form-group">
+                <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
+                <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label asp-for="Senha" class="sr-only">Senha</label>
+                <input asp-for="Senha" type="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group clearfix">
+                <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
+                    <input type="checkbox" id="inputCheckbox" name="remember">
+                    <label for="inputCheckbox">Salvar credenciais</label>
+                </div>
+                <a class="float-right" href="forgot-password.html">Esqueceu a senha?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+        <p>
+            Não possue uma conta? Por favor, registre-se.
+
+            <a href class="float-right" data-toggle="modal" data-target="#cadastroModal" data-mdb-dismiss="loginModal">Cadastre-se <span aria-hidden="true"></span></a>
+        </p>
+    </div>
+
+
+
+</body>
+</html>
