@@ -22,7 +22,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
         public IActionResult Logout()
         {
             _logonServico.Logout<Usuario>();
-            return RedirectToAction("Index", "Home", "Publico");
+            return RedirectToAction("Index", "Home", new { area = "Publico" });
         }
     }
 }

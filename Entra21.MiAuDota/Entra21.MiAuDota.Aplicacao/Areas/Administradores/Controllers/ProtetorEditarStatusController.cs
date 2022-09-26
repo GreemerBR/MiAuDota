@@ -28,7 +28,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
             if (!alterou)
                 return NotFound();
 
-            return RedirectToAction("Index", "Home", new { area = "Usuarios" });
+            return RedirectToAction("Index", "Home", new { area = "Administradores" });
         }
     }
 }

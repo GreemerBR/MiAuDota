@@ -36,8 +36,6 @@ namespace Entra21.MiAuDota.Servico.Servicos
             {
                 _sessionManager.Store(protetor);
                 return "protetores";
-
-                
             }
 
             var usuario = _usuarioServico.Logon(email, senha);
