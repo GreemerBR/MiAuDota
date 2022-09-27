@@ -62,7 +62,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            var entity = _servico.Cadastrar(creatViewModel);
+            _servico.Cadastrar(creatViewModel);
 
             return RedirectToAction("Index", "Logon", new { area = "Publico" });
         }
@@ -94,6 +94,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
 
             return RedirectToAction("Index", "Home", new { area = "Publico" });
         }
+
         [HttpGet("apagar")]
         public virtual IActionResult Apagar([FromQuery] int id)
         {

@@ -19,8 +19,9 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
     {
         private readonly ISessionManager _sessionManager;
 
-        public ProtetorController(IProtetorServico servico) : base(servico)
+        public ProtetorController(IProtetorServico servico, ISessionManager sessionManager) : base(servico)
         {
+            _sessionManager = sessionManager;
         }
 
         public override IActionResult Editar()

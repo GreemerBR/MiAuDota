@@ -30,7 +30,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
                 DataAdocao = entity.DataAdocao,
                 Genero = (GeneroAnimal)entity.Genero,
                 Status = (StatusInstituicao)entity.Status,
-                ProtetorId = (int)entity.ProtetorId
+                UsuarioId = (int)entity.UsuarioId
             };
         }
     }
