@@ -51,7 +51,8 @@
             </div>
             <p>Sign up to find interesting thing</p>
 
-            <form asp-action="Editar" method="POST">
+            <form asp-area="Usuarios" asp-controller="Usuario" asp-action="Editar" method="POST">
+                <input type="hidden" asp-for="Id" name="id" />
                 <div class="mb-3">
                     <label asp-for="Endereco" class="form-label" span-required=""></label>
                     <input asp-for="Endereco" class="form-control" />
@@ -62,18 +63,6 @@
                     <label asp-for="Celular" class="form-label" span-required=""></label>
                     <input asp-for="Celular" class="form-control" />
                     <span asp-validation-for="Celular" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Senha" class="form-label" span-required=""></label>
-                    <input asp-for="Senha" class="form-control" />
-                    <span asp-validation-for="Senha" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="ConfirmarSenha" class="form-label" span-required=""></label>
-                    <input asp-for="ConfirmarSenha" class="form-control" />
-                    <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">

@@ -16,8 +16,21 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
     public class AnimalController
         : BaseController<Animal, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {
+        private readonly IAnimalServico _animalServico;
+
         public AnimalController(IAnimalServico servico) : base(servico)
         {
+            _animalServico = servico;
+        }
+
+        public override IActionResult Cadastrar([FromForm] AnimalCadastrarViewModel creatViewModel)
+        {
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
+            _animalServico.Cadastrar(creatViewModel);
+
+            return RedirectToAction("Index", "Home", new { area = "Protetores" });
         }
     }
 }

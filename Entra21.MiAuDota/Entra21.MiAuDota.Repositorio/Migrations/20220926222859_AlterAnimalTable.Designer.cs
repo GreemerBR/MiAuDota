@@ -4,6 +4,7 @@ using Entra21.MiAuDota.Repositorio.BancoDados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entra21.MiAuDota.Repositorio.Migrations
 {
     [DbContext(typeof(MiAuDotaContexto))]
-    partial class MiAuDotaContextoModelSnapshot : ModelSnapshot
+    [Migration("20220926222859_AlterAnimalTable")]
+    partial class AlterAnimalTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -144,6 +146,7 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
                         .HasColumnName("status");
 
                     b.Property<int?>("UsuarioId")
+                        .IsRequired()
                         .HasColumnType("INT")
                         .HasColumnName("usuario_id");
 
@@ -326,7 +329,9 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
 
                     b.HasOne("Entra21.MiAuDota.Repositorio.Entidades.Usuario", "Usuario")
                         .WithMany("Animais")
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Protetor");
 

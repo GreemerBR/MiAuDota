@@ -18,9 +18,12 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
         : BaseController<Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
     {
         private readonly ISessionManager _sessionManager;
+        private readonly IUsuarioServico _usuarioServico;
 
-        public UsuarioController(IUsuarioServico servico) : base(servico)
+        public UsuarioController(IUsuarioServico servico, ISessionManager sessionManage) : base(servico)
         {
+            _sessionManager = sessionManage;
+            _usuarioServico = servico;
         }
 
         public override IActionResult Editar()
@@ -40,6 +43,16 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
             };
 
             return View("usuario/Editar", usuarioEditarViewModel);
+        }
+
+        public override IActionResult Editar([FromBody] UsuarioEditarViewModel updateViewModel)
+        {
+            var alterou = _usuarioServico.Editar(updateViewModel);
+
+            if (!alterou)
+                return NotFound();
+
+            return RedirectToAction("Index", "Home", new { area = "Usuarios" });
         }
     }
 }

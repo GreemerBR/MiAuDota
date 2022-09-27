@@ -103,7 +103,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
 
             builder.Property(x => x.UsuarioId)
                 .HasColumnType("INT")
-                .IsRequired()
                 .HasColumnName("usuario_id");
                        
             builder.HasOne(x => x.Usuario)

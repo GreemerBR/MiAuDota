@@ -1,11 +1,19 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Enum;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.ViewModels.Animais;
 
 namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 {
     public class AnimalMapeamentoEntidade : IAnimalMapeamentoEntidade
     {
+        private readonly ISessionManager _sessionManager;
+
+        public AnimalMapeamentoEntidade(ISessionManager sessionManager)
+        {
+            _sessionManager = sessionManager;
+        }
+
         public void AtualizarCampos(Animal entity, AnimalEditarViewModel viewModel)
         {
             entity.Sobre = viewModel.Sobre;
@@ -19,7 +27,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Castrado = viewModel.Castrado;
             entity.DataAdocao = viewModel.DataAdocao;
             entity.Status = (StatusInstituicao)viewModel.Status;
-            entity.UsuarioId = (int)viewModel.UsuarioId;
+            entity.UsuarioId = (Int32)viewModel.UsuarioId;
         }
 
         public Animal ConstruirCom(AnimalCadastrarViewModel viewModel)
@@ -40,9 +48,8 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Castrado = viewModel.Castrado,
                 Genero = (GeneroAnimal)viewModel.Genero,
                 Status = (StatusInstituicao)viewModel.Status,
-                UsuarioId = 0,
-                //ProtetorId = viewModel.ProtetorId.GetValueOrDefault(),
-                ProtetorId = 3,
+                UsuarioId = null,
+                ProtetorId = _sessionManager.GetUser<Protetor>().Id
             };
         }
     }
