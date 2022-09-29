@@ -21,13 +21,13 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Alergias = viewModel.Alergias;
             entity.OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas;
             entity.Foto = viewModel.Foto;
-            entity.Idade = (Byte)viewModel.Idade;
-            entity.Peso = (Double)viewModel.Peso;
-            entity.Altura = (Double)viewModel.Altura;
+            entity.Idade = viewModel.Idade;
+            entity.Peso = viewModel.Peso;
+            entity.Altura = viewModel.Altura;
             entity.Castrado = viewModel.Castrado;
             entity.DataAdocao = viewModel.DataAdocao;
             entity.Status = (StatusInstituicao)viewModel.Status;
-            entity.UsuarioId = (Int32)viewModel.UsuarioId;
+            entity.UsuarioId = viewModel.UsuarioId;
         }
 
         public Animal ConstruirCom(AnimalCadastrarViewModel viewModel)
