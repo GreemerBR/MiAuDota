@@ -6,7 +6,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Animais;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public interface IAnimalServico : IBaseServico<Animal, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
+    public interface IAnimalServico : IBaseServico<Animal, Administrador, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {
     }
 }

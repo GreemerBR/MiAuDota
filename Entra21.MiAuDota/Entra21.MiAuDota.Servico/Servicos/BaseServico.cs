@@ -1,14 +1,16 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.ViewModels;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public class BaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> 
-        : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> 
-        where TEntity : BaseEntity 
+    public class BaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> 
+        : IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> 
+        where TEntity : BaseEntity
+        where TBaseModel : UsuarioBase
         where TCreateViewModel : BaseViewModel 
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>
         where TViewModel: BaseViewModel
@@ -19,15 +21,18 @@ namespace Entra21.MiAuDota.Servico.Servicos
         protected readonly TRepositorio _baseRepositorio;
         private readonly TMapeamentoEntidade _baseMapeamentoEntidade;
         private readonly TMapeamentoViewModel _mapeamentoViewModel;
+        private readonly ISessionManager _sessionManager;
 
         public BaseServico(
-            TRepositorio baseRepositorio,
-            TMapeamentoEntidade baseMapeamentoEntidade,
-            TMapeamentoViewModel mapeamentoViewModel)
+            TRepositorio baseRepositorio, 
+            TMapeamentoEntidade baseMapeamentoEntidade, 
+            TMapeamentoViewModel mapeamentoViewModel, 
+            ISessionManager sessionManager)
         {
             _baseRepositorio = baseRepositorio;
             _baseMapeamentoEntidade = baseMapeamentoEntidade;
             _mapeamentoViewModel = mapeamentoViewModel;
+            _sessionManager = sessionManager;
         }
 
         public virtual bool Apagar(int id) =>
@@ -44,7 +49,8 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
         public virtual bool Editar(TUpdateViewModel viewModel)
         {
-            var entity = _baseRepositorio.ObterPorId(viewModel.Id);
+            var baseModel = _sessionManager.GetUser<TBaseModel>();
+            var entity = _baseRepositorio.ObterPorId(baseModel.Id);
 
             if (entity == null)
                 return false;

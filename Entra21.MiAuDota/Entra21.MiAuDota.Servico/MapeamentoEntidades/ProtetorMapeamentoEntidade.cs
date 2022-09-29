@@ -28,6 +28,8 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             return new Protetor
             {
                 Nome = viewModel.Nome,
+                Cpf = viewModel.Cpf,
+                Cnpj = viewModel.Cnpj,
                 Endereco = viewModel.Endereco,
                 Celular = viewModel.Celular,
                 Telefone = viewModel.Telefone,

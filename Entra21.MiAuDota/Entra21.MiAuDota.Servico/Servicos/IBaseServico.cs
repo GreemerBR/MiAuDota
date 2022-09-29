@@ -6,8 +6,9 @@ using Entra21.MiAuDota.Servico.ViewModels;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public interface IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
+    public interface IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
         where TEntity : BaseEntity
+        where TBaseModel : UsuarioBase
         where TCreateViewModel : BaseViewModel
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>
         where TViewModel : BaseViewModel
