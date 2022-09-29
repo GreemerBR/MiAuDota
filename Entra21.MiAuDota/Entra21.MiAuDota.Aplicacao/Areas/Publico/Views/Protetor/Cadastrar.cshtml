@@ -8,6 +8,7 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
+
 <body style="background-color: #FDECEB">
     <div class="mx-auto" style="width: 500px;">
         <div class="page vertical-align text-center">
@@ -75,16 +76,16 @@
                 <input asp-for="ConfirmarSenha" class="form-control" />
                 <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
             </div>
-        </form>
 
-        <div class="position-relative" style="padding-top: 50px">
-            <div class="text-end">
-                <div class="position-absolute bottom-0 end-0">
-                    <a asp-action="Cadastrar"> </a> <button type="button" class="btn btn-success">Salvar</button>
+            <div class="position-relative" style="padding-top: 50px">
+                <div class="text-end">
+                    <div class="position-absolute bottom-0 end-0">
+                        <a asp-action="Cadastrar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                    </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
