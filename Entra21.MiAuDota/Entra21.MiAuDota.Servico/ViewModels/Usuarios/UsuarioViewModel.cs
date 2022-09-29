@@ -15,6 +15,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
         public string Celular { get; set; }
 
         [Display(Name = nameof(Email))]
+        [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "{0} deve ser em um formato válido")]
         public string Email { get; set; }
