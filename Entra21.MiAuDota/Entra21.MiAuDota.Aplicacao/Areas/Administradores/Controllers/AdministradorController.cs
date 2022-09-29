@@ -14,7 +14,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
     [Area("Administradores")]
     [Route("administradores/protetor")]
     public class AdministradorController
-        : BaseController<Administrador, IAdministradorServico, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorViewModel, IAdministradorRepositorio, IAdministradorMapeamentoEntidade, IAdministradorMapeamentoViewModel>
+        : BaseController<Administrador, Administrador, IAdministradorServico, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorViewModel, IAdministradorRepositorio, IAdministradorMapeamentoEntidade, IAdministradorMapeamentoViewModel>
     {
         public AdministradorController(IAdministradorServico servico) : base(servico)
         {

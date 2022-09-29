@@ -40,6 +40,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         public virtual void Editar(TEntity entity)
         {
             _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
+            _contexto.SaveChanges();
         }
 
         public virtual TEntity? ObterPorId(int id)

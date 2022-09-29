@@ -9,14 +9,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
 {
-    public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
+    public class BaseController<TEntity, TBaseModel, TServico, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
         where TEntity : BaseEntity
+        where TBaseModel : UsuarioBase
         where TViewModel : BaseViewModel
         where TCreateViewModel : BaseViewModel, new()
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>, new()
         where TRepositorio : IBaseRepositorio<TEntity>
         where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
-        where TServico : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
+        where TServico : IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
         where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TViewModel>
 
     {
@@ -85,14 +86,14 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpPost("editar")]
-        public virtual IActionResult Editar([FromBody] TUpdateViewModel updateViewModel)
+        public virtual IActionResult Editar([FromForm] TUpdateViewModel updateViewModel)
         {
             var alterou = _servico.Editar(updateViewModel);
 
             if (!alterou)
                 return NotFound();
 
-            return RedirectToAction("Index", "Home", new { area = "Publico" });
+            return View("Home/Index");
         }
 
         [HttpGet("apagar")]

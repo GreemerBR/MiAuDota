@@ -6,7 +6,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public interface IProtetorServico : IBaseServico<Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>
+    public interface IProtetorServico : IBaseServico<Protetor, Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>
     {
         Protetor? Logon(string email, string senha);
     }

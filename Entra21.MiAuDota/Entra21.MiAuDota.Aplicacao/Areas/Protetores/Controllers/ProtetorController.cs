@@ -15,15 +15,16 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
     [Area("Protetores")]
     [Route("protetores/protetor")]
     public class ProtetorController
-        : BaseController<Protetor, IProtetorServico, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>
+        : BaseController<Protetor, Protetor, IProtetorServico, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>
     {
         private readonly ISessionManager _sessionManager;
 
-        public ProtetorController(IProtetorServico servico, ISessionManager sessionManager) : base(servico)
+        public ProtetorController(ISessionManager sessionManager, IProtetorServico servico) : base(servico)
         {
             _sessionManager = sessionManager;
         }
 
+        [HttpGet("editar")]
         public override IActionResult Editar()
         {
             var protetorLogado = _sessionManager.GetUser<Protetor>();
