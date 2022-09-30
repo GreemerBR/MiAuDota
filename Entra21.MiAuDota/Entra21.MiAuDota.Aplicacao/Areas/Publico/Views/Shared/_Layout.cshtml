@@ -29,32 +29,42 @@
         </div>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary w-auto m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary w-auto m-3" data-bs-toggle="modal" data-bs-target="#modalCadastro">
             Cadastrar
         </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Cadastre-se</h5>
+                        <h5 class="modal-title">Cadastre-se</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-
                     <div class="modal-body">
-                        <a asp-area="Publico" asp-controller="Usuario" asp-action="Cadastrar" class="btn btn-primary">Quero adotar (Usuário)</a>
-                    </div>
-                    <div class="modal-body">
-                        <a asp-area="Publico" asp-controller="Protetor" asp-action="Cadastrar" class="btn btn-primary">Quero divulgar um animal (Protetor)</a>
-                    </div>
-                    <div class="modal-footer">
-                        ...
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="brand">
+                                        <img class="brand-img" src="~/theme/assets//images/logoteste.png-removebg-preview.svg" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <a asp-area="Publico" asp-controller="Usuario" asp-action="Cadastrar" class="btn btn-primary">Quero adotar (Usuário)</a>
+                                    </div>
+                                    <div class="row">
+                                        <a asp-area="Publico" asp-controller="Protetor" asp-action="Cadastrar" class="btn btn-primary">Quero divulgar um animal (Protetor)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        </div>
+        </div>
     </nav>
 </head>
 
