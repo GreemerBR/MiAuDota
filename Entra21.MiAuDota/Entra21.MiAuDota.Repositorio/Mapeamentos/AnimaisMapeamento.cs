@@ -86,6 +86,11 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasColumnType("TINYINT")
                 .IsRequired()
                 .HasColumnName("genero");
+            
+            builder.Property(x => x.Porte)
+                .HasColumnType("TINYINT")
+                .IsRequired()
+                .HasColumnName("porte");
 
             builder.Property(x => x.Status)
                 .HasColumnType("TINYINT")

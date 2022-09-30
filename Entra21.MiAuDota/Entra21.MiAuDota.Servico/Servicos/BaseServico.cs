@@ -81,9 +81,9 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return list;
         }
 
-        public IList<TEntity> ObterTodosComFiltro(string pesquisa)
+        public IList<TEntity> ObterTodosComFiltro(string especie, string raca, byte idade, byte porte, byte genero)
         {
-            var list = _baseRepositorio.ObterTodosComFiltro(pesquisa);
+            var list = _baseRepositorio.ObterTodosComFiltro(especie, raca, idade, porte, genero);
 
             return list;
         }
