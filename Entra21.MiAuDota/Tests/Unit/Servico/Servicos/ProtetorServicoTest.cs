@@ -15,16 +15,21 @@ using Xunit;
 
 namespace Tests.Unit.Servico.Servicos
 {
-    public class ProtetorServicoTests
+    public class ProtetorServicoTest
     {
         private readonly IProtetorServico _protetorServico;
         private readonly IProtetorRepositorio _protetorRepositorio;
-        private readonly IProtetorMapeamentoEntidade _protetorMapeamentoEntidade;
-        private readonly IProtetorMapeamentoViewModel _protetorMapeamentoViewModel;
-        public ProtetorServicoTests()
+        private readonly IProtetorMapeamentoEntidade _mapeamentoEntidade;
+        private readonly IProtetorMapeamentoViewModel _mapeamentoViewModel; 
+
+        public ProtetorServicoTest()
         {
+            
             _protetorRepositorio = Substitute.For<IProtetorRepositorio>();
-            _protetorServico = new ProtetorServico(_protetorRepositorio, _protetorMapeamentoEntidade, _protetorMapeamentoViewModel);
+            _mapeamentoEntidade = Substitute.For<IProtetorMapeamentoEntidade>();
+            _mapeamentoViewModel = Substitute.For<IProtetorMapeamentoViewModel>();
+
+            _protetorServico = new ProtetorServico(_protetorRepositorio, _mapeamentoEntidade, _mapeamentoViewModel);
         }
 
         [Fact]
@@ -33,7 +38,7 @@ namespace Tests.Unit.Servico.Servicos
             // Arrange
             var viewModel = new ProtetorCadastrarViewModel
             {
-                 Nome = "Ana",
+                Nome = "Ana",
                 Endereco = "Rua do mar",
                 Celular = "47999999999",
                 Telefone = "33302828",
@@ -46,6 +51,7 @@ namespace Tests.Unit.Servico.Servicos
                 Facebook = "@ana145",
                 Instagram = "@ana145",
                 Sobre = "abcdef"
+
             };
 
             // Act
@@ -53,12 +59,24 @@ namespace Tests.Unit.Servico.Servicos
 
             // Assert
             _protetorRepositorio.Received(1).Cadastrar(Arg.Is<Protetor>(
-                protetor => ValidarProtetor(protetor, viewModel)));
+                protetor => ValidarRaca(protetor, viewModel)));
         }
-        private bool ValidarProtetor(Protetor protetor, ProtetorCadastrarViewModel viewModel)
+        private bool ValidarRaca(Protetor protetor, ProtetorCadastrarViewModel viewModel)
         {
             protetor.Nome.Should().Be(viewModel.Nome);
+            protetor.Endereco.Should().Be(viewModel.Endereco);
+            protetor.Celular.Should().Be(viewModel.Celular);
+            protetor.Telefone.Should().Be(viewModel.Telefone);
+            protetor.Email.Should().Be(viewModel.Email);
+            protetor.Senha.Should().Be(viewModel.Senha);
+            protetor.Cpf.Should().Be(viewModel.Cpf);
+            protetor.Cnpj.Should().Be(viewModel.Cnpj);
+            protetor.Pix.Should().Be(viewModel.Pix);
+            protetor.Facebook.Should().Be(viewModel.Facebook);
+            protetor.Instagram.Should().Be(viewModel.Instagram);
+            protetor.Sobre.Should().Be(viewModel.Sobre);
 
+            // Informar que a validação da raça foi executada com sucesso
             return true;
         }
     }

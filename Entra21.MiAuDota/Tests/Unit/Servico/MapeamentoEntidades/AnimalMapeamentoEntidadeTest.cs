@@ -39,7 +39,7 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
                 Vacinas = "Nenhuma",
                 Alergias = "Nehuma",
                 OutrasInformacoesMedicas = "Nada consta",
-                //Foto = "275E5840-F48D-4E7B-9156-D038C9AB89B4.jpg",
+                Foto = "275E5840-F48D-4E7B-9156-D038C9AB89B4.jpg",
                 Idade = 2,
                 Peso = 2.2,
                 Altura = 0.5,
@@ -54,6 +54,13 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
 
             };
 
+            var protetor = new Protetor
+            {
+                Id = 30
+            };
+
+            _sessionManager.GetUser<Protetor>().Returns(protetor);
+
             // Act
             var animal = _animalMapeamentoEntidade.ConstruirCom(viewModel);
 
@@ -65,8 +72,7 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             animal.Vacinas.Should().Be(viewModel.Vacinas);
             animal.Alergias.Should().Be(viewModel.Alergias);
             animal.OutrasInformacoesMedicas.Should().Be(viewModel.OutrasInformacoesMedicas);
-            animal.Foto.Should().BeNull();
-            // animal.Foto.Should().Be(viewModel.Foto);
+            animal.Foto.Should().Be(viewModel.Foto);
             animal.Idade.Should().Be(viewModel.Idade);
             animal.Peso.Should().Be(viewModel.Peso);
             animal.Altura.Should().Be(viewModel.Altura);
@@ -74,7 +80,7 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             animal.Genero.Should().Be((GeneroAnimal)viewModel.Genero);
             animal.Status.Should().Be((StatusInstituicao)viewModel.Status);
             animal.UsuarioId.Should().BeNull();
-            animal.ProtetorId.Should().Be(viewModel.ProtetorId);
+            animal.ProtetorId.Should().Be(protetor.Id);
             animal.DataAdocao.Should().BeNull();
         }
 
