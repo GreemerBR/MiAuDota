@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
 {
-    [ProtetorEstaLogado]
     [Area("Publico")]
     [Route("/animal")]
     public class AnimalController
