@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Entra21.MiAuDota.Repositorio.Enum;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 {
@@ -38,15 +39,15 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
         [Display(Name = nameof(Idade))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        public byte? Idade { get; set; }
+        public byte Idade { get; set; }
 
         [Display(Name = nameof(Peso))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        public double? Peso { get; set; }
+        public double Peso { get; set; }
 
         [Display(Name = nameof(Altura))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        public double? Altura { get; set; }
+        public double Altura { get; set; }
 
         [Display(Name = "É Castrado")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
@@ -69,6 +70,8 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public byte Status { get; set; }
 
+        [Display(Name = "Porte do Animal")]
+        public PorteDoAnimal Porte { get; set; }
 
         [Display(Name = "Outras informacoesMedicas")]
         public string? OutrasInformacoesMedicas { get; set; }
