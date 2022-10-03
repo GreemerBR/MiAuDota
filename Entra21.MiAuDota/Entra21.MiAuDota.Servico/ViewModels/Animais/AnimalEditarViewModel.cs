@@ -20,6 +20,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
         public GeneroAnimal Genero { get; set; }
         public StatusInstituicao Status { get; set; }
+        public PorteDoAnimal Porte { get; set; }
 
         public int? UsuarioId { get; set; }
     }

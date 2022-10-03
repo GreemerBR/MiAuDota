@@ -9,6 +9,6 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         void Editar(T entity);
         T? ObterPorId(int id);
         IList<T> ObterTodos();
-        IList<T> ObterTodosComFiltro(string pesquisa);
+        IList<T> ObterTodosComFiltro(string especie, string raca, byte idade, byte porte, byte genero);
     }
 }

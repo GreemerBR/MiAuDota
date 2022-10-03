@@ -22,6 +22,6 @@ namespace Entra21.MiAuDota.Servico.Servicos
         bool Editar(TUpdateViewModel viewModel);
         TUpdateViewModel? ObterPorId(int id);
         IList<TEntity> ObterTodos();
-        IList<TEntity> ObterTodosComFiltro(string pesquisa);
+        IList<TEntity> ObterTodosComFiltro(string especie, string raca, byte idade, byte porte, byte genero);
     }
 }
