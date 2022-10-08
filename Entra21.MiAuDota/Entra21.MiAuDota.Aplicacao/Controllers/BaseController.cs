@@ -21,7 +21,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TViewModel>
 
     {
-        private readonly TServico _servico;
+        protected readonly TServico _servico;
 
         public BaseController(TServico servico)
         {
