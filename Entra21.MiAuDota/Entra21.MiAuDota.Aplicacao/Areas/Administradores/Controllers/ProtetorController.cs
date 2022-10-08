@@ -23,18 +23,6 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
         {
         }
 
-        //[HttpPost("alterarStatus")]
-        //public IActionResult Editar(ProtetorEditarViewModel updateViewModel, ProtetorStatusDto statusDto)
-        //{
-        //    updateViewModel.IsActive = statusDto.IsActive;
-        //    var alterou = _protetorServico.Editar(updateViewModel);
-
-        //    if (!alterou)
-        //        return NotFound();
-
-        //    return Ok();
-        //}
-
         [HttpPost("alterarStatus")]
         public IActionResult AlterarStatus(ProtetorStatusViewModel viewModel)
         {
