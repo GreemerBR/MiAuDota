@@ -40,7 +40,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             protetor.AlterarStatus();
 
-            _baseRepositorio.Editar(protetor);
+            _baseRepositorio.EditarStatus(protetor);
         }
     }
 }

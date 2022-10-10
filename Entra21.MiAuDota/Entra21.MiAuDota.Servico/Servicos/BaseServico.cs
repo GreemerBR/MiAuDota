@@ -47,7 +47,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return entity;
         }
 
-        public virtual bool Editar(TUpdateViewModel viewModel)
+        public virtual bool EditarCampos(TUpdateViewModel viewModel)
         {
             var baseModel = _sessionManager.GetUser<TBaseModel>();
             var entity = _baseRepositorio.ObterPorId(baseModel.Id);
@@ -57,7 +57,37 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             _baseMapeamentoEntidade.AtualizarCampos(entity, viewModel);
 
-            _baseRepositorio.Editar(entity);
+            _baseRepositorio.EditarCampos(entity);
+
+            return true;
+        }
+
+        public virtual bool EditarSenha(TUpdateViewModel viewModel)
+        {
+            var baseModel = _sessionManager.GetUser<TBaseModel>();
+            var entity = _baseRepositorio.ObterPorId(baseModel.Id);
+
+            if (entity == null)
+                return false;
+
+            _baseMapeamentoEntidade.AtualizarSenha(entity, viewModel);
+
+            _baseRepositorio.EditarCampos(entity);
+
+            return true;
+        }
+
+        public virtual bool EditarStatus(TUpdateViewModel viewModel)
+        {
+            var baseModel = _sessionManager.GetUser<TBaseModel>();
+            var entity = _baseRepositorio.ObterPorId(baseModel.Id);
+
+            if (entity == null)
+                return false;
+
+            _baseMapeamentoEntidade.AtualizarStatus(entity, viewModel);
+
+            _baseRepositorio.EditarCampos(entity);
 
             return true;
         }
