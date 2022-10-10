@@ -15,6 +15,16 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.EhVoluntario = viewModel.EhVoluntario;
         }
 
+        public void AtualizarSenha(Usuario entity, UsuarioEditarViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarStatus(Usuario entity, UsuarioEditarViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
         public Usuario ConstruirCom(UsuarioCadastrarViewModel viewModel)
         {
             return new Usuario

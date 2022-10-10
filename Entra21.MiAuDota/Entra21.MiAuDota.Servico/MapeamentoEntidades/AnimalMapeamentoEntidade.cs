@@ -31,6 +31,16 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.UsuarioId = viewModel.UsuarioId;
         }
 
+        public void AtualizarSenha(Animal entity, AnimalEditarViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarStatus(Animal entity, AnimalEditarViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
         public Animal ConstruirCom(AnimalCadastrarViewModel viewModel)
         {
             return new Animal
