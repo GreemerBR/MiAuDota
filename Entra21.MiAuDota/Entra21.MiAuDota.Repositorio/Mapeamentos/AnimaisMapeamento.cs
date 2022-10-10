@@ -113,6 +113,83 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.HasOne(x => x.Usuario)
                 .WithMany(x => x.Animais)
                 .HasForeignKey(x => x.UsuarioId);
+
+            builder.HasData(
+            new Animal
+            {
+                Id = 1,
+                Nome = "Tobias",
+                Raca = "Colie",
+                Especie = "Cachorro",
+                Sobre = "Cão bravo",
+                Vacinas = "Nenhuma",
+                Alergias = "Nehuma",
+                Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
+                Idade = 1,
+                Peso = 3.35,
+                Altura = 0.6,
+                Castrado = false,
+                Genero = Enum.GeneroAnimal.Macho,
+                Status = Enum.StatusInstituicao.AptoParaAdocao,
+                ProtetorId = 1
+
+            },
+            new Animal
+            {
+                Id = 2,
+                Nome = "Andre",
+                Raca = "Pitbull",
+                Especie = "Cachorro",
+                Sobre = "Cão dócil",
+                Vacinas = "Nenhuma",
+                Alergias = "Nehuma",
+                Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
+                Idade = 3,
+                Peso = 6.35,
+                Altura = 0.5,
+                Castrado = true,
+                Genero = Enum.GeneroAnimal.Macho,
+                Status = Enum.StatusInstituicao.AptoParaAdocao,
+                ProtetorId = 2
+            },
+             new Animal
+             {
+                 Id = 3,
+                 Nome = "Pretinho",
+                 Raca = "rottweiler ",
+                 Especie = "Cachorro",
+                 Sobre = "Cão legal",
+                 Vacinas = "todas",
+                 Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
+                 Alergias = "Nehuma",
+                 Idade = 6,
+                 Peso = 7.35,
+                 Altura = 0.9,
+                 Castrado = true,
+                 Genero = Enum.GeneroAnimal.Macho,
+                 Status = Enum.StatusInstituicao.AptoParaAdocao,
+                 ProtetorId = 1
+             },
+             new Animal
+             {
+                 Id = 4,
+                 Nome = "Branquinha",
+                 Raca = "Dogue ",
+                 Especie = "Cachorro",
+                 Sobre = "Cão",
+                 Vacinas = "todas",
+                 Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
+                 Alergias = "Nehuma",
+                 Idade = 13,
+                 Peso = 1.35,
+                 Altura = 0.2,
+                 Castrado = true,
+                 Genero = Enum.GeneroAnimal.Femea,
+                 Status = Enum.StatusInstituicao.AptoParaAdocao,
+                 ProtetorId = 2
+             }
+            );
+
         }
     }
 }

@@ -4,6 +4,7 @@ using Entra21.MiAuDota.Repositorio.BancoDados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entra21.MiAuDota.Repositorio.Migrations
 {
     [DbContext(typeof(MiAuDotaContexto))]
-    partial class MiAuDotaContextoModelSnapshot : ModelSnapshot
+    [Migration("20220928231622_UpdateTableProtetor")]
+    partial class UpdateTableProtetor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,10 +126,6 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
                         .HasColumnType("DECIMAL(5,2)")
                         .HasColumnName("peso");
 
-                    b.Property<byte>("Porte")
-                        .HasColumnType("TINYINT")
-                        .HasColumnName("porte");
-
                     b.Property<int>("ProtetorId")
                         .HasColumnType("INT")
                         .HasColumnName("protetor_id");
@@ -164,80 +162,6 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("animais", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Alergias = "Nehuma",
-                            Altura = 0.6m,
-                            Castrado = false,
-                            Especie = "Cachorro",
-                            Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
-                            Genero = (byte)1,
-                            Idade = (byte)1,
-                            Nome = "Tobias",
-                            Peso = 3.35m,
-                            ProtetorId = 1,
-                            Raca = "Colie",
-                            Sobre = "Cão bravo",
-                            Status = (byte)0,
-                            Vacinas = "Nenhuma"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Alergias = "Nehuma",
-                            Altura = 0.5m,
-                            Castrado = true,
-                            Especie = "Cachorro",
-                            Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
-                            Genero = (byte)1,
-                            Idade = (byte)3,
-                            Nome = "Andre",
-                            Peso = 6.35m,
-                            ProtetorId = 2,
-                            Raca = "Pitbull",
-                            Sobre = "Cão dócil",
-                            Status = (byte)0,
-                            Vacinas = "Nenhuma"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Alergias = "Nehuma",
-                            Altura = 0.9m,
-                            Castrado = true,
-                            Especie = "Cachorro",
-                            Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
-                            Genero = (byte)1,
-                            Idade = (byte)6,
-                            Nome = "Pretinho",
-                            Peso = 7.35m,
-                            ProtetorId = 1,
-                            Raca = "rottweiler ",
-                            Sobre = "Cão legal",
-                            Status = (byte)0,
-                            Vacinas = "todas"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Alergias = "Nehuma",
-                            Altura = 0.2m,
-                            Castrado = true,
-                            Especie = "Cachorro",
-                            Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
-                            Genero = (byte)0,
-                            Idade = (byte)13,
-                            Nome = "Branquinha",
-                            Peso = 1.35m,
-                            ProtetorId = 2,
-                            Raca = "Dogue ",
-                            Sobre = "Cão",
-                            Status = (byte)0,
-                            Vacinas = "todas"
-                        });
                 });
 
             modelBuilder.Entity("Entra21.MiAuDota.Repositorio.Entidades.Protetor", b =>

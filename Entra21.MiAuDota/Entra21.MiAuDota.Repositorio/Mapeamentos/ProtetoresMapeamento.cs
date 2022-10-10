@@ -83,6 +83,35 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
             builder.Property(x => x.IsActive)
                 .HasColumnType("BIT")
                 .HasColumnName("conta_esta_ativa");
+
+            builder.HasData(
+               new Protetor
+               {
+                   Id = 1,
+                   Nome = "Greg",
+                   Email = "greg@grag.com",
+                   Senha = "protetor123",
+                   ConfirmarSenha = "protetor123",
+                   Cpf = "123456789",
+                   Endereco = "Rua Argentina 140",
+                   Celular = "47988222345",
+                   Instagram = "@greg145",
+                   IsActive = true
+
+               },
+                new Protetor
+                {
+                    Id = 2,
+                    Nome = "Amanda",
+                    Email = "amanda@amanda.com",
+                    Senha = "protetor123",
+                    ConfirmarSenha = "protetor123",
+                    Cpf = "123456788",
+                    Endereco = "Rua Grécia",
+                    Celular = "47999222345",
+                    Instagram = "@amanda186",
+                    IsActive = true
+                });
         }
     }
 }
