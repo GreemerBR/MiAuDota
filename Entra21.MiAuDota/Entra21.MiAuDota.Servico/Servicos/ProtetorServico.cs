@@ -30,5 +30,17 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             return entity;
         }
+
+        public void AlterarStatus(ProtetorStatusViewModel viewModel)
+        {
+            var protetor = _baseRepositorio.ObterPorId(viewModel.Id);
+
+            if (protetor == null)
+                throw new Exception("Protetor não encontrado");
+
+            protetor.AlterarStatus();
+
+            _baseRepositorio.Editar(protetor);
+        }
     }
 }

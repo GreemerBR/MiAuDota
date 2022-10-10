@@ -15,5 +15,10 @@
         public bool IsActive { get; set; }
 
         public IList<Animal> Animais { get; set; }
+
+        public void AlterarStatus()
+        {
+            IsActive = true;
+        }
     }
 }
