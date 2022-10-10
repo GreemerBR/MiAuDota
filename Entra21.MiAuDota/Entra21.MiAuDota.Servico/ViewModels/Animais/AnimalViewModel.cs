@@ -1,4 +1,5 @@
 ﻿using Entra21.MiAuDota.Repositorio.Enum;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entra21.MiAuDota.Servico.ViewModels.Animais
@@ -75,5 +76,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
         [Display(Name = "Outras informacoesMedicas")]
         public string? OutrasInformacoesMedicas { get; set; }
+
+        public IFormFile? Arquivo { get; set; }
     }
 }

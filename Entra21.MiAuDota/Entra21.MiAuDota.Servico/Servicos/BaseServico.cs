@@ -19,7 +19,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
         where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TViewModel>
     {
         protected readonly TRepositorio _baseRepositorio;
-        private readonly TMapeamentoEntidade _baseMapeamentoEntidade;
+        protected readonly TMapeamentoEntidade _baseMapeamentoEntidade;
         private readonly TMapeamentoViewModel _mapeamentoViewModel;
         private readonly ISessionManager _sessionManager;
 
@@ -38,7 +38,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
         public virtual bool Apagar(int id) =>
             _baseRepositorio.Apagar(id);
 
-        public TEntity Cadastrar(TCreateViewModel viewModel)
+        public virtual TEntity Cadastrar(TCreateViewModel viewModel)
         {
             var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel);
 

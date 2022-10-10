@@ -124,6 +124,18 @@
                     <span asp-validation-for="Status" class="text-danger"></span>
                 </div>
 
+                <div class="col-6">
+                    <span class="form-label">Gênero - Apenas Teste<span class="text-danger">*</span></span>
+                    <div class="form-check">
+                        <input type="radio" id="cadastroPetGeneroFeminino" name="cadastroPetModalGenero" class="form-check-input" value="0" checked="checked" />
+                        <label class="form-check-label" for="cadastroPetGeneroFeminino">Feminino</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="cadastroPetGeneroMasculino" name="cadastroPetModalGenero" class="form-check-input" value="1" />
+                        <label class="form-check-label" for="cadastroPetGeneroMasculino">Masculino</label>
+                    </div>
+                </div>
+
                 <div class="mb-3">
                     <label asp-for="OutrasInformacoesMedicas" class="form-label" span-required=""></label>
                     <input asp-for="OutrasInformacoesMedicas" class="form-control" />
