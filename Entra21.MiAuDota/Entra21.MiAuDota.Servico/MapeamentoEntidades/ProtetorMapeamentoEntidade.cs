@@ -18,6 +18,13 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Facebook = viewModel.Facebook;
         }
 
+        public void AtualizarSenha(Protetor entity, ProtetorEditarViewModel viewModel)
+        {
+            
+            entity.Senha = viewModel.Senha;
+            entity.ConfirmarSenha = viewModel.ConfirmarSenha;
+        }
+
         public void AtualizarStatus(Protetor entity, ProtetorEditarViewModel viewModel)
         {
             entity.IsActive = viewModel.IsActive;

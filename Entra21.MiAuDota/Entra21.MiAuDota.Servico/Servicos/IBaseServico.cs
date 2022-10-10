@@ -19,7 +19,9 @@ namespace Entra21.MiAuDota.Servico.Servicos
     {
         TEntity Cadastrar(TCreateViewModel viewModel);
         bool Apagar(int id);
-        bool Editar(TUpdateViewModel viewModel);
+        bool EditarCampos(TUpdateViewModel viewModel);
+        bool EditarSenha(TUpdateViewModel viewModel);
+        bool EditarStatus(TUpdateViewModel viewModel);
         TUpdateViewModel? ObterPorId(int id);
         IList<TEntity> ObterTodos();
         IList<TEntity> ObterTodosComFiltro(string especie, string raca, byte idade, byte porte, byte genero);

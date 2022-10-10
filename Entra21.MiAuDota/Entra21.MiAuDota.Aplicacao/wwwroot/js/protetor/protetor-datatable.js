@@ -9,6 +9,8 @@
     processing: true,
     columns: [
         { data: 'nome' },
+        { data: 'email' },
+        { data: 'sobre' },
         {
             data: null,
             render: function (data, type, protetor) {
@@ -22,7 +24,7 @@
                     cor = "success";
 
                 }
-                return `<span class="badge bg-${cor}">${status}</span>`;
+                return `<h5><span class="badge bg-${cor}">${status}</span></h5>`;
             },
         },
         {
@@ -32,6 +34,8 @@
                 if (protetor.isActive === false) {
                     return `<button class="btn btn-primary protetor-alterarStatus" data-id="${protetor.id}">Ativar</button>`;
                 }
+
+                return `<button class="btn btn-success" data-id="${protetor.id}">Nenhuma ação disponível</button>`;
 
                 return "";
             }
