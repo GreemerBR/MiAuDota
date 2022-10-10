@@ -23,11 +23,11 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             return base.Cadastrar(entity);
         }
 
-        public override void EditarCampos(Protetor entity)
+        public void EditarSenha(Protetor entity)
         {
             entity.Senha = Criptografia.Criptografar(entity.Senha);
             entity.ConfirmarSenha = Criptografia.Criptografar(entity.ConfirmarSenha);
-            base.EditarCampos(entity);
+            base.EditarSenha(entity);
         }
 
         public Protetor Logon(string email, string senha)

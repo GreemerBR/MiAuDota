@@ -57,7 +57,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             _baseMapeamentoEntidade.AtualizarCampos(entity, viewModel);
 
-            _baseRepositorio.EditarCampos(entity);
+            _baseRepositorio.EditarSenha(entity);
 
             return true;
         }
@@ -72,7 +72,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             _baseMapeamentoEntidade.AtualizarSenha(entity, viewModel);
 
-            _baseRepositorio.EditarCampos(entity);
+            _baseRepositorio.EditarSenha(entity);
 
             return true;
         }
@@ -87,7 +87,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             _baseMapeamentoEntidade.AtualizarStatus(entity, viewModel);
 
-            _baseRepositorio.EditarCampos(entity);
+            _baseRepositorio.EditarSenha(entity);
 
             return true;
         }
