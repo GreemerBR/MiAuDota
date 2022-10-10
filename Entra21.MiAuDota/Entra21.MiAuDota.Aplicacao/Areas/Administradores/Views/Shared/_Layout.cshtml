@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MiAuDota</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.css" />
+</head>
+<body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" asp-area="Publico" asp-controller="Home" asp-action="Index">
@@ -54,16 +56,16 @@
                 </div>
             </div>
         </div>
-
     </nav>
-</head>
 
-<body>
     <div class="bg-image"
         <div style="background-image: url('https://t4.ftcdn.net/jpg/00/26/80/33/360_F_26803377_fFNCrwUbzm7Ye6b3UP15VHwzWqU0Xcs3.jpg');"></div>
     </div>
     @RenderBody()
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>
