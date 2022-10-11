@@ -83,6 +83,56 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             animal.ProtetorId.Should().Be(protetor.Id);
             animal.DataAdocao.Should().BeNull();
         }
+        [Fact]
+        public void Test_AtualizarCampos()
+        {
+            // Arrange
+            var animal = new Animal
+            {
+                Sobre = "pequeno e loiro",
+                Vacinas = "Todas",
+                Alergias = "Nada",
+                OutrasInformacoesMedicas = "Nenhuma",
+                Idade = 8,
+                Peso = 18.5,
+                Altura = 0.3,
+                Castrado = false,
+                DataAdocao = new DateTime (2020,05,06),
+                Status = StatusInstituicao.EmTratamento,
+                UsuarioId = null
+            };
+
+            var viewModelEditar = new AnimalEditarViewModel
+            {
+                Sobre = "pequeno e acinzentado",
+                Vacinas = "Qause todas",
+                Alergias = "Nenhuma",
+                OutrasInformacoesMedicas = "Nada",
+                Idade = 7,
+                Peso = 1.5,
+                Altura = 0.2,
+                Castrado = true,
+                DataAdocao = null,
+                Status = StatusInstituicao.AptoParaAdocao,
+                UsuarioId = 1
+            };
+
+            // Act
+            _animalMapeamentoEntidade.AtualizarCampos(animal, viewModelEditar);
+
+            // Assert
+            animal.Sobre.Should().Be(viewModelEditar.Sobre);
+            animal.Vacinas.Should().Be(viewModelEditar.Vacinas);
+            animal.Alergias.Should().Be(viewModelEditar.Alergias);
+            animal.OutrasInformacoesMedicas.Should().Be(viewModelEditar.OutrasInformacoesMedicas);
+            animal.Idade.Should().Be(viewModelEditar.Idade);
+            animal.Peso.Should().Be(viewModelEditar.Peso);
+            animal.Altura.Should().Be(viewModelEditar.Altura);
+            animal.Castrado.Should().Be(viewModelEditar.Castrado);
+            animal.DataAdocao.Should().Be(viewModelEditar.DataAdocao);
+            animal.Status.Should().Be(viewModelEditar.Status);
+            animal.UsuarioId.Should().Be(viewModelEditar.UsuarioId);
+        }
 
     }
 }

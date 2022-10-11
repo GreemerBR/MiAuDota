@@ -1,4 +1,5 @@
-﻿using Entra21.MiAuDota.Servico.MapeamentoEntidades;
+﻿using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 using FluentAssertions;
 using System;
@@ -58,6 +59,50 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             protetor.Instagram.Should().Be(viewModel.Instagram);
             protetor.Sobre.Should().Be(viewModel.Sobre);
 
+        }
+        [Fact]
+        public void Test_AtualizarCampos()
+        {
+            // Arrange
+            var protetor = new Protetor()
+            {
+                Endereco = "Rua Amazonas",
+                Celular = "47999929999",
+                Telefone = "3330-3033",
+                Senha = "brasil?",
+                ConfirmarSenha = "brasil?",
+                Pix = null,
+                Sobre = null,
+                Instagram = null,
+                Facebook = null
+            };
+
+            var viewModelEditar = new ProtetorEditarViewModel
+            {
+                Endereco = "Rua Grécia",
+                Celular = "47999929940",
+                Telefone = "3330-7070",
+                Senha = "brasil!",
+                ConfirmarSenha = "brasil!",
+                Pix = "47999929940",
+                Sobre = "protetor new protetor",
+                Instagram = "@nomedapessoa",
+                Facebook = "@nomedapessoa"
+            };
+
+            // Act
+            _protetorMapeamentoEntidade.AtualizarCampos(protetor, viewModelEditar);
+
+            // Assert
+            protetor.Endereco.Should().Be(viewModelEditar.Endereco);
+            protetor.Celular.Should().Be(viewModelEditar.Celular);
+            protetor.Telefone.Should().Be(viewModelEditar.Telefone);
+            protetor.Senha.Should().Be(viewModelEditar.Senha);
+            protetor.ConfirmarSenha.Should().Be(viewModelEditar.ConfirmarSenha);
+            protetor.Pix.Should().Be(viewModelEditar.Pix);
+            protetor.Sobre.Should().Be(viewModelEditar.Sobre);
+            protetor.Instagram.Should().Be(viewModelEditar.Instagram);
+            protetor.Facebook.Should().Be(viewModelEditar.Facebook);
         }
 
     }

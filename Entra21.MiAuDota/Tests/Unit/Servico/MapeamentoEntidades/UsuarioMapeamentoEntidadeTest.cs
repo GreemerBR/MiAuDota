@@ -1,4 +1,5 @@
-﻿using Entra21.MiAuDota.Servico.MapeamentoEntidades;
+﻿using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using FluentAssertions;
 using System;
@@ -50,6 +51,41 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             usuario.EhVoluntario.Should().Be(viewModel.EhVoluntario);
             usuario.Email.Should().Be(viewModel.Email);
             usuario.DataNascimento.Should().Be(viewModel.DataNascimento);
+        }
+        [Fact]
+        public void Test_AtualizarCampos()
+        {
+            // Arrange
+            var usuario = new Usuario()
+            {
+                Endereco = "Rua Lorival",
+                Celular = "47999999993",
+                Senha = "Laranja?",
+                ConfirmarSenha = "Laranja?",
+                Especialidade = null,
+                EhVoluntario = false
+            };
+
+            var viewModelEditar = new UsuarioEditarViewModel
+            {
+                Endereco = "Rua Antonio",
+                Celular = "4799998897",
+                Senha = "Laranja!",
+                ConfirmarSenha = "Laranja!",
+                Especialidade = "Nunhuma especialidade",
+                EhVoluntario = true
+            };
+
+            // Act
+            _usuarioMapeamentoEntidade.AtualizarCampos(usuario, viewModelEditar);
+
+            // Assert
+            usuario.Endereco.Should().Be(viewModelEditar.Endereco);
+            usuario.Celular.Should().Be(viewModelEditar.Celular);
+            usuario.Senha.Should().Be(viewModelEditar.Senha);
+            usuario.ConfirmarSenha.Should().Be(viewModelEditar.ConfirmarSenha);
+            usuario.Especialidade.Should().Be(viewModelEditar.Especialidade);
+            usuario.EhVoluntario.Should().Be(viewModelEditar.EhVoluntario);
         }
     }
 }
