@@ -29,33 +29,6 @@
         <div class="modal-body">
             <a asp-area="Administradores" asp-controller="Logout" asp-action="Logout" class="btn btn-primary">Sair</a>
         </div>
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary w-auto m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Cadastrar
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Cadastre-se</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <a asp-area="Publico" asp-controller="Usuario" asp-action="Cadastrar" class="btn btn-primary">Quero adotar (Usuário)</a>
-                    </div>
-                    <div class="modal-body">
-                        <a asp-area="Publico" asp-controller="Protetor" asp-action="Cadastrar" class="btn btn-primary">Quero divulgar um animal (Protetor)</a>
-                    </div>
-                    <div class="modal-footer">
-                        ...
-                    </div>
-                </div>
-            </div>
-        </div>
     </nav>
 
     <div class="bg-image"

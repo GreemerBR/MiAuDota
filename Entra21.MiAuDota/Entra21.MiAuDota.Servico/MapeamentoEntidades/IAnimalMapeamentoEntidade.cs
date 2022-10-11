@@ -3,7 +3,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Animais;
 
 namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 {
-    public interface IAnimalMapeamentoEntidade : IBaseMapeamentoEntidade<Animal, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel>
+    public interface IAnimalMapeamentoEntidade : IBaseMapeamentoEntidade<Animal, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalViewModel>
     {
     }
 }

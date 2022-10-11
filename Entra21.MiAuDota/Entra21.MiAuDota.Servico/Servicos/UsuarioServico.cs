@@ -8,7 +8,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 namespace Entra21.MiAuDota.Servico.Servicos
 {
     public class UsuarioServico
-        : BaseServico<Usuario, Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>,
+        : BaseServico<Usuario, Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioEditarViewModel, UsuarioSenhaViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>,
         IUsuarioServico
     {
         public UsuarioServico(
@@ -16,8 +16,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
             IUsuarioMapeamentoEntidade baseMapeamentoEntidade, 
             IUsuarioMapeamentoViewModel mapeamentoViewModel, 
             ISessionManager sessionManager) 
-            : base(
-                  baseRepositorio, 
+            : base(baseRepositorio, 
                   baseMapeamentoEntidade, 
                   mapeamentoViewModel, 
                   sessionManager)

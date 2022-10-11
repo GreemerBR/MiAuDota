@@ -8,7 +8,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 namespace Entra21.MiAuDota.Servico.Servicos
 {
     public class ProtetorServico
-        : BaseServico<Protetor, Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>,
+        : BaseServico<Protetor, Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorStatusViewModel, ProtetorSenhaViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>,
         IProtetorServico
     {
         public ProtetorServico(
