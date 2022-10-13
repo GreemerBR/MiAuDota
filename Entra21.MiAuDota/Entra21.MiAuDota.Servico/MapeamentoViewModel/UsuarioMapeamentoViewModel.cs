@@ -11,8 +11,6 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
                 Nome = entity.Nome,
                 Endereco = entity.Endereco,
                 Celular = entity.Celular,
-                Senha = entity.Senha,
-                ConfirmarSenha = entity.ConfirmarSenha,
                 Especialidade = entity.Especialidade,
                 EhVoluntario = entity.EhVoluntario
             };

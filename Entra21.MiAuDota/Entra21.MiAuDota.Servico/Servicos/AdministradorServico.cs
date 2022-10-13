@@ -1,5 +1,6 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.ViewModels.Administrador;
@@ -7,20 +8,29 @@ using Entra21.MiAuDota.Servico.ViewModels.Administrador;
 namespace Entra21.MiAuDota.Servico.Servicos
 {
     public class AdministradorServico : 
-        BaseServico<Administrador, 
-        AdministradorCadastrarViewModel, 
-        AdministradorEditarViewModel,
-        AdministradorViewModel,
-        IAdministradorRepositorio,
-        IAdministradorMapeamentoEntidade,
-        IAdministradorMapeamentoViewModel>,
+        BaseServico<
+            Administrador,
+            Administrador,
+            AdministradorCadastrarViewModel, 
+            AdministradorEditarViewModel,
+            AdministradorEditarViewModel,
+            AdministradorEditarViewModel,
+            AdministradorViewModel,
+            IAdministradorRepositorio,
+            IAdministradorMapeamentoEntidade,
+            IAdministradorMapeamentoViewModel>,
         IAdministradorServico
     {
         public AdministradorServico(
-            IAdministradorRepositorio baseRepositorio,
-            IAdministradorMapeamentoEntidade baseMapeamentoEntidade, 
-            IAdministradorMapeamentoViewModel mapeamentoViewModel) 
-            : base(baseRepositorio, baseMapeamentoEntidade, mapeamentoViewModel)
+                IAdministradorRepositorio baseRepositorio, 
+                IAdministradorMapeamentoEntidade baseMapeamentoEntidade, 
+                IAdministradorMapeamentoViewModel mapeamentoViewModel, 
+                ISessionManager sessionManager) 
+            : base(
+                  baseRepositorio, 
+                  baseMapeamentoEntidade, 
+                  mapeamentoViewModel, 
+                  sessionManager)
         {
         }
 

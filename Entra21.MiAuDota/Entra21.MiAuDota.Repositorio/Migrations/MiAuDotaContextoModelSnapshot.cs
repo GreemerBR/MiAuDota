@@ -124,6 +124,10 @@ namespace Entra21.MiAuDota.Repositorio.Migrations
                         .HasColumnType("DECIMAL(5,2)")
                         .HasColumnName("peso");
 
+                    b.Property<byte>("Porte")
+                        .HasColumnType("TINYINT")
+                        .HasColumnName("porte");
+
                     b.Property<int>("ProtetorId")
                         .HasColumnType("INT")
                         .HasColumnName("protetor_id");

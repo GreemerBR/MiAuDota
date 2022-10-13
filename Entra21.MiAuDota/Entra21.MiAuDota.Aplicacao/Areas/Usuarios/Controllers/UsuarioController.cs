@@ -15,17 +15,16 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
     [Area("Usuarios")]
     [Route("/usuarios/usuario")]
     public class UsuarioController
-        : BaseController<Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
+        : BaseController<Usuario, Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioEditarViewModel, UsuarioSenhaViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
     {
         private readonly ISessionManager _sessionManager;
-        private readonly IUsuarioServico _usuarioServico;
 
-        public UsuarioController(IUsuarioServico servico, ISessionManager sessionManage) : base(servico)
+        public UsuarioController(ISessionManager sessionManage, IUsuarioServico servico) : base(servico)
         {
             _sessionManager = sessionManage;
-            _usuarioServico = servico;
         }
 
+        [HttpGet("editar")]
         public override IActionResult Editar()
         {
             var usuarioLogado = _sessionManager.GetUser<Usuario>();
@@ -36,23 +35,11 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
                 Nome = usuarioLogado.Nome,
                 Endereco = usuarioLogado.Endereco,
                 Celular = usuarioLogado.Celular,
-                Senha = usuarioLogado.Senha,
-                ConfirmarSenha = usuarioLogado.ConfirmarSenha,
                 Especialidade = usuarioLogado.Especialidade,
                 EhVoluntario = usuarioLogado.EhVoluntario
             };
 
             return View("usuario/Editar", usuarioEditarViewModel);
-        }
-
-        public override IActionResult Editar([FromBody] UsuarioEditarViewModel updateViewModel)
-        {
-            var alterou = _usuarioServico.Editar(updateViewModel);
-
-            if (!alterou)
-                return NotFound();
-
-            return RedirectToAction("Index", "Home", new { area = "Usuarios" });
         }
     }
 }

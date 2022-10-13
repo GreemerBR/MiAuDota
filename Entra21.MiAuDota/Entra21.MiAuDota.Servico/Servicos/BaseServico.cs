@@ -1,39 +1,46 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.ViewModels;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public class BaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> 
-        : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> 
-        where TEntity : BaseEntity 
-        where TCreateViewModel : BaseViewModel 
+    public class BaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
+        : IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
+        where TEntity : BaseEntity
+        where TBaseModel : UsuarioBase
+        where TCreateViewModel : BaseViewModel
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>
-        where TViewModel: BaseViewModel
+        where TUpdateStatusViewModel : BaseEditarViewModel<TViewModel>
+        where TUpdateSenhaViewModel : BaseEditarViewModel<TViewModel>
+        where TViewModel : BaseViewModel
         where TRepositorio : IBaseRepositorio<TEntity>
-        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
-        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TViewModel>
+        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
+        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
     {
         protected readonly TRepositorio _baseRepositorio;
-        private readonly TMapeamentoEntidade _baseMapeamentoEntidade;
+        protected readonly TMapeamentoEntidade _baseMapeamentoEntidade;
         private readonly TMapeamentoViewModel _mapeamentoViewModel;
+        private readonly ISessionManager _sessionManager;
 
         public BaseServico(
             TRepositorio baseRepositorio,
             TMapeamentoEntidade baseMapeamentoEntidade,
-            TMapeamentoViewModel mapeamentoViewModel)
+            TMapeamentoViewModel mapeamentoViewModel,
+            ISessionManager sessionManager)
         {
             _baseRepositorio = baseRepositorio;
             _baseMapeamentoEntidade = baseMapeamentoEntidade;
             _mapeamentoViewModel = mapeamentoViewModel;
+            _sessionManager = sessionManager;
         }
 
         public virtual bool Apagar(int id) =>
             _baseRepositorio.Apagar(id);
 
-        public TEntity Cadastrar(TCreateViewModel viewModel)
+        public virtual TEntity Cadastrar(TCreateViewModel viewModel)
         {
             var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel);
 
@@ -42,16 +49,47 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return entity;
         }
 
-        public virtual bool Editar(TUpdateViewModel viewModel)
+        public virtual bool EditarCampos(TUpdateViewModel viewModel)
         {
-            var entity = _baseRepositorio.ObterPorId(viewModel.Id);
+            var baseModel = _sessionManager.GetUser<TBaseModel>();
+            var entity = _baseRepositorio.ObterPorId(baseModel.Id);
 
             if (entity == null)
                 return false;
 
             _baseMapeamentoEntidade.AtualizarCampos(entity, viewModel);
 
-            _baseRepositorio.Editar(entity);
+            _baseRepositorio.EditarCampos(entity);
+
+            return true;
+        }
+
+        public virtual bool EditarSenha(TUpdateSenhaViewModel viewModel)
+        {
+            var baseModel = _sessionManager.GetUser<TBaseModel>();
+            var entity = _baseRepositorio.ObterPorId(baseModel.Id);
+
+            if (entity == null)
+                return false;
+
+            _baseMapeamentoEntidade.AtualizarSenha(entity, viewModel);
+
+            _baseRepositorio.EditarSenha(entity);
+
+            return true;
+        }
+
+        public virtual bool EditarStatus(TUpdateStatusViewModel viewModel)
+        {
+            var baseModel = _sessionManager.GetUser<TBaseModel>();
+            var entity = _baseRepositorio.ObterPorId(baseModel.Id);
+
+            if (entity == null)
+                return false;
+
+            _baseMapeamentoEntidade.AtualizarStatus(entity, viewModel);
+
+            _baseRepositorio.EditarStatus(entity);
 
             return true;
         }
@@ -75,9 +113,9 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return list;
         }
 
-        public IList<TEntity> ObterTodosComFiltro(string pesquisa)
+        public IList<TEntity> ObterTodosComFiltro(string especie, string raca, byte idade, byte porte, byte genero)
         {
-            var list = _baseRepositorio.ObterTodosComFiltro(pesquisa);
+            var list = _baseRepositorio.ObterTodosComFiltro(especie, raca, idade, porte, genero);
 
             return list;
         }

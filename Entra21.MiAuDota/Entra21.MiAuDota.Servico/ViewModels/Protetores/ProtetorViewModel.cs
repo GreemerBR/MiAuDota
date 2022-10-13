@@ -20,15 +20,18 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         public string? Telefone { get; set; }
 
         [Display(Name = nameof(Email))]
+        [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "{0} deve ser em um formato válido")]
         public string Email { get; set; }
 
         [Display(Name = nameof(Senha))]
+        [DataType(DataType.Password)]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
         public string Senha { get; set; }
 
         [Display(Name = "Confirmar senha")]
+        [DataType(DataType.Password)]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
         public string ConfirmarSenha { get; set; }
 

@@ -1,39 +1,81 @@
 ﻿@using Entra21.MiAuDota.Repositorio.Entidades
 @model List<Animal>
 
-<ul class="blocks blocks-100 blocks-xxl-4 blocks-lg-3 blocks-md-2" data-plugin="filterable"
-    data-filters="#exampleFilter">
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Encontre seu amigo!</h1>
+        </div>
 
+        <div>
+            <form asp-area="Publico" asp-controller="Animal" asp-action="obterTodosComFiltro#pets" method="GET" class="row g-3">
+                <div class="flex flex-col md:gap-2 sm:flex-row">
+                    <div class="form-select flex-1">
+                        <select id="Especie" name="Especie">
+                            <option selected>Todas</option>
+                            <option value="Cachorro">Cachorro</option>
+                            <option value="Gato">Gato</option>
+                        </select>
+                    </div>
+                    <div class="form-select flex-1">
+                        <select id="genero" name="genero">
+                            <option selected>Todos</option>
+                            <option value="Femea">Fêmea</option>
+                            <option value="Macho">Macho</option>
+                        </select>
+                    </div>
+                    <div class="form-select flex-1">
+                        <select id="Porte" name="Porte">
+                            <option selected>Todos</option>
+                            <option value="Pequeno">Pequeno</option>
+                            <option value="Medio">Médio</option>
+                            <option value="Grande">Grande</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a asp-action="obterTodosComFiltro" /> <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
 
-
-    @foreach (var animal in Model)
-    {
-        <li data-type="object">
-            <div class="card card-shadow">
-                <figure class="card-img-top overlay-hover overlay">
-                    <img class="overlay-figure overlay-scale" src="~/theme/global/photos/placeholder.png"
-                     alt="...">
-                    <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
-                        <a class="icon wb-search" href="~/theme/global/photos/placeholder.png"></a>
-                    </figcaption>
-                </figure>
-                <div class="card-block">
-                    <h4 class="card-title">@animal.Raca @animal.Nome</h4>
+            <div id="pets">
+                <div id="grid-pet">
+                    <div class="grid gap-3 justify-center grid-rows-none sm:gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                        <div class="flex-1 bg-white rounded-lg shadow-md overflow-hidden">
+                            @foreach (var animal in Model)
+                            {
+                                <div class="card">
+                                    <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@animal.Nome</h5>
+                                        <p class="card-text">@animal.Raca </p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
-        </li>
+        </div>
+    </div>
 
-    }
-
-
-</ul>
-
-@section Scripts{
-
-    <script src="~/theme/assets/examples/js/pages/gallery.js"></script>
-    }
-
-
-    @section css{
-    <link rel="stylesheet" href="~/theme/assets/examples/css/pages/gallery.css">
-}
+@*    @foreach (var animal in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">@animal.Raca @animal.Nome</p>
+            </div>
+        </div>
+    }*@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

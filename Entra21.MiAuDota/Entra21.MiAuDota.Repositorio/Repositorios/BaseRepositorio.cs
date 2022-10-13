@@ -37,9 +37,22 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             return entity;
         }
 
-        public virtual void Editar(TEntity entity)
+        public virtual void EditarCampos(TEntity entity)
         {
             _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
+            _contexto.SaveChanges();
+        }
+
+        public virtual void EditarSenha(TEntity entity)
+        {
+            _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
+            _contexto.SaveChanges();
+        }
+
+        public virtual void EditarStatus(TEntity entity)
+        {
+            _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
+            _contexto.SaveChanges();
         }
 
         public virtual TEntity? ObterPorId(int id)
@@ -52,6 +65,9 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             return _contexto.Set<TEntity>().ToList();
         }
 
-        public virtual IList<TEntity> ObterTodosComFiltro(string pesquisa) => ObterTodos();
+        public virtual IList<TEntity> ObterTodosComFiltro(string especie, string raca, byte idade, byte porte, byte genero)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

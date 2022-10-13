@@ -6,7 +6,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Administrador;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public interface IAdministradorServico : IBaseServico<Administrador, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorViewModel, IAdministradorRepositorio, IAdministradorMapeamentoEntidade, IAdministradorMapeamentoViewModel>
+    public interface IAdministradorServico : IBaseServico<Administrador, Administrador, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorEditarViewModel, AdministradorEditarViewModel, AdministradorViewModel, IAdministradorRepositorio, IAdministradorMapeamentoEntidade, IAdministradorMapeamentoViewModel>
     {
         Administrador? Logon(string email, string senha);
     }

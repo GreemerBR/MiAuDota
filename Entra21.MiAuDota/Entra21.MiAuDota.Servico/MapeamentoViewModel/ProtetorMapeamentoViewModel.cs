@@ -9,7 +9,6 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
         {
             return new ProtetorEditarViewModel
             {
-                Nome = entity.Nome,
                 Endereco = entity.Endereco,
                 Celular = entity.Celular,
                 Telefone = entity.Telefone,

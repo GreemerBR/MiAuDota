@@ -1,6 +1,5 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
-using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -9,18 +8,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
 {
-    public class BaseController<TEntity, TServico, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
+    public class BaseController<TEntity, TBaseModel, TServico, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel,  TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
         where TEntity : BaseEntity
+        where TBaseModel : UsuarioBase
         where TViewModel : BaseViewModel
         where TCreateViewModel : BaseViewModel, new()
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>, new()
+        where TUpdateStatusViewModel : BaseEditarViewModel<TViewModel>, new()
+        where TUpdateSenhaViewModel : BaseEditarViewModel<TViewModel>, new()
         where TRepositorio : IBaseRepositorio<TEntity>
-        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
-        where TServico : IBaseServico<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
-        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TViewModel>
+        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
+        where TServico : IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
+        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
 
     {
-        private readonly TServico _servico;
+        protected readonly TServico _servico;
 
         public BaseController(TServico servico)
         {
@@ -35,9 +37,9 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpGet("obterTodosComFiltro")]
-        public virtual IActionResult ObterTodosComFiltro([FromQuery] string pesquisa)
+        public virtual IActionResult ObterTodosComFiltro([FromQuery] string especie, string raca, byte idade, byte porte, byte genero)
         {
-            var entities = _servico.ObterTodosComFiltro(pesquisa);
+            var entities = _servico.ObterTodosComFiltro(especie, raca, idade, porte, genero);
 
             return Ok(entities);
         }
@@ -85,14 +87,31 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpPost("editar")]
-        public virtual IActionResult Editar([FromBody] TUpdateViewModel updateViewModel)
+        public virtual IActionResult Editar([FromForm] TUpdateViewModel updateViewModel)
         {
-            var alterou = _servico.Editar(updateViewModel);
+            var alterou = _servico.EditarCampos(updateViewModel);
 
             if (!alterou)
                 return NotFound();
 
-            return RedirectToAction("Index", "Home", new { area = "Publico" });
+            return View("Home/Index");
+        }
+
+        [HttpGet("alterarSenha")]
+        public virtual IActionResult EditarSenha()
+        {
+            return View();
+        }
+
+        [HttpPost("alterarSenha")]
+        public virtual IActionResult EditarSenha([FromForm] TUpdateViewModel updateViewModel)
+        {
+            var alterou = _servico.EditarCampos(updateViewModel);
+
+            if (!alterou)
+                return NotFound();
+
+            return View("Home/Index");
         }
 
         [HttpGet("apagar")]

@@ -7,6 +7,7 @@
         public string? Endereco { get; set; }
         public string? Celular { get; set; }
         public string? Telefone { get; set; }
+        public string Senha { get; set; }
         public string ConfirmarSenha { get; set; }
         public string? Pix { get; set; }
         public string? Sobre { get; set; }
@@ -15,5 +16,10 @@
         public bool IsActive { get; set; }
 
         public IList<Animal> Animais { get; set; }
+
+        public void AlterarStatus()
+        {
+            IsActive = true;
+        }
     }
 }

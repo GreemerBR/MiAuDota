@@ -12,7 +12,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
     [Area("Publico")]
     [Route("/usuario")]
     public class UsuarioController
-        : BaseController<Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
+        : BaseController<Usuario, Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioEditarViewModel, UsuarioSenhaViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
     {
         public UsuarioController(IUsuarioServico servico) : base(servico)
         {

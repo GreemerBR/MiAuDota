@@ -3,7 +3,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 
 namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 {
-    public interface IUsuarioMapeamentoEntidade : IBaseMapeamentoEntidade<Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel>
+    public interface IUsuarioMapeamentoEntidade : IBaseMapeamentoEntidade<Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioEditarViewModel, UsuarioSenhaViewModel, UsuarioViewModel>
     {
     }
 }

@@ -27,7 +27,18 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Castrado = viewModel.Castrado;
             entity.DataAdocao = viewModel.DataAdocao;
             entity.Status = (StatusInstituicao)viewModel.Status;
+            entity.Porte = DeterminarPorte(viewModel.Peso, viewModel.Altura);
             entity.UsuarioId = viewModel.UsuarioId;
+        }
+
+        public void AtualizarSenha(Animal entity, AnimalEditarViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarStatus(Animal entity, AnimalEditarViewModel viewModel)
+        {
+            throw new NotImplementedException();
         }
 
         public Animal ConstruirCom(AnimalCadastrarViewModel viewModel)
@@ -42,15 +53,26 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Alergias = viewModel.Alergias,
                 OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas,
                 Foto = viewModel.Foto,
-                Idade = viewModel.Idade.GetValueOrDefault(),
-                Peso = viewModel.Peso.GetValueOrDefault(),
-                Altura = viewModel.Altura.GetValueOrDefault(),
+                Idade = viewModel.Idade,
+                Peso = viewModel.Peso,
+                Altura = viewModel.Altura,
                 Castrado = viewModel.Castrado,
                 Genero = (GeneroAnimal)viewModel.Genero,
                 Status = (StatusInstituicao)viewModel.Status,
+                Porte = DeterminarPorte(viewModel.Peso, viewModel.Altura),
                 UsuarioId = null,
                 ProtetorId = _sessionManager.GetUser<Protetor>().Id
             };
+        }
+
+        private PorteDoAnimal DeterminarPorte(double peso, double altura)
+        {
+            if (peso <= 15 && altura <= 35)
+                return PorteDoAnimal.Pequeno;
+            else if (peso <= 25 && altura <= 49)
+                return PorteDoAnimal.Medio;
+            else
+                return PorteDoAnimal.Grande;
         }
     }
 }
