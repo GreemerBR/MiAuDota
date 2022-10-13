@@ -51,7 +51,7 @@ namespace Tests.Unit.Servico.Servicos
         public void Test_Cadastrar()
         {
             // Arrange
-            var viewModel = new ProtetorCadastrarViewModel
+            var viewModelEsperado = new ProtetorCadastrarViewModel
             {
                 Nome = "Ana",
                 Endereco = "Rua do mar",
@@ -66,49 +66,54 @@ namespace Tests.Unit.Servico.Servicos
                 Sobre = "abcdef",
                 Facebook = "@ana145",
                 Instagram = "@ana145",
-                IsActive = true,
             };
+
+            var protetorEsperado = new Protetor()
+            {
+                Nome = viewModelEsperado.Nome,
+                Endereco = viewModelEsperado.Endereco,
+                Celular = viewModelEsperado.Celular,
+                Telefone = viewModelEsperado.Telefone,
+                Email = viewModelEsperado.Email,
+                Senha = viewModelEsperado.Senha,
+                ConfirmarSenha = viewModelEsperado.ConfirmarSenha,
+                Cpf = viewModelEsperado.Cpf,
+                Cnpj = viewModelEsperado.Cpf,
+                Pix = viewModelEsperado.Pix,
+                Sobre = viewModelEsperado.Sobre,
+                Facebook = viewModelEsperado.Facebook,
+                Instagram = viewModelEsperado.Instagram
+            };
+
+            _mapeamentoEntidade.ConstruirCom(
+                Arg.Is<ProtetorCadastrarViewModel>(viewModel =>
+                    viewModel.Nome == viewModelEsperado.Nome))
+                .Returns(protetorEsperado);
 
 
             // Act
-            _protetorServico.Cadastrar(viewModel);
+            _protetorServico.Cadastrar(viewModelEsperado);
 
             // Assert
             _protetorRepositorio
                 .Received(1).
-                Cadastrar(Arg.Is<Protetor>(protetor => ValidarRaca(viewModel)));
+                Cadastrar(Arg.Is<Protetor>(protetor => ValidarRaca(protetor, protetorEsperado)));
         }
-        private bool ValidarRaca(ProtetorCadastrarViewModel viewModel)
+
+        private bool ValidarRaca(Protetor protetor, Protetor protetorEsperado)
         {
-            var protetor = new Protetor()
-            {
-                Nome = viewModel.Nome,
-                Endereco = viewModel.Endereco,
-                Celular = viewModel.Celular,
-                Telefone = viewModel.Telefone,
-                Email = viewModel.Email,
-                Senha = viewModel.Senha,
-                Cpf = viewModel.Cpf,
-                Cnpj = viewModel.Cnpj,
-                Pix = viewModel.Pix,
-                Facebook = viewModel.Facebook,
-                Instagram = viewModel.Instagram,
-                Sobre = viewModel.Sobre,
-                IsActive = viewModel.IsActive,
-            };
-            protetor.Nome.Should().Be(viewModel.Nome);
-            protetor.Endereco.Should().Be(viewModel.Endereco);
-            protetor.Celular.Should().Be(viewModel.Celular);
-            protetor.Telefone.Should().Be(viewModel.Telefone);
-            protetor.Email.Should().Be(viewModel.Email);
-            protetor.Senha.Should().Be(viewModel.Senha);
+            protetor.Nome.Should().Be(protetorEsperado.Nome);
+            protetor.Endereco.Should().Be(protetorEsperado.Endereco);
+            protetor.Celular.Should().Be(protetorEsperado.Celular);
+            protetor.Telefone.Should().Be(protetorEsperado.Telefone);
+            protetor.Email.Should().Be(protetorEsperado.Email);
+            protetor.Senha.Should().Be(protetorEsperado.Senha);
             protetor.Cpf.Should().BeNull();
             protetor.Cnpj.Should().BeNull();
-            protetor.Pix.Should().Be(viewModel.Pix);
-            protetor.Facebook.Should().Be(viewModel.Facebook);
-            protetor.Instagram.Should().Be(viewModel.Instagram);
-            protetor.Sobre.Should().Be(viewModel.Sobre);
-            protetor.IsActive.Should().Be(viewModel.IsActive);
+            protetor.Pix.Should().Be(protetorEsperado.Pix);
+            protetor.Facebook.Should().Be(protetorEsperado.Facebook);
+            protetor.Instagram.Should().Be(protetorEsperado.Instagram);
+            protetor.Sobre.Should().Be(protetorEsperado.Sobre);
 
             // Informar que a validação da raça foi executada com sucesso
             return true;

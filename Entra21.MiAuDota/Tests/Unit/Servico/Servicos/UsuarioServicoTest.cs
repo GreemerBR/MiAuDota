@@ -50,9 +50,9 @@ namespace Tests.Unit.Servico.Servicos
         public void Test_Cadastrar()
         {
             // Arrange
-            var viewModel = new UsuarioCadastrarViewModel
+            var viewModelEsperado = new UsuarioCadastrarViewModel
             {
-                Nome = "Chico",
+                Nome = "Chico Lucas",
                 Endereco = "Rua Amazonas",
                 Celular = "4799999999",
                 Email = "chico@gmail.com",
@@ -62,41 +62,46 @@ namespace Tests.Unit.Servico.Servicos
                 Especialidade = "aaa",
                 EhVoluntario = true,
                 DataNascimento = new DateTime(2000, 1, 6),
-                IsActive = true,
             };
+
+            var usuarioEsperado = new Usuario()
+            {
+                Nome = viewModelEsperado.Nome,
+                Endereco = viewModelEsperado.Endereco,
+                Celular = viewModelEsperado.Celular,
+                Email = viewModelEsperado.Email,
+                Senha = viewModelEsperado.Senha,
+                ConfirmarSenha = viewModelEsperado.ConfirmarSenha,
+                Cpf = viewModelEsperado.Cpf,
+                Especialidade = viewModelEsperado.Especialidade,
+                EhVoluntario = viewModelEsperado.EhVoluntario,
+                DataNascimento= viewModelEsperado.DataNascimento
+            };
+
+            _mapeamentoEntidade.ConstruirCom(
+                Arg.Is<UsuarioCadastrarViewModel>(viewModel =>
+                    viewModel.Nome == viewModelEsperado.Nome))
+                .Returns(usuarioEsperado);
+
             // Act
-            _usuarioServico.Cadastrar(viewModel);
+            _usuarioServico.Cadastrar(viewModelEsperado);
 
             // Assert
             _usuarioRepositorio.Received(1).Cadastrar(Arg.Is<Usuario>(
-                usuario => ValidarUser(viewModel)));
+                usuario => ValidarUser(usuario, usuarioEsperado)));
         }
-        private bool ValidarUser(UsuarioCadastrarViewModel viewModel)
+        private bool ValidarUser(Usuario usuario, Usuario usuarioEsperado)
         {
-            var user = new Usuario()
-            {
-                Nome = viewModel.Nome,
-                Endereco = viewModel.Endereco,
-                Celular = viewModel.Celular,
-                Email = viewModel.Email,
-                Senha = viewModel.Senha,
-                ConfirmarSenha = viewModel.ConfirmarSenha,
-                Cpf = viewModel.Cpf,
-                Especialidade = viewModel.Especialidade,
-                EhVoluntario = viewModel.EhVoluntario,
-                DataNascimento = viewModel.DataNascimento,
-                IsActive = viewModel.IsActive,
-            };
-            user.Nome.Should().Be(viewModel.Nome);
-            user.Endereco.Should().Be(viewModel.Endereco);
-            user.Celular.Should().Be(viewModel.Celular);
-            user.Email.Should().Be(viewModel.Email);
-            user.Senha.Should().Be(viewModel.Senha);
-            user.ConfirmarSenha.Should().Be(viewModel.ConfirmarSenha);
-            user.Cpf.Should().Be(viewModel.Cpf);
-            user.EhVoluntario.Should().Be(viewModel.EhVoluntario);
-            user.DataNascimento.Should().Be(viewModel.DataNascimento);
-            user.IsActive.Should().Be(viewModel.IsActive);
+           
+            usuario.Nome.Should().Be(usuarioEsperado.Nome);
+            usuario.Endereco.Should().Be(usuarioEsperado.Endereco);
+            usuario.Celular.Should().Be(usuarioEsperado.Celular);
+            usuario.Email.Should().Be(usuarioEsperado.Email);
+            usuario.Senha.Should().Be(usuarioEsperado.Senha);
+            usuario.ConfirmarSenha.Should().Be(usuarioEsperado.ConfirmarSenha);
+            usuario.Cpf.Should().Be(usuarioEsperado.Cpf);
+            usuario.EhVoluntario.Should().Be(usuarioEsperado.EhVoluntario);
+            usuario.DataNascimento.Should().Be(usuarioEsperado.DataNascimento);
             return true;
         }
     }
