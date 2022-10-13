@@ -9,7 +9,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Animais;
 namespace Entra21.MiAuDota.Servico.Servicos
 {
     public class AnimalServico
-        : BaseServico<Animal, Administrador, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>,
+        : BaseServico<Animal, Administrador, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>,
         IAnimalServico
     {
         public AnimalServico(

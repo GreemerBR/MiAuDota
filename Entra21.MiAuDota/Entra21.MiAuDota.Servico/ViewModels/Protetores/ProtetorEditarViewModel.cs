@@ -5,8 +5,6 @@
         public string Endereco { get; set; }
         public string Celular { get; set; }
         public string Telefone { get; set; }
-        public string Senha { get; set; }
-        public string ConfirmarSenha { get; set; }
         public string Pix { get; set; }
         public string Sobre { get; set; }
         public string Instagram { get; set; }

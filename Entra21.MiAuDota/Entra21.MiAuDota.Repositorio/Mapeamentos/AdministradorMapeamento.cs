@@ -31,7 +31,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasColumnName("senha");
 
             builder.HasData(
-            new Protetor
+            new Administrador
             {
                 Id = 1,
                 Nome = "Administrador",

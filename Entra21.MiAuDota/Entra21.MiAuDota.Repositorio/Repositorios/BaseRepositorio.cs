@@ -37,7 +37,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             return entity;
         }
 
-        public virtual void EditarCampo(TEntity entity)
+        public virtual void EditarCampos(TEntity entity)
         {
             _contexto.Entry<TEntity>(entity).State = EntityState.Modified;
             _contexto.SaveChanges();

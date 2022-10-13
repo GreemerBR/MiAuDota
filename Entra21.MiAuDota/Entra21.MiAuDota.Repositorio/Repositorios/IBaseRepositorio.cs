@@ -6,7 +6,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
     {
         bool Apagar(int id);
         T Cadastrar(T entity);
-        void EditarSenha(T entity);
+        void EditarCampos(T entity);
         void EditarSenha(T entity);
         void EditarStatus(T entity);
         T? ObterPorId(int id);

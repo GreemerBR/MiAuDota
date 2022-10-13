@@ -4,8 +4,6 @@
     {
         public string? Endereco { get; set; }
         public string? Celular { get; set; }
-        public string Senha { get; set; }
-        public string ConfirmarSenha { get; set; }
         public string? Especialidade { get; set; }
         public bool EhVoluntario { get; set; }
     }

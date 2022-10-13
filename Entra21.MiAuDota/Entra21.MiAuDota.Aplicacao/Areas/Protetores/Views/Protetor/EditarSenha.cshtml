@@ -1,4 +1,4 @@
-﻿@model ProtetorEditarViewModel
+﻿@model ProtetorSenhaViewModel
 
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="en">
@@ -51,52 +51,22 @@
 			</div>
 			<p>Edite seu perfil</p>
 
-			<form asp-controller="Protetor" asp-action="Editar" method="POST">
+			<form asp-controller="Protetor" asp-action="AlterarSenha" method="POST">
 
 				<div class="mb-3">
-					<label asp-for="Endereco" class="form-label" span-required=""></label>
-					<input asp-for="Endereco" class="form-control" />
-					<span asp-validation-for="Endereco" class="text-danger"></span>
+					<label asp-for="Senha" class="password" span-required=""></label>
+					<input asp-for="Senha" class="form-control" />
+					<span asp-validation-for="Senha" class="text-danger"></span>
 				</div>
 
 				<div class="mb-3">
-					<label asp-for="Celular" class="form-label" span-required=""></label>
-					<input asp-for="Celular" class="form-control" />
-					<span asp-validation-for="Celular" class="text-danger"></span>
-				</div>
-
-				<div class="mb-3">
-					<label asp-for="Telefone" class="form-label" span-required=""></label>
-					<input asp-for="Telefone" class="form-control" />
-					<span asp-validation-for="Telefone" class="text-danger"></span>
-				</div>
-
-				<div class="mb-3">
-					<label asp-for="Pix" class="form-label" span-required=""></label>
-					<input asp-for="Pix" class="form-control" />
-					<span asp-validation-for="Pix" class="text-danger"></span>
-				</div>
-
-				<div class="mb-3">
-					<label asp-for="Sobre" class="form-label" span-required=""></label>
-					<input asp-for="Sobre" class="form-control" />
-					<span asp-validation-for="Sobre" class="text-danger"></span>
-				</div>
-
-				<div class="mb-3">
-					<label asp-for="Instagram" class="form-label" span-required=""></label>
-					<input asp-for="Instagram" class="form-control" />
-					<span asp-validation-for="Instagram" class="text-danger"></span>
-				</div>
-
-				<div class="mb-3">
-					<label asp-for="Facebook" class="form-label" span-required=""></label>
-					<input asp-for="Facebook" class="form-control" />
-					<span asp-validation-for="Facebook" class="text-danger"></span>
+					<label asp-for="ConfirmarSenha" class="password" span-required=""></label>
+					<input asp-for="ConfirmarSenha" class="form-control" />
+					<span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
 				</div>
 
 				<div class="text-end">
-					<a asp-action="Editar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+					<a asp-action="AlterarSenha"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
 				</div>
 
 			</form>
@@ -148,11 +118,11 @@
 	<script src="~/theme/global/js/Plugin/animate-list.js"></script>
 
 	<script>
-		(function(document, window, $) {
+		(function (document, window, $) {
 			'use strict';
 
 			var Site = window.Site;
-			$(document).ready(function() {
+			$(document).ready(function () {
 				Site.run();
 			});
 		})(document, window, jQuery);
