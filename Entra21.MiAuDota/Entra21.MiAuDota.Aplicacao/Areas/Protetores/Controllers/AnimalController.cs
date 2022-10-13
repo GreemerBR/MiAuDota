@@ -14,7 +14,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
     [Area("Protetores")]
     [Route("protetores/animal")]
     public class AnimalController
-        : BaseController<Animal, Administrador, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
+        : BaseController<Animal, Administrador, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {
         private readonly IAnimalServico _animalServico;
 

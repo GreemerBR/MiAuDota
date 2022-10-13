@@ -14,7 +14,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
     [Area("Administradores")]
     [Route("administradores/animal")]
     public class AnimalController
-        : BaseController<Animal, Administrador, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
+        : BaseController<Animal, Administrador, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {
         public AnimalController(IAnimalServico servico) : base(servico)
         {

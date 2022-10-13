@@ -1,6 +1,5 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
-using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -9,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
 {
-    public class BaseController<TEntity, TBaseModel, TServico, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, UpdateSenhaViewModel,  TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
+    public class BaseController<TEntity, TBaseModel, TServico, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel,  TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
         where TEntity : BaseEntity
         where TBaseModel : UsuarioBase
         where TViewModel : BaseViewModel
@@ -18,9 +17,9 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         where TUpdateStatusViewModel : BaseEditarViewModel<TViewModel>, new()
         where TUpdateSenhaViewModel : BaseEditarViewModel<TViewModel>, new()
         where TRepositorio : IBaseRepositorio<TEntity>
-        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, UpdateSenhaViewModel, TViewModel>
-        where TServico : IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, UpdateSenhaViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
-        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TUpdateStatusViewModel, UpdateSenhaViewModel, TViewModel>
+        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
+        where TServico : IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
+        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
 
     {
         protected readonly TServico _servico;
