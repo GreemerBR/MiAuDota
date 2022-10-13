@@ -41,11 +41,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         [Display(Name = "CNPJ")]
         public string? Cnpj { get; set; }
 
-        [Display(Name = nameof(Especialidade))]
-        [MinLength(5, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
-        [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
-        public string? Especialidade { get; set; }
-
         [Display(Name = nameof(Pix))]
         public string? Pix { get; set; }
 
