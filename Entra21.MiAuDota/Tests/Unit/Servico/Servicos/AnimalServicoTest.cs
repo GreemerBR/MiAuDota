@@ -127,7 +127,7 @@ namespace Tests.Unit.Servico.Servicos
             animal.Status.Should().Be(animalEsperado.Status);
             animal.UsuarioId.Should().Be(animalEsperado.UsuarioId);
 
-            // Informar que a validação da raça foi executada com sucesso
+            // Retorna true quando a validação da raça foi executada com sucesso
             return true;
         }
     }
