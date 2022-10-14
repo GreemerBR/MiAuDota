@@ -32,5 +32,11 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
 
             return RedirectToAction("Index", "Home", new { area = "Protetores" });
         }
+
+        [HttpGet("meus-animais")]
+        public IActionResult MeusAnimais()
+        {
+            return View("MeusAnimais");
+        }
     }
 }
