@@ -4,6 +4,245 @@
 
 <head>
     <style type="text/css">
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          opacity: 1;
+
+        }
+
+        .b-example-divider {
+          height: 3rem;
+          background-color: rgba(0, 0, 0, .1);
+          border: solid rgba(0, 0, 0, .15);
+          border-width: 1px 0;
+          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+          flex-shrink: 0;
+          width: 1.5rem;
+          height: 100vh;
+        }
+
+        .bi {
+          vertical-align: -.125em;
+          fill: currentColor;
+        }
+
+        h1 {
+            color: white;
+        }
+
+
+    </style>
+</head>
+
+<main>
+    <body class="page" style="background-image: linear-gradient(90deg, #FDE3F0 0%, #FA9FCA 50.52%, #FDE3F0 100%)">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <!--Feito-->
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/page.png" preserveAspectRatio="xMidYMid slice">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1><b>Sabe quantos animais precisam de um lar?</b></h1>
+                            <p>
+                                <b>
+                                    Acredita-se que há 3,9 milhões (2,7 milhões de cães e 1,2 milhões de gatos) vivendo em situação de vulnerabilidade.
+                                    A castração e a adoção de animais são as maneiras mais efetivas de reduzir a população de rua e de dar
+                                    uma vida digna a esses seres tão especiais.
+                                </b>
+                            </p>
+                            <p><a class="btn btn-lg btn-primary" href="">Cadastre-se</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!--Pronto-->
+                <div class="carousel-item active">
+                    <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/page.png" preserveAspectRatio="xMidYMid slice">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1><b>Gostaria de cadastrar um animal?</b></h1>
+                            <p><b>Aqui no site você pode ser um protetor, cadastrar seus animais para adoção responsável, clique em</b></p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Saiba mais</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!--Pronto-->
+                <div class="carousel-item">
+                    <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/page.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1><b>Quer adotar um animal?</b></h1>
+                            <p>
+                                <b>
+                                    Gostou da iniciativa do site? Nos ajude a encontrar um lar para esses bichinhos, manter eles seguros é a nossa
+                                    prioridade.
+                                </b>
+                            </p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Ver galeria</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="container marketing">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/cute1.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+                    <h2 class="fw-normal">Quero ajudar</h2>
+                    <p>
+                        Através da nossa plataforma, a gente conecta pessoas que querem ter um pet a cães e gatos resgatados que precisam de um lar.
+                        Contribua com o nosso site, seja um apoiador!
+                    </p>
+                    <p><a class="btn btn-secondary" href="#">Ver detalhes »</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/midia.png" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+                    <h2 class="fw-normal">Outras formas de ajudar</h2>
+                    <p>
+                        Caso não consiga ajudar com doações, seja um compartilhador. Compartilhe esse site com amigos, familiares e conhecidos
+                        para que tenhamos cada vez mais visibilidade.
+                    </p>
+                    <p><a class="btn btn-secondary" href="https://www.instagram.com/">Nossas redes sociais »</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/sitesite.png" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+                    <h2 class="fw-normal">Conheça outros sites de adoção</h2>
+                    <p>Caso queira pesquisar mais, aqui vai outras dicas de site para você!</p>
+                    <p><a class="btn btn-secondary" href="https://www.amigonaosecompra.com.br/" target="_blank">Ver sites »</a></p>
+                </div>
+            </div>
+
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">Queda de pelos nos pets: <span class="text-muted">saiba quando se preocupar</span></h2>
+                    <p class="lead">
+                        Eu não sei vocês, mas ver os pelos dos bichinhos voando pela casa é uma coisa que me preocupa.
+                        Assim como perder até 100 fios de cabelo por dia é algo normal para os humanos, os cães e gatos também têm uma queda que é normal.
+                        Vamos falar um pouquinho sobre cada um desses fatores.
+                    </p>
+                    <p>
+                        <b>Desequilíbrio alimentar</b>
+                        É fundamental manter uma alimentação de qualidade, pois é ela que vai garantir todos os nutrientes necessários que vão cuidar não apenas de manter a pancinha cheia,
+                        mas também por garantir uma boa saúde, incluindo pelos saudáveis.
+                    </p>
+                    <p>
+                        <b>Problemas dermatológicos</b>
+                        Dermatite é uma inflamação na pele que acomete várias áreas do corpo.
+                        Mas não se preocupe, há tratamento e seu bichinho pode levar uma vida tranquila,
+                        dependendo do estágio em que for diagnosticado o problema.
+                    </p>
+
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/Sobre.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading fw-normal lh-1">Você sabe o que é a Síndrome de <span class="text-muted">Pandora?</span></h2>
+                    <p class="lead">
+                        A Síndrome de Pandora se apresenta com um conjunto de sintomas e distúrbios do trato urinário inferior de felinos.
+                        O trato urinário inferior é representado por: rins, ureteres, bexiga, uretra, glândula bulbouretral e nos machos, ainda há a glândula prostática e pênis.
+                        Com tantas possibilidades de causas, os sintomas às vezes se misturam também. Mas você sempre pode observar:<br />
+                        - Dificuldade para urinar (indo à caixa várias vezes sem conseguir urinar ou mesmo se faz pouquinho xixi);<br />
+                        - Xixi fora do lugar;<br />
+                        - Se a urina apresenta sangue;<br />
+                        - Vômitos (por vezes amarelo, sem bolas pêlos ou vestígios de ração);<br />
+                        - Se o felino fica mais quieto que o de costume;<br />
+                        - Sobrepeso;<br />
+                        - Apresenta pouco ou nenhum apetite.<br />
+                        <b>Importante: se o gatinho não for tratado pode morrer!</b>
+                    </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/pandora.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">Responsabilidade afetiva pet, <span class="text-muted">você sabe o que é?</span></h2>
+                    <p class="lead">
+                        Por definição, podemos dizer que responsabilidade afetiva é quando você se responsabiliza pelo sentimento e pelas expectativas que cria nos outros, independente da relação ser romântica ou não.
+                        Como os animais, enfim, foram considerados seres sencientes (isso significa que são dotados de sentimentos, sensibilidade e que são capazes de sentir e demonstrar as suas emoções)
+                        não ficou margem para dúvidas de que sofrem ao serem abandonados, devolvidos, doados ou ignorados dentro do próprio lar.
+                        Já pensou viver em um lar onde te dão comida, água, mas ninguém fala com você, ninguém interage ou pergunta como você está?
+                        É impossível ser feliz assim. Nós precisamos de mais que coisas materiais para viver, precisamos de amigos, de alguém que se importe com nossas dores,
+                        que se alegrem com nossas conquistas e liguem para ouvir nossa voz. Se importe com o seu pet!
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/afeto.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+        </div>
+        <footer class="container">
+            <p class="float-end"><a href="#">Back to top</a></p>
+            <p>© 2022 MiAuDota. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </footer>
+    </body>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<head>
+    <style type="text/css">
         body {
             background-image: linear-gradient(90deg, #FDE3F0 0%, #FA9FCA 50.52%, #FDE3F0 100%);
         }
@@ -16,33 +255,39 @@
             padding-top: 10px;
         }
 
-        article ul{
-           font-size: 0; /* elimina espaços entre as li */
+        .btn {
+            background-color: #8E37A6;
+            color: white;
+            margin-top: 10px;
 
 
         }
 
-        article ul li img{
-           width: 100%; /* ajusta a largura da imagem dentro da li */
-           display: block; /* convertendo para block elimina espaço natural abaixo da imagem */
-           border-radius: 10px;
+        article ul {
+            font-size: 0; /* elimina espaços entre as li */
         }
 
-        article ul, article ul li{ /* remove espaços e o bullet da ul e das li */
-           list-style: none;
-           margin: 0;
-           padding: 0;
-        }
+            article ul li img {
+                width: 100%; /* ajusta a largura da imagem dentro da li */
+                display: block; /* convertendo para block elimina espaço natural abaixo da imagem */
+                border-radius: 10px;
+            }
 
-        article ul li{
-           display: inline-block;
-           width: 25%; /* divide a largura por 4 */
-           box-sizing: border-box; /* restringe o padding à área da li */
-           text-align: center; /* centraliza o conteúdo */
-           padding: 15px; /* espaçamento interno entre o conteúdo e a borda da li */
-           font-size: 16px; /* ajusta o tamanho da fonte nas li com o tamanho padrão */
-           vertical-align: top; /* alinha as li no topo da linha */
-        }
+            article ul, article ul li { /* remove espaços e o bullet da ul e das li */
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+                article ul li {
+                    display: inline-block;
+                    width: 25%; /* divide a largura por 4 */
+                    box-sizing: border-box; /* restringe o padding à área da li */
+                    text-align: center; /* centraliza o conteúdo */
+                    padding: 15px; /* espaçamento interno entre o conteúdo e a borda da li */
+                    font-size: 16px; /* ajusta o tamanho da fonte nas li com o tamanho padrão */
+                    vertical-align: top; /* alinha as li no topo da linha */
+                }
 
     </style>
 </head>
@@ -53,142 +298,125 @@
     <article>
         <ul>
             <li>
-                <img src="~/theme/assets/images/xarope.png">
-                <h4><a href="https://localhost:7194/logon/Logon">XAROPE</a></h4>
-                <h5>
-                    Xarope é um cachorrinho de 2 anos, gentil e carinhoso
-                    a familia ta amando a interação dele com as crianças, fofo né?
-                </h5>
+                <div class="card" style="width: 18rem;">
+                    <img src="~/theme/assets/images/xarope.png">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>TOBIAS</b></h5>
+                        <p class="card-text">
+                            Tobias é um cachorrinho de 2 anos, gentil e carinhoso
+                            a familia ta amando a interação dele com as crianças, fofo né?
+                        </p>
+                        <a href="https://localhost:7194/usuario/cadastrar" class="btn btn-primary">Cadastre-se</a>
+                    </div>
+                </div>
+
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+
+                    </div>
+                </div>
             </li>
             <li>
-                <a href="#"><img src="~/theme/assets/images/cleber.png"></a>
-                <h4><a href="https://localhost:7194/logon/Logon">CLEBER</a></h4>
-                <h5>
-                    O gatinho Cleber tem 2 aninhos, foi adotado ainda no ano de 2022.
-                    Preguiçoso e carinhoso a familia relata que ele ama raçãozinha com patê.
-                </h5>
+                <img src="~/theme/assets/images/cleber.png">
+                <p>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <b>CLEBER</b>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        O gatinho Cleber tem 2 aninhos, foi adotado ainda no ano de 2022.
+                        Preguiçoso e carinhoso a familia relata que ele ama raçãozinha com patê.
+                    </div>
+                </div>
             </li>
             <li>
-                <a href="#"><img src="~/theme/assets/images/squad.png"></a>
-                <h4><a href="https://localhost:7194/logon/Logon">SQUAD MAD</a></h4>
-                <h5>
-                    Loucura adotar 2 né? Imagina adotar 7,
-                    é o caso dessa familia, que adora tanto o site que adotou logo 7 gatinhos.
-                </h5>
+                <img src="~/theme/assets/images/squad.png">
+                <p>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <b>SQUAD MAD</b>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Loucura adotar 2 né? Imagina adotar 7,
+                        é o caso dessa familia, que adora tanto o site que adotou logo 7 gatinhos.
+                    </div>
+                </div>
             </li>
             <li>
-                <a href="#"><img src="~/theme/assets/images/teste.png"></a>
-                <h4><a href="https://localhost:7194/logon/Logon">HUGO</a></h4>
-                <h5>
-                    O Hugo tem 1 aninho e ele ta sendo tão bem cuidado pelos novos papais que hoje ele faz até comercial de TV
-                    Lindo né?!
-                </h5>
+                <img src="~/theme/assets/images/teste.png">
+                <p>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <b>HUGO</b>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        O Hugo tem 1 aninho e ele ta sendo tão bem cuidado pelos novos papais que hoje ele faz até comercial de TV
+                        Lindo né?!
+                    </div>
+                </div>
             </li>
             <li>
                 <a href="#"><img src="~/theme/assets/images/teste2.png"></a>
-                <h4><a href="https://localhost:7194/logon/Logon">CACAU</a></h4>
-                <h5>
-                    Cacau foi abandonada ainda filhote, e com 4 anos foi adotada por uma familia maravilhosa. Hoje ela é muito feliz e amada!
-                </h5>
+                <p>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <b>CACAU</b>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Cacau foi abandonada ainda filhote, e com 4 anos foi adotada por uma familia maravilhosa.
+                        Hoje ela é muito feliz e amada!
+                    </div>
+                </div>
             </li>
             <li>
-                <a href="#"><img src="~/theme/assets/images/sosteste.png"></a>
-                <h4><a href="https://localhost:7194/logon/Logon">BILIH</a></h4>
-                <h5>
-                    Bilih ainda é um filhote, tem apenas 50 dias. Mas já faz bastante bagunça com os irmãozinhos humanos dele. Um fofo né?
-                </h5>
+                <img src="~/theme/assets/images/sosteste.png">
+                <p>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <b>BILIH</b>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Bilih ainda é um filhote, tem apenas 50 dias.
+                        Mas já faz bastante bagunça com os irmãozinhos humanos dele. Um fofo né?
+                    </div>
+                </div>
             </li>
             <li>
-                <a href="#"><img src="~/theme/assets/images/sansao.png"></a>
-                <h4><a href="https://localhost:7194/logon/Logon">SANSÃO</a></h4>
-                <h5>
-                    TEXTO AQUI
-                </h5>
+                <img src="~/theme/assets/images/sansao.png">
+                <p>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <b>SANSÃO</b>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Sansão é um filhotinho de 3 meses, é super brincalhão e adora arranhar.
+                        Patêzinho e ração de frango são seus alimentos favoritos, e ele só dorme
+                        com seu companheiro bichinho de pelucia.
+                    </div>
+                </div>
             </li>
             <li>
-                <a href="#"><img src="~/theme/assets/images/fofoX.png"></a>
-                <h4><a href="https://localhost:7194/logon/Logon">FOFOX</a></h4>
-                <h5>
-                    TEXTO AQUI.
-                </h5>
+                <img src="~/theme/assets/images/fofoX.png">
+                <p>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <b>FOFOX</b>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Fofox é um filhote de 3 meses, cachorrinho sem raça definida.
+                        Adora brincar de pegar a bolinha, precisa de um lar que o ame e cuide dele.
+                    </div>
+                </div>
             </li>
-
         </ul>
     </article>
 
-
-
-    @*<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-    </div>
-    <div class="carousel-inner">
-    <div class="carousel-item active mx-auto" data-bs-interval="10000">
-    <div>
-    <img src="~/theme/assets/images/bebel.png" class="d-block w-45 mx-auto">
-    </div>
-
-    <div class="carousel-caption d-none d-md-block">
-    <h5>BEBEL</h5>
-    <p>
-    Bebel é uma cadelinha dócil, tem 4 anos de idade e é sem raça definida.</br>
-    Foi adotada em Agosto de 2020, na pandemia, hoje ela vive feliz com a sua familia.
-    </p>
-    </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-    <img src="~/theme/assets/images/cleber.png" class="d-block w-45 mx-auto">
-    <div class="carousel-caption d-none d-md-block">
-    <h5><b>CLEBER</b></h5>
-    <p>
-    O gatinho Cleber tem 2 aninhos, foi adotado ainda no ano de 2022.</br>
-    Preguiçoso e carinhoso a familia relata que ele ama raçãozinha com patê.
-    </p>
-    </div>
-    </div>
-    <div class="carousel-item">
-    <img src="~/theme/assets/images/hugo&serelepe.png" class="d-block w-45 mx-auto">
-    <div class="carousel-caption d-none d-md-block">
-    <h5>HUGO & SERELEPE</h5>
-    <p>
-    Os irmãos Hugo (gatinho) e Serelepe (doguinho) tem 1 aninho, inseparáveis </br>
-    justamente por isso, a familia decidiu levar os dois. Hoje eles fazem até comercial de TV</br>
-    Lindos né?!
-    </p>
-    </div>
-    </div>
-    <div class="carousel-item">
-    <img src="~/theme/assets/images/squad.png" class="d-block w-45 mx-auto">
-    <div class="carousel-caption d-none d-md-block">
-    <h5>SQUAD COMPLETO</h5>
-    <p>
-    Loucura adotar 2 né? Imagina adotar 7, </br>
-    é o caso dessa familia, que adora tanto o site que adotou logo 7 gatinhos.
-    </p>
-    </div>
-    </div>
-    <div class="carousel-item">
-    <img src="~/theme/assets/images/xarope.png" class="d-block w-45 mx-auto">
-    <div class="carousel-caption d-none d-md-block">
-    <h5>XAROPE</h5>
-    <p>
-    Xarope é um cachorrinho de 2 anos, gentil e carinhoso </br>
-    a familia ta amando a interação dele com as crianças, fofo né?
-    </p>
-    </div>
-    </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-    </button>
-    </div>*@
 </body>
+*@
