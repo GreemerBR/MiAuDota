@@ -90,6 +90,7 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
                 Facebook = "@nomedapessoa"
             };
 
+
             // Act
             _protetorMapeamentoEntidade.AtualizarCampos(protetor, viewModelEditar);
 

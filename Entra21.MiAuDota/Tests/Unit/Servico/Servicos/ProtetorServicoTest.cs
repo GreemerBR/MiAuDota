@@ -1,5 +1,6 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -21,6 +22,7 @@ namespace Tests.Unit.Servico.Servicos
         private readonly IProtetorRepositorio _protetorRepositorio;
         private readonly IProtetorMapeamentoEntidade _mapeamentoEntidade;
         private readonly IProtetorMapeamentoViewModel _mapeamentoViewModel;
+        private readonly ISessionManager _sessionManager;
 
         public ProtetorServicoTest()
         {
@@ -28,8 +30,9 @@ namespace Tests.Unit.Servico.Servicos
             _protetorRepositorio = Substitute.For<IProtetorRepositorio>();
             _mapeamentoEntidade = Substitute.For<IProtetorMapeamentoEntidade>();
             _mapeamentoViewModel = Substitute.For<IProtetorMapeamentoViewModel>();
+            _sessionManager = Substitute.For<ISessionManager>();
 
-            _protetorServico = new ProtetorServico(_protetorRepositorio, _mapeamentoEntidade, _mapeamentoViewModel);
+            _protetorServico = new ProtetorServico(_protetorRepositorio, _mapeamentoEntidade, _mapeamentoViewModel, _sessionManager);
         }
 
         [Fact]
