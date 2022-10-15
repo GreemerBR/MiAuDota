@@ -9,10 +9,28 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
         {
             entity.Endereco = viewModel.Endereco;
             entity.Celular = viewModel.Celular;
-            entity.Senha = viewModel.Senha;
-            entity.ConfirmarSenha = viewModel.ConfirmarSenha;
             entity.Especialidade = viewModel.Especialidade;
             entity.EhVoluntario = viewModel.EhVoluntario;
+        }
+
+        public void AtualizarSenha(Usuario entity, UsuarioEditarViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarSenha(Usuario entity, UsuarioSenhaViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarStatus(Usuario entity, UsuarioEditarViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarStatus(Usuario entity, UsuarioSenhaViewModel viewModel)
+        {
+            throw new NotImplementedException();
         }
 
         public Usuario ConstruirCom(UsuarioCadastrarViewModel viewModel)

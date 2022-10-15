@@ -8,7 +8,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 namespace Entra21.MiAuDota.Servico.Servicos
 {
     public class ProtetorServico
-        : BaseServico<Protetor, Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>,
+        : BaseServico<Protetor, Protetor, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorStatusViewModel, ProtetorSenhaViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>,
         IProtetorServico
     {
         public ProtetorServico(
@@ -29,6 +29,18 @@ namespace Entra21.MiAuDota.Servico.Servicos
             var entity = _baseRepositorio.Logon(email, senha);
 
             return entity;
+        }
+
+        public void AlterarStatus(ProtetorStatusViewModel viewModel)
+        {
+            var protetor = _baseRepositorio.ObterPorId(viewModel.Id);
+
+            if (protetor == null)
+                throw new Exception("Protetor não encontrado");
+
+            protetor.AlterarStatus();
+
+            _baseRepositorio.EditarStatus(protetor);
         }
     }
 }

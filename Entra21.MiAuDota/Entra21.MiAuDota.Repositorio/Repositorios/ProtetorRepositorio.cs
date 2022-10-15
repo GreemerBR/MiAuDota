@@ -1,6 +1,7 @@
 ﻿using Entra21.MiAuDota.Repositorio.BancoDados;
 using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Utils;
+using Microsoft.EntityFrameworkCore;
 
 namespace Entra21.MiAuDota.Repositorio.Repositorios
 {
@@ -22,11 +23,11 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             return base.Cadastrar(entity);
         }
 
-        public override void Editar(Protetor entity)
+        public void EditarSenha(Protetor entity)
         {
             entity.Senha = Criptografia.Criptografar(entity.Senha);
             entity.ConfirmarSenha = Criptografia.Criptografar(entity.ConfirmarSenha);
-            base.Editar(entity);
+            base.EditarSenha(entity);
         }
 
         public Protetor Logon(string email, string senha)

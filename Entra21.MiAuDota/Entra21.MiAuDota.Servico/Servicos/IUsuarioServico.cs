@@ -6,7 +6,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 
 namespace Entra21.MiAuDota.Servico.Servicos
 {
-    public interface IUsuarioServico : IBaseServico<Usuario, Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
+    public interface IUsuarioServico : IBaseServico<Usuario, Usuario, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioEditarViewModel, UsuarioSenhaViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
     {
         Usuario? Logon(string email, string senha);
     }

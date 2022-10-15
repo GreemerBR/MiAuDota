@@ -20,12 +20,12 @@ builder.Services.AddSession();
 builder.Services.AddControllersWithViews();
 
 builder.Services
-    .AdicionarEntityFramework(builder.Configuration)
     .AdicionarServicos()
     .AdicionarRepositorios()
     .AdicionarAutenticacoes()
     .AdicionarMapeamentoEntidades()
-    .AdicionarMapeamentoViewModel();
+    .AdicionarMapeamentoViewModel()
+    .AdicionarEntityFramework(builder.Configuration);
 
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

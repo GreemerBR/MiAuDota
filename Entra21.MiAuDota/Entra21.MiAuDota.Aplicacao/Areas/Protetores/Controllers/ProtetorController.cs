@@ -15,7 +15,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
     [Area("Protetores")]
     [Route("protetores/protetor")]
     public class ProtetorController
-        : BaseController<Protetor, Protetor, IProtetorServico, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>
+        : BaseController<Protetor, Protetor, IProtetorServico, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorStatusViewModel, ProtetorSenhaViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>
     {
         private readonly ISessionManager _sessionManager;
 

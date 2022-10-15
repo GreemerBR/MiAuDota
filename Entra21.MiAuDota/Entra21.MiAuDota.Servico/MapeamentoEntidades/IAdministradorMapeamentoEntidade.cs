@@ -3,7 +3,7 @@ using Entra21.MiAuDota.Servico.ViewModels.Administrador;
 
 namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 {
-    public interface IAdministradorMapeamentoEntidade : IBaseMapeamentoEntidade<Administrador, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorViewModel>
+    public interface IAdministradorMapeamentoEntidade : IBaseMapeamentoEntidade<Administrador, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorEditarViewModel, AdministradorEditarViewModel, AdministradorViewModel>
     {
     }
 }
