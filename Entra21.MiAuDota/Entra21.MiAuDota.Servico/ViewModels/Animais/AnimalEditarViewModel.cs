@@ -1,4 +1,5 @@
 ﻿using Entra21.MiAuDota.Repositorio.Enum;
+using Microsoft.AspNetCore.Http;
 
 namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 {
@@ -23,5 +24,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public PorteDoAnimal Porte { get; set; }
 
         public int? UsuarioId { get; set; }
+
+        public IFormFile? Arquivo { get; set; }
     }
 }

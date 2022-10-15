@@ -9,7 +9,13 @@
     processing: true,
     columns: [
         { data: 'nome' },
-        { data: 'foto' },
+        {
+            data: null,
+            width: '20%',
+            render: function (data, type, animal) {
+                return `<img src="/Uploads/Animais/${data.foto}" width=200px/>`;
+            }
+        },
         {
             data: null,
             render: function (data, type, animal) {
