@@ -37,9 +37,27 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
 
             creatViewModel.UsuarioId = user.Id;
 
-            _animalServico.Cadastrar(creatViewModel, _webHostEnvironment.WebRootPath);
+            _animalServico.CadastrarAnimal(creatViewModel, _webHostEnvironment.WebRootPath);
 
             return RedirectToAction("Index", "Home", new { area = "Protetores" });
+        }
+
+        [HttpPost("editarAnimal")]
+        public IActionResult EditarAnimal(AnimalEditarViewModel updateViewModel)
+        {
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
+            var user = _session.GetUser<Protetor>();
+
+            updateViewModel.UsuarioId = user.Id;
+
+            var alterou = _animalServico.EditarAnimal(updateViewModel, _webHostEnvironment.WebRootPath);
+
+            if (!alterou)
+                return NotFound();
+
+            return Ok();
         }
 
         [HttpGet("meus-animais")]
