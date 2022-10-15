@@ -28,9 +28,11 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
                 Altura = (Double)entity.Altura,
                 Castrado = entity.Castrado,
                 DataAdocao = entity.DataAdocao,
-                Genero = (GeneroAnimal)entity.Genero,
                 Status = (StatusInstituicao)entity.Status,
-                UsuarioId = (int)entity.UsuarioId
+                UsuarioId = entity.UsuarioId,
+                Id = entity.Id,
+               Genero = entity.Genero,
+               Porte = entity.Porte
             };
         }
     }

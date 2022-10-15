@@ -28,7 +28,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.IsActive = viewModel.IsActive;
         }
 
-        public Protetor ConstruirCom(ProtetorCadastrarViewModel viewModel)
+        public Protetor ConstruirCom(ProtetorCadastrarViewModel viewModel, string? caminho)
         {
             return new Protetor
             {

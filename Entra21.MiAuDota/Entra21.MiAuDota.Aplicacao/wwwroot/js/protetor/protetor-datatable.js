@@ -20,11 +20,11 @@
                     status = "Conta Inativa";
                     cor = "danger";
                 } else {
-                    status = "Ativa";
+                    status = "Conta Ativa";
                     cor = "success";
 
                 }
-                return `<h5><span class="badge bg-${cor}">${status}</span></h5>`;
+                return `<h4><span class="badge bg-${cor}">${status}</span></h4>`;
             },
         },
         {

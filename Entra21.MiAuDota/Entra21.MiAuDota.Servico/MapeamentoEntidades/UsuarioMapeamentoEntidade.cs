@@ -13,11 +13,6 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.EhVoluntario = viewModel.EhVoluntario;
         }
 
-        public void AtualizarSenha(Usuario entity, UsuarioEditarViewModel viewModel)
-        {
-            throw new NotImplementedException();
-        }
-
         public void AtualizarSenha(Usuario entity, UsuarioSenhaViewModel viewModel)
         {
             throw new NotImplementedException();
@@ -28,12 +23,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             throw new NotImplementedException();
         }
 
-        public void AtualizarStatus(Usuario entity, UsuarioSenhaViewModel viewModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Usuario ConstruirCom(UsuarioCadastrarViewModel viewModel)
+        public Usuario ConstruirCom(UsuarioCadastrarViewModel viewModel, string? caminho)
         {
             return new Usuario
             {

@@ -20,7 +20,10 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Vacinas = viewModel.Vacinas;
             entity.Alergias = viewModel.Alergias;
             entity.OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas;
-            entity.Foto = viewModel.Foto;
+
+            if(!string.IsNullOrEmpty(viewModel.Foto))
+                entity.Foto = viewModel.Foto;
+
             entity.Idade = viewModel.Idade;
             entity.Peso = viewModel.Peso;
             entity.Altura = viewModel.Altura;
@@ -41,7 +44,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             throw new NotImplementedException();
         }
 
-        public Animal ConstruirCom(AnimalCadastrarViewModel viewModel)
+        public Animal ConstruirCom(AnimalCadastrarViewModel viewModel, string caminho)
         {
             return new Animal
             {
@@ -52,7 +55,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Vacinas = viewModel.Vacinas,
                 Alergias = viewModel.Alergias,
                 OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas,
-                Foto = viewModel.Foto,
+                Foto = caminho,
                 Idade = viewModel.Idade,
                 Peso = viewModel.Peso,
                 Altura = viewModel.Altura,
