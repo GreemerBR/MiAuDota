@@ -20,7 +20,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             throw new NotImplementedException();
         }
 
-        public Administrador ConstruirCom(AdministradorCadastrarViewModel viewModel)
+        public Administrador ConstruirCom(AdministradorCadastrarViewModel viewModel, string caminho)
         {
             throw new NotImplementedException();
         }

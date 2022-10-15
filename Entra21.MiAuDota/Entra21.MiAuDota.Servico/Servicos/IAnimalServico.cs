@@ -8,6 +8,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
 {
     public interface IAnimalServico : IBaseServico<Animal, Administrador, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {
-        Animal CadastrarAnimal(AnimalCadastrarViewModel viewModel, string caminhoArquivos);
+        Animal CadastrarAnimal(AnimalCadastrarViewModel viewModel, string? caminhoArquivos);
+        bool EditarAnimal(AnimalEditarViewModel viewModel, string? caminhoArquivos);
     }
 }

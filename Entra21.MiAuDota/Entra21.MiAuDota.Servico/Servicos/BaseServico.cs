@@ -40,9 +40,9 @@ namespace Entra21.MiAuDota.Servico.Servicos
         public virtual bool Apagar(int id) =>
             _baseRepositorio.Apagar(id);
 
-        public virtual TEntity Cadastrar(TCreateViewModel viewModel)
+        public virtual TEntity Cadastrar(TCreateViewModel viewModel, string? caminho)
         {
-            var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel);
+            var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel, caminho);
 
             _baseRepositorio.Cadastrar(entity);
 
@@ -51,8 +51,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
         public virtual bool EditarCampos(TUpdateViewModel viewModel)
         {
-            var baseModel = _sessionManager.GetUser<TBaseModel>();
-            var entity = _baseRepositorio.ObterPorId(baseModel.Id);
+            var entity = _baseRepositorio.ObterPorId(viewModel.Id);
 
             if (entity == null)
                 return false;
