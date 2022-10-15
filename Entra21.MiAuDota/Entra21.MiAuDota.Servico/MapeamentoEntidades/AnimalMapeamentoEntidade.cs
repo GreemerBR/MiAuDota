@@ -16,6 +16,9 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 
         public void AtualizarCampos(Animal entity, AnimalEditarViewModel viewModel)
         {
+            entity.Nome = viewModel.Nome;
+            entity.Raca = viewModel.Raca;
+            entity.Especie = viewModel.Especie;
             entity.Sobre = viewModel.Sobre;
             entity.Vacinas = viewModel.Vacinas;
             entity.Alergias = viewModel.Alergias;
