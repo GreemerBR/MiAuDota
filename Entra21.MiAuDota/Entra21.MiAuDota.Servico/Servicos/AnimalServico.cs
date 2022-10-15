@@ -29,7 +29,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
         {
             var caminho = SalvarArquivo(viewModel, caminhoArquivos);
 
-            var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel);
+            var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel, caminho);
 
             entity.Foto = caminho;
 

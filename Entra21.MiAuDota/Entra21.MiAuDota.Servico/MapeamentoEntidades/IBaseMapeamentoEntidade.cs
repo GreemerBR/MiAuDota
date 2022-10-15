@@ -12,6 +12,6 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
         where TUpdateSenhaViewModel : BaseEditarViewModel<TViewModel>
         where TViewModel: BaseViewModel
     {
-        TEntity ConstruirCom(TCreateViewModel viewModel);
+        TEntity ConstruirCom(TCreateViewModel viewModel, string? caminho);
     }
 }

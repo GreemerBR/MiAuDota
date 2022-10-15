@@ -19,7 +19,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
         where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
 
     {
-        TEntity Cadastrar(TCreateViewModel viewModel);
+        TEntity Cadastrar(TCreateViewModel viewModel, string caminho = "");
         bool Apagar(int id);
         bool EditarCampos(TUpdateViewModel viewModel);
         bool EditarSenha(TUpdateSenhaViewModel viewModel);

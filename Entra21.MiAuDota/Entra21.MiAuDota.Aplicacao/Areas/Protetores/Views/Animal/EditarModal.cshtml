@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input type="hidden" id="editarModalModalId" class="form-control" />
+                <input type="hidden" id="editarModalId" class="form-control" />
 
                 <div class="mb-2">
                     <label for="editarModalRaca" class="form-label">Raca <span class="text-danger">*</span></label>
@@ -39,8 +39,11 @@
                 </div>
 
                 <div class="mb-2">
-                    <label for="editarModalFoto" class="form-label">Foto <span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalFoto" class="form-control" />
+                    <p>Imagem Atual</p>
+                    <img id="editarModalFotoCampoImg" width="400" />
+
+                    <label for="formFile" class="form-label">Selecione uma imagem</label>
+                    <input class="form-control" type="file" id="Arquivo">
                 </div>
 
                 <div class="mb-2">

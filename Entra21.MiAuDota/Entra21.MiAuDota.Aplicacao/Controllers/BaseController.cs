@@ -87,7 +87,7 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpPost("editar")]
-        public virtual IActionResult Editar([FromForm] TUpdateViewModel updateViewModel)
+        public virtual IActionResult Editar(TUpdateViewModel updateViewModel)
         {
             var alterou = _servico.EditarCampos(updateViewModel);
 

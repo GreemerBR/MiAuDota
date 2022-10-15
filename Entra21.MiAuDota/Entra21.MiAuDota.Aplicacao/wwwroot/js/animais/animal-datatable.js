@@ -35,7 +35,7 @@
             width: '20%',
             render: function (data, type, animal) {
                 if (animal.status === 0 || animal.status === 1) {
-                    return `<button class="btn btn-info animal-editar" data-id="${animal.id}">Editar</button>`;
+                    return `<button class="btn btn-info animal-modalEditar" data-id="${animal.id}">Editar</button>`;
                 }
 
                 return `<button class="btn btn-primary animal-obterPorId" data-id="${animal.id}">Ver detalhes</button>`;

@@ -1,91 +1,51 @@
-﻿let EditarPreencherModal = (botaoEditar) => {
-    let id = botaoEditar.getAttribute('data-id');
-    let statusResponse = 0;
-
-    fetch(`/protetores/animal/obterPorId?id=${id}`)
-        .then((response) => {
-            statusResponse = response.status;
-
-            return response.json();
-        })
-        .then((data) => {
-            if (statusResponse === 200) {
-                let modal = new bootstrap.Modal(document.getElementById('editarModal'), {});
-
-                document.getElementById('editarModalLabel').innerText = `Editar animal: ${data.nome}`
-                document.getElementById('editarModalId').value = data.id;
-                document.getElementById('editarModalRaca').value = data.raca;
-                document.getElementById('editarModalEspecie').value = data.especie;
-                document.getElementById('editarModalSobre').value = data.sobre;
-                document.getElementById('editarModalVacinas').value = data.vacinas;
-                document.getElementById('editarModalAlergias').value = data.alergias;
-                document.getElementById('editarModalOutrasInformacaoes').value = data.outras_infos_medicas;
-                document.getElementById('editarModalFoto').value = data.caminho_arquivo;
-                document.getElementById('editarModalIdade').value = data.idade;
-                document.getElementById('editarModalPeso').value = data.peso;
-                document.getElementById('editarModalAltura').value = data.altura;
-                document.getElementById('editarModalCastrado').value = data.cadastro;
-                document.getElementById('editarModalDataAdocao').value = data.data_adocao;
-                document.getElementById('editarModalDatagenero').value = data.genero;
-                document.getElementById('editarModalDataStatus').value = data.status;
-                document.getElementById('editarModalDataPorte').value = data.porte;
-                document.getElementById('editarModalDataUsuarioId').value = data.usuario_id;
-
-                modal.show();
-            }
-        })
-        .catch((error) => console.log(error));
-};
-
-let animalBotaoSalvarModalEditar = () => {
-    let id = parseInt(document.getElementById('editarModalId'));
+﻿let animalBotaoSalvarModalEditar = () => {
+    let id = parseInt(document.getElementById('editarModalId').value);
     let raca = document.getElementById('editarModalRaca').value;
     let especie = document.getElementById('editarModalEspecie').value;
     let sobre = document.getElementById('editarModalSobre').value;
     let vacinas = document.getElementById('editarModalVacinas').value;
     let alergias = document.getElementById('editarModalAlergias').value;
-    let outras_infos_medicas  = document.getElementById('editarModalOutrasInformacaoes').value;
+    let outras_infos_medicas = document.getElementById('editarModalOutrasInformacoes').value;
     let caminho_arquivo = document.getElementById('editarModalFoto').value;
     let idade = document.getElementById('editarModalIdade').value;
     let peso = document.getElementById('editarModalPeso').value;
     let altura = document.getElementById('editarModalAltura').value;
     let cadastro = document.getElementById('editarModalCastrado').value;
     let data_adocao = document.getElementById('editarModalDataAdocao').value;
-    let genero = document.getElementById('editarModalDatagenero').value;
-    let status = document.getElementById('editarModalDataStatus').value;
-    let porte = document.getElementById('editarModalDataPorte').value;
-    let usuario_id = document.getElementById('editarModalDataUsuarioId').value;
+    let genero = document.getElementById('editarModalGenero').value;
+    let status = document.getElementById('editarModalStatus').value;
+    let porte = document.getElementById('editarModalPorte').value;
+    let usuario_id = document.getElementById('editarModalUsuarioId').value;
+
+    let formData = new FormData();
+    formData.append('id', id);
+    formData.append('raca', raca);
+    formData.append('especie', especie);
+    formData.append('sobre', sobre);
+    formData.append('vacinas', vacinas);
+    formData.append('alergias', alergias);
+    formData.append('outrasInformacoes', outras_infos_medicas);
+    formData.append('idade', idade);
+    formData.append('foto', caminho_arquivo);
+    formData.append('peso', peso);
+    formData.append('altura', altura);
+    formData.append('castrado', cadastro);
+    formData.append('dataAdocao', data_adocao);
+    formData.append('genero', genero);
+    formData.append('status', status);
+    formData.append('porte', porte);
+    formData.append('usuarioId', usuario_id);
 
     fetch('/protetores/animal/editar', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            id: id,
-            raca: raca,
-            especie: especie,
-            sobre: sobre,
-            vacinas: vacinas,
-            alergias: alergias,
-            outras_infos_medicas: outras_infos_medicas,
-            caminho_arquivo: caminho_arquivo,
-            idade: idade,
-            peso: peso,
-            altura: altura,
-            cadastro: cadastro,
-            data_adocao: data_adocao,
-            genero: genero,
-            status: status,
-            porte: porte,
-            usuario_id: usuario_id
-        })
+        
+        body: formData
     })
         .then((response) => {
             if (response.status === 200) {
                 toastr.success('Animal alterado com sucesso');
 
-                let modal = bootstrap.Modal.getInstance(document.getElementById('editarModal'), {});
+                let modal = bootstrap.Modal.getInstance(document.getElementById('EditarModal'), {});
                 modal.hide();
 
                 $('#tabela-animais').DataTable().ajax.reload();
