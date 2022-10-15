@@ -1,6 +1,5 @@
 ﻿function mascara(i) {
 
-//    var cpf = document.getElementById('CPF');
     var v = i.value;
 
     if (isNaN(v[v.length - 1])) { 
@@ -13,24 +12,48 @@
     if (v.length == 11) i.value += "-";
 
 }
+function verificarCPF(c) {
+    var i;
+    s = c.replace('.', '');
+    var c = s.substr(0, 9);
+    var dv = s.substr(9, 2);
+    var d1 = 0;
+    var v = false;
 
-function TestaCPF(strCPF) {
-    var Soma;
-    var Resto;
-    Soma = 0;
-    if (strCPF == "00000000000") return false;
+    for (i = 0; i < 9; i++) {
+        d1 += c.charAt(i) * (10 - i);
+    }
+    if (d1 == 0) {
+        alert("CPF Inválido")
+        console.log(c)
 
-    for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
-    Resto = (Soma * 10) % 11;
+        v = true;
+        return false;
+    }
+    d1 = 11 - (d1 % 11);
+    if (d1 > 9) d1 = 0;
+    if (dv.charAt(0) != d1) {
+        alert("CPF Inválido")
+        console.log(c)
 
-    if ((Resto == 10) || (Resto == 11)) Resto = 0;
-    if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+        v = true;
+        return false;
+    }
 
-    Soma = 0;
-    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
-    Resto = (Soma * 10) % 11;
+    d1 *= 2;
+    for (i = 0; i < 9; i++) {
+        d1 += c.charAt(i) * (11 - i);
+    }
+    d1 = 11 - (d1 % 11);
+    if (d1 > 9) d1 = 0;
+    if (dv.charAt(1) != d1) {
+        alert("CPF Inválido")
+    console.log(c)
 
-    if ((Resto == 10) || (Resto == 11)) Resto = 0;
-    if (Resto != parseInt(strCPF.substring(10, 11))) return false;
-    return true;
+        v = true;
+        return false;
+    }
+    if (!v) {
+        alert(c + "nCPF Válido")
+    }
 }
