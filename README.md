@@ -10,5 +10,6 @@ A ideia do MiAuDota surgiu do amor que os integrantes da equipe tem por animais.
 - HTML
 - CSS
 - JavaScript
-[📎Clique aqui para acessar o site](https://miaudota.azurewebsites.net/)
+
+Você pode testar, [📎Clique aqui para acessar o site](https://miaudota.azurewebsites.net/) 
 
