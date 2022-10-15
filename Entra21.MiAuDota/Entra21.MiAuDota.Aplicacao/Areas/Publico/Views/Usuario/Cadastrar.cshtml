@@ -109,13 +109,13 @@
 
             <div class="col-md-7">
                 <label asp-for="Cpf" class="form-label" span-required="">CPF</label>
-                <input asp-for="Cpf" class="form-control" oninput="mascara(this)" />
+                <input asp-for="Cpf" class="form-control" oninput="mascara(this)" placeholder="000.000.000-00"/>
                 <span asp-validation-for="Cpf" class="text-danger"></span>
             </div>
 
             <div class="col-md-5">
                 <label asp-for="DataNascimento" class="form-label" span-required="">Data de Nascimento</label>
-                <input asp-for="DataNascimento" class="form-control" />
+                <input asp-for="DataNascimento" class="form-control" value=""/>
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
             </div>
 

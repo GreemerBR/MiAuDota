@@ -17,5 +17,17 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
         public ProtetorController(IProtetorServico servico) : base(servico)
         {
         }
+
+        [HttpPost("cadastrar")]
+        public override IActionResult Cadastrar([FromForm] ProtetorCadastrarViewModel creatViewModel)
+        {
+
+            if (!ModelState.IsValid)
+                return View(creatViewModel);
+
+            _servico.Cadastrar(creatViewModel);
+
+            return RedirectToAction("Index", "Logon", new { area = "Publico" });
+        }
     }
 }
