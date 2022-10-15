@@ -52,8 +52,8 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             protetor.Email.Should().Be(viewModel.Email);
             protetor.Senha.Should().Be(viewModel.Senha);
             protetor.ConfirmarSenha.Should().Be(viewModel.ConfirmarSenha);
-            protetor.Cpf.Should().BeNull();
-            protetor.Cnpj.Should().BeNull();
+            protetor.Cpf.Should().Be(viewModel.Cpf);
+            protetor.Cnpj.Should().Be(viewModel.Cnpj);
             protetor.Pix.Should().Be(viewModel.Pix);
             protetor.Facebook.Should().Be(viewModel.Facebook);
             protetor.Instagram.Should().Be(viewModel.Instagram);
@@ -77,28 +77,34 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
                 Facebook = null
             };
 
+            var viewModelSenha = new ProtetorSenhaViewModel
+            {
+                Senha = "brasil!",
+                ConfirmarSenha = "brasil!",
+            };
             var viewModelEditar = new ProtetorEditarViewModel
             {
                 Endereco = "Rua Grécia",
                 Celular = "47999929940",
                 Telefone = "3330-7070",
-                Senha = "brasil!",
-                ConfirmarSenha = "brasil!",
                 Pix = "47999929940",
                 Sobre = "protetor new protetor",
                 Instagram = "@nomedapessoa",
                 Facebook = "@nomedapessoa"
             };
 
+
             // Act
             _protetorMapeamentoEntidade.AtualizarCampos(protetor, viewModelEditar);
+            _protetorMapeamentoEntidade.AtualizarSenha(protetor, viewModelSenha);
+
 
             // Assert
             protetor.Endereco.Should().Be(viewModelEditar.Endereco);
             protetor.Celular.Should().Be(viewModelEditar.Celular);
             protetor.Telefone.Should().Be(viewModelEditar.Telefone);
-            protetor.Senha.Should().Be(viewModelEditar.Senha);
-            protetor.ConfirmarSenha.Should().Be(viewModelEditar.ConfirmarSenha);
+            protetor.Senha.Should().Be(viewModelSenha.Senha);
+            protetor.ConfirmarSenha.Should().Be(viewModelSenha.ConfirmarSenha);
             protetor.Pix.Should().Be(viewModelEditar.Pix);
             protetor.Sobre.Should().Be(viewModelEditar.Sobre);
             protetor.Instagram.Should().Be(viewModelEditar.Instagram);

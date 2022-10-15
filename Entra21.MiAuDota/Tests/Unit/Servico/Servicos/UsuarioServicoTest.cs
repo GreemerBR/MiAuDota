@@ -1,5 +1,6 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -21,14 +22,15 @@ namespace Tests.Unit.Servico.Servicos
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly IUsuarioMapeamentoEntidade _mapeamentoEntidade;
         private readonly IUsuarioMapeamentoViewModel _mapeamentoViewModel;
-
+        private readonly ISessionManager _sessionManager;
         public UsuarioServicoTest()
         {
             
             _usuarioRepositorio = Substitute.For<IUsuarioRepositorio>();
             _mapeamentoEntidade = Substitute.For<IUsuarioMapeamentoEntidade>();
             _mapeamentoViewModel = Substitute.For<IUsuarioMapeamentoViewModel>();
-            _usuarioServico = new UsuarioServico(_usuarioRepositorio, _mapeamentoEntidade, _mapeamentoViewModel);
+            _sessionManager = Substitute.For<ISessionManager>();
+            _usuarioServico = new UsuarioServico(_usuarioRepositorio, _mapeamentoEntidade, _mapeamentoViewModel, _sessionManager);
         }
 
         [Fact]
