@@ -34,10 +34,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         [MaxLength(200, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
         public string Alergias { get; set; }
 
-        [Display(Name = nameof(Foto))]
-        [Required(ErrorMessage = "{0} deve ser enviada")]
-        public string Foto { get; set; }
-
         [Display(Name = nameof(Idade))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
         public byte Idade { get; set; }
@@ -74,7 +70,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         [Display(Name = "Porte do Animal")]
         public PorteDoAnimal Porte { get; set; }
 
-        [Display(Name = "Outras informacoesMedicas")]
+        [Display(Name = "Outras informações Medicas")]
         public string? OutrasInformacoesMedicas { get; set; }
 
         public IFormFile? Arquivo { get; set; }

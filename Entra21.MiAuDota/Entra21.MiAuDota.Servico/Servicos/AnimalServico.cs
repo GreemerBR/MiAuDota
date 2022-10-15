@@ -29,7 +29,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
         {
             var caminho = SalvarArquivo(viewModel, caminhoArquivos);
 
-            var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel);
+            var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel, caminho);
 
             entity.Foto = caminho;
 
@@ -38,7 +38,51 @@ namespace Entra21.MiAuDota.Servico.Servicos
             return entity;
         }
 
+        public bool EditarAnimal(AnimalEditarViewModel viewModel, string caminhoArquivos)
+        {
+            var caminho = EditarArquivo(viewModel, caminhoArquivos);
+
+            var entity = _baseRepositorio.ObterPorId(viewModel.Id);
+
+            if (entity == null)
+                return false;
+
+            entity.Foto = caminho;
+
+            _baseMapeamentoEntidade.AtualizarCampos(entity, viewModel);
+
+            _baseRepositorio.EditarCampos(entity);
+
+            return true;
+        }
+
         private string SalvarArquivo(AnimalCadastrarViewModel viewModel, string caminhoArquivos, string? arquivoAntigo = "")
+        {
+            if (viewModel.Arquivo == null)
+                return string.Empty;
+
+            var caminhoPastaImagens = Path.Combine(caminhoArquivos, ArquivoHelper.ObterCaminhoPastas());
+
+            if (!Directory.Exists(caminhoPastaImagens))
+                Directory.CreateDirectory(caminhoPastaImagens);
+
+            if (!string.IsNullOrEmpty(arquivoAntigo))
+                ApagarArquivoAntigo(caminhoPastaImagens, arquivoAntigo);
+
+            var informacaoDoArquivo = new FileInfo(viewModel.Arquivo.FileName);
+            var nomeArquivo = Guid.NewGuid() + informacaoDoArquivo.Extension;
+
+            var caminhoArquivo = Path.Combine(caminhoPastaImagens, nomeArquivo);
+
+            using (var stream = new FileStream(caminhoArquivo, FileMode.Create))
+            {
+                viewModel.Arquivo.CopyTo(stream);
+
+                return nomeArquivo;
+            }
+        }
+
+        private string EditarArquivo(AnimalEditarViewModel viewModel, string caminhoArquivos, string? arquivoAntigo = "")
         {
             if (viewModel.Arquivo == null)
                 return string.Empty;

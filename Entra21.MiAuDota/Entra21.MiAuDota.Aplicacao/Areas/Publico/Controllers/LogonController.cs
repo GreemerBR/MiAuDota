@@ -16,13 +16,13 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
             _logonServico = logonServico;
         }
 
-        [HttpGet("Logon")]
+        [HttpGet]
         public IActionResult Index()
         {
             return View("Index");
         }
 
-        [HttpPost("Logon")]
+        [HttpPost]
         public IActionResult Logon([FromForm] LogonDto logonDto)
         {
             var result = _logonServico.Logon(logonDto.Email, logonDto.Senha);            

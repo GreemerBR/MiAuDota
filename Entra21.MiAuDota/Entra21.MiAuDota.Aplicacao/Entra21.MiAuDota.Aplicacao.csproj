@@ -10,13 +10,9 @@
 
   <ItemGroup>
     <Compile Remove="Areas\Usuarios\Views\NewFolder\**" />
-    <Compile Remove="wwwroot\NewFolder\**" />
     <Content Remove="Areas\Usuarios\Views\NewFolder\**" />
-    <Content Remove="wwwroot\NewFolder\**" />
     <EmbeddedResource Remove="Areas\Usuarios\Views\NewFolder\**" />
-    <EmbeddedResource Remove="wwwroot\NewFolder\**" />
     <None Remove="Areas\Usuarios\Views\NewFolder\**" />
-    <None Remove="wwwroot\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +31,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Entra21.MiAuDota.Repositorio\Entra21.MiAuDota.Repositorio.csproj" />
     <ProjectReference Include="..\Entra21.MiAuDota.Servico\Entra21.MiAuDota.Servico.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Uploads\Animais\" />
   </ItemGroup>
 
 </Project>
