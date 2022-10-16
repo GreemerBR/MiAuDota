@@ -17,11 +17,9 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
     public class UsuarioController
         : BaseController<Usuario, Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioEditarViewModel, UsuarioSenhaViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
     {
-        private readonly ISessionManager _sessionManager;
 
-        public UsuarioController(ISessionManager sessionManage, IUsuarioServico servico) : base(servico)
+        public UsuarioController(ISessionManager sessionManager, IUsuarioServico servico) : base(servico, sessionManager)
         {
-            _sessionManager = sessionManage;
         }
 
         [HttpGet("editar")]

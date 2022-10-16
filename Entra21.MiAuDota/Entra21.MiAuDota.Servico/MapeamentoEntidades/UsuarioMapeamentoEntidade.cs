@@ -7,6 +7,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
     {
         public void AtualizarCampos(Usuario entity, UsuarioEditarViewModel viewModel)
         {
+            entity.Nome = viewModel.Nome;
             entity.Endereco = viewModel.Endereco;
             entity.Celular = viewModel.Celular;
             entity.Especialidade = viewModel.Especialidade;
