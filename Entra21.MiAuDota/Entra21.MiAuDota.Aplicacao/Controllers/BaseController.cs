@@ -111,9 +111,9 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpPost("alterarSenha")]
-        public virtual IActionResult EditarSenha([FromForm] TUpdateViewModel updateViewModel)
+        public virtual IActionResult EditarSenha([FromForm] TUpdateSenhaViewModel updateSenhaViewModel)
         {
-            var alterou = _servico.EditarCampos(updateViewModel);
+            var alterou = _servico.EditarSenha(updateSenhaViewModel);
 
             if (!alterou)
                 return NotFound();
