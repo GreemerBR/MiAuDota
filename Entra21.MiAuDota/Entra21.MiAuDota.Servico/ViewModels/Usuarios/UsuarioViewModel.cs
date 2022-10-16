@@ -7,11 +7,13 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
         [Display(Name = "Endereço")]
         [MinLength(7, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string Endereco { get; set; }
 
         [Display(Name = nameof(Celular))]
         [MinLength(9, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(11, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string Celular { get; set; }
 
         [Display(Name = nameof(Email))]
@@ -32,6 +34,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
         public string ConfirmarSenha { get; set; }
 
         [Display(Name = "CPF")]
+        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string Cpf { get; set; }
 
         [Display(Name = nameof(Especialidade))]
@@ -45,7 +48,8 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
 
         [Display(Name = "Data de nascimento")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", NullDisplayText = "{0} deve ser preenchido no formato '00/00/0000'")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "{0} deve ser preenchido no formato '00/00/0000'")]
         public DateTime DataNascimento { get; set; }
     }
 }

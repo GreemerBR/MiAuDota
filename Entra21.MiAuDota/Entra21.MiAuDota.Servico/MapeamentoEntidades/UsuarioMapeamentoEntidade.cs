@@ -16,7 +16,8 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 
         public void AtualizarSenha(Usuario entity, UsuarioSenhaViewModel viewModel)
         {
-            throw new NotImplementedException();
+            entity.Senha = viewModel.Senha;
+            entity.ConfirmarSenha = viewModel.ConfirmarSenha;
         }
 
         public void AtualizarStatus(Usuario entity, UsuarioEditarViewModel viewModel)

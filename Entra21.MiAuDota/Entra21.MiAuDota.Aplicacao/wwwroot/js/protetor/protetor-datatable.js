@@ -24,7 +24,7 @@
                     cor = "success";
 
                 }
-                return `<h4><span class="badge bg-${cor}">${status}</span></h4>`;
+                return `<h5><span class="badge bg-${cor}">${status}</span></h5>`;
             },
         },
         {
@@ -32,7 +32,7 @@
             width: '20%',
             render: function (data, type, protetor) {
                 if (protetor.isActive === false) {
-                    return `<button class="btn btn-primary protetor-alterarStatus" data-id="${protetor.id}">Ativar</button>`;
+                    return `<h5><button class="btn btn-primary protetor-alterarStatus" data-id="${protetor.id}">Ativar</button></h5>`;
                 }
 
                 return `<button class="btn btn-success" data-id="${protetor.id}">Nenhuma ação disponível</button>`;
