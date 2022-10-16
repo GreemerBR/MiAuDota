@@ -1,11 +1,11 @@
-﻿@model LogonViewModel
+﻿@model UsuarioSenhaViewModel
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Miaudota - Login</title>
+    <title>Miaudota - Cadastro Usuário</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <style type="text/css">
         body {
@@ -20,16 +20,20 @@
         }
 
         .brand-img {
-            margin-top: 55px;
             max-width: 200px;
             max-height: 150px
         }
 
-        .form-group {
+        .form-label {
             color: #582B5C;
             font-size: 16px;
             font-weight: 500;
-            padding: 6px 20px;
+        }
+
+        .form-check-label {
+            color: #582B5C;
+            font-size: 16px;
+            font-weight: 500;
         }
 
         .form-control {
@@ -47,39 +51,13 @@
 
         .brand {
             margin: 20px 0;
-            transition: transform .2s;
-            animation: fromTop .2s 2s backwards;
         }
-
-            .brand img {
-                -webkit-transition: all 0.7s ease;
-                transition: all 0.7s ease;
-            }
-
-                .brand img:hover {
-                    -webkit-transform: scale(1.2);
-                    transform: scale(1.2);
-                }
 
         .initial-text {
             margin: 0 0 20px 0;
         }
 
-        .title {
-            padding: 6px 20px;
-            font-size: 16px;
-            color: #582b5cc9;
-            font-weight: 500;
-        }
-
-        .lnr-eye {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            cursor: pointer;
-        }
-
-        .btn-entrar {
+        .btn-salvar {
             background-color: #582b5cc9;
             border-color: #582b5cc9;
             border-width: 1px;
@@ -96,53 +74,49 @@
             cursor: pointer;
         }
 
-            .btn-entrar:hover {
+            .btn-salvar:hover {
                 background-color: #582B5C;
                 border-color: #582B5C;
                 color: white;
             }
 
-        footer {
-            height: 30px;
-            line-height: 30px;
-        }
-
     </style>
-
 </head>
+
 <body>
     <div class="mx-auto" style="width: 500px;">
         <div class="page vertical-align text-center">
             <div class="brand">
-                <img class="brand-img" src="~/theme/assets//images/logopreview.png.png" />
+                <img class="brand-img" src="~/theme/assets//images/logoteste.png-removebg-preview.svg" />
             </div>
             <div class="initial-text">
-                <h5>E aí? Bora adotar?</h5>
-                <h5>Faça login e encontre seu pet!</h5>
+                <h5>Alterar Senha</h5>
             </div>
         </div>
 
-        <form asp-controller="Logon" asp-action="Index" method="post">
-            <div class="form-group">
-                <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
-                <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="seuemail@exemplo.com">
-            </div>
-            <div class="form-group">
-                <label asp-for="Senha" class="sr-only">Senha</label>
-                <input asp-for="Senha" type="password" class="form-control">
+        <form asp-controller="Usuario" asp-action="AlterarSenha" method="POST" class="row g-3">
+
+            <div class="col-6">
+                <label asp-for="Senha" class="form-label" span-required="">Senha</label>
+                <input asp-for="Senha" class="form-control" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
             </div>
 
+            <div class="col-6">
+                <label asp-for="ConfirmarSenha" class="form-label" span-required="">Confirmar Senha</label>
+                <input asp-for="ConfirmarSenha" class="form-control" />
+                <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+            </div>
+
+            @*<div class="text-end">
+            <a asp-action="Cadastrar"> </a> <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+            </div>*@
+
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="submit" class="btn-entrar">Entrar</button>
+                <a asp-action="Alterar senha" /> <button type="submit" class="btn-salvar">Salvar</button>
             </div>
         </form>
     </div>
-
-    <hr class="featurette-divider">
-
-    <footer class="container">
-        <p>© 2022 MiAuDota. · <a href="https://linktr.ee/miaudota" target="_blank">Alunos Entra21</a>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>

@@ -2,6 +2,7 @@
 using Entra21.MiAuDota.Aplicacao.FiltroLogin;
 using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -16,7 +17,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
     public class AnimalController
         : BaseController<Animal, Administrador, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {
-        public AnimalController(IAnimalServico servico) : base(servico)
+        public AnimalController(IAnimalServico servico, ISessionManager sessionManager) : base(servico, sessionManager)
         {
         }
     }
