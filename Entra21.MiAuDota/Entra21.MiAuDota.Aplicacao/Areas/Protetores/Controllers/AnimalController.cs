@@ -2,6 +2,7 @@
 using Entra21.MiAuDota.Aplicacao.FiltroLogin;
 using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -17,10 +18,12 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
         : BaseController<Animal, Administrador, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {
         private readonly IAnimalServico _animalServico;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public AnimalController(IAnimalServico servico) : base(servico)
+        public AnimalController(IAnimalServico servico, ISessionManager sessionManager, IWebHostEnvironment webHostEnvironment) : base(servico, sessionManager)
         {
             _animalServico = servico;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public override IActionResult Cadastrar([FromForm] AnimalCadastrarViewModel creatViewModel)
@@ -28,9 +31,37 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            _animalServico.Cadastrar(creatViewModel);
+            var user = _sessionManager.GetUser<Protetor>();
+
+            creatViewModel.UsuarioId = user.Id;
+
+            _animalServico.CadastrarAnimal(creatViewModel, _webHostEnvironment.WebRootPath);
 
             return RedirectToAction("Index", "Home", new { area = "Protetores" });
+        }
+
+        [HttpPost("editarAnimal")]
+        public IActionResult EditarAnimal(AnimalEditarViewModel updateViewModel)
+        {
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
+            var user = _sessionManager.GetUser<Protetor>();
+
+            updateViewModel.UsuarioId = user.Id;
+
+            var alterou = _animalServico.EditarAnimal(updateViewModel, _webHostEnvironment.WebRootPath);
+
+            if (!alterou)
+                return NotFound();
+
+            return Ok();
+        }
+
+        [HttpGet("meus-animais")]
+        public IActionResult MeusAnimais()
+        {
+            return View("MeusAnimais");
         }
     }
 }

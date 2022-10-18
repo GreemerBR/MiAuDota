@@ -1,6 +1,7 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Enum;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -23,14 +24,15 @@ namespace Tests.Unit.Servico.Servicos
         private readonly IAnimalRepositorio _animalRepositorio;
         private readonly IAnimalMapeamentoEntidade _mapeamentoEntidade;
         private readonly IAnimalMapeamentoViewModel _mapeamentoViewModel;
-
+        private readonly ISessionManager _sessioManager;
 
         public AnimalServicoTest()
         {
             _animalRepositorio = Substitute.For<IAnimalRepositorio>();
             _mapeamentoEntidade = Substitute.For<IAnimalMapeamentoEntidade>();
             _mapeamentoViewModel = Substitute.For<IAnimalMapeamentoViewModel>();
-            _animalServico = new AnimalServico(_animalRepositorio, _mapeamentoEntidade, _mapeamentoViewModel);
+            _sessioManager = Substitute.For<ISessionManager>();
+            _animalServico = new AnimalServico(_animalRepositorio, _mapeamentoEntidade, _mapeamentoViewModel, _sessioManager);
 
         }
 
@@ -125,7 +127,7 @@ namespace Tests.Unit.Servico.Servicos
             animal.Status.Should().Be(animalEsperado.Status);
             animal.UsuarioId.Should().Be(animalEsperado.UsuarioId);
 
-            // Informar que a validação da raça foi executada com sucesso
+            // Retorna true quando a validação da raça foi executada com sucesso
             return true;
         }
     }

@@ -3,7 +3,7 @@
 public static class ArquivoHelper
 {
     private const string PastaPai = "Uploads";
-    private const string PastaImagens = "Pets";
+    private const string PastaImagens = "Animais";
 
     public static string ObterCaminhoPastas() =>
         Path.Join(PastaPai, PastaImagens);

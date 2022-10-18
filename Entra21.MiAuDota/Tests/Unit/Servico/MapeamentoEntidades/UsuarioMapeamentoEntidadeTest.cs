@@ -60,32 +60,43 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             {
                 Endereco = "Rua Lorival",
                 Celular = "47999999993",
-                Senha = "Laranja?",
-                ConfirmarSenha = "Laranja?",
                 Especialidade = null,
                 EhVoluntario = false
             };
 
+            //var viewModelSenha = new UsuarioSenhaViewModel
+            //{
+            //    Senha = "Laranja!",
+            //    ConfirmarSenha = "Laranja!",
+            //};
+
             var viewModelEditar = new UsuarioEditarViewModel
             {
                 Endereco = "Rua Antonio",
-                Celular = "4799998897",
-                Senha = "Laranja!",
-                ConfirmarSenha = "Laranja!",
+                Celular = "4799998897",             
                 Especialidade = "Nunhuma especialidade",
-                EhVoluntario = true
+                EhVoluntario = true,
+                
             };
+            
 
             // Act
             _usuarioMapeamentoEntidade.AtualizarCampos(usuario, viewModelEditar);
+            //_usuarioMapeamentoEntidade.AtualizarSenha(usuario, viewModelSenha);
+            //_usuarioMapeamentoEntidade.AtualizarStatus(usuario, viewModelStatus);
 
             // Assert
             usuario.Endereco.Should().Be(viewModelEditar.Endereco);
             usuario.Celular.Should().Be(viewModelEditar.Celular);
-            usuario.Senha.Should().Be(viewModelEditar.Senha);
-            usuario.ConfirmarSenha.Should().Be(viewModelEditar.ConfirmarSenha);
             usuario.Especialidade.Should().Be(viewModelEditar.Especialidade);
             usuario.EhVoluntario.Should().Be(viewModelEditar.EhVoluntario);
+
+            //usuario.Senha.Should().Be(viewModelSenha.Senha);
+            //usuario.ConfirmarSenha.Should().Be(viewModelSenha.ConfirmarSenha);
+
+            //usuario.Status.Should().Be(viewModelStatus.Status);
+
+
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
     {
         public void AtualizarCampos(Protetor entity, ProtetorEditarViewModel viewModel)
         {
+            entity.Nome = viewModel.Nome;
             entity.Endereco = viewModel.Endereco;
             entity.Celular = viewModel.Celular;
             entity.Telefone = viewModel.Telefone;
@@ -28,7 +29,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.IsActive = viewModel.IsActive;
         }
 
-        public Protetor ConstruirCom(ProtetorCadastrarViewModel viewModel)
+        public Protetor ConstruirCom(ProtetorCadastrarViewModel viewModel, string? caminho)
         {
             return new Protetor
             {

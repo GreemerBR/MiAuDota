@@ -20,7 +20,7 @@
                     status = "Conta Inativa";
                     cor = "danger";
                 } else {
-                    status = "Ativa";
+                    status = "Conta Ativa";
                     cor = "success";
 
                 }
@@ -32,7 +32,7 @@
             width: '20%',
             render: function (data, type, protetor) {
                 if (protetor.isActive === false) {
-                    return `<button class="btn btn-primary protetor-alterarStatus" data-id="${protetor.id}">Ativar</button>`;
+                    return `<h5><button class="btn btn-primary protetor-alterarStatus" data-id="${protetor.id}">Ativar</button></h5>`;
                 }
 
                 return `<button class="btn btn-success" data-id="${protetor.id}">Nenhuma ação disponível</button>`;
