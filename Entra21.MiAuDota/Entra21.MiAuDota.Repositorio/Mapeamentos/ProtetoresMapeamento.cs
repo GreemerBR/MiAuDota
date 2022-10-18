@@ -23,10 +23,16 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasMaxLength(14)
                 .HasColumnName("cpf");
 
+            builder.HasIndex(x => x.Cpf)
+            .IsUnique();
+
             builder.Property(x => x.Cnpj)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(18)
                 .HasColumnName("cnpj");
+
+            builder.HasIndex(x => x.Cnpj)
+            .IsUnique();
 
             builder.Property(x => x.Endereco)
                 .HasColumnType("VARCHAR")
@@ -48,6 +54,9 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasMaxLength(45)
                 .IsRequired()
                 .HasColumnName("email");
+
+            builder.HasIndex(x => x.Email)
+            .IsUnique();
 
             builder.Property(x => x.Senha)
                 .HasColumnType("VARCHAR")
@@ -89,8 +98,8 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                {
                    Id = 1,
                    Nome = "Greg",
-                   Email = "greg@grag.com",
-                   Senha = "protetor123",
+                   Email = "greg@greg.com",
+                   Senha = "2A30172116B6F59CA40B47E5BC895CFF",
                    ConfirmarSenha = "protetor123",
                    Cpf = "123456789",
                    Endereco = "Rua Argentina 140",
@@ -104,7 +113,7 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                     Id = 2,
                     Nome = "Amanda",
                     Email = "amanda@amanda.com",
-                    Senha = "protetor123",
+                    Senha = "2A30172116B6F59CA40B47E5BC895CFF",
                     ConfirmarSenha = "protetor123",
                     Cpf = "123456788",
                     Endereco = "Rua Grécia",

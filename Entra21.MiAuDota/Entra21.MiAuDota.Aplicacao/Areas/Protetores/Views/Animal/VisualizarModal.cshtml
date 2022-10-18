@@ -1,0 +1,106 @@
+﻿<div class="modal fade" id="visualizarModal" tabindex="-1" aria-labelledby="visualizarModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="visualizarModalLabel">Dados do animal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="visualizarModalId" class="form-control" disable="" />
+
+                <div class="mb-2">
+                    <label for="visualizarModalNome" class="form-label">Nome<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalNome" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalRaca" class="form-label">Raça<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalRaca" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalEspecie" class="form-label">Espécie<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalEspecie" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalSobre" class="form-label">Sobre<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalSobre" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalVacinas" class="form-label">Vacinas<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalVacinas" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalAlergias" class="form-label">Alergias<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalAlergias" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalOutrasInformacoes" class="form-label">Outras informações médicas<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalOutrasInformacoes" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <p>Imagem atual</p>
+                    <img id="visualizarModalFotoCampoImg" width="400" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalIdade" class="form-label">Idade<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalIdade" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalPeso" class="form-label">Peso<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalPeso" class="form-control" disable="" />
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalAltura" class="form-label">Altura<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalAltura" class="form-control" disable="" />
+                </div>
+
+                <div class="col-6">
+                    <span class="form-label">Castrado<span class="text-danger">*</span></span>
+                    <div class="form-check">
+                        <input type="radio" id="visualizarModalCastradoS" name="visualizarModalCastrado" class="form-check-input" value="true" checked="checked" />
+                        <label class="form-check-label" for="visualizarModalCastradoS">Sim</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="visualizarModalCastradoN" name="visualizarModalCastrado" class="form-check-input" value="false" />
+                        <label class="form-check-label" for="visualizarModalCastradoN">Não</label>
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalDataAdocao" class="form-label">Data da adoção<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalDataAdocao" class="form-control" disable="" />
+                </div>
+
+                <div class="col-6">
+                    <span class="form-label">Gênero<span class="text-danger">*</span></span>
+                    <div class="form-check">
+                        <input type="radio" id="visualizarModalDataGeneroF" name="visualizarModalDataGenero" class="form-check-input" value="0" checked="checked" />
+                        <label class="form-check-label" for="visualizarModalDataGeneroF">Feminino</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="visualizarModalDataGeneroM" name="visualizarModalDataGenero" class="form-check-input" value="1" />
+                        <label class="form-check-label" for="visualizarModalDataGeneroM">Masculino</label>
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="visualizarModalUsuarioId" class="form-label">Foi adotado por<span class="text-danger">*</span></label>
+                    <input type="text" id="visualizarModalUsuarioId" class="form-control" disable="" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Sair</button>
+            </div>
+        </div>
+    </div>
+</div>

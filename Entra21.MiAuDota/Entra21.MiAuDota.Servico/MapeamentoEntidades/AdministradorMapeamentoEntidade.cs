@@ -5,7 +5,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 {
     public class AdministradorMapeamentoEntidade : IAdministradorMapeamentoEntidade
     {
-        public void AtualizarCampos(Administrador entity, AdministradorEditarViewModel viewModel)
+        public void AtualizarCampos(Administrador entity, AdministradorEditarViewModel viewModel, string caminho = "")
         {
             throw new NotImplementedException();
         }

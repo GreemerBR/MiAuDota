@@ -14,7 +14,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             _sessionManager = sessionManager;
         }
 
-        public void AtualizarCampos(Animal entity, AnimalEditarViewModel viewModel)
+        public void AtualizarCampos(Animal entity, AnimalEditarViewModel viewModel, string caminho = "")
         {
             entity.Nome = viewModel.Nome;
             entity.Raca = viewModel.Raca;
@@ -24,8 +24,8 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Alergias = viewModel.Alergias;
             entity.OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas;
 
-            if(!string.IsNullOrEmpty(viewModel.Foto))
-                entity.Foto = viewModel.Foto;
+            if (!string.IsNullOrEmpty(caminho))
+                entity.Foto = caminho;
 
             entity.Idade = viewModel.Idade;
             entity.Peso = viewModel.Peso;

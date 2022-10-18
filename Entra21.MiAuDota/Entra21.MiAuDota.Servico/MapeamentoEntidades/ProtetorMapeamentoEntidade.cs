@@ -5,7 +5,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 {
     public class ProtetorMapeamentoEntidade : IProtetorMapeamentoEntidade
     {
-        public void AtualizarCampos(Protetor entity, ProtetorEditarViewModel viewModel)
+        public void AtualizarCampos(Protetor entity, ProtetorEditarViewModel viewModel, string caminho = "")
         {
             entity.Nome = viewModel.Nome;
             entity.Endereco = viewModel.Endereco;

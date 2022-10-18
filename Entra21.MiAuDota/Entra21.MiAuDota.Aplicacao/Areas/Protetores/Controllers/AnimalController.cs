@@ -33,7 +33,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
 
             var user = _sessionManager.GetUser<Protetor>();
 
-            creatViewModel.UsuarioId = user.Id;
+            creatViewModel.ProtetorId = user.Id;
 
             _animalServico.CadastrarAnimal(creatViewModel, _webHostEnvironment.WebRootPath);
 
@@ -46,9 +46,6 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            var user = _sessionManager.GetUser<Protetor>();
-
-            updateViewModel.UsuarioId = user.Id;
 
             var alterou = _animalServico.EditarAnimal(updateViewModel, _webHostEnvironment.WebRootPath);
 
@@ -62,6 +59,15 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
         public IActionResult MeusAnimais()
         {
             return View("MeusAnimais");
+        }
+
+        [HttpGet("obterTodos")]
+        public override IActionResult ObterTodos()
+        {
+            var protetorId = _sessionManager.GetUser<Protetor>().Id;
+            var entities = _servico.ObterTodosPorProtetorId(protetorId);
+
+            return Ok(entities);
         }
     }
 }

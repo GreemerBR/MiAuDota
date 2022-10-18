@@ -10,7 +10,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
         where TUpdateSenhaViewModel : BaseEditarViewModel<TViewModel>
         where TViewModel: BaseViewModel 
     {
-        void AtualizarCampos(TEntity entity, TUpdateViewModel viewModel);
+        void AtualizarCampos(TEntity entity, TUpdateViewModel viewModel, string caminho = "");
         void AtualizarSenha(TEntity entity, TUpdateSenhaViewModel viewModel);
         void AtualizarStatus(TEntity entity, TUpdateStatusViewModel viewModel);
     }
