@@ -5,170 +5,173 @@
 <head>
     <style type="text/css">
         .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-          opacity: 1;
-
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            opacity: 1;
         }
 
         .b-example-divider {
-          height: 3rem;
-          background-color: rgba(0, 0, 0, .1);
-          border: solid rgba(0, 0, 0, .15);
-          border-width: 1px 0;
-          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
         }
 
         .b-example-vr {
-          flex-shrink: 0;
-          width: 1.5rem;
-          height: 100vh;
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
         }
 
         .bi {
-          vertical-align: -.125em;
-          fill: currentColor;
+            vertical-align: -.125em;
+            fill: currentColor;
         }
 
         h1 {
-            color: white;
+            color: black;
         }
 
+        p {
+            color: black;
+            font-size: 17px;
+        }
 
     </style>
 </head>
 
 
-    <body class="page" style="background-image: linear-gradient(90deg, #FDE3F0 0%, #FA9FCA 50.52%, #FDE3F0 100%)">
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<body class="page" style="background-image: linear-gradient(90deg, #FDE3F0 0%, #FA9FCA 50.52%, #FDE3F0 100%)">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        @*<div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>*@
+        <!--Feito-->
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/fundo.png.jpg" preserveAspectRatio="xMidYMid slice">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1><b>Sabe quantos animais precisam de um lar?</b></h1>
+                        <p>
+                            <b>
+                                Acredita-se que há 3,9 milhões (2,7 milhões de cães e 1,2 milhões de gatos) vivendo em situação de vulnerabilidade.
+                                A castração e a adoção de animais são as maneiras mais efetivas de reduzir a população de rua e de dar
+                                uma vida digna a esses seres tão especiais.
+                            </b>
+                        </p>
+                        @*  <p><a class="btn btn-lg btn-primary" href="#">Cadastre-se</a></p>*@
+                    </div>
+                </div>
             </div>
-            <!--Feito-->
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/page.png" preserveAspectRatio="xMidYMid slice">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1><b>Sabe quantos animais precisam de um lar?</b></h1>
-                            <p>
-                                <b>
-                                    Acredita-se que há 3,9 milhões (2,7 milhões de cães e 1,2 milhões de gatos) vivendo em situação de vulnerabilidade.
-                                    A castração e a adoção de animais são as maneiras mais efetivas de reduzir a população de rua e de dar
-                                    uma vida digna a esses seres tão especiais.
-                                </b>
-                            </p>
-                            <p><a class="btn btn-lg btn-primary" href="https://localhost:7194/usuario/cadastrar">Cadastre-se</a></p>
-                        </div>
+            <!--Pronto-->
+            <div class="carousel-item active">
+                <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/page.png" preserveAspectRatio="xMidYMid slice">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1><b>Gostaria de cadastrar um animal?</b></h1>
+                        <p><b>Aqui no site você pode ser um protetor e cadastrar seus animais para adoção responsável.</b></p>
+                        @*<p><a class="btn btn-lg btn-primary" href="#">Saiba mais</a></p>*@
                     </div>
                 </div>
-                <!--Pronto-->
-                <div class="carousel-item active">
-                    <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/page.png" preserveAspectRatio="xMidYMid slice">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1><b>Gostaria de cadastrar um animal?</b></h1>
-                            <p><b>Aqui no site você pode ser um protetor, cadastrar seus animais para adoção responsável, clique em</b></p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Saiba mais</a></p>
-                        </div>
+            </div>
+            <!--Pronto-->
+            <div class="carousel-item">
+                <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/page.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1><b>Quer adotar um animal?</b></h1>
+                        <p>
+                            <b>
+                                Gostou da iniciativa do site? Nos ajude a encontrar um lar para esses bichinhos, manter eles seguros é a nossa
+                                prioridade.
+                            </b>
+                        </p>
+                        <p><a class="btn btn-lg btn-primary" href="https://miaudota.azurewebsites.net/animal">Ver galeria</a></p>
                     </div>
                 </div>
-                <!--Pronto-->
-                <div class="carousel-item">
-                    <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/page.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1><b>Quer adotar um animal?</b></h1>
-                            <p>
-                                <b>
-                                    Gostou da iniciativa do site? Nos ajude a encontrar um lar para esses bichinhos, manter eles seguros é a nossa
-                                    prioridade.
-                                </b>
-                            </p>
-                            <p><a class="btn btn-lg btn-primary" href="https://localhost:7194/animal">Ver galeria</a></p>
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="container marketing">
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/cute1.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+                <h2 class="fw-normal">Quero ajudar</h2>
+                <p>
+                    Através da nossa plataforma, a gente conecta pessoas que querem ter um pet a cães e gatos resgatados que precisam de um lar.
+                    Contribua com o nosso site, seja um apoiador!
+                </p>
+                <p><a class="btn btn-secondary" href="#" target="_blank">Ver detalhes »</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/midia.png" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+                <h2 class="fw-normal">Outras formas de ajudar</h2>
+                <p>
+                    Caso não consiga ajudar com doações, seja um compartilhador. Compartilhe esse site com amigos, familiares e conhecidos
+                    para que tenhamos cada vez mais visibilidade.
+                </p>
+                <p><a class="btn btn-secondary" href="https://www.instagram.com/" target="_blank">Nossas redes sociais »</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/sitesite.png" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+                <h2 class="fw-normal">Conheça outros sites de adoção</h2>
+                <p>Caso queira pesquisar mais, aqui vai outras dicas de site para você!</p>
+                <p><a class="btn btn-secondary" href="https://www.amigonaosecompra.com.br/" target="_blank">Ver sites »</a></p>
+            </div>
+        </div>
+
 
         <hr class="featurette-divider">
 
-        <div class="container marketing">
-            <div class="row">
-                <div class="col-lg-4">
-                    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/cute1.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">Queda de pelos nos pets: <span class="text-muted">saiba quando se preocupar</span></h2>
+                <p class="lead">
+                    Eu não sei vocês, mas ver os pelos dos bichinhos voando pela casa é uma coisa que me preocupa.
+                    Assim como perder até 100 fios de cabelo por dia é algo normal para os humanos, os cães e gatos também têm uma queda que é normal.
+                    Vamos falar um pouquinho sobre cada um desses fatores.<br />
 
-                    <h2 class="fw-normal">Quero ajudar</h2>
-                    <p>
-                        Através da nossa plataforma, a gente conecta pessoas que querem ter um pet a cães e gatos resgatados que precisam de um lar.
-                        Contribua com o nosso site, seja um apoiador!
-                    </p>
-                <p><a class="btn btn-secondary" href="#" target="_blank">Ver detalhes »</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/midia.png" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
 
-                    <h2 class="fw-normal">Outras formas de ajudar</h2>
-                    <p>
-                        Caso não consiga ajudar com doações, seja um compartilhador. Compartilhe esse site com amigos, familiares e conhecidos
-                        para que tenhamos cada vez mais visibilidade.
-                    </p>
-                <p><a class="btn btn-secondary" href="https://www.instagram.com/" target="_blank">Nossas redes sociais »</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/sitesite.png" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+                    <b>Desequilíbrio alimentar</b>
+                    É fundamental manter uma alimentação de qualidade, pois é ela que vai garantir todos os nutrientes necessários que vão cuidar não apenas de manter a pancinha cheia,
+                    mas também por garantir uma boa saúde, incluindo pelos saudáveis.<br />
 
-                    <h2 class="fw-normal">Conheça outros sites de adoção</h2>
-                    <p>Caso queira pesquisar mais, aqui vai outras dicas de site para você!</p>
-                    <p><a class="btn btn-secondary" href="https://www.amigonaosecompra.com.br/" target="_blank">Ver sites »</a></p>
-                </div>
+
+                    <b>Problemas dermatológicos</b>
+                    Dermatite é uma inflamação na pele que acomete várias áreas do corpo.
+                    Mas não se preocupe, há tratamento e seu bichinho pode levar uma vida tranquila,
+                    dependendo do estágio em que for diagnosticado o problema.<br />
+                </p>
+
             </div>
-
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading fw-normal lh-1">Queda de pelos nos pets: <span class="text-muted">saiba quando se preocupar</span></h2>
-                    <p class="lead">
-                        Eu não sei vocês, mas ver os pelos dos bichinhos voando pela casa é uma coisa que me preocupa.
-                        Assim como perder até 100 fios de cabelo por dia é algo normal para os humanos, os cães e gatos também têm uma queda que é normal.
-                        Vamos falar um pouquinho sobre cada um desses fatores.
-                    </p>
-                    <p>
-                        <b>Desequilíbrio alimentar</b>
-                        É fundamental manter uma alimentação de qualidade, pois é ela que vai garantir todos os nutrientes necessários que vão cuidar não apenas de manter a pancinha cheia,
-                        mas também por garantir uma boa saúde, incluindo pelos saudáveis.
-                    </p>
-                    <p>
-                        <b>Problemas dermatológicos</b>
-                        Dermatite é uma inflamação na pele que acomete várias áreas do corpo.
-                        Mas não se preocupe, há tratamento e seu bichinho pode levar uma vida tranquila,
-                        dependendo do estágio em que for diagnosticado o problema.
-                    </p>
-
-                </div>
-                <div class="col-md-5">
-                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/Sobre.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
-                </div>
+            <div class="col-md-5">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/Sobre.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
             </div>
+        </div>
 
-            <hr class="featurette-divider">
+        <hr class="featurette-divider">
 
             <div class="row featurette">
                 <div class="col-md-7 order-md-2">
@@ -188,36 +191,51 @@
                     </p>
                 </div>
                 <div class="col-md-5 order-md-1">
-                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/pandora.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/pandorateste-removebg-preview.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
                 </div>
             </div>
 
-            <hr class="featurette-divider">
+        <hr class="featurette-divider">
 
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading fw-normal lh-1">Responsabilidade afetiva pet, <span class="text-muted">você sabe o que é?</span></h2>
-                    <p class="lead">
-                        Por definição, podemos dizer que responsabilidade afetiva é quando você se responsabiliza pelo sentimento e pelas expectativas que cria nos outros, independente da relação ser romântica ou não.
-                        Como os animais, enfim, foram considerados seres sencientes (isso significa que são dotados de sentimentos, sensibilidade e que são capazes de sentir e demonstrar as suas emoções)
-                        não ficou margem para dúvidas de que sofrem ao serem abandonados, devolvidos, doados ou ignorados dentro do próprio lar.
-                        Já pensou viver em um lar onde te dão comida, água, mas ninguém fala com você, ninguém interage ou pergunta como você está?
-                        É impossível ser feliz assim. Nós precisamos de mais que coisas materiais para viver, precisamos de amigos, de alguém que se importe com nossas dores,
-                        que se alegrem com nossas conquistas e liguem para ouvir nossa voz. Se importe com o seu pet!
-                    </p>
-                </div>
-                <div class="col-md-5">
-                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/afeto.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
-                </div>
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">Responsabilidade afetiva pet, <span class="text-muted">você sabe o que é?</span></h2>
+                <p class="lead">
+                    Por definição, podemos dizer que responsabilidade afetiva é quando você se responsabiliza pelo sentimento e pelas expectativas que cria nos outros, independente da relação ser romântica ou não.
+                    Como os animais, enfim, foram considerados seres sencientes (isso significa que são dotados de sentimentos, sensibilidade e que são capazes de sentir e demonstrar as suas emoções)
+                    não ficou margem para dúvidas de que sofrem ao serem abandonados, devolvidos, doados ou ignorados dentro do próprio lar.
+                    Já pensou viver em um lar onde te dão comida, água, mas ninguém fala com você, ninguém interage ou pergunta como você está?
+                    É impossível ser feliz assim. Nós precisamos de mais que coisas materiais para viver, precisamos de amigos, de alguém que se importe com nossas dores,
+                    que se alegrem com nossas conquistas e liguem para ouvir nossa voz. Se importe com o seu pet!
+                </p>
             </div>
-
-            <hr class="featurette-divider">
-
+            <div class="col-md-5">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/theme/assets/images/afeto.png" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
+            </div>
         </div>
-        <footer class="container">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>© 2022 MiAuDota. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-        </footer>
-    </body>
+
+        <hr class="featurette-divider">
+
+    </div>
+    <footer class="container">
+        <!--ARRUMAR-->
+       @* <div class="flex gap-8 mt-16 justify-center">
+            <a href="https://www.instagram.com/amigonaosecompra" target="_blank">
+                <img loading="lazy" src="https://www.amigonaosecompra.com.br/images/instagram-1577ddddf7aaefce41fe6e89b4d81de3.png?vsn=d">
+            </a>
+            <a href="https://www.facebook.com/amigonaosecompra.com.br" target="_blank">
+                <img loading="lazy" src="https://www.amigonaosecompra.com.br/images/facebook-42cdb13b597064462896ab0d32096a36.png?vsn=d">
+            </a>
+            <a href="https://www.youtube.com/channel/UChWiCT28HIEe_XRNVX8UMLw" target="_blank">
+                <img loading="lazy" src="https://www.amigonaosecompra.com.br/images/youtube-df83385dafd64efd85799e8a2daa2ef0.png?vsn=d">
+            </a>
+            <a href="https://twitter.com/migonaosecompra" target="_blank">
+                <img loading="lazy" src="https://www.amigonaosecompra.com.br/images/twitter-e2c877a4789b475409a4c93237faca71.png?vsn=d">
+            </a>
+        </div>*@
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2022 MiAuDota. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
+</body>
 
 
