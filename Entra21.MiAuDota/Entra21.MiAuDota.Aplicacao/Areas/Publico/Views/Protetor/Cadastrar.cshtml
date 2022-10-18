@@ -107,7 +107,7 @@
             </div>
             <div class="col-md-6">
                 <label asp-for="Cpf" class="form-label">CPF</label>
-                <input asp-for="Cpf" class="form-control">
+                <input asp-for="Cpf" class="form-control" oninput="mascara(this)">
             </div>
             <div class="col-12">
                 <label asp-for="Endereco" class="form-label">Endereço Completo</label>
@@ -164,6 +164,7 @@
         </form>
     </div>
 
+    <script src="~/js/usuario/validacoesCadastrar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
