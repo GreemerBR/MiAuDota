@@ -1,5 +1,6 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -23,10 +24,12 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
 
     {
         protected readonly TServico _servico;
+        protected readonly ISessionManager _sessionManager;
 
-        public BaseController(TServico servico)
+        public BaseController(TServico servico, ISessionManager sessionManager)
         {
             _servico = servico;
+            _sessionManager = sessionManager;
         }
 
         [HttpGet]
@@ -89,12 +92,16 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         [HttpPost("editar")]
         public virtual IActionResult Editar(TUpdateViewModel updateViewModel)
         {
+            var id = _sessionManager.GetUser<TBaseModel>().Id;
+
+            updateViewModel.Id = id;
+
             var alterou = _servico.EditarCampos(updateViewModel);
 
             if (!alterou)
                 return NotFound();
 
-            return View("Home/Index");
+            return View("home/Index");
         }
 
         [HttpGet("alterarSenha")]
@@ -104,9 +111,9 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpPost("alterarSenha")]
-        public virtual IActionResult EditarSenha([FromForm] TUpdateViewModel updateViewModel)
+        public virtual IActionResult EditarSenha([FromForm] TUpdateSenhaViewModel updateSenhaViewModel)
         {
-            var alterou = _servico.EditarCampos(updateViewModel);
+            var alterou = _servico.EditarSenha(updateSenhaViewModel);
 
             if (!alterou)
                 return NotFound();

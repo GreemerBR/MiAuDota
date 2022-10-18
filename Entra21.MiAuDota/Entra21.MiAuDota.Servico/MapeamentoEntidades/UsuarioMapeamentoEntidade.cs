@@ -7,6 +7,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
     {
         public void AtualizarCampos(Usuario entity, UsuarioEditarViewModel viewModel)
         {
+            entity.Nome = viewModel.Nome;
             entity.Endereco = viewModel.Endereco;
             entity.Celular = viewModel.Celular;
             entity.Especialidade = viewModel.Especialidade;
@@ -15,7 +16,8 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
 
         public void AtualizarSenha(Usuario entity, UsuarioSenhaViewModel viewModel)
         {
-            throw new NotImplementedException();
+            entity.Senha = viewModel.Senha;
+            entity.ConfirmarSenha = viewModel.ConfirmarSenha;
         }
 
         public void AtualizarStatus(Usuario entity, UsuarioEditarViewModel viewModel)

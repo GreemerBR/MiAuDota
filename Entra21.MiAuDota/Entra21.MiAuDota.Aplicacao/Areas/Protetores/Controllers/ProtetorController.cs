@@ -17,11 +17,9 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
     public class ProtetorController
         : BaseController<Protetor, Protetor, IProtetorServico, ProtetorCadastrarViewModel, ProtetorEditarViewModel, ProtetorStatusViewModel, ProtetorSenhaViewModel, ProtetorViewModel, IProtetorRepositorio, IProtetorMapeamentoEntidade, IProtetorMapeamentoViewModel>
     {
-        private readonly ISessionManager _sessionManager;
 
-        public ProtetorController(ISessionManager sessionManager, IProtetorServico servico) : base(servico)
+        public ProtetorController(IProtetorServico servico, ISessionManager sessionManager) : base(servico, sessionManager)
         {
-            _sessionManager = sessionManager;
         }
 
         [HttpGet("editar")]

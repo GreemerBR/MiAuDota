@@ -18,13 +18,11 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
         : BaseController<Animal, Administrador, IAnimalServico, AnimalCadastrarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalEditarViewModel, AnimalViewModel, IAnimalRepositorio, IAnimalMapeamentoEntidade, IAnimalMapeamentoViewModel>
     {
         private readonly IAnimalServico _animalServico;
-        private readonly ISessionManager _session;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public AnimalController(IAnimalServico servico, ISessionManager session, IWebHostEnvironment webHostEnvironment) : base(servico)
+        public AnimalController(IAnimalServico servico, ISessionManager sessionManager, IWebHostEnvironment webHostEnvironment) : base(servico, sessionManager)
         {
             _animalServico = servico;
-            _session = session;
             _webHostEnvironment = webHostEnvironment;
         }
 
@@ -33,7 +31,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            var user = _session.GetUser<Protetor>();
+            var user = _sessionManager.GetUser<Protetor>();
 
             creatViewModel.UsuarioId = user.Id;
 
@@ -48,7 +46,7 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            var user = _session.GetUser<Protetor>();
+            var user = _sessionManager.GetUser<Protetor>();
 
             updateViewModel.UsuarioId = user.Id;
 
