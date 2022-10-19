@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.MiAuDota.Servico", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.MiAuDota.Aplicacao", "Entra21.MiAuDota.Aplicacao\Entra21.MiAuDota.Aplicacao.csproj", "{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Tests", "03 - Tests", "{CEBE6078-197E-402A-8DED-5E9B4E9F8418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{5E45BCF9-E731-4269-9683-F4AEC2950304}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E45BCF9-E731-4269-9683-F4AEC2950304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E45BCF9-E731-4269-9683-F4AEC2950304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E45BCF9-E731-4269-9683-F4AEC2950304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E45BCF9-E731-4269-9683-F4AEC2950304}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{E1445673-6B79-45F5-A59A-FB6948EA82F8} = {52FAB95E-DDFC-47B6-9562-18D19ACA8CD0}
 		{B357C30A-E41B-43D1-B0F1-8E72F902D1CE} = {5E316F0F-C5B1-45A8-B776-A96A250529A7}
 		{B5EC2895-BAC1-4993-AE1B-BCE04F1A7738} = {85C7880D-405D-4FBE-907C-D5C3EF509183}
+		{5E45BCF9-E731-4269-9683-F4AEC2950304} = {CEBE6078-197E-402A-8DED-5E9B4E9F8418}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {689011A9-2358-4ABD-9092-1D7957F80C41}

@@ -9,23 +9,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Controllers
 {
-    public class BaseController<TEntity, TBaseModel, TServico, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
+    public class BaseController<TEntity, TBaseModel, TServico, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel,  TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel> : Controller
         where TEntity : BaseEntity
         where TBaseModel : UsuarioBase
         where TViewModel : BaseViewModel
         where TCreateViewModel : BaseViewModel, new()
         where TUpdateViewModel : BaseEditarViewModel<TViewModel>, new()
+        where TUpdateStatusViewModel : BaseEditarViewModel<TViewModel>, new()
+        where TUpdateSenhaViewModel : BaseEditarViewModel<TViewModel>, new()
         where TRepositorio : IBaseRepositorio<TEntity>
-        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TViewModel>
-        where TServico : IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
-        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TViewModel>
+        where TMapeamentoEntidade : IBaseMapeamentoEntidade<TEntity, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
+        where TServico : IBaseServico<TEntity, TBaseModel, TCreateViewModel, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel, TRepositorio, TMapeamentoEntidade, TMapeamentoViewModel>
+        where TMapeamentoViewModel : IBaseMapeamentoViewModel<TEntity, TUpdateViewModel, TUpdateStatusViewModel, TUpdateSenhaViewModel, TViewModel>
 
     {
         protected readonly TServico _servico;
+        protected readonly ISessionManager _sessionManager;
 
-        public BaseController(TServico servico)
+        public BaseController(TServico servico, ISessionManager sessionManager)
         {
             _servico = servico;
+            _sessionManager = sessionManager;
         }
 
         [HttpGet]
@@ -86,9 +90,30 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpPost("editar")]
-        public virtual IActionResult Editar([FromForm] TUpdateViewModel updateViewModel)
+        public virtual IActionResult Editar(TUpdateViewModel updateViewModel)
         {
-            var alterou = _servico.Editar(updateViewModel);
+            var id = _sessionManager.GetUser<TBaseModel>().Id;
+
+            updateViewModel.Id = id;
+
+            var alterou = _servico.EditarCampos(updateViewModel);
+
+            if (!alterou)
+                return NotFound();
+
+            return View("home/Index");
+        }
+
+        [HttpGet("alterarSenha")]
+        public virtual IActionResult EditarSenha()
+        {
+            return View();
+        }
+
+        [HttpPost("alterarSenha")]
+        public virtual IActionResult EditarSenha([FromForm] TUpdateSenhaViewModel updateSenhaViewModel)
+        {
+            var alterou = _servico.EditarSenha(updateSenhaViewModel);
 
             if (!alterou)
                 return NotFound();

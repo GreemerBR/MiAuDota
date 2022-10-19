@@ -2,6 +2,7 @@
 using Entra21.MiAuDota.Aplicacao.FiltroLogin;
 using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
+using Entra21.MiAuDota.Servico.Autenticacao;
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
@@ -14,9 +15,9 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Administradores.Controllers
     [Area("Administradores")]
     [Route("administradores/protetor")]
     public class AdministradorController
-        : BaseController<Administrador, Administrador, IAdministradorServico, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorViewModel, IAdministradorRepositorio, IAdministradorMapeamentoEntidade, IAdministradorMapeamentoViewModel>
+        : BaseController<Administrador, Administrador, IAdministradorServico, AdministradorCadastrarViewModel, AdministradorEditarViewModel, AdministradorEditarViewModel, AdministradorEditarViewModel, AdministradorViewModel, IAdministradorRepositorio, IAdministradorMapeamentoEntidade, IAdministradorMapeamentoViewModel>
     {
-        public AdministradorController(IAdministradorServico servico) : base(servico)
+        public AdministradorController(IAdministradorServico servico, ISessionManager sessionManager) : base(servico, sessionManager)
         {
         }
     }

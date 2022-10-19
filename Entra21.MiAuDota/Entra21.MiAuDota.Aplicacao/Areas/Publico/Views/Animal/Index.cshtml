@@ -18,15 +18,16 @@
             background-color: #FDECEB;
         }
 
-        .main{
+        .main {
             margin: 1.5rem;
         }
-        #area-titulo{
+
+        #area-titulo {
             text-align: center;
             margin: 0 0 1.5rem 0;
         }
 
-        #area-busca{
+        #area-busca {
             padding: 1rem;
             margin: 0 0 1.5rem 0;
             background-color: white;
@@ -52,7 +53,7 @@
             font-size: 16px;
         }
 
-        .btn-buscar{
+        .btn-buscar {
             background-color: #582b5cc9;
             border-color: #582b5cc9;
             border-width: 1px;
@@ -68,19 +69,19 @@
             cursor: pointer;
         }
 
-                .btn-buscar:hover {
-                    background-color: #582B5C;
-                    border-color: #582B5C;
-                    color: white;
-                }
+            .btn-buscar:hover {
+                background-color: #582B5C;
+                border-color: #582B5C;
+                color: white;
+            }
 
-        .card{
+        .card {
             border-color: #582b5cc9;
             border-width: 1px;
             border-radius: 0.375rem;
         }
 
-        .card-title{
+        .card-title {
             color: #8E37A6;
             text-align: center;
             text-decoration: none;
@@ -88,13 +89,12 @@
             font-size: 20px;
         }
 
-        .card-text{
+        .card-text {
             color: #8E37A6;
             text-align: center;
             text-decoration: none;
             font-size: 16px;
         }
-
     </style>
 </head>
 <body>
@@ -104,7 +104,7 @@
         </div>
 
         <div>
-            <form asp-area="Publico" asp-controller="Animal" asp-action="obterTodosComFiltro#pets" method="GET">
+            <form asp-area="Publico" asp-controller="Animal" asp-action="obterTodosComFiltro" method="GET">
                 <div class="row g-2" id="area-busca">
                     <div class="flex col md-4">
                         <select class="form-select" aria-label="Default select example" id="Especie" name="Especie">
@@ -134,41 +134,41 @@
                 </div>
 
             </form>
+        </div>
 
-            @* TODO : ajustar para buscar imagens do banco de dados
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-            @foreach (var animal in Model)
-            {
-            <div class="col">
-            <div class="card">
-            <img src="@(string.IsNullOrEmpty(animal.CaminhoArquivo) || !File.Exists(ArquivoHelper.ObterCaminhoArquivoServidor(animal.CaminhoArquivo, caminhoServidor))
-            ? "/images/pet-bigger.png"
-            : $"/{ArquivoHelper.ObterCaminhoArquivo(animal.CaminhoArquivo)}")" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">@($"{animal.Nome}")</h5>
-            <p class="card-text">@animal.Responsavel.NomeCompleto</p>
-            </div>
-            </div>
-            </div>
-            }
-            </div>*@
+        @* TODO : ajustar para buscar imagens do banco de dados
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+        @foreach (var animal in Model)
+        {
+        <div class="col">
+        <div class="card">
+        <img src="@(string.IsNullOrEmpty(animal.CaminhoArquivo) || !File.Exists(ArquivoHelper.ObterCaminhoArquivoServidor(animal.CaminhoArquivo, caminhoServidor))
+        ? "/images/pet-bigger.png"
+        : $"/{ArquivoHelper.ObterCaminhoArquivo(animal.CaminhoArquivo)}")" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">@($"{animal.Nome}")</h5>
+        <p class="card-text">@animal.Responsavel.NomeCompleto</p>
+        </div>
+        </div>
+        </div>
+        }
+        </div>*@
 
-            <div id="pets">
-                <div id="grid-pet">
-                    <div class="row row-cols-1 row-cols-md-4 g-4">
-                        @foreach (var animal in Model)
-                        {
-                            <div class="col">
-                                <div class="card">
-                                    <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">@animal.Nome</h5>
-                                        <p class="card-text">@animal.Genero - @animal.Porte</p>
-                                    </div>
+        <div id="animais">
+            <div id="grid-pet">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    @foreach (var animal in Model)
+                    {
+                        <div class="col">
+                            <div class="card" asp-area="Publico" asp-controller="Animal" asp-action="exibirAnimal">
+                                <img src="/Uploads/Animais/@animal.Foto" width=200px class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">@animal.Nome</h5>
+                                    <p class="card-text">@animal.Genero - @animal.Porte</p>
                                 </div>
                             </div>
-                        }
-                    </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

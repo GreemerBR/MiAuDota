@@ -51,7 +51,7 @@
             </div>
             <p>Sign up to find interesting thing</p>
 
-            <form asp-action="Cadastrar" method="POST">
+            <form asp-action="Cadastrar" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label asp-for="Nome" class="form-label" span-required=""></label>
                     <input asp-for="Nome" class="form-control" />
@@ -86,12 +86,6 @@
                     <label asp-for="Alergias" class="form-label" span-required=""></label>
                     <input asp-for="Alergias" class="form-control" />
                     <span asp-validation-for="Alergias" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Foto" class="form-label" span-required=""></label>
-                    <input asp-for="Foto" class="form-control" />
-                    <span asp-validation-for="Foto" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
@@ -134,6 +128,11 @@
                         <input type="radio" id="cadastroPetGeneroMasculino" name="cadastroPetModalGenero" class="form-check-input" value="1" />
                         <label class="form-check-label" for="cadastroPetGeneroMasculino">Masculino</label>
                     </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Selecione uma imagem</label>
+                    <input class="form-control" type="file" asp-for="Arquivo">
                 </div>
 
                 <div class="mb-3">

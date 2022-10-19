@@ -13,6 +13,8 @@ namespace Entra21.MiAuDota.Servico.Servicos
             Administrador,
             AdministradorCadastrarViewModel, 
             AdministradorEditarViewModel,
+            AdministradorEditarViewModel,
+            AdministradorEditarViewModel,
             AdministradorViewModel,
             IAdministradorRepositorio,
             IAdministradorMapeamentoEntidade,

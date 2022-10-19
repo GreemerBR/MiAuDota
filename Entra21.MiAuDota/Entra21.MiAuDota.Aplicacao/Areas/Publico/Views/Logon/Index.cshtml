@@ -20,6 +20,7 @@
         }
 
         .brand-img {
+            margin-top: 55px;
             max-width: 200px;
             max-height: 150px
         }
@@ -39,24 +40,43 @@
             border-color: #582B5C;
         }
 
-        .form-check-input:checked {
+            .form-check-input:checked {
                 background-color: #582B5C;
                 border-color: #582B5C;
-        }
+            }
 
         .brand {
             margin: 20px 0;
+            transition: transform .2s;
+            animation: fromTop .2s 2s backwards;
         }
+
+            .brand img {
+                -webkit-transition: all 0.7s ease;
+                transition: all 0.7s ease;
+            }
+
+                .brand img:hover {
+                    -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+                }
 
         .initial-text {
             margin: 0 0 20px 0;
         }
 
-        .title{
+        .title {
             padding: 6px 20px;
             font-size: 16px;
             color: #582b5cc9;
             font-weight: 500;
+        }
+
+        .lnr-eye {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
         }
 
         .btn-entrar {
@@ -76,11 +96,17 @@
             cursor: pointer;
         }
 
-        .btn-entrar:hover {
-                    background-color: #582B5C;
-                    border-color: #582B5C;
-                    color: white;
+            .btn-entrar:hover {
+                background-color: #582B5C;
+                border-color: #582B5C;
+                color: white;
+            }
+
+        footer {
+            height: 30px;
+            line-height: 30px;
         }
+
     </style>
 
 </head>
@@ -91,12 +117,12 @@
                 <img class="brand-img" src="~/theme/assets//images/logopreview.png.png" />
             </div>
             <div class="initial-text">
-                <h5>E ai? Bora adotar?</h5>
-                <h5>Faça login e encontre seu pet.</h5>
+                <h5>E aí? Bora adotar?</h5>
+                <h5>Faça login e encontre seu pet!</h5>
             </div>
         </div>
 
-        <form asp-controller="Logon" asp-action="Logon" method="post">
+        <form asp-controller="Logon" asp-action="Index" method="post">
             <div class="form-group">
                 <label asp-for="Email" class="sr-only" for="inputEmail">Email</label>
                 <input asp-for="Email" type="text" class="form-control" id="inputEmail" name="email" placeholder="seuemail@exemplo.com">
@@ -110,13 +136,13 @@
                 <button type="submit" class="btn-entrar">Entrar</button>
             </div>
         </form>
-        <p class="title">
-            Ja tem uma conta? Por favor,
-            <a href="https://localhost:7194/" class="float-right" data-toggle="modal" data-target="#cadastroModal" data-mdb-dismiss="loginModal">cadastre-se. <span aria-hidden="true"></span></a>
-        </p>
     </div>
 
+    <hr class="featurette-divider">
 
+    <footer class="container">
+        <p>© 2022 MiAuDota. · <a href="https://linktr.ee/miaudota" target="_blank">Alunos Entra21</a>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>

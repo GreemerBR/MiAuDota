@@ -7,11 +7,13 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         [Display(Name = "Endereço")]
         [MinLength(7, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string? Endereco { get; set; }
 
         [Display(Name = nameof(Celular))]
         [MinLength(9, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(11, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+        [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string? Celular { get; set; }
 
         [Display(Name = nameof(Telefone))]       
@@ -28,6 +30,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         [Display(Name = nameof(Senha))]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
+        [Compare("ConfirmarSenha")]
         public string Senha { get; set; }
 
         [Display(Name = "Confirmar senha")]
@@ -40,11 +43,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 
         [Display(Name = "CNPJ")]
         public string? Cnpj { get; set; }
-
-        [Display(Name = nameof(Especialidade))]
-        [MinLength(5, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
-        [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
-        public string? Especialidade { get; set; }
 
         [Display(Name = nameof(Pix))]
         public string? Pix { get; set; }

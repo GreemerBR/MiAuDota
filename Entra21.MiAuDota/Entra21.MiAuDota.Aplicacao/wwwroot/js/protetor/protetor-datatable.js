@@ -9,6 +9,8 @@
     processing: true,
     columns: [
         { data: 'nome' },
+        { data: 'email' },
+        { data: 'sobre' },
         {
             data: null,
             render: function (data, type, protetor) {
@@ -18,11 +20,11 @@
                     status = "Conta Inativa";
                     cor = "danger";
                 } else {
-                    status = "Ativa";
+                    status = "Conta Ativa";
                     cor = "success";
 
                 }
-                return `<span class="badge bg-${cor}">${status}</span>`;
+                return `<h5><span class="badge bg-${cor}">${status}</span></h5>`;
             },
         },
         {
@@ -30,8 +32,10 @@
             width: '20%',
             render: function (data, type, protetor) {
                 if (protetor.isActive === false) {
-                    return `<button class="btn btn-primary protetor-alterarStatus" data-id="${protetor.id}">Ativar</button>`;
+                    return `<h5><button class="btn btn-primary protetor-alterarStatus" data-id="${protetor.id}">Ativar</button></h5>`;
                 }
+
+                return `<button class="btn btn-success" data-id="${protetor.id}">Nenhuma ação disponível</button>`;
 
                 return "";
             }
