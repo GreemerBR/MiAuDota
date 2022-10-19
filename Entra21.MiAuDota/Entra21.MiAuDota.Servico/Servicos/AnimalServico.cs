@@ -31,8 +31,6 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             var entity = _baseMapeamentoEntidade.ConstruirCom(viewModel, caminho);
 
-            entity.Foto = caminho;
-
             _baseRepositorio.Cadastrar(entity);
 
             return entity;
@@ -47,9 +45,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
             if (entity == null)
                 return false;
 
-            entity.Foto = caminho;
-
-            _baseMapeamentoEntidade.AtualizarCampos(entity, viewModel);
+            _baseMapeamentoEntidade.AtualizarCampos(entity, viewModel, caminho);
 
             _baseRepositorio.EditarCampos(entity);
 
@@ -85,7 +81,7 @@ namespace Entra21.MiAuDota.Servico.Servicos
         private string EditarArquivo(AnimalEditarViewModel viewModel, string caminhoArquivos, string? arquivoAntigo = "")
         {
             if (viewModel.Arquivo == null)
-                return string.Empty;
+                    return string.Empty;
 
             var caminhoPastaImagens = Path.Combine(caminhoArquivos, ArquivoHelper.ObterCaminhoPastas());
 
@@ -114,6 +110,11 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             if (File.Exists(caminhoArquivoAntigo))
                 File.Delete(caminhoArquivoAntigo);
+        }
+
+        public List<Animal> ObterTodosPorProtetorId(int protetorId)
+        {
+            return _baseRepositorio.ObterTodosPorProtetorId(protetorId);
         }
     }
 }

@@ -31,8 +31,9 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
                 Status = (StatusInstituicao)entity.Status,
                 UsuarioId = entity.UsuarioId,
                 Id = entity.Id,
-               Genero = entity.Genero,
-               Porte = entity.Porte
+                Genero = entity.Genero,
+                Porte = entity.Porte,
+                DataAdocaoFormatada = entity.DataAdocao?.ToShortDateString() ?? string.Empty
             };
         }
     }

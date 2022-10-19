@@ -23,6 +23,9 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasMaxLength(14)
                 .HasColumnName("cpf");
 
+            builder.HasIndex(x => x.Cpf)
+            .IsUnique();
+
             builder.Property(x => x.Endereco)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(45)
@@ -38,6 +41,9 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasMaxLength(45)
                 .IsRequired()
                 .HasColumnName("email");
+
+            builder.HasIndex(x => x.Email)
+            .IsUnique();
 
             builder.Property(x => x.Senha)
                 .HasColumnType("VARCHAR")

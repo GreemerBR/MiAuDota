@@ -10,5 +10,6 @@ namespace Entra21.MiAuDota.Servico.Servicos
     {
         Animal CadastrarAnimal(AnimalCadastrarViewModel viewModel, string? caminhoArquivos);
         bool EditarAnimal(AnimalEditarViewModel viewModel, string? caminhoArquivos);
+        List<Animal> ObterTodosPorProtetorId(int protetorId);
     }
 }

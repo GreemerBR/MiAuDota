@@ -3,7 +3,7 @@
         url: 'https://raw.githubusercontent.com/DataTables/Plugins/master/i18n/pt-BR.json'
     },
     ajax: {
-        url: '/animal/obterTodos',
+        url: '/protetores/animal/obterTodos',
         dataSrc: ''
     },
     processing: true,
@@ -43,10 +43,9 @@
                 if (animal.status === 0 || animal.status === 1) {
                     return `<button class="btn btn-info animal-modalEditar" data-id="${animal.id}">Editar</button>`;
                 }
-
-                return `<button class="btn btn-primary animal-obterPorId" data-id="${animal.id}">Ver detalhes</button>`;
-
-                return "";
+                else {
+                    return `<button class="btn btn-primary animal-modalVisualizar" data-id="${animal.id}">Ver detalhes</button>`;
+                }
             }
         }
     ],

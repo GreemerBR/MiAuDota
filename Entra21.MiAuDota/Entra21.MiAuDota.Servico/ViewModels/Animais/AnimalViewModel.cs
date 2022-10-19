@@ -61,6 +61,8 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public int? ProtetorId { get; set; }
 
         [Display(Name = "Data de adoção")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataAdocao { get; set; }
 
         [Display(Name = "Status na instituíção")]
