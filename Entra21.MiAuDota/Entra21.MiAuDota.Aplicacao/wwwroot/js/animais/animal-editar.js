@@ -25,7 +25,7 @@
     formData.append('sobre', sobre);
     formData.append('vacinas', vacinas);
     formData.append('alergias', alergias);
-    formData.append('outrasInformacoes', outrasInformacoesMedicas);
+    formData.append('outrasInformacoesMedicas', outrasInformacoesMedicas);
     formData.append('idade', idade);
     formData.append('arquivo', foto);
     formData.append('peso', peso);
@@ -41,13 +41,12 @@
         body: formData
     })
         .then((response) => {
-            statusResponse === 200;
+            statusResponse = response.status;
 
-            return response.json();
+            return response;
         })
         .then((response) => {
             if (response.status === 200) {
-                //toastr.success('Animal alterado com sucesso');
 
                 let modal = bootstrap.Modal.getInstance(document.getElementById('editarModal'), {});
                 modal.hide();
@@ -55,8 +54,6 @@
                 $('#tabela-animais').DataTable().ajax.reload();
                 return;
             }
-
-            //toastr.error('Não foi possível alterar o animal');
         })
         .catch((error) => console.log(error));
 };

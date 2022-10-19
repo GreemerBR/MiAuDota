@@ -60,7 +60,6 @@ let editarPreencherModal = (botaoEditar) => {
 };
 
 let visualizarPreencherModal = (botaoVisualizar) => {
-    debugger;
     let id = botaoVisualizar.getAttribute('data-id');
     let statusResponse = 0;
 
@@ -87,8 +86,7 @@ let visualizarPreencherModal = (botaoVisualizar) => {
                 document.getElementById('visualizarModalIdade').value = data.idade;
                 document.getElementById('visualizarModalPeso').value = data.peso;
                 document.getElementById('visualizarModalAltura').value = data.altura;
-                document.getElementById('visualizarModalDataAdocao').value = data.dataAdocao;
-                document.getElementById('visualizarModalStatus').value = data.status;
+                document.getElementById('visualizarModalDataAdocao').value = data.dataAdocaoFormatada;
                 document.getElementById('visualizarModalUsuarioId').value = data.usuarioId;
                 if (data.genero === 0)
                     document.getElementById('visualizarModalDataGeneroF').checked = true;

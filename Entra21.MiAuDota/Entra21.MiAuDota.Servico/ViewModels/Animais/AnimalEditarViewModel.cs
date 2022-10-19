@@ -1,5 +1,7 @@
 ﻿using Entra21.MiAuDota.Repositorio.Enum;
 using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 {
@@ -26,5 +28,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public int? UsuarioId { get; set; }
 
         public string? Foto { get; set; }
+
+        public string DataAdocaoFormatada { get; set; }
     }
 }
