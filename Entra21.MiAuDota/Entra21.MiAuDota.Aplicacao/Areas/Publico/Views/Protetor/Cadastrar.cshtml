@@ -115,11 +115,11 @@
             </div>
             <div class="col-md-4">
                 <label asp-for="Telefone" class="form-label">Telefone</label>
-                <input asp-for="Telefone" class="form-control" placeholder="(00) 0000-0000">
+                <input asp-for="Telefone" class="form-control" placeholder="00 0000-0000" oninput="mascaraTel(this)" />
             </div>
             <div class="col-md-4">
                 <label asp-for="Celular" class="form-label">Celular</label>
-                <input asp-for="Celular" class="form-control" placeholder="(00) 00000-0000">
+                <input asp-for="Celular" class="form-control" placeholder="00 00000-0000">
             </div>
             <div class="col-md-4">
                 <label asp-for="Pix" class="form-label">PIX</label>
