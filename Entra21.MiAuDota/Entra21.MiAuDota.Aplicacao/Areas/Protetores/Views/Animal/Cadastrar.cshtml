@@ -1,198 +1,197 @@
 ﻿@model AnimalCadastrarViewModel
 
-<!DOCTYPE html>
-<html class="no-js css-menubar" lang="en">
+<!doctype html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="bootstrap admin template">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Miaudota - Cadastro Animal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style type="text/css">
+        body {
+            background-color: #FDECEB;
+        }
 
-    <title>Register | Remark Admin Template</title>
+        h5 {
+            color: #8E37A6;
+            font-weight: 500;
+            font-size: 18px;
+            margin: 0;
+        }
 
-    <link rel="apple-touch-icon" href="~/theme/assets/images/apple-touch-icon.png">
-    <link rel="shortcut icon" href="~/theme/assets/images/favicon.ico">
+        .brand-img {
+            max-width: 200px;
+            max-height: 150px
+        }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="~/theme/global/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/theme/global/css/bootstrap-extend.min.css">
-    <link rel="stylesheet" href="~/theme/assets/css/site.min.css">
+        .form-label {
+            color: #582B5C;
+            font-size: 16px;
+            font-weight: 500;
+        }
 
-    <!-- Plugins -->
-    <link rel="stylesheet" href="~/theme/global/vendor/animsition/animsition.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/asscrollable/asScrollable.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/switchery/switchery.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/intro-js/introjs.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/slidepanel/slidePanel.css">
-    <link rel="stylesheet" href="~/theme/global/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="~/theme/assets/examples/css/pages/register.css">
+        .form-check-label {
+            color: #582B5C;
+            font-size: 16px;
+            font-weight: 500;
+        }
 
+        .form-control {
+            border-color: #582B5C;
+        }
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="~/theme/global/fonts/web-icons/web-icons.min.css">
-    <link rel="stylesheet" href="~/theme/global/fonts/brand-icons/brand-icons.min.css">
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+        .form-check-input {
+            border-color: #582B5C;
+        }
 
-    <!-- Scripts -->
-    <script src="~/theme/global/vendor/breakpoints/breakpoints.js"></script>
-    <script>
-        Breakpoints();
-    </script>
+            .form-check-input:checked {
+                background-color: #582B5C;
+                border-color: #582B5C;
+            }
+
+        .brand {
+            margin: 20px 0;
+        }
+
+        .initial-text {
+            margin: 0 0 20px 0;
+        }
+
+        .btn-salvar {
+            background-color: #582b5cc9;
+            border-color: #582b5cc9;
+            border-width: 1px;
+            border-radius: 0.375rem;
+            color: white;
+            padding: 6px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+            .btn-salvar:hover {
+                background-color: #582B5C;
+                border-color: #582B5C;
+                color: white;
+            }
+
+    </style>
 </head>
-<body class="animsition page-register layout-full page-dark">
 
-    <!-- Page -->
-    <div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
-        <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
+<body>
+    <div class="mx-auto" style="width: 500px;">
+        <div class="page vertical-align text-center">
             <div class="brand">
-                <img class="brand-img" src="~/theme/assets//images/logo.png" alt="...">
-                <h2 class="brand-text">Remark</h2>
+                <img class="brand-img" src="~/theme/assets//images/logopreview.png.png" />
             </div>
-            <p>Sign up to find interesting thing</p>
-
-            <form asp-action="Cadastrar" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label asp-for="Nome" class="form-label" span-required=""></label>
-                    <input asp-for="Nome" class="form-control" />
-                    <span asp-validation-for="Nome" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Raca" class="form-label" span-required=""></label>
-                    <input asp-for="Raca" class="form-control" />
-                    <span asp-validation-for="Raca" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Especie" class="form-label" span-required=""></label>
-                    <input asp-for="Especie" class="form-control" />
-                    <span asp-validation-for="Especie" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Sobre" class="form-label" span-required=""></label>
-                    <input asp-for="Sobre" class="form-control" />
-                    <span asp-validation-for="Sobre" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Vacinas" class="form-label" span-required=""></label>
-                    <input asp-for="Vacinas" class="form-control" />
-                    <span asp-validation-for="Vacinas" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Alergias" class="form-label" span-required=""></label>
-                    <input asp-for="Alergias" class="form-control" />
-                    <span asp-validation-for="Alergias" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Idade" class="form-label" span-required=""></label>
-                    <input asp-for="Idade" class="form-control" />
-                    <span asp-validation-for="Idade" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Peso" class="form-label" span-required=""></label>
-                    <input asp-for="Peso" class="form-control" />
-                    <span asp-validation-for="Peso" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Altura" class="form-label" span-required=""></label>
-                    <input asp-for="Altura" class="form-control" />
-                    <span asp-validation-for="Altura" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Genero" class="form-label" span-required=""></label>
-                    <input asp-for="Genero" class="form-control" />
-                    <span asp-validation-for="Genero" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Status" class="form-label" span-required=""></label>
-                    <input asp-for="Status" class="form-control" />
-                    <span asp-validation-for="Status" class="text-danger"></span>
-                </div>
-
-                <div class="col-6">
-                    <span class="form-label">Gênero - Apenas Teste<span class="text-danger">*</span></span>
-                    <div class="form-check">
-                        <input type="radio" id="cadastroPetGeneroFeminino" name="cadastroPetModalGenero" class="form-check-input" value="0" checked="checked" />
-                        <label class="form-check-label" for="cadastroPetGeneroFeminino">Feminino</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" id="cadastroPetGeneroMasculino" name="cadastroPetModalGenero" class="form-check-input" value="1" />
-                        <label class="form-check-label" for="cadastroPetGeneroMasculino">Masculino</label>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Selecione uma imagem</label>
-                    <input class="form-control" type="file" asp-for="Arquivo">
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="OutrasInformacoesMedicas" class="form-label" span-required=""></label>
-                    <input asp-for="OutrasInformacoesMedicas" class="form-control" />
-                    <span asp-validation-for="OutrasInformacoesMedicas" class="text-danger"></span>
-                </div>
-
-                <div class="text-end">
-                    <a asp-action="Cadastrar"> </a>
-                    <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
-                </div>
-
-            </form>
-
-            <p>Have account already? Please go to <a href="login.html">Sign In</a></p>
+            <div class="initial-text">
+                <h5>Cadastre seus animais</h5>
+            </div>
         </div>
+
+        <form asp-action="Cadastrar" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Nome" class="form-label" span-required=""></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Raca" class="form-label" span-required=""></label>
+                <input asp-for="Raca" class="form-control" />
+                <span asp-validation-for="Raca" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Especie" class="form-label" span-required=""></label>
+                <input asp-for="Especie" class="form-control" />
+                <span asp-validation-for="Especie" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Sobre" class="form-label" span-required=""></label>
+                <input asp-for="Sobre" class="form-control" />
+                <span asp-validation-for="Sobre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Vacinas" class="form-label" span-required=""></label>
+                <input asp-for="Vacinas" class="form-control" />
+                <span asp-validation-for="Vacinas" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Alergias" class="form-label" span-required=""></label>
+                <input asp-for="Alergias" class="form-control" />
+                <span asp-validation-for="Alergias" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Idade" class="form-label" span-required=""></label>
+                <input asp-for="Idade" class="form-control" />
+                <span asp-validation-for="Idade" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Peso" class="form-label" span-required=""></label>
+                <input asp-for="Peso" class="form-control" />
+                <span asp-validation-for="Peso" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Altura" class="form-label" span-required=""></label>
+                <input asp-for="Altura" class="form-control" />
+                <span asp-validation-for="Altura" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Genero" class="form-label" span-required=""></label>
+                <input asp-for="Genero" class="form-control" />
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Status" class="form-label" span-required=""></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <span class="form-label">Gênero - Apenas Teste<span class="text-danger">*</span></span>
+                <div class="form-check">
+                    <input type="radio" id="cadastroPetGeneroFeminino" name="cadastroPetModalGenero" class="form-check-input" value="0" checked="checked" />
+                    <label class="form-check-label" for="cadastroPetGeneroFeminino">Feminino</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="cadastroPetGeneroMasculino" name="cadastroPetModalGenero" class="form-check-input" value="1" />
+                    <label class="form-check-label" for="cadastroPetGeneroMasculino">Masculino</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Selecione uma imagem</label>
+                <input class="form-control" type="file" asp-for="Arquivo">
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OutrasInformacoesMedicas" class="form-label" span-required=""></label>
+                <input asp-for="OutrasInformacoesMedicas" class="form-control" />
+                <span asp-validation-for="OutrasInformacoesMedicas" class="text-danger"></span>
+            </div>
+
+            <div class="text-end">
+                <a asp-action="Cadastrar"> </a>
+                <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+            </div>
+
+        </form>
+
     </div>
-    <!-- End Page -->
-    <!-- Core  -->
-    <script src="~/theme/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
-    <script src="~/theme/global/vendor/jquery/jquery.js"></script>
-    <script src="~/theme/global/vendor/popper-js/umd/popper.min.js"></script>
-    <script src="~/theme/global/vendor/bootstrap/bootstrap.js"></script>
-    <script src="~/theme/global/vendor/animsition/animsition.js"></script>
-    <script src="~/theme/global/vendor/mousewheel/jquery.mousewheel.js"></script>
-    <script src="~/theme/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
-    <script src="~/theme/global/vendor/asscrollable/jquery-asScrollable.js"></script>
-    <script src="~/theme/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
-
-    <!-- Plugins -->
-    <script src="~/theme/global/vendor/switchery/switchery.js"></script>
-    <script src="~/theme/global/vendor/intro-js/intro.js"></script>
-    <script src="~/theme/global/vendor/screenfull/screenfull.js"></script>
-    <script src="~/theme/global/vendor/slidepanel/jquery-slidePanel.js"></script>
-    <script src="~/theme/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-
-    <!-- Scripts -->
-    <script src="~/theme/global/js/Component.js"></script>
-    <script src="~/theme/global/js/Plugin.js"></script>
-    <script src="~/theme/global/js/Base.js"></script>
-    <script src="~/theme/global/js/Config.js"></script>
-
-    <script src="~/theme/assets/js/Section/Menubar.js"></script>
-    <script src="~/theme/assets/js/Section/GridMenu.js"></script>
-    <script src="~/theme/assets/js/Section/Sidebar.js"></script>
-    <script src="~/theme/assets/js/Section/PageAside.js"></script>
-    <script src="~/theme/assets/js/Plugin/menu.js"></script>
-
-    <script src="~/theme/global/js/config/colors.js"></script>
-    <script src="~/theme/assets/js/config/tour.js"></script>
-    <script>Config.set('assets', '~/theme/assets');</script>
-
-    <!-- Page -->
-    <script src="~/theme/assets/js/Site.js"></script>
-    <script src="~/theme/global/js/Plugin/asscrollable.js"></script>
-    <script src="~/theme/global/js/Plugin/slidepanel.js"></script>
-    <script src="~/theme/global/js/Plugin/switchery.js"></script>
-    <script src="~/theme/global/js/Plugin/jquery-placeholder.js"></script>
-    <script src="~/theme/global/js/Plugin/animate-list.js"></script>
 
     <script>
         (function (document, window, $) {
@@ -204,5 +203,7 @@
             });
         })(document, window, jQuery);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
