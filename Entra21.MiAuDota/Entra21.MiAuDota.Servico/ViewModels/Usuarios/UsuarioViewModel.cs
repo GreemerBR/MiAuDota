@@ -12,7 +12,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Usuarios
 
         [Display(Name = nameof(Celular))]
         [MinLength(9, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
-        [MaxLength(11, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+        [MaxLength(15, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string Celular { get; set; }
 
