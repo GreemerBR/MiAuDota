@@ -18,7 +18,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 
         [Display(Name = nameof(Telefone))]       
         [MinLength(8, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
-        [MaxLength(10, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+        [MaxLength(15, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
         public string? Telefone { get; set; }
 
         [Display(Name = nameof(Email))]

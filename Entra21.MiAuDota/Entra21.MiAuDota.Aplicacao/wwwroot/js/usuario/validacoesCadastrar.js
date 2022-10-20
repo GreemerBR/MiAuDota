@@ -1,14 +1,4 @@
-﻿function mascara(i) {
-
-    var v = i.value;
-
-    if (isNaN(v[v.length - 1])) { 
-        i.value = v.substring(0, v.length - 1);
-        return;
-    }
-
-    i.setAttribute("maxlength", "14");
-    if (v.length == 3 || v.length == 7) i.value += ".";
-    if (v.length == 11) i.value += "-";
-
-}
+﻿$('#Celular').mask('(00) 00000-0000');
+$('#Telefone').mask('(00) 0000-0000');
+$('#Cpf').mask('000.000.000-00', { reverse: true });
+$('#Cnpj').mask('00.000.000/0000-00', { reverse: true });
