@@ -1,7 +1,6 @@
 ﻿using Entra21.MiAuDota.Repositorio.Enum;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 {
@@ -19,7 +18,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public double Altura { get; set; }
         public bool Castrado { get; set; }
 
-        [Display(Name = "Data de adoção")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataAdocao { get; set; }
