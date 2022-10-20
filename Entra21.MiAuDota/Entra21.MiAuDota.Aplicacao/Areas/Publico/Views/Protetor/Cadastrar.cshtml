@@ -11,7 +11,7 @@
         body {
             background-color: #FDECEB;
         }
-
+        
         h5 {
             color: #8E37A6;
             font-weight: 500;
@@ -79,6 +79,11 @@
                     border-color: #582B5C;
                     color: white;
                 }
+        .required:after {
+        content:" *"; 
+        color: red;
+        }
+
 
     </style>
 </head>
@@ -97,7 +102,7 @@
 
         <form asp-action="Cadastrar" method="POST" class="row g-3">
             <div class="col-12">
-                <label asp-for="Nome" class="form-label">Nome Completo</label>
+                <label asp-for="Nome" class="form-label required">Nome Completo</label>
                 <input asp-for="Nome" class="form-control">
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
@@ -107,7 +112,7 @@
             </div>
             <div class="col-md-6">
                 <label asp-for="Cpf" class="form-label">CPF</label>
-                <input asp-for="Cpf" class="form-control" oninput="mascara(this)">
+                <input asp-for="Cpf" class="form-control" >
             </div>
             <div class="col-12">
                 <label asp-for="Endereco" class="form-label">Endereço Completo</label>
@@ -115,11 +120,11 @@
             </div>
             <div class="col-md-4">
                 <label asp-for="Telefone" class="form-label">Telefone</label>
-                <input asp-for="Telefone" class="form-control" placeholder="(00) 0000-0000">
+                <input asp-for="Telefone" class="form-control" placeholder="00 0000-0000" />
             </div>
             <div class="col-md-4">
                 <label asp-for="Celular" class="form-label">Celular</label>
-                <input asp-for="Celular" class="form-control" placeholder="(00) 00000-0000">
+                <input asp-for="Celular" class="form-control" placeholder="00 00000-0000">
             </div>
             <div class="col-md-4">
                 <label asp-for="Pix" class="form-label">PIX</label>
@@ -134,17 +139,17 @@
                 <input asp-for="Facebook" class="form-control">
             </div>
             <div class="col-12">
-                <label asp-for="Email" class="form-label" span-required="">Email</label>
+                <label asp-for="Email" class="form-label required" span-required="">Email</label>
                 <input asp-for="Email" class="form-control" placeholder="seuemail@exemplo.com" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-                <label asp-for="Senha" class="form-label" span-required="">Senha</label>
+                <label asp-for="Senha" class="form-label required" span-required="">Senha</label>
                 <input asp-for="Senha" class="form-control" />
                 <span asp-validation-for="Senha" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-                <label asp-for="ConfirmarSenha" class="form-label" span-required="">Confirmar senha</label>
+                <label asp-for="ConfirmarSenha" class="form-label required" span-required="">Confirmar senha</label>
                 <input asp-for="ConfirmarSenha" class="form-control" />
                 <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
             </div>
@@ -163,7 +168,8 @@
 
         </form>
     </div>
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/jquery.mask.js"></script>
     <script src="~/js/usuario/validacoesCadastrar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
