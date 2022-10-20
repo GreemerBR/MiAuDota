@@ -84,6 +84,9 @@
                     height: 50px;
 
                 }
+                .p{
+                    color:red
+                }
 
     </style>
 </head>
@@ -102,14 +105,14 @@
 
         <form asp-action="Cadastrar" method="POST" class="row g-3">
             <div class="col-12">
-                <label asp-for="Nome" class="form-label" span-required="">Nome Completo</label>
+                <label asp-for="Nome" class="form-label" span-required="">Nome Completo </label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
 
             <div class="col-md-7">
                 <label asp-for="Cpf" class="form-label" span-required="">CPF</label>
-                <input asp-for="Cpf" class="form-control" oninput="mascara(this)" placeholder="000.000.000-00"/>
+                <input asp-for="Cpf" class="form-control" placeholder="000.000.000-00"/>
                 <span asp-validation-for="Cpf" class="text-danger"></span>
             </div>
 
@@ -121,7 +124,7 @@
 
             <div class="col-12">
                 <label asp-for="Endereco" class="form-label" span-required="">Endereço Completo</label>
-                <input asp-for="Endereco" class="form-control" placeholder="Rua XV de Novembro, 123, Centro, Blumenau, SC" />
+                <input asp-for="Endereco"  class="form-control" placeholder="Rua XV de Novembro, 123, Centro, Blumenau, SC" />
                 <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
 
@@ -168,6 +171,8 @@
             </div>
         </form>
     </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/jquery.mask.js"></script>
     <script src="~/js/usuario/validacoesCadastrar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
