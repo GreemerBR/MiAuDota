@@ -19,6 +19,9 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public double Altura { get; set; }
         public bool Castrado { get; set; }
 
+        [Display(Name = "Data de adoção")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataAdocao { get; set; }
 
         public GeneroAnimal Genero { get; set; }
@@ -29,6 +32,6 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
         public string? Foto { get; set; }
 
-        public string DataAdocaoFormatada { get; set; }
+        public string? DataAdocaoFormatada { get; set; }
     }
 }
