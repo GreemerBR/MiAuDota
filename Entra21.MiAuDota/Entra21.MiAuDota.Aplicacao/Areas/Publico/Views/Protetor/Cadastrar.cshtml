@@ -79,6 +79,11 @@
                     border-color: #582B5C;
                     color: white;
                 }
+        .required:after {
+        content:" *"; 
+        color: red;
+        }
+
 
     </style>
 </head>
@@ -97,7 +102,7 @@
 
         <form asp-action="Cadastrar" method="POST" class="row g-3">
             <div class="col-12">
-                <label asp-for="Nome" class="form-label">Nome Completo</label>
+                <label asp-for="Nome" class="form-label required">Nome Completo</label>
                 <input asp-for="Nome" class="form-control">
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
@@ -134,17 +139,17 @@
                 <input asp-for="Facebook" class="form-control">
             </div>
             <div class="col-12">
-                <label asp-for="Email" class="form-label" span-required="">Email</label>
+                <label asp-for="Email" class="form-label required" span-required="">Email</label>
                 <input asp-for="Email" class="form-control" placeholder="seuemail@exemplo.com" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-                <label asp-for="Senha" class="form-label" span-required="">Senha</label>
+                <label asp-for="Senha" class="form-label required" span-required="">Senha</label>
                 <input asp-for="Senha" class="form-control" />
                 <span asp-validation-for="Senha" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-                <label asp-for="ConfirmarSenha" class="form-label" span-required="">Confirmar senha</label>
+                <label asp-for="ConfirmarSenha" class="form-label required" span-required="">Confirmar senha</label>
                 <input asp-for="ConfirmarSenha" class="form-control" />
                 <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
             </div>
