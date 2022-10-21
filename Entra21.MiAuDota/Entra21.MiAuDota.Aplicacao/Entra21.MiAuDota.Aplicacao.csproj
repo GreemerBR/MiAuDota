@@ -19,6 +19,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+	  <PackageReference Include="Font.Awesome" Version="5.15.4" />
+
   </ItemGroup>
 
   <ItemGroup>
