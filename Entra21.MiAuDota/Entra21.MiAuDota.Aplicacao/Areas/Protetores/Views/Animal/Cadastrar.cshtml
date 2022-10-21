@@ -98,6 +98,11 @@
             color: #582b5cc9;
         }
 
+        .required:after {
+            content: " *";
+            color: red;
+        }
+
     </style>
 </head>
 
@@ -114,37 +119,37 @@
 
         <form asp-action="Cadastrar" method="POST" enctype="multipart/form-data" class="row g-3">
             <div class="col-12">
-                <label asp-for="Nome" class="form-label" span-required=""></label>
+                <label asp-for="Nome" class="form-label required" span-required=""></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
 
             <div class="col-md-6">
-                <label asp-for="Raca" class="form-label" span-required=""></label>
+                <label asp-for="Raca" class="form-label required" span-required=""></label>
                 <input asp-for="Raca" class="form-control" />
                 <span asp-validation-for="Raca" class="text-danger"></span>
             </div>
 
             <div class="col-md-6">
-                <label asp-for="Especie" class="form-label" span-required=""></label>
+                <label asp-for="Especie" class="form-label required" span-required=""></label>
                 <input asp-for="Especie" class="form-control" />
                 <span asp-validation-for="Especie" class="text-danger"></span>
             </div>
 
             <div class="col-12">
-                <label asp-for="Sobre" class="form-label" span-required=""></label>
+                <label asp-for="Sobre" class="form-label required" span-required=""></label>
                 <input asp-for="Sobre" class="form-control" />
                 <span asp-validation-for="Sobre" class="text-danger"></span>
             </div>
 
             <div class="col-md-4">
-                <label asp-for="Vacinas" class="form-label" span-required=""></label>
+                <label asp-for="Vacinas" class="form-label required" span-required=""></label>
                 <input asp-for="Vacinas" class="form-control" />
                 <span asp-validation-for="Vacinas" class="text-danger"></span>
             </div>
 
             <div class="col-md-4">
-                <label asp-for="Alergias" class="form-label" span-required=""></label>
+                <label asp-for="Alergias" class="form-label required" span-required=""></label>
                 <input asp-for="Alergias" class="form-control" />
                 <span asp-validation-for="Alergias" class="text-danger"></span>
             </div>
