@@ -1,0 +1,100 @@
+﻿<div class="modal fade" id="modalAnimal" tabindex="-1" aria-labelledby="modalAnimalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAnimalLabel">Dados do animal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden" id="modalAnimalId" class="form-control" disabled="" />
+                <div class="row">
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalNome" class="form-label">Nome</label>
+                        <input type="text" id="modalAnimalNome" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalRaca" class="form-label">Raça</label>
+                        <input type="text" id="modalAnimalRaca" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalEspecie" class="form-label">Espécie</label>
+                        <input type="text" id="modalAnimalEspecie" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalSobre" class="form-label">Sobre</label>
+                        <input type="text" id="modalAnimalSobre" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalVacinas" class="form-label">Vacinas</label>
+                        <input type="text" id="modalAnimalVacinas" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalAlergias" class="form-label">Alergias</label>
+                        <input type="text" id="modalAnimalAlergias" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalOutrasInformacoes" class="form-label">Outras informações médicas</label>
+                        <input type="text" id="modalAnimalOutrasInformacoes" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalIdade" class="form-label">Idade</label>
+                        <input type="text" id="modalAnimalIdade" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalPeso" class="form-label">Peso</label>
+                        <input type="text" id="modalAnimalPeso" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-4 col-sm-6 mb-2">
+                        <label for="modalAnimalAltura" class="form-label">Altura</label>
+                        <input type="text" id="modalAnimalAltura" class="form-control" disabled="" />
+                    </div>
+
+                    <div class="col-6">
+                        <span class="form-label">Castrado</span>
+                        <div class="form-check">
+                            <input type="radio" id="modalAnimalCastradoS" name="modalAnimalCastrado" class="form-check-input" value="true" checked="checked" disabled="" />
+                            <label class="form-check-label" for="modalAnimalCastradoS">Sim</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="modalAnimalCastradoN" name="modalAnimalCastrado" class="form-check-input" value="false" disabled="" />
+                            <label class="form-check-label" for="modalAnimalCastradoN">Não</label>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <span class="form-label">Gênero</span>
+                        <div class="form-check">
+                            <input type="radio" id="modalAnimalDataGeneroF" name="modalAnimalDataGenero" class="form-check-input" value="0" checked="checked" disabled="" />
+                            <label class="form-check-label" for="modalAnimalDataGeneroF">Feminino</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="modalAnimalDataGeneroM" name="modalAnimalDataGenero" class="form-check-input" value="1" disabled="" />
+                            <label class="form-check-label" for="modalAnimalDataGeneroM">Masculino</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-4 col-sm-6 mb-2">
+                        <p>Imagem atual</p>
+                            <img id="modalAnimalFotoCampoImg" width="400" />
+                    </div>
+
+                    </div>
+                </div>                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Sair</button>
+            </div>
+        </div>
+    </div>
+</div>
