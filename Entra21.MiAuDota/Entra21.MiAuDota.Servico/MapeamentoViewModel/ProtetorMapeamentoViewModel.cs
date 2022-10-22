@@ -13,7 +13,6 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
                 Celular = entity.Celular,
                 Telefone = entity.Telefone,
                 Pix = entity.Pix,
-                Sobre = entity.Sobre,
                 Instagram = entity.Instagram,
                 Facebook = entity.Facebook,
             };

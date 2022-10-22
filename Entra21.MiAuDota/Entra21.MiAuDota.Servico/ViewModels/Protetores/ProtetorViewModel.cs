@@ -14,7 +14,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
         [MinLength(9, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(15, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        public string? Celular { get; set; }
+        public string Celular { get; set; }
 
         [Display(Name = nameof(Telefone))]       
         [MinLength(8, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
@@ -52,8 +52,5 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Protetores
 
         [Display(Name = nameof(Instagram))]
         public string? Instagram { get; set; }
-
-        [Display(Name = nameof(Sobre))]
-        public string? Sobre { get; set; }
     }
 }

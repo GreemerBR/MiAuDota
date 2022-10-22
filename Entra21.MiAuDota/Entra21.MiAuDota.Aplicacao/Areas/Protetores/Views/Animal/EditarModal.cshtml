@@ -1,101 +1,101 @@
 ﻿<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editarModalLabel">Editar animal</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" id="editarModalId" class="form-control" />
+	<div class="modal-dialog  modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="editarModalLabel">Editar animal</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<input type="hidden" id="editarModalId" class="form-control" />
 
-                <div class="mb-2">
-                    <label for="editarModalNome" class="form-label">Nome<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalNome" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalNome" class="form-label">Nome<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalNome" class="form-control" />
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalRaca" class="form-label">Raça<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalRaca" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalRaca" class="form-label">Raça<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalRaca" class="form-control" />
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalEspecie" class="form-label">Espécie<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalEspecie" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalEspecie" class="form-label">Espécie<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalEspecie" class="form-control" />
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalSobre" class="form-label">Sobre<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalSobre" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalSobre" class="form-label">Sobre<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalSobre" class="form-control" />
+				</div>
 
-                <div class="mb-2">
-                    <p>Imagem atual</p>
-                    <img id="editarModalFotoCampoImg" width="400" />
+				<div class="mb-2">
+					<p>Imagem atual</p>
+					<img id="editarModalFotoCampoImg" width="400" />
 
-                    <p>Nova imagem</p>
-                    <label for="formFile" class="form-label">Selecione uma imagem</label>
-                    <input class="form-control" type="file" id="Arquivo">
-                </div>
+					<p>Nova imagem</p>
+					<label for="formFile" class="form-label">Selecione uma imagem</label>
+					<input class="form-control" type="file" id="Arquivo">
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalIdade" class="form-label">Idade<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalIdade" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalIdade" class="form-label">Idade<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalIdade" class="form-control" />
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalPeso" class="form-label">Peso<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalPeso" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalPeso" class="form-label">Peso<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalPeso" class="form-control" />
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalAltura" class="form-label">Altura<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalAltura" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalAltura" class="form-label">Altura<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalAltura" class="form-control" />
+				</div>
 
-                <div class="col-6">
-                    <span class="form-label">Castrado<span class="text-danger">*</span></span>
-                    <div class="form-check">
-                        <input type="radio" id="editarModalCastradoS" name="editarModalCastrado" class="form-check-input" value="true" checked="checked" />
-                        <label class="form-check-label" for="editarModalCastradoS">Sim</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" id="editarModalCastradoN" name="editarModalCastrado" class="form-check-input" value="false" />
-                        <label class="form-check-label" for="editarModalCastradoN">Não</label>
-                    </div>
-                </div>
+				<div class="col-6">
+					<span class="form-label">Castrado<span class="text-danger">*</span></span>
+					<div class="form-check">
+						<input type="radio" id="editarModalCastradoS" name="editarModalCastrado" class="form-check-input" value="true" checked="checked" />
+						<label class="form-check-label" for="editarModalCastradoS">Sim</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" id="editarModalCastradoN" name="editarModalCastrado" class="form-check-input" value="false" />
+						<label class="form-check-label" for="editarModalCastradoN">Não</label>
+					</div>
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalDataAdocao" class="form-label">Data da adoção<span class="text-danger">*</span></label>
-                    <input type="datetime-local" id="editarModalDataAdocao" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalDataAdocao" class="form-label">Data da adoção<span class="text-danger">*</span></label>
+					<input type="datetime-local" id="editarModalDataAdocao" class="form-control" />
+				</div>
 
-                <div class="col-6">
-                    <span class="form-label">Gênero<span class="text-danger">*</span></span>
-                    <div class="form-check">
-                        <input type="radio" id="editarModalDataGeneroF" name="editarModalDataGenero" class="form-check-input" value="0" checked="checked" />
-                        <label class="form-check-label" for="editarModalDataGeneroF">Feminino</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" id="editarModalDataGeneroM" name="editarModalDataGenero" class="form-check-input" value="1" />
-                        <label class="form-check-label" for="editarModalDataGeneroM">Masculino</label>
-                    </div>
-                </div>
+				<div class="col-6">
+					<span class="form-label">Gênero<span class="text-danger">*</span></span>
+					<div class="form-check">
+						<input type="radio" id="editarModalDataGeneroF" name="editarModalDataGenero" class="form-check-input" value="0" checked="checked" />
+						<label class="form-check-label" for="editarModalDataGeneroF">Feminino</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" id="editarModalDataGeneroM" name="editarModalDataGenero" class="form-check-input" value="1" />
+						<label class="form-check-label" for="editarModalDataGeneroM">Masculino</label>
+					</div>
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalStatus" class="form-label">Status<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalStatus" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalStatus" class="form-label">Status<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalStatus" class="form-control" />
+				</div>
 
-                <div class="mb-2">
-                    <label for="editarModalUsuarioId" class="form-label">Foi adotado por<span class="text-danger">*</span></label>
-                    <input type="text" id="editarModalUsuarioId" class="form-control" />
-                </div>
+				<div class="mb-2">
+					<label for="editarModalUsuarioId" class="form-label">Foi adotado por<span class="text-danger">*</span></label>
+					<input type="text" id="editarModalUsuarioId" class="form-control" />
+				</div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Cancelar</button>
-                <button type="button" class="btn btn-primary" id="editarModalSalvar"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
-            </div>
-        </div>
-    </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+				<button type="button" class="btn btn-primary" id="editarModalSalvar"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+			</div>
+		</div>
+	</div>
 </div>

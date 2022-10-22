@@ -18,11 +18,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
         {
             entity.Nome = viewModel.Nome;
             entity.Raca = viewModel.Raca;
-            entity.Especie = viewModel.Especie;
-            entity.Sobre = viewModel.Sobre;
-            entity.Vacinas = viewModel.Vacinas;
-            entity.Alergias = viewModel.Alergias;
-            entity.OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas;
+            entity.Sobre = viewModel.Sobre;            
 
             if (!string.IsNullOrEmpty(caminho))
                 entity.Foto = caminho;
@@ -32,9 +28,11 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Altura = viewModel.Altura;
             entity.Castrado = viewModel.Castrado;
             entity.DataAdocao = viewModel.DataAdocao;
+            entity.Especie = (EspecieAnimal)viewModel.Especie;
+            entity.Genero = (GeneroAnimal)viewModel.Genero;
             entity.Status = (StatusInstituicao)viewModel.Status;
             entity.Porte = DeterminarPorte(viewModel.Peso, viewModel.Altura);
-            entity.UsuarioId = viewModel.UsuarioId;
+            entity.Usuario = viewModel.Usuario;
         }
 
         public void AtualizarSenha(Animal entity, AnimalEditarViewModel viewModel)
@@ -53,16 +51,13 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             {
                 Nome = viewModel.Nome,
                 Raca = viewModel.Raca,
-                Especie = viewModel.Especie,
                 Sobre = viewModel.Sobre,
-                Vacinas = viewModel.Vacinas,
-                Alergias = viewModel.Alergias,
-                OutrasInformacoesMedicas = viewModel.OutrasInformacoesMedicas,
                 Foto = caminho,
                 Idade = viewModel.Idade,
                 Peso = viewModel.Peso,
                 Altura = viewModel.Altura,
                 Castrado = viewModel.Castrado,
+                Especie = (EspecieAnimal)viewModel.Especie,
                 Genero = (GeneroAnimal)viewModel.Genero,
                 Status = (StatusInstituicao)viewModel.Status,
                 Porte = DeterminarPorte(viewModel.Peso, viewModel.Altura),

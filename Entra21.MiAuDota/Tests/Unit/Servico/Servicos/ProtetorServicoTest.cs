@@ -7,11 +7,6 @@ using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 using FluentAssertions;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Tests.Unit.Servico.Servicos
@@ -66,7 +61,6 @@ namespace Tests.Unit.Servico.Servicos
                 Cpf = null,
                 Cnpj = null,
                 Pix = "ana@gmail.com",
-                Sobre = "abcdef",
                 Facebook = "@ana145",
                 Instagram = "@ana145",
             };
@@ -83,14 +77,13 @@ namespace Tests.Unit.Servico.Servicos
                 Cpf = viewModelEsperado.Cpf,
                 Cnpj = viewModelEsperado.Cpf,
                 Pix = viewModelEsperado.Pix,
-                Sobre = viewModelEsperado.Sobre,
                 Facebook = viewModelEsperado.Facebook,
                 Instagram = viewModelEsperado.Instagram
             };
 
             _mapeamentoEntidade.ConstruirCom(
                 Arg.Is<ProtetorCadastrarViewModel>(viewModel =>
-                    viewModel.Nome == viewModelEsperado.Nome))
+                    viewModel.Nome == viewModelEsperado.Nome), string.Empty)
                 .Returns(protetorEsperado);
 
 
@@ -116,7 +109,6 @@ namespace Tests.Unit.Servico.Servicos
             protetor.Pix.Should().Be(protetorEsperado.Pix);
             protetor.Facebook.Should().Be(protetorEsperado.Facebook);
             protetor.Instagram.Should().Be(protetorEsperado.Instagram);
-            protetor.Sobre.Should().Be(protetorEsperado.Sobre);
 
             // Informar que a validação da raça foi executada com sucesso
             return true;

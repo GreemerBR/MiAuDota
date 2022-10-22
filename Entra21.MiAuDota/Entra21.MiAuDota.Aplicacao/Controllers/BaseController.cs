@@ -40,9 +40,9 @@ namespace Entra21.MiAuDota.Aplicacao.Controllers
         }
 
         [HttpGet("obterTodosComFiltro")]
-        public virtual IActionResult ObterTodosComFiltro([FromQuery] string especie, string raca, byte idade, byte porte, byte genero)
+        public virtual IActionResult ObterTodosComFiltro()
         {
-            var entities = _servico.ObterTodosComFiltro(especie, raca, idade, porte, genero);
+            var entities = _servico.ObterTodosComFiltro();
 
             return Ok(entities);
         }
