@@ -1,69 +1,104 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="~/theme/assets/images/paws.png" />
+	<link rel="shortcut icon" href="~/theme/assets/images/paws.png" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <title>MiAuDota</title>
-    <style type="text/css">
-        h5 {
-            font-size: 20px;
-            color: #8E37A6;
-        }
-    </style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+	<title>MiAuDota</title>
+	<style type="text/css">
+		h5 {
+			font-size: 20px;
+			color: white;
+		}
+
+		#layout-menu {
+			color: #8E37A6;
+			font-size: 18px;
+			padding: 10px 20px;
+			transition: .3s;
+		}
+
+		#layout-menu:hover {
+			color: #6e2b81;
+			text-shadow: 0.1em 0.1em 0.2em #c8c8c8;
+		}
+
+		.offcanvas-header {
+			background-color: #8E37A6;
+			padding: 16px 20px;
+		}
+
+		.offcanvas-body {
+			padding: 8px 0 0 0;
+		}
+
+		.navbar-toggler {
+			border-color: #8E37A6;
+			border-width: 2px;
+			padding: 4px 8px;
+			color: #FDE3F0;
+			transition: .2s;
+		}
+
+		.navbar-toggler:hover {
+			background-color: #ffffff8c;
+		}
+
+	</style>
 </head>
 
 <body class="bodyNav">
-    <nav class="navbar navbar-light bg-faded fixed-top" style="background-color: #FDE3F0; border-color: #000;">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="Publico" asp-controller="Home" asp-action="Index">
-                <img src="~/theme/assets/images/logopreview.png-removebg-preview.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
-                MiAuDota
-            </a>
-            <button id="teste" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #FDE3F0; border-color: #000;">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><b>MENU</b></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="https://miaudota.azurewebsites.net/" style="font-size: 15px; color: #8E37A6;"><b>Página Inicial</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Publico" asp-controller="Animal" asp-action="Index"><b>Animais para adoção</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Publico" asp-controller="Usuario" asp-action="Cadastrar"><b>Cadastre-se para adotar um animal</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Publico" asp-controller="Protetor" asp-action="Cadastrar"><b>Cadastre-se para divulgar um animal</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Publico" asp-controller="Logon" asp-action="Index"><b>Fazer login</b></a>
-                        </li>
+	<nav class="navbar navbar-light bg-faded fixed-top" style="background-color: #FDE3F0; border-color: #000;">
+		<div class="container-fluid">
+			<a class="navbar-brand" asp-area="Publico" asp-controller="Home" asp-action="Index">
+				<img src="~/theme/assets/images/logopreview.png-removebg-preview.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
+				MiAuDota
+			</a>
+			<button id="teste" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #FDE3F0; border-color: #000;">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasNavbarLabel"><b>MENU</b></h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
 
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav justify-content-end flex-grow-1">
+						<li class="nav-item" >
+							<a class="nav-link active" id="layout-menu" aria-current="page" href="https://miaudota.azurewebsites.net/"><i class="fa fa-solid fa-house fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Página Inicial</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Publico" asp-controller="Animal" asp-action="Index"><i class="fa fa-solid fa-paw fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Animais para adoção</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Publico" asp-controller="Usuario" asp-action="Cadastrar"><i class="fa fa-solid fa-user-plus fa-lg" aria-hidden="true"></i><b>&ensp;Cadastre-se para adotar</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Publico" asp-controller="Protetor" asp-action="Cadastrar"><i class="fa fa-solid fa-shield-heart fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Cadastre-se para divulgar</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Publico" asp-controller="Logon" asp-action="Index"><i class="fa fa-solid fa-user fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Fazer login</b></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
 
-    <div class="bg-image">
-        <div style="background-image: url('https://t4.ftcdn.net/jpg/00/26/80/33/360_F_26803377_fFNCrwUbzm7Ye6b3UP15VHwzWqU0Xcs3.jpg');"></div>
-    </div>
-    @RenderBody()
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    @RenderSection("Scripts", required: false)
+	<div class="bg-image">
+		<div style="background-image: url('https://t4.ftcdn.net/jpg/00/26/80/33/360_F_26803377_fFNCrwUbzm7Ye6b3UP15VHwzWqU0Xcs3.jpg');"></div>
+	</div>
+	@RenderBody()
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/ee7b96a9e8.js" crossorigin="anonymous"></script>
+	@RenderSection("Scripts", required: false)
 </body>
 </html>
 
