@@ -14,25 +14,13 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
         [Display(Name = "Espécie")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [MinLength(3, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
-        [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
-        public string Especie { get; set; }
+        public EspecieAnimal Especie { get; set; }
 
         [Display(Name = nameof(Sobre))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(10, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(200, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
-        public string Sobre { get; set; }
-
-        [Display(Name = nameof(Vacinas))]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [MaxLength(200, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
-        public string Vacinas { get; set; }
-
-        [Display(Name = nameof(Alergias))]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [MaxLength(200, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
-        public string Alergias { get; set; }
+        public string Sobre { get; set; }        
 
         [Display(Name = nameof(Idade))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
@@ -52,7 +40,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
         [Display(Name = "Gênero")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        public byte Genero { get; set; }
+        public GeneroAnimal Genero { get; set; }
 
         [Display(Name = "Id do Usuário")]
         public int? UsuarioId { get; set; }
@@ -65,15 +53,12 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataAdocao { get; set; }
 
-        [Display(Name = "Status na instituíção")]
+        [Display(Name = "Status na instituição")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        public byte Status { get; set; }
+        public StatusInstituicao Status { get; set; }
 
         [Display(Name = "Porte do Animal")]
         public PorteDoAnimal Porte { get; set; }
-
-        [Display(Name = "Outras informações Medicas")]
-        public string? OutrasInformacoesMedicas { get; set; }
 
         public IFormFile? Arquivo { get; set; }
     }

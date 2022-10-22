@@ -8,16 +8,11 @@ using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Animais;
 using FluentAssertions;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Tests.Unit.Servico.Servicos
 {
-    public class AnimalServicoTest
+	public class AnimalServicoTest
     {
 
         private readonly IAnimalServico _animalServico;
@@ -60,9 +55,6 @@ namespace Tests.Unit.Servico.Servicos
                 Raca = "Vira-Lata",
                 Especie = "Cachorro",
                 Sobre = "muito legal",
-                Vacinas = "Todas",
-                Alergias = "Nenhuma",
-                OutrasInformacoesMedicas = "atualmente gripado coitado",
                 Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
                 Idade = 2,
                 Peso = 1.2,
@@ -80,9 +72,6 @@ namespace Tests.Unit.Servico.Servicos
                 Raca = viewModelEsperado.Raca,
                 Especie = viewModelEsperado.Especie,
                 Sobre = viewModelEsperado.Sobre,
-                Vacinas = viewModelEsperado.Vacinas,
-                Alergias = viewModelEsperado.Alergias,
-                OutrasInformacoesMedicas = viewModelEsperado.OutrasInformacoesMedicas,
                 Foto = viewModelEsperado.Foto,
                 Idade = (Byte)viewModelEsperado.Idade,
                 Peso = (Double)viewModelEsperado.Peso,
@@ -114,9 +103,6 @@ namespace Tests.Unit.Servico.Servicos
             animal.Raca.Should().Be(animalEsperado.Raca);
             animal.Especie.Should().Be(animalEsperado.Especie);
             animal.Sobre.Should().Be(animalEsperado.Sobre);
-            animal.Vacinas.Should().Be(animalEsperado.Vacinas);
-            animal.Alergias.Should().Be(animalEsperado.Alergias);
-            animal.OutrasInformacoesMedicas.Should().Be(animalEsperado.OutrasInformacoesMedicas);
             animal.Foto.Should().Be(animalEsperado.Foto);
             animal.Idade.Should().Be(animalEsperado.Idade);
             animal.Peso.Should().Be(animalEsperado.Peso);

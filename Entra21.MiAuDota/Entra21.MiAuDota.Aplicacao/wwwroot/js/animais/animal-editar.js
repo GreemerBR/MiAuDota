@@ -4,9 +4,6 @@
     let raca = document.getElementById('editarModalRaca').value;
     let especie = document.getElementById('editarModalEspecie').value;
     let sobre = document.getElementById('editarModalSobre').value;
-    let vacinas = document.getElementById('editarModalVacinas').value;
-    let alergias = document.getElementById('editarModalAlergias').value;
-    let outrasInformacoesMedicas = document.getElementById('editarModalOutrasInformacoes').value;
     let foto = document.getElementById('Arquivo').files[0];
     let idade = document.getElementById('editarModalIdade').value;
     let peso = document.getElementById('editarModalPeso').value;
@@ -23,9 +20,6 @@
     formData.append('raca', raca);
     formData.append('especie', especie);
     formData.append('sobre', sobre);
-    formData.append('vacinas', vacinas);
-    formData.append('alergias', alergias);
-    formData.append('outrasInformacoesMedicas', outrasInformacoesMedicas);
     formData.append('idade', idade);
     formData.append('arquivo', foto);
     formData.append('peso', peso);

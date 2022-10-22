@@ -1,15 +1,10 @@
 ﻿using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Enum;
 using Entra21.MiAuDota.Servico.ViewModels.Animais;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
 {
-    public class AnimalMapeamentoViewModel : IAnimalMapeamentoViewModel
+	public class AnimalMapeamentoViewModel : IAnimalMapeamentoViewModel
     {
         public AnimalEditarViewModel ConstruirCom(Animal entity)
         {
@@ -17,11 +12,8 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
             {
                 Nome = entity.Nome,
                 Raca = entity.Raca,
-                Especie = entity.Especie,
+                Especie = (EspecieAnimal)entity.Especie,
                 Sobre = entity.Sobre,
-                Vacinas = entity.Vacinas,
-                Alergias = entity.Alergias,
-                OutrasInformacoesMedicas = entity.OutrasInformacoesMedicas,
                 Foto = entity.Foto,
                 Idade = (Byte)entity.Idade,
                 Peso = (Double)entity.Peso,
@@ -31,8 +23,8 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
                 Status = (StatusInstituicao)entity.Status,
                 UsuarioId = entity.UsuarioId,
                 Id = entity.Id,
-                Genero = entity.Genero,
-                Porte = entity.Porte,
+                Genero = (GeneroAnimal)entity.Genero,
+                Porte = (PorteDoAnimal)entity.Porte,
                 DataAdocaoFormatada = entity.DataAdocao?.ToShortDateString() ?? string.Empty
             };
         }
