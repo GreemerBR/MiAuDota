@@ -1,4 +1,5 @@
-﻿using Entra21.MiAuDota.Repositorio.Enum;
+﻿using Entra21.MiAuDota.Repositorio.Entidades;
+using Entra21.MiAuDota.Repositorio.Enum;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
@@ -23,7 +24,10 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public StatusInstituicao Status { get; set; }
         public PorteDoAnimal Porte { get; set; }
 
-        public int? UsuarioId { get; set; }
+        public Usuario? Usuario { get; set; }
+
+        public Protetor? Protetor { get; set; }
+        public int? ProtetorId { get; set; }
 
         public string? Foto { get; set; }
 

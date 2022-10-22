@@ -35,7 +35,7 @@ let editarPreencherModal = (botaoEditar) => {
         .then((data) => {
             if (statusResponse === 200) {
                 let modal = new bootstrap.Modal(document.getElementById('editarModal'), {});
-
+                
                 document.getElementById('editarModalLabel').innerText = `Editar animal: ${data.nome}`
                 document.getElementById('editarModalId').value = data.id;
                 document.getElementById('editarModalNome').value = data.nome;
@@ -77,6 +77,7 @@ let visualizarPreencherModal = (botaoVisualizar) => {
         .then((data) => {
             if (statusResponse === 200) {
                 let modal = new bootstrap.Modal(document.getElementById('visualizarModal'), {});
+                debugger;
 
                 document.getElementById('visualizarModalLabel').innerText = `Animal: ${data.nome}`
                 document.getElementById('visualizarModalId').value = data.id;
@@ -88,7 +89,9 @@ let visualizarPreencherModal = (botaoVisualizar) => {
                 document.getElementById('visualizarModalPeso').value = data.peso;
                 document.getElementById('visualizarModalAltura').value = data.altura;
                 document.getElementById('visualizarModalDataAdocao').value = data.dataAdocaoFormatada;
-                document.getElementById('visualizarModalUsuarioId').value = data.usuarioId;
+                document.getElementById('visualizarModalUsuarioNome').value = data.usuario.nome;
+                document.getElementById('visualizarModalProtetorNome').value = data.protetor.nome;
+                document.getElementById('visualizarModalProtetorCelular').value = data.protetor.celular;
                 if (data.genero === 0)
                     document.getElementById('visualizarModalDataGeneroF').checked = true;
                 else
