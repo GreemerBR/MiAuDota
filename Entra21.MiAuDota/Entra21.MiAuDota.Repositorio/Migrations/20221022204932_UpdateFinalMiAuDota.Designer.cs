@@ -4,6 +4,7 @@ using Entra21.MiAuDota.Repositorio.BancoDados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entra21.MiAuDota.Repositorio.Migrations
 {
     [DbContext(typeof(MiAuDotaContexto))]
-    partial class MiAuDotaContextoModelSnapshot : ModelSnapshot
+    [Migration("20221022204932_UpdateFinalMiAuDota")]
+    partial class UpdateFinalMiAuDota
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

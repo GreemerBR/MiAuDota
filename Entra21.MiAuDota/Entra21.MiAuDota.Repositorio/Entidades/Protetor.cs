@@ -10,7 +10,6 @@
         public string Senha { get; set; }
         public string ConfirmarSenha { get; set; }
         public string? Pix { get; set; }
-        public string? Sobre { get; set; }
         public string? Instagram { get; set; }
         public string? Facebook { get; set; }
         public bool IsActive { get; set; }

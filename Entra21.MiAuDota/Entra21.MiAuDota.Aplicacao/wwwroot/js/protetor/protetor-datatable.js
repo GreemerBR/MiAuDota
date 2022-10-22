@@ -10,7 +10,6 @@
     columns: [
         { data: 'nome' },
         { data: 'email' },
-        { data: 'sobre' },
         {
             data: null,
             render: function (data, type, protetor) {

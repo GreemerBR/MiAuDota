@@ -1,5 +1,4 @@
 ﻿using Entra21.MiAuDota.Aplicacao.Controllers;
-using Entra21.MiAuDota.Aplicacao.FiltroLogin;
 using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Repositorio.Repositorios;
 using Entra21.MiAuDota.Servico.Autenticacao;
@@ -18,12 +17,6 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers
     {
         public AnimalController(IAnimalServico servico, ISessionManager sessionManager) : base(servico, sessionManager)
         {
-        }
-
-        [HttpGet("exibirAnimal")]
-        public virtual IActionResult ExibirAnimal()
-        {
-            return View("animal/PaginaAnimal");
         }
     }
 }

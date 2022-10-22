@@ -2,11 +2,6 @@
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Tests.Unit.Servico.MapeamentoEntidades
@@ -39,7 +34,7 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             };
 
             //act
-            var usuario = _usuarioMapeamentoEntidade.ConstruirCom(viewModel);
+            var usuario = _usuarioMapeamentoEntidade.ConstruirCom(viewModel, string.Empty);
 
             //Assert
             usuario.Nome.Should().Be(viewModel.Nome);

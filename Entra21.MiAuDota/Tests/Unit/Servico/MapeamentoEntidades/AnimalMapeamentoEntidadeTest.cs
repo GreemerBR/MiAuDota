@@ -28,14 +28,13 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             {
                 Nome = "Tobias",
                 Raca = "Dog",
-                Especie = "Cachorro",
-                Sobre = "Animal muito legal",                
-                Foto = "275E5840-F48D-4E7B-9156-D038C9AB89B4.jpg",
+                Especie = 0,
+                Sobre = "Animal muito legal",
                 Idade = 2,
                 Peso = 2.2,
                 Altura = 0.5,
                 Castrado = false,
-                Genero = 1,
+                Genero = 0,
                 Status = 0,
                 UsuarioId = null,
                 ProtetorId = 1,
@@ -53,14 +52,13 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             _sessionManager.GetUser<Protetor>().Returns(protetor);
 
             // Act
-            var animal = _animalMapeamentoEntidade.ConstruirCom(viewModel);
+            var animal = _animalMapeamentoEntidade.ConstruirCom(viewModel, string.Empty);
 
             // Assert
             animal.Nome.Should().Be(viewModel.Nome);
             animal.Raca.Should().Be(viewModel.Raca);
             animal.Especie.Should().Be((EspecieAnimal)viewModel.Especie);
-            animal.Sobre.Should().Be(viewModel.Sobre);            
-            animal.Foto.Should().Be(viewModel.Foto);
+            animal.Sobre.Should().Be(viewModel.Sobre);
             animal.Idade.Should().Be(viewModel.Idade);
             animal.Peso.Should().Be(viewModel.Peso);
             animal.Altura.Should().Be(viewModel.Altura);

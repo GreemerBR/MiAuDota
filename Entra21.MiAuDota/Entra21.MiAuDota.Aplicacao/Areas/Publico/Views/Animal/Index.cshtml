@@ -107,16 +107,19 @@
 				<div class="row row-cols-1 row-cols-md-4 g-4">
 					@foreach (var animal in Model)
 					{
-						<div class="col">
-							<div class="card" asp-area="Publico" asp-controller="Animal" asp-action="exibirAnimal">
-								<img src="/Uploads/Animais/@animal.Foto" width="200" class="card-img-top" alt="..." />
-								<div class="card-body">
-									<h5 class="card-title">@animal.Nome</h5>
-									<p class="card-text">@animal.Genero - @animal.Porte</p>
-									<a type="submit" class="btn btn-info btn-center" href="https://miaudota.azurewebsites.net/logon">Mais informações</a>
+						if (animal.Status == Repositorio.Enum.StatusInstituicao.AptoParaAdocao)
+						{
+							<div class="col">
+								<div class="card">
+									<img src="/Uploads/Animais/@animal.Foto" width="200" class="card-img-top" alt="..." />
+									<div class="card-body">
+										<h5 class="card-title">@animal.Nome</h5>
+										<p class="card-text">@animal.Genero - @animal.Porte</p>
+										<a type="submit" class="btn btn-info btn-center" href="https://miaudota.azurewebsites.net/logon">Mais informações</a>
+									</div>
 								</div>
 							</div>
-						</div>
+						}
 					}
 				</div>
 			</div>

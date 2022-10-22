@@ -12,7 +12,7 @@ using Xunit;
 
 namespace Tests.Unit.Servico.Servicos
 {
-	public class AnimalServicoTest
+    public class AnimalServicoTest
     {
 
         private readonly IAnimalServico _animalServico;
@@ -53,16 +53,15 @@ namespace Tests.Unit.Servico.Servicos
             {
                 Nome = "Tobias",
                 Raca = "Vira-Lata",
-                Especie = "Cachorro",
+                Especie = 0,
                 Sobre = "muito legal",
-                Foto = "8BE47EBF-0F7A-455F-B4DB-58001DD9D577.jpg",
                 Idade = 2,
                 Peso = 1.2,
                 Altura = 0.3,
                 Castrado = true,
                 DataAdocao = new DateTime(2021,05,04),
-                Genero = 1,
-                Status = 2,
+                Genero = 0,
+                Status = 0,
                 UsuarioId = 1,
             };
 
@@ -72,7 +71,6 @@ namespace Tests.Unit.Servico.Servicos
                 Raca = viewModelEsperado.Raca,
                 Especie = viewModelEsperado.Especie,
                 Sobre = viewModelEsperado.Sobre,
-                Foto = viewModelEsperado.Foto,
                 Idade = (Byte)viewModelEsperado.Idade,
                 Peso = (Double)viewModelEsperado.Peso,
                 Altura = (Double)viewModelEsperado.Altura,
@@ -86,7 +84,7 @@ namespace Tests.Unit.Servico.Servicos
 
             _mapeamentoEntidade.ConstruirCom(
                 Arg.Is<AnimalCadastrarViewModel>(viewModel =>
-                    viewModel.Nome == viewModelEsperado.Nome))
+                    viewModel.Nome == viewModelEsperado.Nome), string.Empty)
                 .Returns(animalEsperado);
 
             // Act

@@ -7,11 +7,6 @@ using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using FluentAssertions;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Tests.Unit.Servico.Servicos
@@ -82,7 +77,7 @@ namespace Tests.Unit.Servico.Servicos
 
             _mapeamentoEntidade.ConstruirCom(
                 Arg.Is<UsuarioCadastrarViewModel>(viewModel =>
-                    viewModel.Nome == viewModelEsperado.Nome))
+                    viewModel.Nome == viewModelEsperado.Nome), string.Empty)
                 .Returns(usuarioEsperado);
 
             // Act

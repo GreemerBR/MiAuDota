@@ -18,5 +18,12 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
         {
             return _contexto.Animais.Where(x => x.ProtetorId == protetorId).ToList();
         }
+
+        public override IList<Animal> ObterTodosComFiltro()
+        {
+            var query = _contexto.Animais.AsQueryable().Where(animal => animal.Status == Enum.StatusInstituicao.AptoParaAdocao);
+
+            return query.ToList();
+        }
     }
 }

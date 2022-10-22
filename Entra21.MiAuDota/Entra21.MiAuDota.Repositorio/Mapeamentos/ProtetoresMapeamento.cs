@@ -75,10 +75,6 @@ namespace Entra21.MiAuDota.Repositorio.Mapeamentos
                 .HasMaxLength(45)
                 .HasColumnName("pix");
 
-            builder.Property(x => x.Sobre)
-                .HasColumnType("TEXT")
-                .HasColumnName("sobre");
-
             builder.Property(x => x.Instagram)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(45)
