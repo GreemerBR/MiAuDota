@@ -14,6 +14,14 @@ $('table').on('click', '.animal-modalVisualizar', (event) => {
     visualizarPreencherModal(element);
 });
 
+$('#animais').on('click', '.animal-modalAnimal', (event) => {
+    let element = event.target.tagName === 'I'
+        ? event.target.parentElement
+        : event.target;
+
+    visualizarAnimalModal(element);
+});
+
 let editarPreencherModal = (botaoEditar) => {
     let id = botaoEditar.getAttribute('data-id');
     let statusResponse = 0;
@@ -34,9 +42,6 @@ let editarPreencherModal = (botaoEditar) => {
                 document.getElementById('editarModalRaca').value = data.raca;
                 document.getElementById('editarModalEspecie').value = data.especie;
                 document.getElementById('editarModalSobre').value = data.sobre;
-                document.getElementById('editarModalVacinas').value = data.vacinas;
-                document.getElementById('editarModalAlergias').value = data.alergias;
-                document.getElementById('editarModalOutrasInformacoes').value = data.outrasInformacoesMedicas;                
                 document.getElementById('editarModalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
                 document.getElementById('editarModalIdade').value = data.idade;
                 document.getElementById('editarModalPeso').value = data.peso;
@@ -73,15 +78,11 @@ let visualizarPreencherModal = (botaoVisualizar) => {
             if (statusResponse === 200) {
                 let modal = new bootstrap.Modal(document.getElementById('visualizarModal'), {});
 
-                document.getElementById('visualizarModalLabel').innerText = `Editar animal: ${data.nome}`
+                document.getElementById('visualizarModalLabel').innerText = `Animal: ${data.nome}`
                 document.getElementById('visualizarModalId').value = data.id;
-                document.getElementById('visualizarModalNome').value = data.nome;
                 document.getElementById('visualizarModalRaca').value = data.raca;
                 document.getElementById('visualizarModalEspecie').value = data.especie;
                 document.getElementById('visualizarModalSobre').value = data.sobre;
-                document.getElementById('visualizarModalVacinas').value = data.vacinas;
-                document.getElementById('visualizarModalAlergias').value = data.alergias;
-                document.getElementById('visualizarModalOutrasInformacoes').value = data.outrasInformacoesMedicas;                
                 document.getElementById('visualizarModalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
                 document.getElementById('visualizarModalIdade').value = data.idade;
                 document.getElementById('visualizarModalPeso').value = data.peso;
@@ -96,6 +97,44 @@ let visualizarPreencherModal = (botaoVisualizar) => {
                     document.getElementById('visualizarModalCastradoS').checked = true;
                 else
                     document.getElementById('visualizarModalCastradoN').checked = true;
+
+                modal.show();
+            }
+        })
+        .catch((error) => console.log(error));
+};
+
+let visualizarAnimalModal = (botaoAnimal) => {
+    let id = botaoAnimal.getAttribute('data-id');
+    let statusResponse = 0;
+
+    fetch(`/animal/obterPorId?id=${id}`)
+        .then((response) => {
+            statusResponse = response.status;
+
+            return response.json();
+        })
+        .then((data) => {
+            if (statusResponse === 200) {
+                let modal = new bootstrap.Modal(document.getElementById('modalAnimal'), {});
+
+                document.getElementById('modalAnimalLabel').innerText = `Animal: ${data.nome}`
+                document.getElementById('modalAnimalId').value = data.id;
+                document.getElementById('modalAnimalRaca').value = data.raca;
+                document.getElementById('modalAnimalEspecie').value = data.especie;
+                document.getElementById('modalAnimalSobre').value = data.sobre;
+                document.getElementById('modalAnimalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
+                document.getElementById('modalAnimalIdade').value = data.idade;
+                document.getElementById('modalAnimalPeso').value = data.peso;
+                document.getElementById('modalAnimalAltura').value = data.altura;
+                if (data.genero === 0)
+                    document.getElementById('modalAnimalDataGeneroF').checked = true;
+                else
+                    document.getElementById('modalAnimalDataGeneroM').checked = true;
+                if (data.cadastro === 0)
+                    document.getElementById('modalAnimalCastradoS').checked = true;
+                else
+                    document.getElementById('modalAnimalCastradoN').checked = true;
 
                 modal.show();
             }
