@@ -2,11 +2,11 @@
     ViewData["Title"] = "Home page";
 }
 
-    <div class="text-center" style="margin-top: 80px;">
-        <h4 class="">Seus animais</h4>
-    </div>
+<div class="text-center" style="margin-top: 80px;">
+    <h4 class="">Seus animais</h4>
+</div>
 
-    <div class="position-absolute start-50 translate-middle" style="width: 1000px; margin-top: 200px;">
+<div class="position-absolute start-50 translate-middle" style="width: 1000px; margin-top: 200px;">
     <table class="table table-striped table-bordered" id="tabela-animais">
         <thead>
             <tr>
@@ -17,13 +17,13 @@
             </tr>
         </thead>
     </table>
-    </div>
+</div>
 
 <partial name="EditarModal" />
 <partial name="VisualizarModal" />
 
-    @section Scripts{
-        <script src="~/js/animais/animal-datatable.js"></script>
-        <script src="~/js/animais/animal-editar.js"></script>
-        <script src="~/js/animais/animal-acoes.js"></script>
+@section Scripts{
+    <script src="~/js/animais/animal-datatable.js"></script>
+    <script src="~/js/animais/animal-editar.js"></script>
+    <script src="~/js/animais/animal-acoes.js"></script>
     }

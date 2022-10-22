@@ -142,19 +142,7 @@
                 <span asp-validation-for="Sobre" class="text-danger"></span>
             </div>
 
-            <div class="col-md-4">
-                <label asp-for="Vacinas" class="form-label required" span-required=""></label>
-                <input asp-for="Vacinas" class="form-control" />
-                <span asp-validation-for="Vacinas" class="text-danger"></span>
-            </div>
-
-            <div class="col-md-4">
-                <label asp-for="Alergias" class="form-label required" span-required=""></label>
-                <input asp-for="Alergias" class="form-control" />
-                <span asp-validation-for="Alergias" class="text-danger"></span>
-            </div>
-
-            <div class="col-md-4">
+            <div class="mb-3">
                 <label asp-for="Idade" class="form-label" span-required=""></label>
                 <input asp-for="Idade" class="form-control" />
                 <span asp-validation-for="Idade" class="text-danger"></span>
@@ -199,12 +187,6 @@
             <div class="mb-3">
                 <label for="formFile" class="form-label">Selecione uma imagem</label>
                 <input class="form-control" type="file" asp-for="Arquivo">
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="OutrasInformacoesMedicas" class="form-label" span-required=""></label>
-                <input asp-for="OutrasInformacoesMedicas" class="form-control" />
-                <span asp-validation-for="OutrasInformacoesMedicas" class="text-danger"></span>
             </div>
 
             <div class="text-end">
