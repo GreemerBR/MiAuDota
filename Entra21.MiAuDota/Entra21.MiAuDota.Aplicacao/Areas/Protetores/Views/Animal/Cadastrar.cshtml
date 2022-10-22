@@ -21,7 +21,8 @@
 
         .brand-img {
             max-width: 200px;
-            max-height: 150px
+            max-height: 150px;
+            margin-top: 55px;
         }
 
         .form-label {
@@ -51,7 +52,19 @@
 
         .brand {
             margin: 20px 0;
+            transition: transform .2s;
+            animation: fromTop .2s 2s backwards;
         }
+
+            .brand img {
+                -webkit-transition: all 0.7s ease;
+                transition: all 0.7s ease;
+            }
+
+                .brand img:hover {
+                    -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+                }
 
         .initial-text {
             margin: 0 0 20px 0;
@@ -80,6 +93,16 @@
                 color: white;
             }
 
+        footer {
+            background-color: #FBC5DF;
+            color: #582b5cc9;
+        }
+
+        .required:after {
+            content: " *";
+            color: red;
+        }
+
     </style>
 </head>
 
@@ -94,27 +117,27 @@
             </div>
         </div>
 
-        <form asp-action="Cadastrar" method="POST" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label asp-for="Nome" class="form-label" span-required=""></label>
+        <form asp-action="Cadastrar" method="POST" enctype="multipart/form-data" class="row g-3">
+            <div class="col-12">
+                <label asp-for="Nome" class="form-label required" span-required=""></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="Raca" class="form-label" span-required=""></label>
+            <div class="col-md-6">
+                <label asp-for="Raca" class="form-label required" span-required=""></label>
                 <input asp-for="Raca" class="form-control" />
                 <span asp-validation-for="Raca" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="Especie" class="form-label" span-required=""></label>
+            <div class="col-md-6">
+                <label asp-for="Especie" class="form-label required" span-required=""></label>
                 <input asp-for="Especie" class="form-control" />
                 <span asp-validation-for="Especie" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="Sobre" class="form-label" span-required=""></label>
+            <div class="col-12">
+                <label asp-for="Sobre" class="form-label required" span-required=""></label>
                 <input asp-for="Sobre" class="form-control" />
                 <span asp-validation-for="Sobre" class="text-danger"></span>
             </div>
@@ -125,25 +148,25 @@
                 <span asp-validation-for="Idade" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
+            <div class="col-md-4">
                 <label asp-for="Peso" class="form-label" span-required=""></label>
                 <input asp-for="Peso" class="form-control" />
                 <span asp-validation-for="Peso" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
+            <div class="col-md-4">
                 <label asp-for="Altura" class="form-label" span-required=""></label>
                 <input asp-for="Altura" class="form-control" />
                 <span asp-validation-for="Altura" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
+            <div class="col-md-4">
                 <label asp-for="Genero" class="form-label" span-required=""></label>
                 <input asp-for="Genero" class="form-control" />
                 <span asp-validation-for="Genero" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
+            <div class="col-md-4">
                 <label asp-for="Status" class="form-label" span-required=""></label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
@@ -174,6 +197,34 @@
         </form>
 
     </div>
+
+    <footer class="text-light" style="margin-top: 40px">
+        <div class="container-fluid py-3">
+            <div class="row">
+                <div class="col-4">
+                    <ul class="nav flex-column">
+                        <li class="nav-link"><a href="#">Retornar à Loja</a></li>
+                        <li class="nav-link"><a href="#">Sobre</a></li>
+                        <li class="nav-link"><a href="#">Contato</a></li>
+                        <li class="nav-link"><a href="#">Suporte</a></li>
+                    </ul>
+                </div>
+                <div class="col-8">
+                    <p style="color: #582b5cc9">
+                        A MiAuDota agradece muito a preferencia. Nos ajude a fazer a diferença! Juntos podemos ajudar os animais que precisam de um lar.<br />
+                        Se precisar, pode chamar a nossa equipe no suporte, temos nossas redes sociais, clique e nos siga.
+
+
+                    </p>
+                    <ul class="nav">
+                        <li class="nav-link"><a href="https://pt-br.facebook.com/" target="_blank"><img src="~/theme/assets/images/facebook.svg" /></a><i class="fab fa-facebook fa-3x "></i></li>
+                        <li class="nav-link"><a href="https://www.instagram.com/" target="_blank"><img src="~/theme/assets/images/instagram.svg" /></a><i class="fab fa-instagram fa-3x"></i></li>
+                        <li class="nav-link"><a href="https://linktr.ee/miaudota" target="_blank"><img src="~/theme/assets/images/pessoas.svg" /></a><i class="fab fa-equipe fa-3x"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         (function (document, window, $) {
