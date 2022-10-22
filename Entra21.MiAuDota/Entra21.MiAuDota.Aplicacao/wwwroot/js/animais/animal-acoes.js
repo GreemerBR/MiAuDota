@@ -42,9 +42,6 @@ let editarPreencherModal = (botaoEditar) => {
                 document.getElementById('editarModalRaca').value = data.raca;
                 document.getElementById('editarModalEspecie').value = data.especie;
                 document.getElementById('editarModalSobre').value = data.sobre;
-                document.getElementById('editarModalVacinas').value = data.vacinas;
-                document.getElementById('editarModalAlergias').value = data.alergias;
-                document.getElementById('editarModalOutrasInformacoes').value = data.outrasInformacoesMedicas;                
                 document.getElementById('editarModalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
                 document.getElementById('editarModalIdade').value = data.idade;
                 document.getElementById('editarModalPeso').value = data.peso;
@@ -86,9 +83,6 @@ let visualizarPreencherModal = (botaoVisualizar) => {
                 document.getElementById('visualizarModalRaca').value = data.raca;
                 document.getElementById('visualizarModalEspecie').value = data.especie;
                 document.getElementById('visualizarModalSobre').value = data.sobre;
-                document.getElementById('visualizarModalVacinas').value = data.vacinas;
-                document.getElementById('visualizarModalAlergias').value = data.alergias;
-                document.getElementById('visualizarModalOutrasInformacoes').value = data.outrasInformacoesMedicas;                
                 document.getElementById('visualizarModalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
                 document.getElementById('visualizarModalIdade').value = data.idade;
                 document.getElementById('visualizarModalPeso').value = data.peso;
@@ -129,9 +123,6 @@ let visualizarAnimalModal = (botaoAnimal) => {
                 document.getElementById('modalAnimalRaca').value = data.raca;
                 document.getElementById('modalAnimalEspecie').value = data.especie;
                 document.getElementById('modalAnimalSobre').value = data.sobre;
-                document.getElementById('modalAnimalVacinas').value = data.vacinas;
-                document.getElementById('modalAnimalAlergias').value = data.alergias;
-                document.getElementById('modalAnimalOutrasInformacoes').value = data.outrasInformacoesMedicas;                
                 document.getElementById('modalAnimalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
                 document.getElementById('modalAnimalIdade').value = data.idade;
                 document.getElementById('modalAnimalPeso').value = data.peso;
