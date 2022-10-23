@@ -1,69 +1,111 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <title>MiAuDota</title>
-    <style type="text/css">
-        h5 {
-            font-size: 20px;
-            color: #8E37A6;
-        }
-    </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+	<title>MiAuDota</title>
+	<style type="text/css">
+		.offcanvas-title {
+			font-size: 20px;
+			color: white;
+		}
+
+		#layout-menu {
+			color: #8E37A6;
+			font-size: 18px;
+			padding: 10px 20px;
+			transition: .3s;
+		}
+
+		#layout-menu:hover {
+			color: #6e2b81;
+			text-shadow: 0.1em 0.1em 0.2em #c8c8c8;
+		}
+
+		.offcanvas-header {
+			background-color: #8E37A6;
+			padding: 16px 20px;
+		}
+
+		.offcanvas-body {
+			padding: 8px 0 0 0;
+		}
+
+		.navbar-toggler {
+			border-color: #8E37A6 !important;
+			border-width: 2px !important;
+			padding: 4px 8px !important;
+			color: #FBC5DF !important;
+			transition: .2s !important;
+		}
+
+		.navbar-toggler:hover {
+			background-color: #ffffff8c !important;
+		}
+	</style>
 </head>
 
 <body class="bodyNav">
-    <nav class="navbar navbar-light bg-faded fixed-top" style="background-color: #FDE3F0; border-color: #000;">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="Protetores" asp-controller="Home" asp-action="Index">
-                <img src="~/theme/assets/images/logopreview.png-removebg-preview.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
-                MiAuDota
-            </a>
-            <button id="teste" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #FDE3F0; border-color: #000;">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><b>MENU</b></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Protetores" asp-controller="Home" asp-action="Index"><b>Página Inicial</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Protetores" asp-controller="Animal" asp-action="Index"><b>Animais para adoção</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Protetores" asp-controller="Animal" asp-action="Cadastrar"><b>Cadastrar Animal</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Protetores" asp-controller="Animal" asp-action="MeusAnimais"><b>Meus Animais</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Protetores" asp-controller="Protetor" asp-action="Editar"><b>Editar Perfil</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Protetores" asp-controller="Protetor" asp-action="EditarSenha"><b>Alterar Senha</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 15px; color: #8E37A6;" asp-area="Protetores" asp-controller="Logout" asp-action="Logout"><b>Sair</b></a>
-                        </li>
+	<nav class="navbar navbar-light bg-faded fixed-top" style="background-color: #FBC5DF !important; border-color: #000;">
+		<div class="container-fluid">
+			<a class="navbar-brand" asp-area="Protetores" asp-controller="Home" asp-action="Index">
+				<img src="~/theme/assets/images/logopreview.png-removebg-preview.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
+				MiAuDota
+			</a>
+			<button id="teste" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #FDE3F0; border-color: #000;">
 
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasNavbarLabel"><b>MENU</b></h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
 
-    @RenderBody()
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    @RenderSection("Scripts", required: false)
+				<div class="offcanvas-body">
+					<ul class="navbar-nav justify-content-end flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Protetores" asp-controller="Home" asp-action="Index">
+								<i class="fa fa-solid fa-house fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Página Inicial</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Protetores" asp-controller="Animal" asp-action="Index">
+								<i class="fa fa-solid fa-paw fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Animais para adoção</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Protetores" asp-controller="Animal" asp-action="Cadastrar">
+								<i class="fa-solid fa-circle-plus fa-lg aria-hidden="true""></i><b>&ensp;&nbsp;Cadastrar Animal</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Protetores" asp-controller="Animal" asp-action="MeusAnimais">
+								<i class="fa-solid fa-folder fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Meus animais</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Protetores" asp-controller="Protetor" asp-action="Editar">
+								<i class="fa-solid fa-pen fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Editar Perfil</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Protetores" asp-controller="Protetor" asp-action="EditarSenha">
+								<i class="fa-solid fa-key fa-lg" aria-hidden="true"></i><b>&ensp;&nbsp;Alterar Senha</b></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" id="layout-menu" aria-current="page" asp-area="Protetores" asp-controller="Logout" asp-action="Logout">
+								<i class="fa-solid fa-right-from-bracket fa-lg"></i><b>&ensp;&nbsp;Sair</b></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	@RenderBody()
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+	   <script src="https://kit.fontawesome.com/ee7b96a9e8.js" crossorigin="anonymous"></script>
+	@RenderSection("Scripts", required: false)
 </body>
 </html>
 
