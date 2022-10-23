@@ -117,6 +117,7 @@
 										<h5 class="card-title">@animal.Nome</h5>
 										<p class="card-text">@animal.Genero - @animal.Porte</p>
 										<button class="btn btn-info btn-center animal-modalAnimal" data-id="@animal.Id">Mais informações</button>
+										<button class="btn btn-success btn-center protetor-modalProtetor" data-id="@animal.ProtetorId" style="margin-top: 10px">Entre em contato</button>
 									</div>
 								</div>
 							</div>
@@ -128,9 +129,11 @@
 	</div>
 
 	<partial name="ModalAnimal" />
+	<partial name="ModalProtetor" />
 
 	@section Scripts{
 		<script src="~/js/animais/animal-acoes.js"></script>
+		<script src="~/js/protetor/protetor-acoes.js"></script>
 	}
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 	</body>

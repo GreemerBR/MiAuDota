@@ -1,4 +1,4 @@
-﻿<div class="modal fade" id="modalAnimal" tabindex="-1" aria-labelledby="modalAnimalLabel" aria-hidden="true" style="overflow: hidden; width: 60%; margin-left: 20%;">
+﻿<div class="modal fade" id="modalAnimal" tabindex="-1" aria-labelledby="modalAnimalLabel" aria-hidden="true" style="width: 60%; margin-left: 20%;">
 	<div class="modal-dialog  modal-xl  modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -8,28 +8,31 @@
 
 			<div class="modal-body">
 				<input type="hidden" id="modalAnimalId" class="form-control" disabled="" />
+
 				<div class="row">
-					<div class="column left" style="float:left; width:50%">
+					<div class="column left" style="float:left; width:35%">
 						<div class="col-3 col-sm-6 mb-2">
 							<label for="modalAnimalRaca" class="form-label">Raça</label>
-							<input type="text" id="modalAnimalRaca" class="form-control" style="width: 150%;" disabled="" />
+							<input type="text" id="modalAnimalRaca" class="form-control" style="width: 180%;" disabled="" />
 						</div>
 
 						<div class="col-3 col-sm-6 mb-2">
 							<label for="modalAnimalEspecie" class="form-label">Espécie</label>
-							<input type="text" id="modalAnimalEspecie" class="form-control" style="width: 150%;" disabled="" />
+							<input type="text" id="modalAnimalEspecie" class="form-control" style="width: 180%;" disabled="" />
 						</div>
 
 						<div class="col-3 col-sm-6 mb-2">
 							<label for="modalAnimalIdade" class="form-label">Idade</label>
-							<input type="text" id="modalAnimalIdade" class="form-control" style="width: 150%;" disabled="" />
+							<input type="text" id="modalAnimalIdade" class="form-control" style="width: 180%;" disabled="" />
 						</div>
 
 						<div class="col-3 col-sm-6 mb-2">
 							<label for="modalAnimalSobre" class="form-label">Sobre</label>
-							<input type="text" id="modalAnimalSobre" class="form-control" style="width: 150%;" disabled="" />
+							<input type="text" id="modalAnimalSobre" class="form-control" style="width: 180%;" disabled="" />
 						</div>
+					</div>
 
+					<div class="column center" style="float:left; width:25%">					
 						<div class="col-3 col-sm-6 mb-2">
 							<label for="modalAnimalPeso" class="form-label">Peso</label>
 							<input type="text" id="modalAnimalPeso" class="form-control" style="width: 150%;" disabled="" />
@@ -38,13 +41,6 @@
 						<div class="col-3 col-sm-6 mb-2">
 							<label for="modalAnimalAltura" class="form-label">Altura</label>
 							<input type="text" id="modalAnimalAltura" class="form-control" style="width: 150%;" disabled="" />
-						</div>
-					</div>
-
-					<div class="column right" style="float:right; width:50%">
-						<div class="col-5 col-sm-6 mb-2">
-							<p>Imagem atual</p>
-							<img id="modalAnimalFotoCampoImg" height="250px" width="250px" />
 						</div>
 
 						<div class="col-4">
@@ -57,7 +53,7 @@
 								<input type="radio" id="modalAnimalCastradoN" name="modalAnimalCastrado" class="form-check-input" value="false" disabled="" />
 								<label class="form-check-label" for="modalAnimalCastradoN">Não</label>
 							</div>
-						</div>
+						</div>						
 
 						<div class="col-4">
 							<span class="form-label">Gênero</span>
@@ -71,9 +67,15 @@
 							</div>
 						</div>
 					</div>
-				</div>				
+
+					<div class="column right" style="float:left; width:40%">
+						<div class="col-3 col-sm-6 mb-2">
+							<p>Imagem atual</p>
+							<img id="modalAnimalFotoCampoImg" height="250px" width="280px" />
+						</div>						
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
