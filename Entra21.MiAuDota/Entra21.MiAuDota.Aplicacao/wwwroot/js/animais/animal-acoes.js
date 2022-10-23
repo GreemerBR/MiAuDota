@@ -49,10 +49,7 @@ let editarPreencherModal = (botaoEditar) => {
                 document.getElementById('editarModalDataAdocao').value = data.dataAdocao;
                 document.getElementById('editarModalStatus').value = data.status;
                 document.getElementById('editarModalUsuarioId').value = data.usuarioId;
-                if (data.genero === 0)
-                    document.getElementById('editarModalDataGeneroF').checked = true;
-                else
-                    document.getElementById('editarModalDataGeneroM').checked = true;
+                document.getElementById('editarModalGenero').value = data.genero;
                 if (data.cadastro === 0)
                     document.getElementById('editarModalCastradoS').checked = true;
                 else

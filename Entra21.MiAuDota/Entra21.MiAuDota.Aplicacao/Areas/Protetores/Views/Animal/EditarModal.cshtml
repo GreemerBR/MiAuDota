@@ -18,9 +18,12 @@
 					<input type="text" id="editarModalRaca" class="form-control" />
 				</div>
 
-				<div class="mb-2">
+				<div>
 					<label for="editarModalEspecie" class="form-label">Espécie<span class="text-danger">*</span></label>
-					<input type="text" id="editarModalEspecie" class="form-control" />
+					<select class="form-select" id="editarModalEspecie">
+						<option value="0">Cachorro</option>
+						<option value="1">Gato</option>
+					</select>
 				</div>
 
 				<div class="mb-2">
@@ -69,21 +72,21 @@
 					<input type="datetime-local" id="editarModalDataAdocao" class="form-control" />
 				</div>
 
-				<div class="col-6">
-					<span class="form-label">Gênero<span class="text-danger">*</span></span>
-					<div class="form-check">
-						<input type="radio" id="editarModalDataGeneroF" name="editarModalDataGenero" class="form-check-input" value="0" checked="checked" />
-						<label class="form-check-label" for="editarModalDataGeneroF">Feminino</label>
-					</div>
-					<div class="form-check">
-						<input type="radio" id="editarModalDataGeneroM" name="editarModalDataGenero" class="form-check-input" value="1" />
-						<label class="form-check-label" for="editarModalDataGeneroM">Masculino</label>
-					</div>
+				<div>
+					<label for="editarModalGenero" class="form-label">Gênero<span class="text-danger">*</span></label>
+					<select class="form-select" id="editarModalGenero">
+						<option value="0">Fêmea</option>
+						<option value="1">Macho</option>
+					</select>
 				</div>
 
-				<div class="mb-2">
+				<div>
 					<label for="editarModalStatus" class="form-label">Status<span class="text-danger">*</span></label>
-					<input type="text" id="editarModalStatus" class="form-control" />
+					<select class="form-select" id="editarModalStatus">
+						<option value="0">Apto para adoção</option>
+						<option value="1">Em tratamento</option>
+						<option value="2">Adotado</option>
+					</select>
 				</div>
 
 				<div class="mb-2">
