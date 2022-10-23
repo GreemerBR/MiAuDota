@@ -1,5 +1,4 @@
-﻿using Entra21.MiAuDota.Aplicacao.Areas.Publico.Dtos;
-using Entra21.MiAuDota.Aplicacao.FiltroLogin;
+﻿using Entra21.MiAuDota.Aplicacao.FiltroLogin;
 using Entra21.MiAuDota.Repositorio.Entidades;
 using Entra21.MiAuDota.Servico.Servicos;
 using Microsoft.AspNetCore.Mvc;

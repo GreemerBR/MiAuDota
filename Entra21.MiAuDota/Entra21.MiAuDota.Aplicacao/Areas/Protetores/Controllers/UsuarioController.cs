@@ -40,18 +40,10 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
             return View("usuario/Editar", usuarioEditarViewModel);
         }
 
-        [HttpGet("obterTodosComFiltro")]
-        public override IActionResult ObterTodosComFiltro()
-        {
-            var entities = _servico.ObterTodosComFiltro();
-
-            return Ok(entities);
-        }
-
-        [HttpGet("voluntarios")]
+        [HttpGet("listaUsuarios")]
         public IActionResult MeusAnimais()
         {
-            return View("Voluntarios");
+            return View("Usuarios");
         }
     }
 }

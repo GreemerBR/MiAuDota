@@ -37,12 +37,5 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
 
             return user;
         }
-
-        public override IList<Usuario> ObterTodosComFiltro()
-        {
-            var query = _contexto.Usuarios.AsQueryable().Where(usuario => usuario.EhVoluntario == true);
-
-            return query.ToList();
-        }
     }
 }
