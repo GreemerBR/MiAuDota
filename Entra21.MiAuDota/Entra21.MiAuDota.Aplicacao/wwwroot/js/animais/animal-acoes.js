@@ -90,7 +90,7 @@ let visualizarPreencherModal = (botaoVisualizar) => {
                     document.getElementById('visualizarModalDataGeneroF').checked = true;
                 else
                     document.getElementById('visualizarModalDataGeneroM').checked = true;
-                if (data.cadastro === 0)
+                if (data.castrado == 1)
                     document.getElementById('visualizarModalCastradoS').checked = true;
                 else
                     document.getElementById('visualizarModalCastradoN').checked = true;
@@ -128,7 +128,7 @@ let visualizarAnimalModal = (botaoAnimal) => {
                     document.getElementById('modalAnimalDataGeneroF').checked = true;
                 else
                     document.getElementById('modalAnimalDataGeneroM').checked = true;
-                if (data.cadastro === 0)
+                if (data.castrado == 1)
                     document.getElementById('modalAnimalCastradoS').checked = true;
                 else
                     document.getElementById('modalAnimalCastradoN').checked = true;
