@@ -2,22 +2,64 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center" style="margin-top: 80px;">
-    <h4 class="">Seus animais</h4>
-</div>
+<style type="text/css">
+     body {
+         background-color: #FDECEB;
+     }
 
-<div class="position-absolute start-50 translate-middle" style="width: 1000px; margin-top: 200px;">
-    <table class="table table-striped table-bordered" id="tabela-animais">
-        <thead>
-            <tr>
-                <th width="20%">Nome</th>
-                <th width="50%">Animal</th>
-                <th width="15%">Status do animal</th>
-                <th width="15%">Ação</th>
-            </tr>
-        </thead>
-    </table>
-</div>
+     .main {
+         margin: 80px 0 0 0;
+     }
+
+     .area-texto {
+         padding: 15px;
+         text-align: center;
+     }
+
+     h3 {
+         color: #8E37A6;
+         font-weight: 500;
+         font-size: 28px;
+         padding: 0;
+         margin: 0;
+     }
+
+     p {
+         color: #8E37A6;
+         font-weight: 400;
+         font-size: 20px;
+         padding: 0;
+         margin: 0;
+     }
+
+     .tabela{
+         margin: auto;
+         width: 1000px !important;
+
+     }
+
+</style>
+
+<body>
+    <div class="main">
+        <div class="area-texto">
+            <h3>Seus animais:</h3>
+        </div>
+
+        <div class="tabela">
+            <table class="table table-striped table-bordered" id="tabela-animais">
+                <thead>
+                    <tr>
+                        <th width="20%">Nome</th>
+                        <th width="50%">Animal</th>
+                        <th width="15%">Status do animal</th>
+                        <th width="15%">Ação</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
 
 <partial name="EditarModal" />
 <partial name="VisualizarModal" />
