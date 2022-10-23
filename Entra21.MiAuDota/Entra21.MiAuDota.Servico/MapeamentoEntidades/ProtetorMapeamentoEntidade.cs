@@ -12,7 +12,6 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Celular = viewModel.Celular;
             entity.Telefone = viewModel.Telefone;
             entity.Pix = viewModel.Pix;
-            entity.Sobre = viewModel.Sobre;
             entity.Instagram = viewModel.Instagram;
             entity.Facebook = viewModel.Facebook;
         }
@@ -43,7 +42,6 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
                 Senha = viewModel.Senha,
                 ConfirmarSenha = viewModel.ConfirmarSenha,
                 Pix = viewModel.Pix,
-                Sobre = viewModel.Sobre,
                 Instagram = viewModel.Instagram,
                 Facebook = viewModel.Facebook,
                 IsActive = false,

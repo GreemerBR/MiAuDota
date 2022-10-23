@@ -110,27 +110,30 @@
         </div>
 
         <div id="animais">
-            <div id="grid-pet">
-                <div class="row row-cols-1 row-cols-md-4 g-4">
-                    @foreach (var animal in Model)
-                    {
-                        <div class="col">
-                            <div class="card" asp-area="Publico" asp-controller="Animal" asp-action="exibirAnimal">
-                                <img src="/Uploads/Animais/@animal.Foto" width="200" class="card-img-top" alt="..." />
-                                <div class="card-body">
-                                    <h5 class="card-title">@animal.Nome</h5>
-                                    <p class="card-text">@animal.Genero - @animal.Porte</p>
-                                    <button class="btn-buscar btn-center animal-modalAnimal" data-id="@animal.Id">Mais informações</button>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
-    </div>
+			<div id="grid-pet">
+				<div class="row row-cols-1 row-cols-md-4 g-4">
+					@foreach (var animal in Model)
+					{
+						if (animal.Status == Repositorio.Enum.StatusInstituicao.AptoParaAdocao)
+						{
+							<div class="col">
+								<div class="card" asp-area="Publico" asp-controller="Animal" asp-action="exibirAnimal">
+									<img src="/Uploads/Animais/@animal.Foto" height="200px" width="200px" class="card-img-top" alt="..." />
+									<div class="card-body">
+										<h5 class="card-title">@animal.Nome</h5>
+										<p class="card-text">@animal.Genero - @animal.Porte</p>
+										<button class="btn btn-info btn-center animal-modalAnimal" data-id="@animal.Id">Mais informações</button>
+									</div>
+								</div>
+							</div>
+						}
+					}
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <partial name="ModalAnimal" />
+	<partial name="ModalAnimal" />
 
     @section Scripts{
         <script src="~/js/animais/animal-acoes.js"></script>

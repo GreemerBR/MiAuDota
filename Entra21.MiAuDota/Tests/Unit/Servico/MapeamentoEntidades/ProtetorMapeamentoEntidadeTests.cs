@@ -2,11 +2,6 @@
 using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Tests.Unit.Servico.MapeamentoEntidades
@@ -37,12 +32,11 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
                 Pix = "ana@gmail.com",
                 Facebook = "@ana145",
                 Instagram = "@ana145",
-                Sobre = "abcdef"
 
             };
 
             // Act
-            var protetor = _protetorMapeamentoEntidade.ConstruirCom(viewModel);
+            var protetor = _protetorMapeamentoEntidade.ConstruirCom(viewModel, string.Empty);
             
             // Assert
             protetor.Nome.Should().Be(viewModel.Nome);
@@ -57,7 +51,6 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             protetor.Pix.Should().Be(viewModel.Pix);
             protetor.Facebook.Should().Be(viewModel.Facebook);
             protetor.Instagram.Should().Be(viewModel.Instagram);
-            protetor.Sobre.Should().Be(viewModel.Sobre);
 
         }
         [Fact]
@@ -72,7 +65,6 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
                 Senha = "brasil?",
                 ConfirmarSenha = "brasil?",
                 Pix = null,
-                Sobre = null,
                 Instagram = null,
                 Facebook = null
             };
@@ -88,7 +80,6 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
                 Celular = "47999929940",
                 Telefone = "3330-7070",
                 Pix = "47999929940",
-                Sobre = "protetor new protetor",
                 Instagram = "@nomedapessoa",
                 Facebook = "@nomedapessoa"
             };
@@ -106,7 +97,6 @@ namespace Tests.Unit.Servico.MapeamentoEntidades
             protetor.Senha.Should().Be(viewModelSenha.Senha);
             protetor.ConfirmarSenha.Should().Be(viewModelSenha.ConfirmarSenha);
             protetor.Pix.Should().Be(viewModelEditar.Pix);
-            protetor.Sobre.Should().Be(viewModelEditar.Sobre);
             protetor.Instagram.Should().Be(viewModelEditar.Instagram);
             protetor.Facebook.Should().Be(viewModelEditar.Facebook);
         }

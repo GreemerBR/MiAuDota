@@ -116,5 +116,11 @@ namespace Entra21.MiAuDota.Servico.Servicos
         {
             return _baseRepositorio.ObterTodosPorProtetorId(protetorId);
         }
+
+        public override IList<Animal> ObterTodosComFiltro()
+        {
+            return _baseRepositorio.ObterTodosComFiltro();
+        }
+
     }
 }

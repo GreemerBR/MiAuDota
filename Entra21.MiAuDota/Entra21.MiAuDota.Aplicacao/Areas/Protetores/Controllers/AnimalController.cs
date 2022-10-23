@@ -7,7 +7,6 @@ using Entra21.MiAuDota.Servico.MapeamentoEntidades;
 using Entra21.MiAuDota.Servico.MapeamentoViewModel;
 using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Animais;
-using Entra21.MiAuDota.Servico.ViewModels.Protetores;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
@@ -34,9 +33,9 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
             if (!ModelState.IsValid)
                 return View(creatViewModel);
 
-            _servico.Cadastrar(creatViewModel);
+            _servico.CadastrarAnimal(creatViewModel, _webHostEnvironment.WebRootPath);
 
-            return RedirectToAction("Index", "Logon", new { area = "Publico" });
+            return RedirectToAction("MeusAnimais", "Animal", new { area = "Protetores" });
         }
 
         [HttpPost("editarAnimal")]

@@ -65,7 +65,7 @@ namespace Entra21.MiAuDota.Repositorio.Repositorios
             return _contexto.Set<TEntity>().ToList();
         }
 
-        public virtual IList<TEntity> ObterTodosComFiltro(string especie, string raca, byte idade, byte porte, byte genero)
+        public virtual IList<TEntity> ObterTodosComFiltro()
         {
             throw new NotImplementedException();
         }

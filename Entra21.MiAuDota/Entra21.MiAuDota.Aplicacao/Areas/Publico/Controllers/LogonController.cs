@@ -1,6 +1,7 @@
 ﻿
 using Entra21.MiAuDota.Aplicacao.Areas.Publico.Dtos;
 using Entra21.MiAuDota.Servico.Servicos;
+using Entra21.MiAuDota.Servico.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Entra21.MiAuDota.Aplicacao.Areas.Publico.Controllers

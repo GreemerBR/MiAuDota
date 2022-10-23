@@ -35,7 +35,6 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
                 Celular = protetorLogado.Celular,
                 Telefone = protetorLogado.Telefone,
                 Pix = protetorLogado.Pix,
-                Sobre = protetorLogado.Sobre,
                 Instagram = protetorLogado.Instagram,
                 Facebook = protetorLogado.Facebook,
             };
