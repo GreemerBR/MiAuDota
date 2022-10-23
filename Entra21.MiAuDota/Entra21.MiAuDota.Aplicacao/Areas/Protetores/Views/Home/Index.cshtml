@@ -33,18 +33,31 @@
         }
 
         h1 {
-            color: black;
-        }
+			color: black;
+			font-size: 30px;
+			font-weight: 700;
+		}
 
-        p {
-            color: black;
-            font-size: 17px;
-        }
+		.texto-carrossel {
+			color: black;
+			font-size: 20px;
+			font-weight: 700;
 
-        footer {
-            margin-left: 70px;
-            color: #582b5cc9;
-        }
+		}
+
+		.carousel-caption {
+			margin-bottom: 10px;
+		}
+
+		p {
+			color: black;
+			font-size: 17px;
+		}
+
+		footer {
+			margin-left: 70px;
+			color: #582b5cc9;
+		}
 
     </style>
 </head>
@@ -52,54 +65,46 @@
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 
         <div class="carousel-inner">
-            <div class="carousel-item">
-                <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/fundo.png.jpg" preserveAspectRatio="xMidYMid slice">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1><b>Sabe quantos animais precisam de um lar?</b></h1>
-                        <p>
-                            <b>
-                                Acredita-se que há 3,9 milhões (2,7 milhões de cães e 1,2 milhões de gatos) vivendo em situação de vulnerabilidade.
-                                A castração e a adoção de animais são as maneiras mais efetivas de reduzir a população de rua e de dar
-                                uma vida digna a esses seres tão especiais.
-                            </b>
-                        </p>
+			<div class="carousel-item">
+				<img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/8cat.jpg" preserveAspectRatio="xMidYMid slice">
+				<div class="container">
+					<div class="carousel-caption">
+						<h1>Sabe quantos animais precisam de um lar no Brasil?</h1>
+						<div class="texto-carrossel">
+							São quase 185 mil animais abandonados ou resgatados sob a tutela de ONGs ou protetores<br />
+							e cerca de 3,9 milhões estão em condição de vulnerabilidade no país.
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Pronto-->
+			<div class="carousel-item">
+				<img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/6pata.jpg" preserveAspectRatio="xMidYMid slice">
+				<div class="container">
+					<div class="carousel-caption">
+						<h1>Castre seus bichinhos!</h1>
+						<div class="texto-carrossel">							
+							Além de diminuir o número de animais abandonados, traz benefícios para a saúde do seu pet,
+							reduzindo problemas de agressividade nos machos e prevenindo o câncer de mama nas fêmeas.
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Pronto-->
+			<div class="carousel-item active">
+				<img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/fundo.png.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+				<div class="container">
+					<div class="carousel-caption">
+						<h1>Sobre o projeto</h1>
+						<div class="texto-carrossel">
+							Nossa plataforma foi criada para facilitar a procura do amigo ideal para a sua família.<br />
+							Conectamos você que quer adotar, aos pets que precisam de um lar.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                    </div>
-                </div>
-            </div>
-            <!--Pronto-->
-            <div class="carousel-item active">
-                <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/fundo.png.jpg" preserveAspectRatio="xMidYMid slice">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1><b>Como você pode ajudar</b></h1>
-                        <p>
-                            <b>
-                                Na nossa pagina, temos algumas maneiras que você pode ajudar.
-                                Atraves de pix, tranferência bancária ou até mesmo doando produtos como ração e remédios para os animais.
-                            </b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!--Pronto-->
-            <div class="carousel-item">
-                <img class="bd-placeholder-img" width="100%" height="50%" src="~/theme/assets/images/fundo.png.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1><b>Sobre o projeto</b></h1>
-                        <p>
-                            <b>
-                                Nossa plataforma foi criada para facilitar a procura do animal ideal para sua familia.
-                                Conectando você que quer adotar, a um pet que precisa de um lar.
-                            </b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -119,8 +124,8 @@
 
                 <h2 class="fw-normal">Quero ajudar</h2>
                 <p>
-                    A nossa plataforma conecta pessoas que querem adotar, a cães e gatos resgatados que precisam de um lar.
-                    Contribua com o nosso site compartilhando, doando e adotando!
+                   A nossa plataforma conecta pessoas que querem adotar, a cães e gatos resgatados que precisam de um lar.
+					Contribua com o nosso site compartilhando, doando e adotando!
                 </p>
                 <p><a class="btn btn-secondary" href="https://miaudota.azurewebsites.net/animal" target="_blank">Ver detalhes »</a></p>
             </div>
@@ -129,8 +134,8 @@
 
                 <h2 class="fw-normal">Outras formas de ajudar</h2>
                 <p>
-                    Caso não consiga ajudar com doações, seja um compartilhador. Compartilhe esse site com amigos, familiares e conhecidos
-                    para que tenhamos cada vez mais visibilidade.
+                    Caso não consiga ajudar com doações, compartilhe esse site com amigos, familiares e conhecidos
+					para que tenhamos cada vez mais visibilidade.
                 </p>
                 <p><a class="btn btn-secondary" href="https://instagram.com/sitiodonalucia?igshid=YmMyMTA2M2Y=" target="_blank">Nossas redes sociais »</a></p>
             </div>
@@ -138,7 +143,7 @@
                 <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/theme/assets/images/sitesite.png" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
 
                 <h2 class="fw-normal">Conheça outros sites de adoção</h2>
-                <p>Caso queira pesquisar mais, aqui vai outras dicas de site para você!</p>
+                <p>Caso queira pesquisar mais, aqui vai outra dica de site para você!</p>
                 <p><a class="btn btn-secondary" href="https://www.amigonaosecompra.com.br/" target="_blank">Ver sites »</a></p>
             </div>
         </div>
@@ -225,8 +230,8 @@
                 <div class="col-8">
                     <p style="color: #582b5cc9">
                         <b>
-                            A MiAuDota agradece muito a preferencia. Nos ajude a fazer a diferença! Juntos podemos ajudar os animais que precisam de um lar.
-                            Se precisar, pode chamar a nossa equipe no suporte, temos nossas redes sociais, clique e nos siga.
+                            Nos ajude a fazer a diferença! Juntos podemos ajudar os animais que precisam de um lar!<br />
+                        Se precisar, nos chame no suporte em nossas redes sociais!
                         </b>
                     </p>
                     <ul class="nav">

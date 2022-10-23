@@ -55,14 +55,14 @@
             border-width: 1px;
             border-radius: 0.375rem;
             color: white;
-            padding: 6px 20px;
+            padding: 6px 16px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
+            margin: 4px 2px;
             transition-duration: 0.4s;
-            cursor: pointer;
         }
 
             .btn-buscar:hover {
@@ -70,6 +70,11 @@
                 border-color: #582B5C;
                 color: white;
             }
+            
+        .span {
+            width: 50px;
+            height: 50px;
+        }
 
         .card {
             border-color: #582b5cc9;
@@ -81,8 +86,8 @@
             color: #8E37A6;
             text-align: center;
             text-decoration: none;
+            font-size: 22px;
             font-weight: 500;
-            font-size: 20px;
         }
 
         .card-text {
@@ -90,10 +95,11 @@
             text-align: center;
             text-decoration: none;
             font-size: 16px;
+            font-weight: 500;
         }
 
         .btn-center {
-            margin-left: 25%;
+            margin-left: 21%;
         }
     </style>
 </head>
@@ -102,6 +108,7 @@
         <div id="area-titulo">
             <h3 style="margin-top: 80px">Encontre seu amigo!</h3>
         </div>
+
         <div id="animais">
             <div id="grid-pet">
                 <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -113,7 +120,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">@animal.Nome</h5>
                                     <p class="card-text">@animal.Genero - @animal.Porte</p>
-                                    <a type="submit" class="btn btn-info btn-center" href="https://miaudota.azurewebsites.net/logon">Mais informações</a>
+                                    <a type="submit" class="btn-buscar btn-center" href="https://miaudota.azurewebsites.net/logon">Mais informações</a>
                                 </div>
                             </div>
                         </div>
