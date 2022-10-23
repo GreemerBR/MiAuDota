@@ -29,10 +29,5 @@ namespace Entra21.MiAuDota.Servico.Servicos
 
             return entity;
         }
-
-        public override IList<Usuario> ObterTodosComFiltro()
-        {
-            return _baseRepositorio.ObterTodosComFiltro();
-        }
     }
 }

@@ -32,7 +32,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoEntidades
             entity.Genero = (GeneroAnimal)viewModel.Genero;
             entity.Status = (StatusInstituicao)viewModel.Status;
             entity.Porte = DeterminarPorte(viewModel.Peso, viewModel.Altura);
-            entity.Usuario = viewModel.Usuario;
+            entity.UsuarioId = viewModel.UsuarioId;
         }
 
         public void AtualizarSenha(Animal entity, AnimalEditarViewModel viewModel)
