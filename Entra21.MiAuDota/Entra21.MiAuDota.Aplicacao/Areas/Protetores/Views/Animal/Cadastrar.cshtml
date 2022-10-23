@@ -132,9 +132,14 @@
 
             <div class="col-md-6">
                 <label asp-for="Especie" class="form-label required" span-required=""></label>
-                <input asp-for="Especie" class="form-control" />
-                <span asp-validation-for="Especie" class="text-danger"></span>
+                <div>
+                    <select asp-for="Especie" aria-label="Escolha a espécie">
+                        <option value="0">Cachorro</option>
+                        <option value="1">Gato</option>
+                    </select>
+                </div>
             </div>
+
 
             <div class="col-12">
                 <label asp-for="Sobre" class="form-label required" span-required=""></label>
@@ -142,7 +147,7 @@
                 <span asp-validation-for="Sobre" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
+            <div class="col-md-4">
                 <label asp-for="Idade" class="form-label" span-required=""></label>
                 <input asp-for="Idade" class="form-control" />
                 <span asp-validation-for="Idade" class="text-danger"></span>
@@ -160,27 +165,24 @@
                 <span asp-validation-for="Altura" class="text-danger"></span>
             </div>
 
-            <div class="col-md-4">
-                <label asp-for="Genero" class="form-label" span-required=""></label>
-                <input asp-for="Genero" class="form-control" />
-                <span asp-validation-for="Genero" class="text-danger"></span>
-            </div>
-
-            <div class="col-md-4">
-                <label asp-for="Status" class="form-label" span-required=""></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-
-            <div class="col-6">
-                <span class="form-label">Gênero - Apenas Teste<span class="text-danger">*</span></span>
-                <div class="form-check">
-                    <input type="radio" id="cadastroPetGeneroFeminino" name="cadastroPetModalGenero" class="form-check-input" value="0" checked="checked" />
-                    <label class="form-check-label" for="cadastroPetGeneroFeminino">Feminino</label>
+            <div class="col-md-6">
+                <label asp-for="Genero" class="form-label required" span-required=""></label>
+                <div>
+                    <select asp-for="Genero">
+                        <option value="0">Fêmea</option>
+                        <option value="1">Macho</option>
+                    </select>
                 </div>
-                <div class="form-check">
-                    <input type="radio" id="cadastroPetGeneroMasculino" name="cadastroPetModalGenero" class="form-check-input" value="1" />
-                    <label class="form-check-label" for="cadastroPetGeneroMasculino">Masculino</label>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Status" class="form-label required" span-required=""></label>
+                <div>
+                    <select asp-for="Status">
+                        <option value="0">Apto para adoção</option>
+                        <option value="1">Em tratamento</option>
+                        <option value="2">Adotado</option>
+                    </select>
                 </div>
             </div>
 

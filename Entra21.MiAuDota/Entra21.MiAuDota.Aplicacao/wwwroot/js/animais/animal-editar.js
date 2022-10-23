@@ -10,7 +10,7 @@
     let altura = document.getElementById('editarModalAltura').value;
     let castrado = document.querySelector('input[name="editarModalCastrado"]:checked').value;
     let dataAdocao = document.getElementById('editarModalDataAdocao').value;
-    let genero = document.querySelector('input[name="editarModalDataGenero"]:checked').value;
+    let genero = document.getElementById('editarModalGenero').value;
     let status = document.getElementById('editarModalStatus').value;
     let usuarioId = document.getElementById('editarModalUsuarioId').value;
 
