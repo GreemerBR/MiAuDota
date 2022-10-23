@@ -89,9 +89,6 @@ let visualizarPreencherModal = (botaoVisualizar) => {
                 document.getElementById('visualizarModalPeso').value = data.peso;
                 document.getElementById('visualizarModalAltura').value = data.altura;
                 document.getElementById('visualizarModalDataAdocao').value = data.dataAdocaoFormatada;
-                document.getElementById('visualizarModalUsuarioNome').value = data.usuario.nome;
-                document.getElementById('visualizarModalProtetorNome').value = data.protetor.nome;
-                document.getElementById('visualizarModalProtetorCelular').value = data.protetor.celular;
                 if (data.genero === 0)
                     document.getElementById('visualizarModalDataGeneroF').checked = true;
                 else
