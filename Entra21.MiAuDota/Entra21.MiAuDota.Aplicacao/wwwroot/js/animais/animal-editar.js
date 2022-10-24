@@ -8,9 +8,9 @@
     let idade = document.getElementById('editarModalIdade').value;
     let peso = document.getElementById('editarModalPeso').value;
     let altura = document.getElementById('editarModalAltura').value;
-    let cadastro = document.querySelector('input[name="editarModalCastrado"]:checked').value;
+    let castrado = document.querySelector('input[name="editarModalCastrado"]:checked').value;
     let dataAdocao = document.getElementById('editarModalDataAdocao').value;
-    let genero = document.querySelector('input[name="editarModalDataGenero"]:checked').value;
+    let genero = document.getElementById('editarModalGenero').value;
     let status = document.getElementById('editarModalStatus').value;
     let usuarioId = document.getElementById('editarModalUsuarioId').value;
 
@@ -24,7 +24,7 @@
     formData.append('arquivo', foto);
     formData.append('peso', peso);
     formData.append('altura', altura);
-    formData.append('castrado', cadastro);
+    formData.append('castrado', castrado);
     formData.append('dataAdocao', dataAdocao);
     formData.append('genero', genero);
     formData.append('status', status);

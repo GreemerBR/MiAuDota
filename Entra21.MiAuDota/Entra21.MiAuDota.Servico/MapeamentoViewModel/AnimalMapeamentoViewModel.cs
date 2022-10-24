@@ -21,32 +21,7 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
                 Castrado = entity.Castrado,
                 DataAdocao = entity.DataAdocao,
                 Status = (StatusInstituicao)entity.Status,
-                Usuario = entity.Usuario,
-                ProtetorId = entity.ProtetorId,
-                Protetor = entity.Protetor,
-                Id = entity.Id,
-                Genero = (GeneroAnimal)entity.Genero,
-                Porte = (PorteDoAnimal)entity.Porte,
-                DataAdocaoFormatada = entity.DataAdocao?.ToShortDateString() ?? string.Empty
-            };
-        }
-        
-        public AnimalEditarViewModel VizualizarCom(Animal entity)
-        {
-            return new AnimalEditarViewModel
-            {
-                Nome = entity.Nome,
-                Raca = entity.Raca,
-                Especie = (EspecieAnimal)entity.Especie,
-                Sobre = entity.Sobre,
-                Foto = entity.Foto,
-                Idade = (Byte)entity.Idade,
-                Peso = (Double)entity.Peso,
-                Altura = (Double)entity.Altura,
-                Castrado = entity.Castrado,
-                DataAdocao = entity.DataAdocao,
-                Status = (StatusInstituicao)entity.Status,
-                Usuario = entity.Usuario,
+                UsuarioId = entity.UsuarioId,
                 ProtetorId = entity.ProtetorId,
                 Protetor = entity.Protetor,
                 Id = entity.Id,

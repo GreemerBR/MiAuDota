@@ -9,11 +9,11 @@ using Entra21.MiAuDota.Servico.Servicos;
 using Entra21.MiAuDota.Servico.ViewModels.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
+namespace Entra21.MiAuDota.Aplicacao.Areas.Protetores.Controllers
 {
-    [UsuarioEstaLogado]
-    [Area("Usuarios")]
-    [Route("/usuarios/usuario")]
+    [ProtetorEstaLogado]
+    [Area("Protetores")]
+    [Route("protetores/usuario")]
     public class UsuarioController
         : BaseController<Usuario, Usuario, IUsuarioServico, UsuarioCadastrarViewModel, UsuarioEditarViewModel, UsuarioEditarViewModel, UsuarioSenhaViewModel, UsuarioViewModel, IUsuarioRepositorio, IUsuarioMapeamentoEntidade, IUsuarioMapeamentoViewModel>
     {
@@ -38,6 +38,12 @@ namespace Entra21.MiAuDota.Aplicacao.Areas.Usuarios.Controllers
             };
 
             return View("usuario/Editar", usuarioEditarViewModel);
+        }
+
+        [HttpGet("listaUsuarios")]
+        public IActionResult MeusAnimais()
+        {
+            return View("Usuarios");
         }
     }
 }

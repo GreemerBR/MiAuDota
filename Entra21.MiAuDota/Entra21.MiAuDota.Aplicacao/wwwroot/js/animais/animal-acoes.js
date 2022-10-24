@@ -49,10 +49,7 @@ let editarPreencherModal = (botaoEditar) => {
                 document.getElementById('editarModalDataAdocao').value = data.dataAdocao;
                 document.getElementById('editarModalStatus').value = data.status;
                 document.getElementById('editarModalUsuarioId').value = data.usuarioId;
-                if (data.genero === 0)
-                    document.getElementById('editarModalDataGeneroF').checked = true;
-                else
-                    document.getElementById('editarModalDataGeneroM').checked = true;
+                document.getElementById('editarModalGenero').value = data.genero;
                 if (data.cadastro === 0)
                     document.getElementById('editarModalCastradoS').checked = true;
                 else
@@ -93,7 +90,7 @@ let visualizarPreencherModal = (botaoVisualizar) => {
                     document.getElementById('visualizarModalDataGeneroF').checked = true;
                 else
                     document.getElementById('visualizarModalDataGeneroM').checked = true;
-                if (data.cadastro === 0)
+                if (data.castrado == 1)
                     document.getElementById('visualizarModalCastradoS').checked = true;
                 else
                     document.getElementById('visualizarModalCastradoN').checked = true;
@@ -131,7 +128,7 @@ let visualizarAnimalModal = (botaoAnimal) => {
                     document.getElementById('modalAnimalDataGeneroF').checked = true;
                 else
                     document.getElementById('modalAnimalDataGeneroM').checked = true;
-                if (data.cadastro === 0)
+                if (data.castrado == 1)
                     document.getElementById('modalAnimalCastradoS').checked = true;
                 else
                     document.getElementById('modalAnimalCastradoN').checked = true;

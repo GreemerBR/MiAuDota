@@ -24,7 +24,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public StatusInstituicao Status { get; set; }
         public PorteDoAnimal Porte { get; set; }
 
-        public Usuario? Usuario { get; set; }
+        public int? UsuarioId { get; set; }
 
         public Protetor? Protetor { get; set; }
         public int? ProtetorId { get; set; }
