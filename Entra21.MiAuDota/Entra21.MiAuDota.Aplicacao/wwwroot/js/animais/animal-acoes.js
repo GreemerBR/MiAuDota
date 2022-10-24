@@ -44,8 +44,8 @@ let editarPreencherModal = (botaoEditar) => {
                 document.getElementById('editarModalSobre').value = data.sobre;
                 document.getElementById('editarModalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
                 document.getElementById('editarModalIdade').value = data.idade;
-                //document.getElementById('editarModalPeso').value = data.peso;
-                //document.getElementById('editarModalAltura').value = data.altura;
+                document.getElementById('editarModalPeso').value = data.pesoFormatado;
+                document.getElementById('editarModalAltura').value = data.alturaFormatada;
                 document.getElementById('editarModalDataAdocao').value = data.dataAdocao;
                 document.getElementById('editarModalStatus').value = data.status;
                 document.getElementById('editarModalUsuarioId').value = data.usuarioId;
@@ -83,8 +83,8 @@ let visualizarPreencherModal = (botaoVisualizar) => {
                 document.getElementById('visualizarModalSobre').value = data.sobre;
                 document.getElementById('visualizarModalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
                 document.getElementById('visualizarModalIdade').value = data.idade;
-                //document.getElementById('visualizarModalPeso').value = data.peso;
-                //document.getElementById('visualizarModalAltura').value = data.altura;
+                document.getElementById('visualizarModalPeso').value = data.pesoFormatado;
+                document.getElementById('visualizarModalAltura').value = data.alturaFormatada;
                 document.getElementById('visualizarModalDataAdocao').value = data.dataAdocaoFormatada;
                 if (data.genero === 0)
                     document.getElementById('visualizarModalDataGeneroF').checked = true;
@@ -122,8 +122,8 @@ let visualizarAnimalModal = (botaoAnimal) => {
                 document.getElementById('modalAnimalSobre').value = data.sobre;
                 document.getElementById('modalAnimalFotoCampoImg').src = "/Uploads/Animais/" + data.foto;
                 document.getElementById('modalAnimalIdade').value = data.idade;
-                //document.getElementById('modalAnimalPeso').value = data.peso;
-                //document.getElementById('modalAnimalAltura').value = data.altura;
+                document.getElementById('modalAnimalPeso').value = data.pesoFormatado;
+                document.getElementById('modalAnimalAltura').value = data.alturaFormatada;
                 if (data.genero === 0)
                     document.getElementById('modalAnimalDataGeneroF').checked = true;
                 else

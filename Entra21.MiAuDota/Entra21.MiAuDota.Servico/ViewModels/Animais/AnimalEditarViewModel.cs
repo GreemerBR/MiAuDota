@@ -38,5 +38,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public string? Foto { get; set; }
 
         public string? DataAdocaoFormatada { get; set; }
+        public string? PesoFormatado { get; set; }
+        public string? AlturaFormatada { get; set; }
     }
 }
