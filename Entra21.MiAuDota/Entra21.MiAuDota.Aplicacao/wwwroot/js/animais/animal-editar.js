@@ -58,5 +58,5 @@ document.getElementById('editarModalSalvar').addEventListener('click', () => {
 
 
 $('#editarModalIdade').mask('00');
-$('#editarModalPeso').mask('0,0', { reverse: true });
-$('#editarModalAltura').mask('0,0');
+$('#editarModalPeso').mask('0,00', { reverse: true });
+$('#editarModalAltura').mask('0,00');

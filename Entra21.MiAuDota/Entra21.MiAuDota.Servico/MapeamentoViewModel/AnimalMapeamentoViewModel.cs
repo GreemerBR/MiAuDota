@@ -27,7 +27,9 @@ namespace Entra21.MiAuDota.Servico.MapeamentoViewModel
                 Id = entity.Id,
                 Genero = (GeneroAnimal)entity.Genero,
                 Porte = (PorteDoAnimal)entity.Porte,
-                DataAdocaoFormatada = entity.DataAdocao?.ToShortDateString() ?? string.Empty
+                DataAdocaoFormatada = entity.DataAdocao?.ToShortDateString() ?? string.Empty,
+                PesoFormatado = entity.Peso.ToString().Replace(".", ","),
+                AlturaFormatada = entity.Altura.ToString().Replace(".", ",")
             };
         }
     }
