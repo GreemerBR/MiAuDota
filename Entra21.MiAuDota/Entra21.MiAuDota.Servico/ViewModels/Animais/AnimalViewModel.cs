@@ -28,6 +28,7 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
 
         [Display(Name = nameof(Peso))]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
+
         public double Peso { get; set; }
 
         [Display(Name = nameof(Altura))]

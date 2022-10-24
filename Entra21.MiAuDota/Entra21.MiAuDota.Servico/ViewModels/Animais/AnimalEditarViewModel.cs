@@ -11,7 +11,14 @@ namespace Entra21.MiAuDota.Servico.ViewModels.Animais
         public string Sobre { get; set; }
         public IFormFile? Arquivo { get; set; }
         public byte Idade { get; set; }
+
+        [Display(Name = nameof(Peso))]
+        [Required(ErrorMessage = "{0} deve ser preenchida")]
+
         public double Peso { get; set; }
+
+        [Display(Name = nameof(Altura))]
+        [Required(ErrorMessage = "{0} deve ser preenchida")]
         public double Altura { get; set; }
         public bool Castrado { get; set; }
 
