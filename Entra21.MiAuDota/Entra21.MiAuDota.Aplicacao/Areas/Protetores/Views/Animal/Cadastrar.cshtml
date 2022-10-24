@@ -103,6 +103,14 @@
             color: red;
         }
 
+        .seletor {
+            border-color: #582B5C;
+            height: 38px;
+            width: 242px;
+            padding: 6px 12px;
+            border-radius: .375rem;
+        }
+
     </style>
 </head>
 
@@ -133,13 +141,12 @@
             <div class="col-md-6">
                 <label asp-for="Especie" class="form-label required" span-required=""></label>
                 <div>
-                    <select asp-for="Especie" aria-label="Escolha a espécie">
+                    <select asp-for="Especie" aria-label="Escolha a espécie" class="seletor">
                         <option value="0">Cachorro</option>
                         <option value="1">Gato</option>
                     </select>
                 </div>
             </div>
-
 
             <div class="col-12">
                 <label asp-for="Sobre" class="form-label required" span-required=""></label>
@@ -168,7 +175,7 @@
             <div class="col-md-6">
                 <label asp-for="Genero" class="form-label required" span-required=""></label>
                 <div>
-                    <select asp-for="Genero">
+                    <select asp-for="Genero" class="seletor">
                         <option value="0">Fêmea</option>
                         <option value="1">Macho</option>
                     </select>
@@ -178,7 +185,7 @@
             <div class="col-md-6">
                 <label asp-for="Status" class="form-label required" span-required=""></label>
                 <div>
-                    <select asp-for="Status">
+                    <select asp-for="Status" class="seletor">
                         <option value="0">Apto para adoção</option>
                         <option value="1">Em tratamento</option>
                         <option value="2">Adotado</option>
@@ -193,9 +200,8 @@
 
             <div class="text-end">
                 <a asp-action="Cadastrar"> </a>
-                <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                <button type="submit" class="btn btn-salvar">Salvar</button>
             </div>
-
         </form>
 
     </div>
