@@ -3,222 +3,215 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Miaudota - Cadastro Usuário</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <style type="text/css">
-        body {
-            background-color: #FDECEB;
-        }
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Miaudota - Cadastro Usuário</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<style type="text/css">
+		body {
+			background-color: #FDECEB;
+		}
 
-        h5 {
-            color: #8E37A6;
-            font-weight: 500;
-            font-size: 18px;
-            margin: 0;
-        }
+		h5 {
+			color: #8E37A6;
+			font-weight: 500;
+			font-size: 18px;
+			margin: 0;
+		}
 
-        .brand-img {
-            max-width: 200px;
-            max-height: 150px
-        }
+		.brand-img {
+			max-width: 200px;
+			max-height: 150px
+		}
 
-        .form-label {
-            color: #582B5C;
-            font-size: 16px;
-            font-weight: 500;
-        }
+		.form-label {
+			color: #582B5C;
+			font-size: 16px;
+			font-weight: 500;
+		}
 
-        .form-check-label {
-            color: #582B5C;
-            font-size: 16px;
-            font-weight: 500;
-        }
+		.form-check-label {
+			color: #582B5C;
+			font-size: 16px;
+			font-weight: 500;
+		}
 
-        .form-control {
-            border-color: #582B5C;
-        }
+		.form-control {
+			border-color: #582B5C;
+		}
 
-        .form-check-input {
-            border-color: #582B5C;
-        }
+		.form-check-input {
+			border-color: #582B5C;
+		}
 
-            .form-check-input:checked {
-                background-color: #582B5C;
-                border-color: #582B5C;
-            }
+			.form-check-input:checked {
+				background-color: #582B5C;
+				border-color: #582B5C;
+			}
 
-        .brand {
-            margin: 20px 0;
-            transition: transform .2s;
-            animation: fromTop .2s 2s backwards;
-        }
+		.brand {
+			margin: 20px 0;
+			transition: transform .2s;
+			animation: fromTop .2s 2s backwards;
+		}
 
-            .brand img {
-                -webkit-transition: all 0.7s ease;
-                transition: all 0.7s ease;
-            }
+			.brand img {
+				-webkit-transition: all 0.7s ease;
+				transition: all 0.7s ease;
+			}
 
-                .brand img:hover {
-                    -webkit-transform: scale(1.2);
-                    transform: scale(1.2);
-                }
+				.brand img:hover {
+					-webkit-transform: scale(1.2);
+					transform: scale(1.2);
+				}
 
-        .initial-text {
-            margin: 0 0 20px 0;
-        }
+		.initial-text {
+			margin: 0 0 20px 0;
+		}
 
-        .btn-salvar{
-            background-color: #582b5cc9;
-            border-color: #582b5cc9;
-            border-width: 1px;
-            border-radius: 0.375rem;
-            color: white;
-            padding: 6px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 18px;
-            font-weight: 500;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-        }
+		.btn-salvar {
+			background-color: #582b5cc9;
+			border-color: #582b5cc9;
+			border-width: 1px;
+			border-radius: 0.375rem;
+			color: white;
+			padding: 6px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 18px;
+			font-weight: 500;
+			margin: 4px 2px;
+			transition-duration: 0.4s;
+		}
 
-                .btn-salvar:hover {
-                    background-color: #582B5C;
-                    border-color: #582B5C;
-                    color: white;
-                }
-                
-        .span {
-            width: 50px;
-            height: 50px;
-        }
+			.btn-salvar:hover {
+				background-color: #582B5C;
+				border-color: #582B5C;
+				color: white;
+			}
 
-        .required:after {
-            content: " *";
-            color: red;
-        }
+		.span {
+			width: 50px;
+			height: 50px;
+		}
 
-        footer {
-            background-color: #FBC5DF;
-            color: #582b5cc9;
-        }
+		.required:after {
+			content: " *";
+			color: red;
+		}
 
-    </style>
+		footer {
+			background-color: #FBC5DF;
+			color: #582b5cc9;			
+			bottom: 0;
+			width: 100%;
+		}
+
+	</style>
 </head>
 
 <body>
-    <div class="mx-auto" style="width: 500px; margin-top: 80px;">
-        <div class="page vertical-align text-center">
-            <div class="brand">
-                <img class="brand-img" src="~/theme/assets/images/logopreview.png.png" />
-            </div>
-            <div class="initial-text">
-                <h5>Novo por aqui?</h5>
-                <h5>Cadastre-se para buscar o seu melhor amigo.</h5>
-            </div>
-        </div>
+	<div class="mx-auto" style="width: 500px; margin-top: 80px;">
+		<div class="page vertical-align text-center">
+			<div class="brand">
+				<img class="brand-img" src="~/theme/assets/images/logopreview.png.png" />
+			</div>
+			<div class="initial-text">
+				<h5>Novo por aqui?</h5>
+				<h5>Cadastre-se para buscar o seu melhor amigo.</h5>
+			</div>
+		</div>
 
-        <form asp-action="Cadastrar" method="POST" class="row g-3">
-            <div class="col-12">
-                <label asp-for="Nome" class="form-label required" span-required="">Nome Completo </label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
+		<form asp-action="Cadastrar" method="POST" class="row g-3">
+			<div class="col-12">
+				<label asp-for="Nome" class="form-label required" span-required="">Nome Completo </label>
+				<input asp-for="Nome" class="form-control" />
+				<span asp-validation-for="Nome" class="text-danger"></span>
+			</div>
 
-            <div class="col-md-7">
-                <label asp-for="Cpf" class="form-label required" span-required="">CPF</label>
-                <input asp-for="Cpf" class="form-control" placeholder="000.000.000-00"/>
-                <span asp-validation-for="Cpf" class="text-danger"></span>
-            </div>
+			<div class="col-md-7">
+				<label asp-for="Cpf" class="form-label required" span-required="">CPF</label>
+				<input asp-for="Cpf" class="form-control" placeholder="000.000.000-00" />
+				<span asp-validation-for="Cpf" class="text-danger"></span>
+			</div>
 
-            <div class="col-md-5">
-                <label asp-for="DataNascimento" class="form-label required" span-required="">Data de Nascimento</label>
-                <input asp-for="DataNascimento" class="form-control" value=""/>
-                <span asp-validation-for="DataNascimento" class="text-danger"></span>
-            </div>
+			<div class="col-md-5">
+				<label asp-for="DataNascimento" class="form-label required" span-required="">Data de Nascimento</label>
+				<input asp-for="DataNascimento" class="form-control" value="" />
+				<span asp-validation-for="DataNascimento" class="text-danger"></span>
+			</div>
 
-            <div class="col-12">
-                <label asp-for="Endereco" class="form-label required" span-required="">Endereço Completo</label>
-                <input asp-for="Endereco"  class="form-control" placeholder="Rua XV de Novembro, 123, Centro, Blumenau, SC" />
-                <span asp-validation-for="Endereco" class="text-danger"></span>
-            </div>
+			<div class="col-12">
+				<label asp-for="Endereco" class="form-label required" span-required="">Endereço Completo</label>
+				<input asp-for="Endereco" class="form-control" placeholder="Rua XV de Novembro, 123, Centro, Blumenau, SC" />
+				<span asp-validation-for="Endereco" class="text-danger"></span>
+			</div>
 
-            <div class="col-md-7">
-                <label asp-for="Email" class="form-label required" span-required="">Email</label>
-                <input asp-for="Email" class="form-control" placeholder="seuemail@exemplo.com" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
+			<div class="col-md-7">
+				<label asp-for="Email" class="form-label required" span-required="">Email</label>
+				<input asp-for="Email" class="form-control" placeholder="seuemail@exemplo.com" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
 
-            <div class="col-md-5">
-                <label asp-for="Celular" class="form-label required" span-required="">Celular</label>
-                <input asp-for="Celular" class="form-control" placeholder="(00) 00000-0000" />
-                <span asp-validation-for="Celular" class="text-danger"></span>
-            </div>
+			<div class="col-md-5">
+				<label asp-for="Celular" class="form-label required" span-required="">Celular</label>
+				<input asp-for="Celular" class="form-control" placeholder="(00) 00000-0000" />
+				<span asp-validation-for="Celular" class="text-danger"></span>
+			</div>
 
-            <div class="col-6">
-                <label asp-for="Senha" class="form-label required" span-required="">Senha</label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div>
+			<div class="col-6">
+				<label asp-for="Senha" class="form-label required" span-required="">Senha</label>
+				<input asp-for="Senha" class="form-control" />
+				<span asp-validation-for="Senha" class="text-danger"></span>
+			</div>
 
-            <div class="col-6">
-                <label asp-for="ConfirmarSenha" class="form-label required" span-required="">Confirmar Senha</label>
-                <input asp-for="ConfirmarSenha" class="form-control" />
-                <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
-            </div>
+			<div class="col-6">
+				<label asp-for="ConfirmarSenha" class="form-label required" span-required="">Confirmar Senha</label>
+				<input asp-for="ConfirmarSenha" class="form-control" />
+				<span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+			</div>
 
-            <div class="col-12">
-                <div class="form-check">
-                    <input asp-for="EhVoluntario" class="form-check-input" span-required="" type="checkbox">
-                    <label asp-for="EhVoluntario" class="form-check-label" for="gridCheck">
-                        Quero ser voluntário!
-                    </label>
-                    <span asp-validation-for="EhVoluntario" class="text-danger"></span>
-                </div>
-            </div>
+			<div class="col-12">
+				<div class="form-check">
+					<input asp-for="EhVoluntario" class="form-check-input" span-required="" type="checkbox">
+					<label asp-for="EhVoluntario" class="form-check-label" for="gridCheck">
+						Quero ser voluntário!
+					</label>
+					<span asp-validation-for="EhVoluntario" class="text-danger"></span>
+				</div>
+			</div>
 
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a asp-action="Cadastrar" /> <button type="submit" class="btn-salvar">Salvar</button>
-            </div>
-        </form>
-    </div>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				<a asp-action="Cadastrar"></a> <button type="submit" class="btn-salvar">Salvar</button>
+			</div>
+		</form>
+	</div>
 
-    <footer class="text-light" style="margin-top: 40px">
-        <div class="container-fluid py-3">
-            <div class="row">
-                <div class="col-4">
-                    <ul class="nav flex-column">
-                        <li class="nav-link"><a href="#">Retornar à Loja</a></li>
-                        <li class="nav-link"><a href="#">Sobre</a></li>
-                        <li class="nav-link"><a href="#">Contato</a></li>
-                        <li class="nav-link"><a href="#">Suporte</a></li>
-                    </ul>
-                </div>
-                <div class="col-8">
-                    <p style="color: #582b5cc9">
-                        Nos ajude a fazer a diferença! Juntos podemos ajudar os animais que precisam de um lar!<br />
-                        Se precisar, nos chame no suporte em nossas redes sociais!
+	<footer class="text-light" style="margin-top: 40px">
+		<div class="container-fluid py-3">
+			<div class="row">				
+				<div class="col-8">
+					<p style="color: #582b5cc9">
+						&emsp;Nos ajude a fazer a diferença, juntos podemos ajudar os animais que precisam de um lar!<br />
+						&emsp;Se precisar, nos chame no suporte em nossas redes sociais.
+					</p>
+					<ul class="nav">
+						<li class="nav-link"><a href="https://pt-br.facebook.com/" target="_blank"><img src="~/theme/assets/images/facebook.svg" /></a></li>
+						<li class="nav-link"><a href="https://www.instagram.com/" target="_blank"><img src="~/theme/assets/images/instagram.svg" /></a></li>
+						<li class="nav-link"><a href="https://linktr.ee/miaudota" target="_blank"><img src="~/theme/assets/images/pessoas.svg" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
 
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/js/jquery.mask.js"></script>
+	<script src="~/js/usuario/validacoesCadastrar.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-                    </p>
-                    <ul class="nav">
-                        <li class="nav-link"><a href="https://pt-br.facebook.com/" target="_blank"><img src="~/theme/assets/images/facebook.svg" /></a><i class="fab fa-facebook fa-3x "></i></li>
-                        <li class="nav-link"><a href="https://www.instagram.com/" target="_blank"><img src="~/theme/assets/images/instagram.svg" /></a><i class="fab fa-instagram fa-3x"></i></li>
-                        <li class="nav-link"><a href="https://linktr.ee/miaudota" target="_blank"><img src="~/theme/assets/images/pessoas.svg" /></a><i class="fab fa-equipe fa-3x"></i></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+</body>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/jquery.mask.js"></script>
-    <script src="~/js/usuario/validacoesCadastrar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
- </body>
 </html>
