@@ -55,3 +55,8 @@
 document.getElementById('editarModalSalvar').addEventListener('click', () => {
     animalBotaoSalvarModalEditar();
 });
+
+
+$('#editarModalIdade').mask('00');
+$('#editarModalPeso').mask('0,0', { reverse: true });
+$('#editarModalAltura').mask('0,0');
